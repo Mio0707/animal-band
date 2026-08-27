@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0",
+  "songs": [
+    {
+      "songId": "dongfanghong",
+      "title": "东方红",
+      "stageId": "stage_1",
+      "cover": null,
+      "originalAudio": null,
+      "scoreImage": "data/songs/dongfanghong/source/score-image.jpg",
+      "draftScore": "data/songs/dongfanghong/recognition/normalized.json",
+      "createdAt": "2026-08-27T00:00:00Z",
+      "updatedAt": "2026-08-27T12:00:00Z"
+    },
+    {
+      "songId": "zuguo-zuguo-women-ai-ni",
+      "title": "祖国祖国我们爱你",
+      "stageId": "stage_1",
+      "cover": null,
+      "originalAudio": null,
+      "scoreImage": "data/songs/zuguo-zuguo-women-ai-ni/source/score-image-combined.png",
+      "draftScore": null,
+      "createdAt": "2026-08-27T12:10:00Z",
+      "updatedAt": "2026-08-27T12:10:00Z"
+    }
+  ]
+}

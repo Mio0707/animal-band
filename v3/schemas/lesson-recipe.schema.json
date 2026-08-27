@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animalbank.local/schemas/lesson-recipe.schema.json",
+  "title": "LessonRecipe",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "songId", "stage", "modules", "materials", "activities", "groupPlan", "audio", "status"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "songId": { "type": "string", "minLength": 1 },
+    "stage": { "type": "string", "pattern": "^stage_[0-9]+$" },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "enum": ["rhythm", "melody", "solfege", "singing"] }
+    },
+    "materials": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rhythm": { "type": "array", "items": { "type": "string" } },
+        "melody": { "type": "array", "items": { "type": "string" } },
+        "solfege": { "type": "array", "items": { "type": "string" } },
+        "singing": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "activities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "module", "materialIds", "teachingAssetIds"],
+        "properties": {
+          "id": { "type": "string" },
+          "module": { "enum": ["rhythm", "melody", "solfege", "singing", "ensemble"] },
+          "materialIds": { "type": "array", "items": { "type": "string" } },
+          "teachingAssetIds": { "type": "array", "items": { "type": "string" } },
+          "phraseIds": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "groupPlan": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["role", "materialIds"],
+        "properties": {
+          "role": { "enum": ["rhythm", "melody", "solfege", "singing"] },
+          "materialIds": { "type": "array", "items": { "type": "string" } },
+          "entryCue": { "type": ["string", "null"] },
+          "exitCue": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "original": { "type": ["string", "null"] },
+        "rhythmTraining": { "type": ["string", "null"] },
+        "melodyPractice": { "type": ["string", "null"] },
+        "solfegePractice": { "type": ["string", "null"] },
+        "referenceVocal": { "type": ["string", "null"] },
+        "rehearsal": { "type": ["string", "null"] },
+        "backing": { "type": ["string", "null"] }
+      }
+    },
+    "status": { "enum": ["draft", "reviewed", "published"] },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  }
+}

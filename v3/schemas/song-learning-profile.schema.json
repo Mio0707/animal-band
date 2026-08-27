@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animalbank.local/schemas/song-learning-profile.schema.json",
+  "title": "SongLearningProfile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["songId", "stage", "scoreId", "modules", "status"],
+  "properties": {
+    "songId": { "type": "string", "minLength": 1 },
+    "stage": { "type": "string", "pattern": "^stage_[0-9]+$" },
+    "scoreId": { "type": "string", "minLength": 1 },
+    "modules": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rhythm": { "$ref": "#/$defs/moduleProfile" },
+        "melody": { "$ref": "#/$defs/moduleProfile" },
+        "solfege": { "$ref": "#/$defs/moduleProfile" },
+        "singing": { "$ref": "#/$defs/moduleProfile" }
+      }
+    },
+    "status": { "enum": ["draft", "reviewed", "published"] },
+    "warnings": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "moduleProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["available", "materials"],
+      "properties": {
+        "available": { "type": "boolean" },
+        "targets": { "type": "array", "items": { "type": "string" } },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["materialId", "count", "recommended"],
+            "properties": {
+              "materialId": { "type": "string", "minLength": 1 },
+              "count": { "type": "integer", "minimum": 0 },
+              "recommended": { "type": "boolean" },
+              "phraseIds": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

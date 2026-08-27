@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>动物银行 · 内容工厂</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-loading"><div class="loading-card"><img src="assets/avatar-dog.png" alt=""><strong>内容工厂</strong><span>正在读取真实数据…</span></div></div>
+  <dialog id="new-song-dialog" class="modal">
+    <form id="new-song-form" method="dialog">
+      <header><div><small>歌曲生产</small><h2>新建歌曲</h2></div><button type="button" class="icon-button" data-close-dialog aria-label="关闭">×</button></header>
+      <div class="form-grid"><label>歌曲 ID<input name="songId" required pattern="[A-Za-z0-9][A-Za-z0-9_-]{0,79}" placeholder="song-id"></label><label>歌曲名称<input name="title" required placeholder="歌曲名称"></label><label>阶段<select name="stageId"><option value="stage_1">第一阶段</option></select></label><label>封面（可选）<input name="cover" type="file" accept="image/*"></label><label>原始歌曲音频<input name="originalAudio" type="file" accept="audio/*"></label><label>简谱图片<input name="scoreImage" type="file" accept="image/*"></label><label class="wide">元数据（可选）<textarea name="metadata" rows="3" placeholder='{"source":"manual"}'></textarea></label></div>
+      <p class="form-note">当前 V1 只创建会话内歌曲记录；不会自动启动 Qwen 或生成后续内容。</p>
+      <footer><button type="button" class="button secondary" data-close-dialog>取消</button><button type="submit" class="button primary">创建歌曲</button></footer>
+    </form>
+  </dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

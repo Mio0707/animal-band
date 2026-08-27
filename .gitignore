@@ -1,0 +1,33 @@
+# 可从原始 PDF 重新生成的页面渲染缓存
+tmp/
+
+# 常见本机系统文件
+.DS_Store
+Thumbs.db
+
+# 图像抠图过程中的纯色背景中间文件
+prototype/assets/stickers/*-key.png
+
+# 本地音乐平台生成的任务与音频
+audio-production/studio-data/
+children-music-studio/studio-data/
+children-music-studio/published-music/
+
+# Python 运行缓存
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+cache/
+node_modules/
+.pnpm-store/
+
+# 本机密钥与过程输出
+.env
+output/
+deliverables/
+
+# 飞书妙搭部署产物（由 prototype 源文件生成）
+miaoda-dist/

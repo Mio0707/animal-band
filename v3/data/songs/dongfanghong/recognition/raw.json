@@ -1,0 +1,398 @@
+{
+  "title": "东方红",
+  "tonic": "F",
+  "mode": "major",
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "bpm": null,
+  "confidence": 0.95,
+  "warnings": [],
+  "measures": [
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 7,
+          "octave": -1,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": -1,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 7,
+          "octave": -1,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": -1,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "confidence": 1.0
+        }
+      ]
+    }
+  ]
+}

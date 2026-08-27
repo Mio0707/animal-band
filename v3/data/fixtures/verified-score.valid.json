@@ -1,0 +1,106 @@
+{
+  "songId": "fixture-song-001",
+  "title": "Verified Score Fixture",
+  "tonic": "C",
+  "key": "C major",
+  "mode": "major",
+  "meter": {
+    "beats": 3,
+    "unit": 4
+  },
+  "bpm": 72,
+  "lyricsText": "小小",
+  "measures": [
+    {
+      "number": 1,
+      "pickup": false,
+      "notes": [
+        {
+          "noteId": "m001_n001",
+          "degree": 1,
+          "octave": 0,
+          "pitch": "C4",
+          "absolutePitch": "C4",
+          "midiNumber": 60,
+          "frequency": 261.626,
+          "solfege": "do",
+          "duration": 1,
+          "beat": 0,
+          "startBeat": 0,
+          "rest": false,
+          "lyric": "小",
+          "lyricSyllableId": "syllable_001",
+          "lyricContinuation": false,
+          "phraseId": "phrase_01",
+          "confidence": 1
+        },
+        {
+          "noteId": "m001_n002",
+          "degree": 3,
+          "octave": 0,
+          "pitch": "E4",
+          "absolutePitch": "E4",
+          "midiNumber": 64,
+          "frequency": 329.628,
+          "solfege": "mi",
+          "duration": 1,
+          "beat": 1,
+          "startBeat": 1,
+          "rest": false,
+          "lyric": "小",
+          "lyricSyllableId": "syllable_002",
+          "lyricContinuation": false,
+          "phraseId": "phrase_01",
+          "confidence": 1
+        },
+        {
+          "noteId": "m001_n003",
+          "degree": 0,
+          "octave": 0,
+          "pitch": null,
+          "absolutePitch": null,
+          "midiNumber": null,
+          "frequency": null,
+          "solfege": "rest",
+          "duration": 1,
+          "beat": 2,
+          "startBeat": 2,
+          "rest": true,
+          "lyric": null,
+          "lyricSyllableId": null,
+          "lyricContinuation": false,
+          "phraseId": "phrase_01",
+          "confidence": 1
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "phraseId": "phrase_01",
+      "startMeasure": 1,
+      "endMeasure": 1,
+      "startNoteId": "m001_n001",
+      "endNoteId": "m001_n003",
+      "contour": "ASCENDING",
+      "isVocal": true,
+      "requiresLyrics": true,
+      "reviewStatus": "confirmed"
+    }
+  ],
+  "source": {
+    "type": "ai_recognition",
+    "reference": "fixtures/source-score.png",
+    "humanReviewed": true,
+    "recognitionModel": "fixture-model",
+    "recognizedAt": "2026-08-27T00:00:00Z",
+    "reviewedAt": "2026-08-27T01:00:00Z"
+  },
+  "recognitionMetadata": {
+    "confidence": 1
+  },
+  "verificationStatus": "verified",
+  "verifiedBy": "fixture-reviewer",
+  "verifiedAt": "2026-08-27T01:05:00Z",
+  "warnings": []
+}

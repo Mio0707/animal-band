@@ -1,0 +1,12 @@
+{
+  "songId": "dongfanghong",
+  "title": "东方红",
+  "stageId": "stage_1",
+  "cover": null,
+  "originalAudio": null,
+  "scoreImage": "source/score-image.jpg",
+  "draftScore": "recognition/normalized.json",
+  "metadata": {},
+  "createdAt": "2026-08-27T00:00:00Z",
+  "updatedAt": "2026-08-27T12:00:00Z"
+}
