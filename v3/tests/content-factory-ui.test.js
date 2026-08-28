@@ -96,7 +96,7 @@ test("Song Library 使用真实 Score 状态且后续流程未生成", async () 
 
 test("Song Detail Score 进入唯一的现有 Score Review", async () => {
   const html = renderSongDetail(await fixtureData(), params("id=dongfanghong&tab=score"));
-  assert.match(html, /score-review\/index\.html\?score=/);
+  assert.match(html, /score-review\/index\.html\?songId=dongfanghong/);
   assert.match(html, /打开乐谱校对/);
 });
 

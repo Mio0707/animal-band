@@ -1,13 +1,17 @@
 const URLS = Object.freeze({
   curriculum: new URL("../../data/curriculum/stage1.json", import.meta.url),
-  teachingAssets: new URL("../../data/teaching-assets/stage1-teaching-assets.json", import.meta.url),
-  songs: new URL("../../data/songs/catalog.json", import.meta.url)
+  teachingAssets: new URL("../../data/teaching-assets/stage1-teaching-assets.json", import.meta.url)
 });
 
-async function fetchJson(url, label) {
-  const response = await fetch(url);
-  if (!response.ok) throw new Error(`${label} 读取失败（${response.status}）`);
-  return response.json();
+async function fetchJson(url, label, options = {}) {
+  const response = await fetch(url, options);
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(payload.error || `${label}失败（${response.status}）`);
+  return payload;
+}
+
+export function songAsset(song, name) {
+  return song?.assets?.[name] ?? song?.[name] ?? null;
 }
 
 export function flattenTargets(module) {
@@ -31,31 +35,40 @@ export function scoreStatus(song) {
 export function songLifecycle(song) {
   return {
     score: scoreStatus(song),
-    learningProfile: "NOT_GENERATED",
+    learningProfile: song.learningProfileStatus ?? "NOT_GENERATED",
     teachingAssets: "NOT_RESOLVED",
     lessonRecipe: "NOT_GENERATED",
-    audio: song.originalAudio ? "ORIGINAL_READY" : "NOT_GENERATED",
+    audio: song.audioStatus ?? (songAsset(song, "originalAudio") ? "ORIGINAL_READY" : "NOT_GENERATED"),
     publication: "NOT_PUBLISHED"
   };
 }
 
-async function loadSongs(catalog) {
-  return Promise.all((catalog.songs ?? []).map(async (song) => {
-    let score = null;
-    if (song.draftScore) {
-      try { score = await fetchJson(new URL(`../../${song.draftScore}`, import.meta.url), `${song.title} 乐谱`); }
-      catch (error) { score = { verificationStatus: "draft", warnings: [{ severity: "blocking", message: error.message }] }; }
-    }
-    return { ...song, score };
-  }));
+export async function listSongs() { return (await fetchJson("/api/songs", "歌曲列表读取")).songs ?? []; }
+export async function getSongById(songId) { return fetchJson(`/api/songs/${encodeURIComponent(songId)}`, "歌曲读取"); }
+export async function createSong(formData) { return fetchJson("/api/songs", "歌曲创建", { method: "POST", body: formData }); }
+export async function updateSong(songId, changes) {
+  return fetchJson(`/api/songs/${encodeURIComponent(songId)}`, "歌曲更新", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(changes) });
+}
+export async function recognizeSong(songId) { return fetchJson(`/api/songs/${encodeURIComponent(songId)}/recognize`, "Qwen 识谱", { method: "POST" }); }
+export async function getSongScore(songId) { return fetchJson(`/api/songs/${encodeURIComponent(songId)}/score`, "乐谱读取"); }
+export async function saveSongScore(songId, score) {
+  return fetchJson(`/api/songs/${encodeURIComponent(songId)}/score`, "乐谱保存", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(score) });
+}
+export async function listPreparations() { return (await fetchJson("/api/preparations", "备课列表读取")).preparations ?? []; }
+export async function getPreparationById(preparationId) { return fetchJson(`/api/preparations/${encodeURIComponent(preparationId)}`, "备课读取"); }
+export async function getActivePreparationForSong(songId) { return fetchJson(`/api/songs/${encodeURIComponent(songId)}/preparation`, "当前备课读取"); }
+export async function createPreparation(songId) {
+  return fetchJson("/api/preparations", "备课创建", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ songId }) });
+}
+export async function updatePreparation(preparationId, changes) {
+  return fetchJson(`/api/preparations/${encodeURIComponent(preparationId)}`, "备课保存", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(changes) });
 }
 
 export async function loadContentFactoryData() {
-  const [curriculum, teachingAssets, songCatalog] = await Promise.all([
-    fetchJson(URLS.curriculum, "课程库"), fetchJson(URLS.teachingAssets, "教学资产"), fetchJson(URLS.songs, "歌曲目录")
+  const [curriculum, teachingAssets, songs, preparations] = await Promise.all([
+    fetchJson(URLS.curriculum, "课程库读取"), fetchJson(URLS.teachingAssets, "教学资产读取"), listSongs(), listPreparations()
   ]);
-  const songs = await loadSongs(songCatalog);
-  return { curriculum, teachingAssets, songs };
+  return { curriculum, teachingAssets, songs, preparations };
 }
 
 export function dashboardMetrics(data) {
@@ -81,22 +94,5 @@ export function dashboardMetrics(data) {
       reviewed: statuses.filter((status) => status === "REVIEWED").length,
       verified: statuses.filter((status) => status === "VERIFIED").length
     }
-  };
-}
-
-export function makeSessionSong(form, files = {}) {
-  return {
-    songId: form.songId,
-    title: form.title,
-    stageId: form.stageId || "stage_1",
-    cover: files.cover ? URL.createObjectURL(files.cover) : null,
-    originalAudio: files.originalAudio ? URL.createObjectURL(files.originalAudio) : null,
-    scoreImage: files.scoreImage ? URL.createObjectURL(files.scoreImage) : null,
-    draftScore: null,
-    score: null,
-    metadata: form.metadata || {},
-    sessionOnly: true,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
   };
 }

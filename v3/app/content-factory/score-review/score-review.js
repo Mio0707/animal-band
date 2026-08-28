@@ -4,6 +4,7 @@ import { autoAlignLyrics, setNoteLyric } from "../../../core/lyrics-alignment.js
 import { canMarkReviewed, collectScoreIssues, markScoreEdited, transitionToReviewed, transitionToVerified } from "../../../core/score-verification.js";
 
 let score = null;
+let songId = null;
 let currentMeasureIndex = 0;
 let confirmedMeasures = new Set();
 let actionMessage = "";
@@ -142,6 +143,7 @@ function renderStatus() {
   document.querySelector("#mark-reviewed").disabled = !allConfirmed || !canMarkReviewed(score).allowed || status !== "draft";
   document.querySelector("#mark-verified").disabled = status !== "reviewed";
   document.querySelector("#download-score").disabled = status !== "verified";
+  document.querySelector("#save-draft").disabled = !songId;
   document.querySelector("#verified-by").value = score.verifiedBy ?? "";
 }
 
@@ -163,7 +165,7 @@ function editScore(mutator, measureIndex = null) {
   if (measureIndex !== null) confirmedMeasures.delete(measureIndex);
   markScoreEdited(score);
   recalculateScoreTiming(score);
-  actionMessage = wasVerified ? "已修改：状态已自动从“已验证”降级为“已审核”。" : "修改已保存。";
+  actionMessage = wasVerified ? "已修改：状态已自动从“已验证”降级为“已审核”，请保存。" : "修改尚未写回，请保存。";
   render();
 }
 
@@ -240,6 +242,19 @@ function downloadJson() {
   const anchor = document.createElement("a"); anchor.href = URL.createObjectURL(blob); anchor.download = `${score.songId || "verified-score"}.verified-score.json`; anchor.click(); URL.revokeObjectURL(anchor.href);
 }
 
+async function persistScore(successMessage) {
+  if (!songId) throw new Error("当前页面未绑定 Song，只能使用调试下载。");
+  const response = await fetch(`/api/songs/${encodeURIComponent(songId)}/score`, {
+    method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(score)
+  });
+  const payload = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(payload.error || `乐谱保存失败（${response.status}）`);
+  score = payload.score;
+  actionMessage = successMessage;
+  render();
+  return payload;
+}
+
 function loadScoreDocument(document) {
   score = document;
   if (!Array.isArray(score.measures) || !score.measures.length) throw new Error("已验证乐谱缺少小节数据。");
@@ -272,11 +287,21 @@ function bootstrap() {
   document.querySelector("#confirm-measure").addEventListener("click", confirmCurrentMeasure);
   document.querySelector("#auto-align").addEventListener("click", () => editScore(() => autoAlignLyrics(score, document.querySelector("#lyrics-text").value)));
   document.querySelector("#create-phrase").addEventListener("click", () => { try { const vocal = document.querySelector("#phrase-vocal").checked; editScore(() => createPhrase(score, document.querySelector("#phrase-start").value, document.querySelector("#phrase-end").value, { isVocal: vocal, requiresLyrics: vocal })); } catch (error) { actionMessage = error.message; render(); } });
-  document.querySelector("#mark-reviewed").addEventListener("click", () => { const result = transitionToReviewed(score); actionMessage = result.allowed ? "状态已更新为“已审核”。" : result.errors.map((item) => item.message).join(" "); render(); });
-  document.querySelector("#mark-verified").addEventListener("click", () => { const result = transitionToVerified(score, document.querySelector("#verified-by").value); actionMessage = result.allowed ? "人工验证完成，状态已更新为“已验证”。" : result.errors.map((item) => item.message).join(" "); render(); });
+  document.querySelector("#save-draft").addEventListener("click", () => persistScore("当前乐谱已保存到 Song。").catch((error) => { actionMessage = error.message; render(); }));
+  document.querySelector("#mark-reviewed").addEventListener("click", async () => {
+    const result = transitionToReviewed(score);
+    if (!result.allowed) { actionMessage = result.errors.map((item) => item.message).join(" "); return render(); }
+    try { await persistScore("已审核乐谱已保存到 Song。"); } catch (error) { actionMessage = error.message; render(); }
+  });
+  document.querySelector("#mark-verified").addEventListener("click", async () => {
+    const result = transitionToVerified(score, document.querySelector("#verified-by").value);
+    if (!result.allowed) { actionMessage = result.errors.map((item) => item.message).join(" "); return render(); }
+    try { await persistScore("验证完成，verified-score.json 已保存。"); } catch (error) { score.verificationStatus = "reviewed"; score.verifiedBy = null; score.verifiedAt = null; actionMessage = error.message; render(); }
+  });
   document.querySelector("#download-score").addEventListener("click", downloadJson);
   const params = new URLSearchParams(location.search);
-  const scoreUrl = params.get("score");
+  songId = params.get("songId");
+  const scoreUrl = params.get("score") || (songId ? `/api/songs/${encodeURIComponent(songId)}/score` : null);
   const imageUrl = params.get("image");
   if (imageUrl) showSourceImage(imageUrl);
   if (scoreUrl) fetch(scoreUrl).then((response) => {

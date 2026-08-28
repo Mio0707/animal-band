@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animalbank.local/schemas/preparation.schema.json",
+  "title": "Preparation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["preparationId", "songId", "selectedModules", "selectedMaterials", "selectedPhrases", "lessonRecipeId", "teacherAdjustments", "status", "createdAt", "updatedAt"],
+  "properties": {
+    "preparationId": { "type": "string", "pattern": "^prep_[A-Za-z0-9_-]+$" },
+    "songId": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$" },
+    "selectedModules": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["rhythm", "melody", "solfege", "singing", "melody_singing"] }
+    },
+    "selectedMaterials": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "selectedPhrases": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "lessonRecipeId": { "type": ["string", "null"] },
+    "teacherAdjustments": { "type": "object", "additionalProperties": true },
+    "status": { "type": "string", "enum": ["DRAFT", "READY"] },
+    "isActive": { "type": "boolean" },
+    "createdAt": { "type": "string", "minLength": 1 },
+    "updatedAt": { "type": "string", "minLength": 1 }
+  }
+}

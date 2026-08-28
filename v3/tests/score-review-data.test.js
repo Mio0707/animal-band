@@ -26,9 +26,9 @@ test("Curriculum 与 Teaching Asset 冻结数据哈希保持不变", async () =>
   assert.equal(await sha256(resolve("data/teaching-assets/stage1-teaching-assets.json")), "64d6d91b27e47dfc6a321902f5ed0044a16c7a9a95f232cc0a9e0bd68a95ea1c");
 });
 
-test("Human Review 页面包含图片、歌词、Phrase、状态与导出工具", async () => {
+test("Human Review 页面包含图片、歌词、Phrase、状态、持久化与调试导出工具", async () => {
   const html = await readFile(resolve("app/content-factory/score-review/index.html"), "utf8");
-  for (const token of ["source-image", "lyrics-text", "phrase-start", "mark-reviewed", "mark-verified", "download-score"]) assert.match(html, new RegExp(token));
+  for (const token of ["source-image", "lyrics-text", "phrase-start", "save-draft", "mark-reviewed", "mark-verified", "download-score"]) assert.match(html, new RegExp(token));
 });
 
 test("Human Review 迁移 prototype 的逐小节校对与编辑能力", async () => {

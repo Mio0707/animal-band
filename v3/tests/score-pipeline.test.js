@@ -13,7 +13,7 @@ test("真实简谱图片通过离线 Recognition fixture 完成 raw → normaliz
   const songId = "dongfanghong-regression";
   const run = spawnSync("/usr/bin/python3", [
     resolve("content-factory/score-recognition/qwen_score_recognizer.py"),
-    "--image", resolve("../prototype/assets/music/dongfanghong/score.jpg"),
+    "--image", resolve("data/songs/dongfanghong/source/score-image.jpg"),
     "--song-id", songId,
     "--output-root", root,
     "--raw-input", resolve("data/fixtures/dongfanghong-recognition-raw.json")

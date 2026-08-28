@@ -130,7 +130,8 @@ def run_recognition(
     source_dir.mkdir(parents=True, exist_ok=True)
     recognition_dir.mkdir(parents=True, exist_ok=True)
     stored_image = source_dir / f"score-image{image_path.suffix.lower()}"
-    shutil.copyfile(image_path, stored_image)
+    if image_path.resolve() != stored_image.resolve():
+        shutil.copyfile(image_path, stored_image)
 
     raw = json.loads(raw_input.read_text(encoding="utf-8")) if raw_input else recognize_with_qwen(image_path, model)
     raw_path = recognition_dir / "raw.json"

@@ -1,6 +1,6 @@
-import { loadContentFactoryData, makeSessionSong } from "./data-service.js";
-import { NAVIGATION, sidebar, topHeader } from "./components/shell.js";
-import { emptyState, escapeHtml } from "./components/ui.js";
+import { createPreparation, createSong, loadContentFactoryData, recognizeSong, updatePreparation } from "./data-service.js";
+import { sidebar, topHeader } from "./components/shell.js";
+import { emptyState } from "./components/ui.js";
 import { renderDashboard } from "./pages/dashboard.js";
 import { renderCurriculum } from "./pages/curriculum.js";
 import { renderTeachingAssets } from "./pages/teaching-assets.js";
@@ -26,10 +26,53 @@ export function parseRoute(hash = "") {
 
 function activeSidebarRoute(route) { return route === "song" ? "songs" : route; }
 function currentLabel(route) { return ROUTES[route]?.[0] ?? "首页概览"; }
+function upsert(collection, item, key) {
+  const index = collection.findIndex((value) => value[key] === item[key]);
+  if (index >= 0) collection[index] = item; else collection.push(item);
+}
 
 export function renderContent(route, params, source = data) {
   const renderer = ROUTES[route]?.[1] ?? renderDashboard;
   return renderer(source, params);
+}
+
+function setBusy(button, busy, label = "处理中…") {
+  if (!button) return;
+  if (busy) { button.dataset.originalLabel = button.textContent; button.textContent = label; button.disabled = true; }
+  else { button.textContent = button.dataset.originalLabel || button.textContent; button.disabled = false; }
+}
+
+function bindPageActions(app) {
+  app.querySelector("[data-recognize-song]")?.addEventListener("click", async (event) => {
+    const button = event.currentTarget; setBusy(button, true, "正在识谱…");
+    try {
+      const result = await recognizeSong(button.dataset.recognizeSong);
+      upsert(data.songs, result.song, "songId"); render();
+    } catch (error) { alert(error.message); setBusy(button, false); }
+  });
+  app.querySelectorAll("[data-create-preparation]").forEach((button) => button.addEventListener("click", async () => {
+    setBusy(button, true, "正在创建…");
+    try {
+      const preparation = await createPreparation(button.dataset.createPreparation);
+      upsert(data.preparations, preparation, "preparationId");
+      location.hash = `#/song?id=${encodeURIComponent(preparation.songId)}&tab=teaching-plan`;
+      render();
+    } catch (error) { alert(error.message); setBusy(button, false); }
+  }));
+  app.querySelector("[data-preparation-form]")?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget; const button = form.querySelector("[type=submit]"); setBusy(button, true, "正在保存…");
+    const fields = new FormData(form);
+    const selectedModules = fields.getAll("selectedModules").map(String);
+    const selectedPhrases = String(fields.get("selectedPhrases") || "").split(/[，,\n]/).map((value) => value.trim()).filter(Boolean);
+    try {
+      const preparation = await updatePreparation(form.dataset.preparationForm, {
+        selectedModules, selectedMaterials: [], selectedPhrases,
+        teacherAdjustments: { notes: String(fields.get("notes") || "").trim() }, status: String(fields.get("status"))
+      });
+      upsert(data.preparations, preparation, "preparationId"); render();
+    } catch (error) { alert(error.message); setBusy(button, false); }
+  });
 }
 
 function render() {
@@ -41,23 +84,26 @@ function render() {
   document.title = `${currentLabel(route)} · 动物银行内容工厂`;
   app.querySelectorAll("[data-toggle-sidebar]").forEach((button) => button.addEventListener("click", () => { sidebarOpen = !sidebarOpen; render(); }));
   app.querySelector("[data-new-song]")?.addEventListener("click", () => document.querySelector("#new-song-dialog").showModal());
+  bindPageActions(app);
   window.scrollTo({ top: 0 });
 }
 
 function bindDialog() {
   const dialog = document.querySelector("#new-song-dialog");
   dialog.querySelectorAll("[data-close-dialog]").forEach((button) => button.addEventListener("click", () => dialog.close()));
-  document.querySelector("#new-song-form").addEventListener("submit", (event) => {
+  document.querySelector("#new-song-form").addEventListener("submit", async (event) => {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const songId = String(form.get("songId") || "").trim();
-    if (data.songs.some((song) => song.songId === songId)) return alert("songId 已存在。");
-    let metadata = {};
-    try { metadata = String(form.get("metadata") || "").trim() ? JSON.parse(form.get("metadata")) : {}; }
-    catch { return alert("元数据必须是有效 JSON。"); }
-    const file = (name) => { const value = form.get(name); return value instanceof File && value.size ? value : null; };
-    const song = makeSessionSong({ songId, title: String(form.get("title") || "").trim(), stageId: form.get("stageId"), metadata }, { cover: file("cover"), originalAudio: file("originalAudio"), scoreImage: file("scoreImage") });
-    data.songs.push(song); dialog.close(); event.currentTarget.reset(); location.hash = `#/song?id=${encodeURIComponent(song.songId)}`;
+    const formElement = event.currentTarget; const form = new FormData(formElement);
+    try {
+      const rawMetadata = String(form.get("metadata") || "").trim();
+      form.set("metadata", JSON.stringify(rawMetadata ? JSON.parse(rawMetadata) : {}));
+    } catch { return alert("元数据必须是有效 JSON。"); }
+    const submit = formElement.querySelector("[type=submit]"); setBusy(submit, true, "正在保存…");
+    try {
+      const song = await createSong(form);
+      data.songs.push(song); dialog.close(); formElement.reset();
+      location.hash = `#/song?id=${encodeURIComponent(song.songId)}`; render();
+    } catch (error) { alert(error.message); setBusy(submit, false); }
   });
 }
 
