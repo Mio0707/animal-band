@@ -1,0 +1,10 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://animalbank.local/schemas/audio-requirement-plan.schema.json","title":"Animal Bank Audio Requirement Plan","type":"object","additionalProperties":false,
+  "required":["schemaVersion","algorithmVersion","planId","preparationId","recipeId","songId","sourceRecipeGeneratedAt","generatedAt","slots","summary","notes"],
+  "properties":{
+    "schemaVersion":{"const":"1.0.0"},"algorithmVersion":{"type":"string","minLength":1},"planId":{"type":"string","minLength":1},"preparationId":{"type":"string","minLength":1},"recipeId":{"type":"string","minLength":1},"songId":{"type":"string","minLength":1},"sourceRecipeGeneratedAt":{"type":["string","null"]},"generatedAt":{"type":"string","minLength":1},
+    "slots":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":true,"required":["slotId","kind","required","fulfillment","requiresReview"],"properties":{"slotId":{"type":"string","minLength":1},"kind":{"enum":["ORIGINAL_AUDIO","RHYTHM_TRAINING","REFERENCE_PITCH_OR_PIANO","SOLFEGE_VOCAL","MELODY_PRACTICE","REFERENCE_VOCAL","GROUP_REHEARSAL"]},"required":{"type":"boolean"},"fulfillment":{"enum":["EXISTING","GENERATE_OR_CACHE"]},"requiresReview":{"type":"boolean"}}}},
+    "summary":{"type":"object","additionalProperties":false,"required":["requiredSlotCount","generationSlotCount","existingSlotCount"],"properties":{"requiredSlotCount":{"type":"integer","minimum":0},"generationSlotCount":{"type":"integer","minimum":0},"existingSlotCount":{"type":"integer","minimum":0}}},
+    "notes":{"type":"array","items":{"type":"string"}}
+  }
+}
