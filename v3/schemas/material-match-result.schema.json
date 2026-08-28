@@ -3,13 +3,14 @@
   "$id": "https://animalbank.local/schemas/material-match-result.schema.json",
   "title": "Animal Bank Material Match Result",
   "type": "object",
-  "required": ["schemaVersion", "algorithmVersion", "songId", "stageId", "sourceScoreStatus", "generatedAt", "facts", "materials", "summary"],
+  "required": ["schemaVersion", "algorithmVersion", "songId", "stageId", "sourceScoreStatus", "sourceScoreVerifiedAt", "generatedAt", "facts", "materials", "summary"],
   "properties": {
     "schemaVersion": { "const": "1.0.0" },
     "algorithmVersion": { "type": "string", "minLength": 1 },
     "songId": { "type": "string", "minLength": 1 },
     "stageId": { "const": "stage_1" },
     "sourceScoreStatus": { "const": "verified" },
+    "sourceScoreVerifiedAt": { "type": ["string", "null"] },
     "generatedAt": { "type": "string", "format": "date-time" },
     "facts": {
       "type": "object",
