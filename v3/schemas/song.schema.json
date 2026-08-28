@@ -35,8 +35,11 @@
         "verifiedPath": { "$ref": "#/$defs/assetPath" }
       }
     },
-    "learningProfileStatus": { "type": "string", "enum": ["NOT_GENERATED", "PROFILE_READY"] },
-    "audioStatus": { "type": "string", "enum": ["NOT_GENERATED", "ORIGINAL_READY", "READY"] },
+    "materialMatchStatus": { "type": "string", "enum": ["NOT_GENERATED", "READY", "STALE"] },
+    "learningProfileStatus": { "type": "string", "enum": ["NOT_GENERATED", "READY", "PROFILE_READY", "STALE"] },
+    "lessonRecipeStatus": { "type": "string", "enum": ["NOT_GENERATED", "READY", "BLOCKED", "STALE"] },
+    "sourceScoreVerifiedAt": { "type": ["string", "null"] },
+    "audioStatus": { "type": "string", "enum": ["NOT_GENERATED", "ORIGINAL_READY", "PARTIAL", "READY", "STALE"] },
     "createdAt": { "type": "string", "minLength": 1 },
     "updatedAt": { "type": "string", "minLength": 1 }
   },

@@ -44,9 +44,12 @@ test("同一 Song 可拥有多个独立 Preparation", async () => {
   await assertValidPreparation(validPreparation({ preparationId: "prep_first" }));
   await assertValidPreparation(validPreparation({ preparationId: "prep_second", isActive: false }));
 });
-test("Teacher State 映射为未备课、备课中、已准备", () => {
+test("Teacher State 只有 Readiness Gate 通过后才显示已准备", () => {
   const song = validSong();
   assert.equal(getTeacherPreparationState(song, null), "NOT_PREPARED");
   assert.equal(getTeacherPreparationState(song, validPreparation()), "PREPARING");
-  assert.equal(getTeacherPreparationState(song, validPreparation({ status: "READY" })), "READY");
+  assert.equal(getTeacherPreparationState(song, validPreparation({ status: "READY" })), "PREPARING");
+  const readySong = validSong({ processingStatus: "SCORE_VERIFIED", score: { recognitionStatus: "VERIFIED", verificationStatus: "verified", draftPath: null, verifiedPath: "data/songs/song_schema_test/verified-score.json" } });
+  const readyPreparation = validPreparation({ status: "READY", selectedMaterials: ["PAT-01"], lessonRecipeId: "lesson_01" });
+  assert.equal(getTeacherPreparationState(readySong, readyPreparation, { learningProfileReady: true, lessonRecipeReady: true, teachingAssetsReady: true, audioReady: true }), "READY");
 });

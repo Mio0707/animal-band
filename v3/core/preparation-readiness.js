@@ -72,3 +72,21 @@ export function evaluatePreparationReadiness({ preparation, verifiedScore, mater
     ]
   };
 }
+
+// Backward-compatible adapter for the Step 3.6 Teacher Workflow. New code
+// should call evaluatePreparationReadiness with the full pipeline artifacts.
+export function canMarkPreparationReady(song, preparation, resources = {}) {
+  const score = song?.score ?? {};
+  const hasVerifiedScore = score.verificationStatus === "verified" || score.recognitionStatus === "VERIFIED";
+  const legacyReady =
+    hasVerifiedScore &&
+    ((preparation?.selectedMaterials?.length ?? 0) > 0 || (preparation?.selectedPhrases?.length ?? 0) > 0) &&
+    resources.learningProfileReady === true &&
+    resources.lessonRecipeReady === true &&
+    resources.teachingAssetsReady === true &&
+    resources.audioReady === true;
+  if (Object.keys(resources).length > 0) {
+    return { ready: legacyReady, errors: legacyReady ? [] : [{ code: "READINESS_NOT_MET", message: "备课尚未满足发布条件。" }], warnings: [] };
+  }
+  return evaluatePreparationReadiness({ preparation, verifiedScore: song?.score, materialMatch: null, learningProfile: null, lessonRecipe: null, audioPlan: null, audioManifest: null });
+}

@@ -6,7 +6,7 @@ const SONG_TABS = [
   { id: "overview", label: "概览" }, { id: "score", label: "乐谱" }, { id: "learning-profile", label: "学习画像" },
   { id: "teaching-plan", label: "备课" }, { id: "audio-assets", label: "音频资产" }, { id: "publication", label: "发布" }
 ];
-const LIFECYCLE_LABELS = Object.freeze({ score: "乐谱", learningProfile: "学习画像", teachingAssets: "教学资产", lessonRecipe: "课程配方", audio: "音频", publication: "发布" });
+const LIFECYCLE_LABELS = Object.freeze({ score: "乐谱", materialMatch: "歌曲分析", learningProfile: "学习画像", teachingAssets: "教学资产", lessonRecipe: "课程配方", audio: "音频", publication: "发布" });
 const TEACHER_STATE = Object.freeze({ NOT_PREPARED: ["未备课", "开始备课"], PREPARING: ["备课中", "继续备课"], READY: ["已准备", "编辑备课"] });
 function stageLabel(stageId) { return stageId === "stage_1" ? "第一阶段" : stageId; }
 function assetUrl(path) { return path ? `/${String(path).replace(/^\//, "")}` : null; }
@@ -47,7 +47,7 @@ function preparationTab(data, song) {
   const preparation = activePreparation(data, song.songId);
   if (!preparation) return emptyState("尚未开始备课", "创建独立 Preparation 后即可保存选择和教师调整。", "○") + `<div class="center-action"><button class="button primary" data-create-preparation="${escapeHtml(song.songId)}">开始备课</button></div>`;
   const checked = (id) => preparation.selectedModules?.includes(id) ? "checked" : "";
-  return `<form class="panel preparation-form" data-preparation-form="${escapeHtml(preparation.preparationId)}"><header><div><small>${escapeHtml(preparation.preparationId)}</small><h2>备课设置</h2></div>${statusBadge(preparation.status)}</header><fieldset><legend>本次教学模块</legend>${[["rhythm","节奏"],["melody","旋律"],["solfege","唱名"],["singing","演唱"]].map(([id,label]) => `<label class="check"><input type="checkbox" name="selectedModules" value="${id}" ${checked(id)}> ${label}</label>`).join("")}</fieldset><label>选定乐句 ID<textarea name="selectedPhrases" rows="2" placeholder="多个 ID 用逗号分隔">${escapeHtml((preparation.selectedPhrases ?? []).join(", "))}</textarea></label><label>教师调整说明<textarea name="notes" rows="4" placeholder="记录本次备课调整">${escapeHtml(preparation.teacherAdjustments?.notes ?? "")}</textarea></label><label>备课状态<select name="status"><option value="DRAFT" ${preparation.status === "DRAFT" ? "selected" : ""}>备课中</option><option value="READY" ${preparation.status === "READY" ? "selected" : ""}>已准备</option></select></label><p class="form-note">材料匹配尚未开始，selectedMaterials 保持空数组。</p><footer><button class="button primary" type="submit">保存备课</button></footer></form>`;
+  return `<form class="panel preparation-form" data-preparation-form="${escapeHtml(preparation.preparationId)}"><header><div><small>${escapeHtml(preparation.preparationId)}</small><h2>备课设置</h2></div>${statusBadge(preparation.status)}</header><fieldset><legend>本次教学模块</legend>${[["rhythm","节奏"],["melody","旋律"],["solfege","唱名"],["singing","演唱"]].map(([id,label]) => `<label class="check"><input type="checkbox" name="selectedModules" value="${id}" ${checked(id)}> ${label}</label>`).join("")}</fieldset><label>选定乐句 ID<textarea name="selectedPhrases" rows="2" placeholder="多个 ID 用逗号分隔">${escapeHtml((preparation.selectedPhrases ?? []).join(", "))}</textarea></label><label>教师调整说明<textarea name="notes" rows="4" placeholder="记录本次备课调整">${escapeHtml(preparation.teacherAdjustments?.notes ?? "")}</textarea></label><p class="form-note">READY 只能由内部 Readiness Gate 写入；当前材料匹配尚未开始。</p><footer><button class="button primary" type="submit">保存备课</button></footer></form>`;
 }
 
 function audioTab(song) {

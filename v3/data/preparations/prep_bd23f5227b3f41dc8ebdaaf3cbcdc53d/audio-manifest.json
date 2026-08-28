@@ -1,0 +1,144 @@
+{
+  "planId": "audio_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "preparationId": "prep_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "sourcePlanGeneratedAt": "2026-08-28T10:56:12.681Z",
+  "assets": [
+    {
+      "slotId": "original_audio",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "rhythm_training:PAT-02",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "rhythm_training:PAT-04",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "rhythm_training:PAT-01",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "reference_pitch:phrase_01",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "solfege_vocal:phrase_01",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "melody_practice:phrase_01",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "reference_vocal:phrase_01",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "reference_pitch:phrase_02",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "solfege_vocal:phrase_02",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "melody_practice:phrase_02",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "reference_vocal:phrase_02",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "group_rehearsal:rhythm_group",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "group_rehearsal:singing_group",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    },
+    {
+      "slotId": "group_rehearsal:together",
+      "status": "MISSING",
+      "path": null,
+      "reviewStatus": "NOT_REVIEWED",
+      "generatedAt": null,
+      "reviewedAt": null,
+      "error": null
+    }
+  ],
+  "updatedAt": "2026-08-28T10:56:12.715938Z"
+}

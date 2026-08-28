@@ -68,7 +68,7 @@ function bindPageActions(app) {
     try {
       const preparation = await updatePreparation(form.dataset.preparationForm, {
         selectedModules, selectedMaterials: [], selectedPhrases,
-        teacherAdjustments: { notes: String(fields.get("notes") || "").trim() }, status: String(fields.get("status"))
+        teacherAdjustments: { notes: String(fields.get("notes") || "").trim() }
       });
       upsert(data.preparations, preparation, "preparationId"); render();
     } catch (error) { alert(error.message); setBusy(button, false); }
@@ -81,7 +81,7 @@ function render() {
   const app = document.querySelector("#app");
   app.className = `factory-shell ${sidebarOpen ? "sidebar-open" : ""}`;
   app.innerHTML = `${sidebar(activeSidebarRoute(route))}<div class="sidebar-backdrop" data-toggle-sidebar></div><section class="workspace">${topHeader(currentLabel(route))}<main id="page-content">${renderContent(route, params)}</main></section>`;
-  document.title = `${currentLabel(route)} · 动物银行内容工厂`;
+  document.title = `${currentLabel(route)} · 动物乐队内部工作台`;
   app.querySelectorAll("[data-toggle-sidebar]").forEach((button) => button.addEventListener("click", () => { sidebarOpen = !sidebarOpen; render(); }));
   app.querySelector("[data-new-song]")?.addEventListener("click", () => document.querySelector("#new-song-dialog").showModal());
   bindPageActions(app);

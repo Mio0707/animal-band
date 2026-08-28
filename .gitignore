@@ -29,5 +29,8 @@ node_modules/
 output/
 deliverables/
 
+# 本地交付压缩包
+AnimalBank_V3_Rhythm_Demo_*.zip
+
 # 飞书妙搭部署产物（由 prototype 源文件生成）
 miaoda-dist/

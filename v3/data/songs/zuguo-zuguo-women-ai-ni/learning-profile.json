@@ -1,0 +1,366 @@
+{
+  "schemaVersion": "2.0.0",
+  "algorithmVersion": "1.0.0",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "stageId": "stage_1",
+  "sourceMatchAlgorithmVersion": "1.0.0",
+  "sourceMatchGeneratedAt": "2026-08-28T09:51:31.240Z",
+  "sourceScoreVerifiedAt": "2026-08-28T09:51:25.805Z",
+  "generatedAt": "2026-08-28T09:51:31.276Z",
+  "generationStatus": "READY",
+  "reviewStatus": "NOT_REVIEWED",
+  "modules": {
+    "rhythm": {
+      "available": true,
+      "targets": [
+        {
+          "targetId": "RHY-12-DURATION-01",
+          "recommendation": "AVAILABLE",
+          "reason": "Verified Score 中存在可匹配的基本时值组合。"
+        },
+        {
+          "targetId": "RHY-12-CHANT-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "匹配到标准 Rhythm Material，可直接使用时值唱名教学。"
+        },
+        {
+          "targetId": "RHY-12-ACCOMP-01",
+          "recommendation": "AVAILABLE",
+          "reason": "匹配到的 Pattern 可用于歌曲身体伴奏。"
+        },
+        {
+          "targetId": "RHY-12-REST-01",
+          "recommendation": "AVAILABLE",
+          "reason": "歌曲中存在真实休止，可练习停止与准确返回。"
+        },
+        {
+          "targetId": "RHY-12-GROUP-02",
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "2拍组织可作为身体律动辅助体验。"
+        }
+      ],
+      "materials": [
+        {
+          "materialId": "PAT-02",
+          "name": "一拍两次",
+          "curriculumLevel": "core",
+          "occurrenceCount": 13,
+          "recommendation": "RECOMMENDED",
+          "reason": "歌曲中稳定出现 13 次，可形成重复练习。",
+          "phraseIds": [],
+          "occurrenceIds": [
+            "PAT-02@m1:m001_n001",
+            "PAT-02@m3:m003_n001",
+            "PAT-02@m5:m005_n001",
+            "PAT-02@m9:m009_n001",
+            "PAT-02@m11:m011_n001",
+            "PAT-02@m13:m013_n001",
+            "PAT-02@m14:m014_n001",
+            "PAT-02@m16:m016_n001",
+            "PAT-02@m19:m019_n001",
+            "PAT-02@m23:m023_n001",
+            "PAT-02@m27:m027_n001",
+            "PAT-02@m31:m031_n001",
+            "PAT-02@m35:m035_n001"
+          ]
+        },
+        {
+          "materialId": "PAT-04",
+          "name": "前疏后密",
+          "curriculumLevel": "core",
+          "occurrenceCount": 4,
+          "recommendation": "RECOMMENDED",
+          "reason": "歌曲中稳定出现 4 次，可形成重复练习。",
+          "phraseIds": [],
+          "occurrenceIds": [
+            "PAT-04@m15:m015_n001",
+            "PAT-04@m17:m017_n001",
+            "PAT-04@m21:m021_n001",
+            "PAT-04@m25:m025_n001"
+          ]
+        },
+        {
+          "materialId": "PAT-01",
+          "name": "一拍一次",
+          "curriculumLevel": "core",
+          "occurrenceCount": 2,
+          "recommendation": "RECOMMENDED",
+          "reason": "歌曲中稳定出现 2 次，可形成重复练习。",
+          "phraseIds": [],
+          "occurrenceIds": [
+            "PAT-01@m6:m006_n001",
+            "PAT-01@m26:m026_n001"
+          ]
+        }
+      ]
+    },
+    "melody": {
+      "available": true,
+      "targets": [
+        {
+          "targetId": "MEL-12-PHRASE-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "存在经人工确认且满足适龄阈值的短旋律 Phrase。"
+        },
+        {
+          "targetId": "MEL-12-MATCH-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "短旋律可用于听后模唱。"
+        },
+        {
+          "targetId": "MEL-12-REPEAT-01",
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "存在重复音特征。"
+        },
+        {
+          "targetId": "MEL-12-CONTOUR-01",
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "存在清晰上行或下行片段。"
+        },
+        {
+          "targetId": "MEL-12-ASC-DESC-01",
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "可在目标短句中辅助上行/下行演唱。"
+        }
+      ],
+      "materials": [
+        {
+          "materialId": "MEL-MAT-REPEAT-NOTE",
+          "name": "重复音",
+          "occurrenceCount": 4,
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "该材料作为短旋律教学的 Feature Support，不单独生成重复课程。",
+          "reviewRequired": false,
+          "phraseIds": [],
+          "occurrenceIds": [
+            "MEL-MAT-REPEAT-NOTE@m019_n001:m019_n002",
+            "MEL-MAT-REPEAT-NOTE@m023_n001:m023_n002",
+            "MEL-MAT-REPEAT-NOTE@m026_n001:m026_n002",
+            "MEL-MAT-REPEAT-NOTE@m027_n001:m027_n002"
+          ]
+        },
+        {
+          "materialId": "MEL-MAT-ASCENDING",
+          "name": "简单上行",
+          "occurrenceCount": 10,
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "该材料作为短旋律教学的 Feature Support，不单独生成重复课程。",
+          "reviewRequired": false,
+          "phraseIds": [
+            "phrase_01",
+            "phrase_02",
+            "phrase_03"
+          ],
+          "occurrenceIds": [
+            "MEL-MAT-ASCENDING@m001_n001:m001_n004",
+            "MEL-MAT-ASCENDING@m003_n001:m003_n004",
+            "MEL-MAT-ASCENDING@m005_n001:m005_n004",
+            "MEL-MAT-ASCENDING@m009_n001:m009_n004",
+            "MEL-MAT-ASCENDING@m011_n001:m011_n004",
+            "MEL-MAT-ASCENDING@m013_n001:m013_n004",
+            "MEL-MAT-ASCENDING@m015_n001:m017_n001",
+            "MEL-MAT-ASCENDING@m018_n001:m019_n002",
+            "MEL-MAT-ASCENDING@m022_n001:m023_n002",
+            "MEL-MAT-ASCENDING@m025_n001:m026_n002"
+          ]
+        },
+        {
+          "materialId": "MEL-MAT-DESCENDING",
+          "name": "简单下行",
+          "occurrenceCount": 9,
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "该材料作为短旋律教学的 Feature Support，不单独生成重复课程。",
+          "reviewRequired": false,
+          "phraseIds": [
+            "phrase_03"
+          ],
+          "occurrenceIds": [
+            "MEL-MAT-DESCENDING@m005_n004:m007_n001",
+            "MEL-MAT-DESCENDING@m008_n001:m008_n003",
+            "MEL-MAT-DESCENDING@m013_n004:m015_n001",
+            "MEL-MAT-DESCENDING@m019_n001:m019_n003",
+            "MEL-MAT-DESCENDING@m023_n001:m023_n003",
+            "MEL-MAT-DESCENDING@m023_n004:m025_n001",
+            "MEL-MAT-DESCENDING@m026_n001:m027_n004",
+            "MEL-MAT-DESCENDING@m031_n002:m032_n001",
+            "MEL-MAT-DESCENDING@m035_n002:m036_n001"
+          ]
+        },
+        {
+          "materialId": "MEL-MAT-LEVEL",
+          "name": "平稳/重复为主",
+          "occurrenceCount": 4,
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "该材料作为短旋律教学的 Feature Support，不单独生成重复课程。",
+          "reviewRequired": true,
+          "phraseIds": [],
+          "occurrenceIds": [
+            "MEL-MAT-LEVEL@m019_n001:m019_n002",
+            "MEL-MAT-LEVEL@m023_n001:m023_n002",
+            "MEL-MAT-LEVEL@m026_n001:m026_n002",
+            "MEL-MAT-LEVEL@m027_n001:m027_n002"
+          ]
+        },
+        {
+          "materialId": "MEL-MAT-SHORT-PHRASE",
+          "name": "适龄短旋律候选",
+          "occurrenceCount": 2,
+          "recommendation": "AVAILABLE",
+          "reason": "短旋律 Phrase 是第一学段旋律教学主对象，需从候选乐句中选择。",
+          "reviewRequired": true,
+          "phraseIds": [
+            "phrase_01",
+            "phrase_02"
+          ],
+          "occurrenceIds": [
+            "MEL-MAT-SHORT-PHRASE@m001_n001:m002_n001",
+            "MEL-MAT-SHORT-PHRASE@m003_n001:m004_n001"
+          ]
+        }
+      ],
+      "phraseCandidates": [
+        {
+          "phraseId": "phrase_01",
+          "occurrenceId": "MEL-MAT-SHORT-PHRASE@m001_n001:m002_n001",
+          "startMeasure": 1,
+          "endMeasure": 2,
+          "noteCount": 5,
+          "pitchRangeSemitones": 5,
+          "contour": "MIXED",
+          "isVocal": true,
+          "hasLyrics": true,
+          "suitabilityScore": 8,
+          "recommendation": "RECOMMENDED"
+        },
+        {
+          "phraseId": "phrase_02",
+          "occurrenceId": "MEL-MAT-SHORT-PHRASE@m003_n001:m004_n001",
+          "startMeasure": 3,
+          "endMeasure": 4,
+          "noteCount": 5,
+          "pitchRangeSemitones": 5,
+          "contour": "MIXED",
+          "isVocal": true,
+          "hasLyrics": true,
+          "suitabilityScore": 8,
+          "recommendation": "RECOMMENDED"
+        }
+      ]
+    },
+    "solfege": {
+      "available": true,
+      "targets": [
+        {
+          "targetId": "SOL-12-NAME-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "Verified Score 已提供简谱音级与唱名映射。"
+        },
+        {
+          "targetId": "SOL-12-DEGREE-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "可建立数字音级与唱名的对应。"
+        },
+        {
+          "targetId": "SOL-12-READ-01",
+          "recommendation": "AVAILABLE",
+          "reason": "存在适龄短句，可按节奏→音高→唱名→歌词顺序读谱。"
+        },
+        {
+          "targetId": "SOL-12-ORDER-01",
+          "recommendation": "AVAILABLE",
+          "reason": "存在连续上行/下行音组，可辅助音阶顺序体验。"
+        },
+        {
+          "targetId": "SOL-12-OCTAVE-01",
+          "recommendation": "AVAILABLE",
+          "reason": "乐谱出现高/低八度音，可识读加点。"
+        }
+      ],
+      "usedDegrees": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "octaves": [
+        0,
+        1
+      ]
+    },
+    "singing": {
+      "available": true,
+      "targets": [
+        {
+          "targetId": "SING-12-POSTURE-01",
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "进入 Singing Tutor 时使用通用歌唱准备提示。"
+        },
+        {
+          "targetId": "SING-12-NATURAL-01",
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "进入 Singing Tutor 时提示自然声音，不从谱面判断实际发声质量。"
+        },
+        {
+          "targetId": "SING-12-PITCH-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "确认乐句提供明确目标音高，可用于听唱与模唱。"
+        },
+        {
+          "targetId": "SING-12-RHYTHM-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "确认乐句提供歌词进入位置、音符时值与休止。"
+        },
+        {
+          "targetId": "SING-12-LYRIC-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "目标乐句具有确认的歌词—音符对应。"
+        },
+        {
+          "targetId": "SING-12-FOLLOW-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "短句适合一句一跟。"
+        },
+        {
+          "targetId": "SING-12-INDEPENDENT-01",
+          "recommendation": "AVAILABLE",
+          "reason": "充分模唱后可尝试短句独立演唱。"
+        }
+      ],
+      "phraseCandidates": [
+        {
+          "phraseId": "phrase_01",
+          "recommendation": "RECOMMENDED",
+          "suitabilityScore": 8
+        },
+        {
+          "phraseId": "phrase_02",
+          "recommendation": "RECOMMENDED",
+          "suitabilityScore": 8
+        }
+      ]
+    }
+  },
+  "teacherCandidates": {
+    "rhythmMaterialIds": [
+      "PAT-02",
+      "PAT-04",
+      "PAT-01"
+    ],
+    "melodyPhraseIds": [
+      "phrase_01",
+      "phrase_02"
+    ],
+    "singingPhraseIds": [
+      "phrase_01",
+      "phrase_02"
+    ]
+  },
+  "limitations": [
+    "Learning Profile 只根据 Verified Score、Material Match 与冻结 Curriculum 生成候选，不判断儿童实际音准、自然发声、气息或情绪表现。",
+    "Melody Feature 作为短旋律教学辅助，不单独生成完整课程。",
+    "最终本次教学内容由教师在备课中选择。"
+  ]
+}

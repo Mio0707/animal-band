@@ -1,0 +1,73 @@
+{
+  "ready": false,
+  "desiredPreparationStatus": "DRAFT",
+  "checks": [
+    {
+      "id": "SCORE_VERIFIED",
+      "ok": true,
+      "message": "乐谱已确认"
+    },
+    {
+      "id": "MATERIAL_MATCH_READY",
+      "ok": true,
+      "message": "歌曲材料分析已完成"
+    },
+    {
+      "id": "LEARNING_PROFILE_READY",
+      "ok": true,
+      "message": "可学习内容分析已完成"
+    },
+    {
+      "id": "TEACHING_SELECTION_VALID",
+      "ok": true,
+      "message": "本次教学内容已选择且有效"
+    },
+    {
+      "id": "LESSON_RECIPE_READY",
+      "ok": true,
+      "message": "课堂方案与 Teaching Asset 已解析"
+    },
+    {
+      "id": "LESSON_RECIPE_REVIEWED",
+      "ok": false,
+      "message": "课堂方案尚未由教师确认"
+    },
+    {
+      "id": "AUDIO_PLAN_READY",
+      "ok": true,
+      "message": "课堂音频需求已生成"
+    },
+    {
+      "id": "REQUIRED_AUDIO_READY",
+      "ok": false,
+      "message": "所有必需课堂音频已生成并审核"
+    },
+    {
+      "id": "PIPELINE_FRESH",
+      "ok": true,
+      "message": "备课下游数据均为最新结果"
+    }
+  ],
+  "blockers": [
+    "必需音频尚未就绪：original_audio",
+    "必需音频尚未就绪：rhythm_training:PAT-02",
+    "必需音频尚未就绪：rhythm_training:PAT-04",
+    "必需音频尚未就绪：rhythm_training:PAT-01",
+    "必需音频尚未就绪：reference_pitch:phrase_01",
+    "必需音频尚未就绪：solfege_vocal:phrase_01",
+    "必需音频尚未就绪：melody_practice:phrase_01",
+    "必需音频尚未就绪：reference_vocal:phrase_01",
+    "必需音频尚未就绪：reference_pitch:phrase_02",
+    "必需音频尚未就绪：solfege_vocal:phrase_02",
+    "必需音频尚未就绪：melody_practice:phrase_02",
+    "必需音频尚未就绪：reference_vocal:phrase_02",
+    "必需音频尚未就绪：group_rehearsal:rhythm_group",
+    "必需音频尚未就绪：group_rehearsal:singing_group",
+    "必需音频尚未就绪：group_rehearsal:together",
+    "课堂方案尚未由教师确认",
+    "所有必需课堂音频已生成并审核"
+  ],
+  "warnings": [
+    "Learning Profile 只根据 Verified Score、Material Match 与冻结 Curriculum 生成候选，不判断儿童实际音准、自然发声、气息或情绪表现。"
+  ]
+}

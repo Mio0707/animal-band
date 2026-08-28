@@ -1,1 +1,1 @@
-"""File-backed repositories for Animal Bank V3 demo persistence."""
+"""File-backed repositories for animal band V3 demo persistence."""

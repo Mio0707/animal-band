@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "mapping": {
+    "CLAP": "CLAP",
+    "PAT": "PAT_THIGHS",
+    "PAT_LEFT": "PAT_LEFT",
+    "PAT_RIGHT": "PAT_RIGHT",
+    "STOMP": "STOMP",
+    "FREEZE": "STOP"
+  },
+  "runtimeStates": {
+    "READY": "READY",
+    "LISTEN": "LISTEN",
+    "DONE": "DONE"
+  },
+  "unknownActionFallback": "READY"
+}

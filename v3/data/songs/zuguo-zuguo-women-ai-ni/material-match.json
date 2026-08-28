@@ -1,0 +1,1645 @@
+{
+  "schemaVersion": "1.0.0",
+  "algorithmVersion": "1.0.0",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "stageId": "stage_1",
+  "sourceScoreStatus": "verified",
+  "sourceScoreVerifiedAt": "2026-08-28T09:51:25.805Z",
+  "generatedAt": "2026-08-28T09:51:31.240Z",
+  "facts": {
+    "meter": {
+      "beats": 2,
+      "unit": 4
+    },
+    "bpm": 72,
+    "usedDegrees": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "pitchRangeSemitones": 12,
+    "restOccurrences": [
+      {
+        "measure": 2,
+        "noteId": "m002_n002",
+        "beat": 1,
+        "duration": 1,
+        "phraseId": "phrase_01"
+      },
+      {
+        "measure": 4,
+        "noteId": "m004_n002",
+        "beat": 1,
+        "duration": 1,
+        "phraseId": "phrase_02"
+      },
+      {
+        "measure": 8,
+        "noteId": "m008_n004",
+        "beat": 1.5,
+        "duration": 0.5,
+        "phraseId": null
+      },
+      {
+        "measure": 10,
+        "noteId": "m010_n002",
+        "beat": 1,
+        "duration": 1,
+        "phraseId": null
+      },
+      {
+        "measure": 12,
+        "noteId": "m012_n002",
+        "beat": 1,
+        "duration": 1,
+        "phraseId": null
+      },
+      {
+        "measure": 29,
+        "noteId": "m029_n003",
+        "beat": 1.5,
+        "duration": 0.5,
+        "phraseId": null
+      },
+      {
+        "measure": 30,
+        "noteId": "m030_n004",
+        "beat": 1.5,
+        "duration": 0.5,
+        "phraseId": null
+      },
+      {
+        "measure": 33,
+        "noteId": "m033_n003",
+        "beat": 1.5,
+        "duration": 0.5,
+        "phraseId": null
+      },
+      {
+        "measure": 34,
+        "noteId": "m034_n004",
+        "beat": 1.5,
+        "duration": 0.5,
+        "phraseId": null
+      },
+      {
+        "measure": 36,
+        "noteId": "m036_n002",
+        "beat": 1,
+        "duration": 1,
+        "phraseId": null
+      }
+    ]
+  },
+  "materials": {
+    "rhythm": [
+      {
+        "materialId": "PAT-01",
+        "module": "rhythm",
+        "name": "一拍一次",
+        "level": "core",
+        "notation": "♩ ♩",
+        "chant": [
+          "da",
+          "da"
+        ],
+        "matchType": "deterministic",
+        "confidence": 1,
+        "reviewRequired": false,
+        "occurrences": [
+          {
+            "occurrenceId": "PAT-01@m6:m006_n001",
+            "measureStart": 6,
+            "measureEnd": 6,
+            "startNoteId": "m006_n001",
+            "endNoteId": "m006_n002",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m006_n001",
+              "m006_n002"
+            ],
+            "durations": [
+              1,
+              1
+            ],
+            "phraseIds": [
+              "phrase_03"
+            ]
+          },
+          {
+            "occurrenceId": "PAT-01@m26:m026_n001",
+            "measureStart": 26,
+            "measureEnd": 26,
+            "startNoteId": "m026_n001",
+            "endNoteId": "m026_n002",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m026_n001",
+              "m026_n002"
+            ],
+            "durations": [
+              1,
+              1
+            ],
+            "phraseIds": []
+          }
+        ]
+      },
+      {
+        "materialId": "PAT-02",
+        "module": "rhythm",
+        "name": "一拍两次",
+        "level": "core",
+        "notation": "♪♪ ♪♪",
+        "chant": [
+          "de",
+          "de",
+          "de",
+          "de"
+        ],
+        "matchType": "deterministic",
+        "confidence": 1,
+        "reviewRequired": false,
+        "occurrences": [
+          {
+            "occurrenceId": "PAT-02@m1:m001_n001",
+            "measureStart": 1,
+            "measureEnd": 1,
+            "startNoteId": "m001_n001",
+            "endNoteId": "m001_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m001_n001",
+              "m001_n002",
+              "m001_n003",
+              "m001_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": [
+              "phrase_01"
+            ]
+          },
+          {
+            "occurrenceId": "PAT-02@m3:m003_n001",
+            "measureStart": 3,
+            "measureEnd": 3,
+            "startNoteId": "m003_n001",
+            "endNoteId": "m003_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m003_n001",
+              "m003_n002",
+              "m003_n003",
+              "m003_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": [
+              "phrase_02"
+            ]
+          },
+          {
+            "occurrenceId": "PAT-02@m5:m005_n001",
+            "measureStart": 5,
+            "measureEnd": 5,
+            "startNoteId": "m005_n001",
+            "endNoteId": "m005_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m005_n001",
+              "m005_n002",
+              "m005_n003",
+              "m005_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": [
+              "phrase_03"
+            ]
+          },
+          {
+            "occurrenceId": "PAT-02@m9:m009_n001",
+            "measureStart": 9,
+            "measureEnd": 9,
+            "startNoteId": "m009_n001",
+            "endNoteId": "m009_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m009_n001",
+              "m009_n002",
+              "m009_n003",
+              "m009_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-02@m11:m011_n001",
+            "measureStart": 11,
+            "measureEnd": 11,
+            "startNoteId": "m011_n001",
+            "endNoteId": "m011_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m011_n001",
+              "m011_n002",
+              "m011_n003",
+              "m011_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-02@m13:m013_n001",
+            "measureStart": 13,
+            "measureEnd": 13,
+            "startNoteId": "m013_n001",
+            "endNoteId": "m013_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m013_n001",
+              "m013_n002",
+              "m013_n003",
+              "m013_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-02@m14:m014_n001",
+            "measureStart": 14,
+            "measureEnd": 14,
+            "startNoteId": "m014_n001",
+            "endNoteId": "m014_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m014_n001",
+              "m014_n002",
+              "m014_n003",
+              "m014_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-02@m16:m016_n001",
+            "measureStart": 16,
+            "measureEnd": 16,
+            "startNoteId": "m016_n001",
+            "endNoteId": "m016_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m016_n001",
+              "m016_n002",
+              "m016_n003",
+              "m016_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-02@m19:m019_n001",
+            "measureStart": 19,
+            "measureEnd": 19,
+            "startNoteId": "m019_n001",
+            "endNoteId": "m019_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m019_n001",
+              "m019_n002",
+              "m019_n003",
+              "m019_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-02@m23:m023_n001",
+            "measureStart": 23,
+            "measureEnd": 23,
+            "startNoteId": "m023_n001",
+            "endNoteId": "m023_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m023_n001",
+              "m023_n002",
+              "m023_n003",
+              "m023_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-02@m27:m027_n001",
+            "measureStart": 27,
+            "measureEnd": 27,
+            "startNoteId": "m027_n001",
+            "endNoteId": "m027_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m027_n001",
+              "m027_n002",
+              "m027_n003",
+              "m027_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-02@m31:m031_n001",
+            "measureStart": 31,
+            "measureEnd": 31,
+            "startNoteId": "m031_n001",
+            "endNoteId": "m031_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m031_n001",
+              "m031_n002",
+              "m031_n003",
+              "m031_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-02@m35:m035_n001",
+            "measureStart": 35,
+            "measureEnd": 35,
+            "startNoteId": "m035_n001",
+            "endNoteId": "m035_n004",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m035_n001",
+              "m035_n002",
+              "m035_n003",
+              "m035_n004"
+            ],
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          }
+        ]
+      },
+      {
+        "materialId": "PAT-04",
+        "module": "rhythm",
+        "name": "前疏后密",
+        "level": "core",
+        "notation": "♩ ♪♪",
+        "chant": [
+          "da",
+          "de",
+          "de"
+        ],
+        "matchType": "deterministic",
+        "confidence": 1,
+        "reviewRequired": false,
+        "occurrences": [
+          {
+            "occurrenceId": "PAT-04@m15:m015_n001",
+            "measureStart": 15,
+            "measureEnd": 15,
+            "startNoteId": "m015_n001",
+            "endNoteId": "m015_n003",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m015_n001",
+              "m015_n002",
+              "m015_n003"
+            ],
+            "durations": [
+              1,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-04@m17:m017_n001",
+            "measureStart": 17,
+            "measureEnd": 17,
+            "startNoteId": "m017_n001",
+            "endNoteId": "m017_n003",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m017_n001",
+              "m017_n002",
+              "m017_n003"
+            ],
+            "durations": [
+              1,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-04@m21:m021_n001",
+            "measureStart": 21,
+            "measureEnd": 21,
+            "startNoteId": "m021_n001",
+            "endNoteId": "m021_n003",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m021_n001",
+              "m021_n002",
+              "m021_n003"
+            ],
+            "durations": [
+              1,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          },
+          {
+            "occurrenceId": "PAT-04@m25:m025_n001",
+            "measureStart": 25,
+            "measureEnd": 25,
+            "startNoteId": "m025_n001",
+            "endNoteId": "m025_n003",
+            "startBeat": 0,
+            "endBeat": 2,
+            "noteIds": [
+              "m025_n001",
+              "m025_n002",
+              "m025_n003"
+            ],
+            "durations": [
+              1,
+              0.5,
+              0.5
+            ],
+            "phraseIds": []
+          }
+        ]
+      }
+    ],
+    "melody": [
+      {
+        "materialId": "MEL-MAT-REPEAT-NOTE",
+        "module": "melody",
+        "name": "重复音",
+        "matchType": "deterministic",
+        "confidence": 1,
+        "reviewRequired": false,
+        "occurrences": [
+          {
+            "occurrenceId": "MEL-MAT-REPEAT-NOTE@m019_n001:m019_n002",
+            "measureStart": 19,
+            "measureEnd": 19,
+            "startNoteId": "m019_n001",
+            "endNoteId": "m019_n002",
+            "noteIds": [
+              "m019_n001",
+              "m019_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 2,
+            "degrees": [
+              7,
+              7
+            ],
+            "octaves": [
+              0,
+              0
+            ],
+            "midiNumbers": [
+              71,
+              71
+            ],
+            "pitchRangeSemitones": 0,
+            "contour": "LEVEL"
+          },
+          {
+            "occurrenceId": "MEL-MAT-REPEAT-NOTE@m023_n001:m023_n002",
+            "measureStart": 23,
+            "measureEnd": 23,
+            "startNoteId": "m023_n001",
+            "endNoteId": "m023_n002",
+            "noteIds": [
+              "m023_n001",
+              "m023_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 2,
+            "degrees": [
+              4,
+              4
+            ],
+            "octaves": [
+              0,
+              0
+            ],
+            "midiNumbers": [
+              65,
+              65
+            ],
+            "pitchRangeSemitones": 0,
+            "contour": "LEVEL"
+          },
+          {
+            "occurrenceId": "MEL-MAT-REPEAT-NOTE@m026_n001:m026_n002",
+            "measureStart": 26,
+            "measureEnd": 26,
+            "startNoteId": "m026_n001",
+            "endNoteId": "m026_n002",
+            "noteIds": [
+              "m026_n001",
+              "m026_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 2,
+            "degrees": [
+              1,
+              1
+            ],
+            "octaves": [
+              1,
+              1
+            ],
+            "midiNumbers": [
+              72,
+              72
+            ],
+            "pitchRangeSemitones": 0,
+            "contour": "LEVEL"
+          },
+          {
+            "occurrenceId": "MEL-MAT-REPEAT-NOTE@m027_n001:m027_n002",
+            "measureStart": 27,
+            "measureEnd": 27,
+            "startNoteId": "m027_n001",
+            "endNoteId": "m027_n002",
+            "noteIds": [
+              "m027_n001",
+              "m027_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 2,
+            "degrees": [
+              7,
+              7
+            ],
+            "octaves": [
+              0,
+              0
+            ],
+            "midiNumbers": [
+              71,
+              71
+            ],
+            "pitchRangeSemitones": 0,
+            "contour": "LEVEL"
+          }
+        ]
+      },
+      {
+        "materialId": "MEL-MAT-ASCENDING",
+        "module": "melody",
+        "name": "简单上行",
+        "matchType": "semi_deterministic",
+        "confidence": 0.95,
+        "reviewRequired": false,
+        "occurrences": [
+          {
+            "occurrenceId": "MEL-MAT-ASCENDING@m001_n001:m001_n004",
+            "measureStart": 1,
+            "measureEnd": 1,
+            "startNoteId": "m001_n001",
+            "endNoteId": "m001_n004",
+            "noteIds": [
+              "m001_n001",
+              "m001_n002",
+              "m001_n003",
+              "m001_n004"
+            ],
+            "phraseId": "phrase_01",
+            "noteCount": 4,
+            "degrees": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              64,
+              65,
+              67,
+              69
+            ],
+            "pitchRangeSemitones": 5,
+            "contour": "ASCENDING",
+            "netSemitones": 5
+          },
+          {
+            "occurrenceId": "MEL-MAT-ASCENDING@m003_n001:m003_n004",
+            "measureStart": 3,
+            "measureEnd": 3,
+            "startNoteId": "m003_n001",
+            "endNoteId": "m003_n004",
+            "noteIds": [
+              "m003_n001",
+              "m003_n002",
+              "m003_n003",
+              "m003_n004"
+            ],
+            "phraseId": "phrase_02",
+            "noteCount": 4,
+            "degrees": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              64,
+              65,
+              67,
+              69
+            ],
+            "pitchRangeSemitones": 5,
+            "contour": "ASCENDING",
+            "netSemitones": 5
+          },
+          {
+            "occurrenceId": "MEL-MAT-ASCENDING@m005_n001:m005_n004",
+            "measureStart": 5,
+            "measureEnd": 5,
+            "startNoteId": "m005_n001",
+            "endNoteId": "m005_n004",
+            "noteIds": [
+              "m005_n001",
+              "m005_n002",
+              "m005_n003",
+              "m005_n004"
+            ],
+            "phraseId": "phrase_03",
+            "noteCount": 4,
+            "degrees": [
+              3,
+              4,
+              5,
+              1
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "midiNumbers": [
+              64,
+              65,
+              67,
+              72
+            ],
+            "pitchRangeSemitones": 8,
+            "contour": "ASCENDING",
+            "netSemitones": 8
+          },
+          {
+            "occurrenceId": "MEL-MAT-ASCENDING@m009_n001:m009_n004",
+            "measureStart": 9,
+            "measureEnd": 9,
+            "startNoteId": "m009_n001",
+            "endNoteId": "m009_n004",
+            "noteIds": [
+              "m009_n001",
+              "m009_n002",
+              "m009_n003",
+              "m009_n004"
+            ],
+            "phraseId": null,
+            "noteCount": 4,
+            "degrees": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              64,
+              65,
+              67,
+              69
+            ],
+            "pitchRangeSemitones": 5,
+            "contour": "ASCENDING",
+            "netSemitones": 5
+          },
+          {
+            "occurrenceId": "MEL-MAT-ASCENDING@m011_n001:m011_n004",
+            "measureStart": 11,
+            "measureEnd": 11,
+            "startNoteId": "m011_n001",
+            "endNoteId": "m011_n004",
+            "noteIds": [
+              "m011_n001",
+              "m011_n002",
+              "m011_n003",
+              "m011_n004"
+            ],
+            "phraseId": null,
+            "noteCount": 4,
+            "degrees": [
+              3,
+              4,
+              5,
+              6
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              64,
+              65,
+              67,
+              69
+            ],
+            "pitchRangeSemitones": 5,
+            "contour": "ASCENDING",
+            "netSemitones": 5
+          },
+          {
+            "occurrenceId": "MEL-MAT-ASCENDING@m013_n001:m013_n004",
+            "measureStart": 13,
+            "measureEnd": 13,
+            "startNoteId": "m013_n001",
+            "endNoteId": "m013_n004",
+            "noteIds": [
+              "m013_n001",
+              "m013_n002",
+              "m013_n003",
+              "m013_n004"
+            ],
+            "phraseId": null,
+            "noteCount": 4,
+            "degrees": [
+              2,
+              3,
+              4,
+              6
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              62,
+              64,
+              65,
+              69
+            ],
+            "pitchRangeSemitones": 7,
+            "contour": "ASCENDING",
+            "netSemitones": 7
+          },
+          {
+            "occurrenceId": "MEL-MAT-ASCENDING@m015_n001:m017_n001",
+            "measureStart": 15,
+            "measureEnd": 17,
+            "startNoteId": "m015_n001",
+            "endNoteId": "m017_n001",
+            "noteIds": [
+              "m015_n001",
+              "m015_n002",
+              "m015_n003",
+              "m016_n001",
+              "m016_n002",
+              "m016_n003",
+              "m016_n004",
+              "m017_n001"
+            ],
+            "phraseId": null,
+            "noteCount": 8,
+            "degrees": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              1
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "midiNumbers": [
+              60,
+              62,
+              64,
+              65,
+              67,
+              69,
+              71,
+              72
+            ],
+            "pitchRangeSemitones": 12,
+            "contour": "ASCENDING",
+            "netSemitones": 12
+          },
+          {
+            "occurrenceId": "MEL-MAT-ASCENDING@m018_n001:m019_n002",
+            "measureStart": 18,
+            "measureEnd": 19,
+            "startNoteId": "m018_n001",
+            "endNoteId": "m019_n002",
+            "noteIds": [
+              "m018_n001",
+              "m019_n001",
+              "m019_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 3,
+            "degrees": [
+              6,
+              7,
+              7
+            ],
+            "octaves": [
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              69,
+              71,
+              71
+            ],
+            "pitchRangeSemitones": 2,
+            "contour": "ASCENDING",
+            "netSemitones": 2
+          },
+          {
+            "occurrenceId": "MEL-MAT-ASCENDING@m022_n001:m023_n002",
+            "measureStart": 22,
+            "measureEnd": 23,
+            "startNoteId": "m022_n001",
+            "endNoteId": "m023_n002",
+            "noteIds": [
+              "m022_n001",
+              "m023_n001",
+              "m023_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 3,
+            "degrees": [
+              3,
+              4,
+              4
+            ],
+            "octaves": [
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              64,
+              65,
+              65
+            ],
+            "pitchRangeSemitones": 1,
+            "contour": "ASCENDING",
+            "netSemitones": 1
+          },
+          {
+            "occurrenceId": "MEL-MAT-ASCENDING@m025_n001:m026_n002",
+            "measureStart": 25,
+            "measureEnd": 26,
+            "startNoteId": "m025_n001",
+            "endNoteId": "m026_n002",
+            "noteIds": [
+              "m025_n001",
+              "m025_n002",
+              "m025_n003",
+              "m026_n001",
+              "m026_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 5,
+            "degrees": [
+              1,
+              3,
+              5,
+              1,
+              1
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            "midiNumbers": [
+              60,
+              64,
+              67,
+              72,
+              72
+            ],
+            "pitchRangeSemitones": 12,
+            "contour": "ASCENDING",
+            "netSemitones": 12
+          }
+        ]
+      },
+      {
+        "materialId": "MEL-MAT-DESCENDING",
+        "module": "melody",
+        "name": "简单下行",
+        "matchType": "semi_deterministic",
+        "confidence": 0.95,
+        "reviewRequired": false,
+        "occurrences": [
+          {
+            "occurrenceId": "MEL-MAT-DESCENDING@m005_n004:m007_n001",
+            "measureStart": 5,
+            "measureEnd": 7,
+            "startNoteId": "m005_n004",
+            "endNoteId": "m007_n001",
+            "noteIds": [
+              "m005_n004",
+              "m006_n001",
+              "m006_n002",
+              "m007_n001"
+            ],
+            "phraseId": "phrase_03",
+            "noteCount": 4,
+            "degrees": [
+              1,
+              7,
+              6,
+              5
+            ],
+            "octaves": [
+              1,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              72,
+              71,
+              69,
+              67
+            ],
+            "pitchRangeSemitones": 5,
+            "contour": "DESCENDING",
+            "netSemitones": -5
+          },
+          {
+            "occurrenceId": "MEL-MAT-DESCENDING@m008_n001:m008_n003",
+            "measureStart": 8,
+            "measureEnd": 8,
+            "startNoteId": "m008_n001",
+            "endNoteId": "m008_n003",
+            "noteIds": [
+              "m008_n001",
+              "m008_n002",
+              "m008_n003"
+            ],
+            "phraseId": null,
+            "noteCount": 3,
+            "degrees": [
+              7,
+              6,
+              5
+            ],
+            "octaves": [
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              71,
+              69,
+              67
+            ],
+            "pitchRangeSemitones": 4,
+            "contour": "DESCENDING",
+            "netSemitones": -4
+          },
+          {
+            "occurrenceId": "MEL-MAT-DESCENDING@m013_n004:m015_n001",
+            "measureStart": 13,
+            "measureEnd": 15,
+            "startNoteId": "m013_n004",
+            "endNoteId": "m015_n001",
+            "noteIds": [
+              "m013_n004",
+              "m014_n001",
+              "m014_n002",
+              "m014_n003",
+              "m014_n004",
+              "m015_n001"
+            ],
+            "phraseId": null,
+            "noteCount": 6,
+            "degrees": [
+              6,
+              5,
+              4,
+              3,
+              2,
+              1
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              69,
+              67,
+              65,
+              64,
+              62,
+              60
+            ],
+            "pitchRangeSemitones": 9,
+            "contour": "DESCENDING",
+            "netSemitones": -9
+          },
+          {
+            "occurrenceId": "MEL-MAT-DESCENDING@m019_n001:m019_n003",
+            "measureStart": 19,
+            "measureEnd": 19,
+            "startNoteId": "m019_n001",
+            "endNoteId": "m019_n003",
+            "noteIds": [
+              "m019_n001",
+              "m019_n002",
+              "m019_n003"
+            ],
+            "phraseId": null,
+            "noteCount": 3,
+            "degrees": [
+              7,
+              7,
+              6
+            ],
+            "octaves": [
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              71,
+              71,
+              69
+            ],
+            "pitchRangeSemitones": 2,
+            "contour": "DESCENDING",
+            "netSemitones": -2
+          },
+          {
+            "occurrenceId": "MEL-MAT-DESCENDING@m023_n001:m023_n003",
+            "measureStart": 23,
+            "measureEnd": 23,
+            "startNoteId": "m023_n001",
+            "endNoteId": "m023_n003",
+            "noteIds": [
+              "m023_n001",
+              "m023_n002",
+              "m023_n003"
+            ],
+            "phraseId": null,
+            "noteCount": 3,
+            "degrees": [
+              4,
+              4,
+              3
+            ],
+            "octaves": [
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              65,
+              65,
+              64
+            ],
+            "pitchRangeSemitones": 1,
+            "contour": "DESCENDING",
+            "netSemitones": -1
+          },
+          {
+            "occurrenceId": "MEL-MAT-DESCENDING@m023_n004:m025_n001",
+            "measureStart": 23,
+            "measureEnd": 25,
+            "startNoteId": "m023_n004",
+            "endNoteId": "m025_n001",
+            "noteIds": [
+              "m023_n004",
+              "m024_n001",
+              "m025_n001"
+            ],
+            "phraseId": null,
+            "noteCount": 3,
+            "degrees": [
+              5,
+              2,
+              1
+            ],
+            "octaves": [
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              67,
+              62,
+              60
+            ],
+            "pitchRangeSemitones": 7,
+            "contour": "DESCENDING",
+            "netSemitones": -7
+          },
+          {
+            "occurrenceId": "MEL-MAT-DESCENDING@m026_n001:m027_n004",
+            "measureStart": 26,
+            "measureEnd": 27,
+            "startNoteId": "m026_n001",
+            "endNoteId": "m027_n004",
+            "noteIds": [
+              "m026_n001",
+              "m026_n002",
+              "m027_n001",
+              "m027_n002",
+              "m027_n003",
+              "m027_n004"
+            ],
+            "phraseId": null,
+            "noteCount": 6,
+            "degrees": [
+              1,
+              1,
+              7,
+              7,
+              6,
+              5
+            ],
+            "octaves": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              72,
+              72,
+              71,
+              71,
+              69,
+              67
+            ],
+            "pitchRangeSemitones": 5,
+            "contour": "DESCENDING",
+            "netSemitones": -5
+          },
+          {
+            "occurrenceId": "MEL-MAT-DESCENDING@m031_n002:m032_n001",
+            "measureStart": 31,
+            "measureEnd": 32,
+            "startNoteId": "m031_n002",
+            "endNoteId": "m032_n001",
+            "noteIds": [
+              "m031_n002",
+              "m031_n003",
+              "m031_n004",
+              "m032_n001"
+            ],
+            "phraseId": null,
+            "noteCount": 4,
+            "degrees": [
+              4,
+              3,
+              2,
+              1
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              65,
+              64,
+              62,
+              60
+            ],
+            "pitchRangeSemitones": 5,
+            "contour": "DESCENDING",
+            "netSemitones": -5
+          },
+          {
+            "occurrenceId": "MEL-MAT-DESCENDING@m035_n002:m036_n001",
+            "measureStart": 35,
+            "measureEnd": 36,
+            "startNoteId": "m035_n002",
+            "endNoteId": "m036_n001",
+            "noteIds": [
+              "m035_n002",
+              "m035_n003",
+              "m035_n004",
+              "m036_n001"
+            ],
+            "phraseId": null,
+            "noteCount": 4,
+            "degrees": [
+              4,
+              3,
+              2,
+              1
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              65,
+              64,
+              62,
+              60
+            ],
+            "pitchRangeSemitones": 5,
+            "contour": "DESCENDING",
+            "netSemitones": -5
+          }
+        ]
+      },
+      {
+        "materialId": "MEL-MAT-LEVEL",
+        "module": "melody",
+        "name": "平稳/重复为主",
+        "matchType": "hybrid",
+        "confidence": 1,
+        "reviewRequired": true,
+        "occurrences": [
+          {
+            "occurrenceId": "MEL-MAT-LEVEL@m019_n001:m019_n002",
+            "measureStart": 19,
+            "measureEnd": 19,
+            "startNoteId": "m019_n001",
+            "endNoteId": "m019_n002",
+            "noteIds": [
+              "m019_n001",
+              "m019_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 2,
+            "degrees": [
+              7,
+              7
+            ],
+            "octaves": [
+              0,
+              0
+            ],
+            "midiNumbers": [
+              71,
+              71
+            ],
+            "pitchRangeSemitones": 0,
+            "contour": "LEVEL",
+            "derivation": "p0_repeat_only"
+          },
+          {
+            "occurrenceId": "MEL-MAT-LEVEL@m023_n001:m023_n002",
+            "measureStart": 23,
+            "measureEnd": 23,
+            "startNoteId": "m023_n001",
+            "endNoteId": "m023_n002",
+            "noteIds": [
+              "m023_n001",
+              "m023_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 2,
+            "degrees": [
+              4,
+              4
+            ],
+            "octaves": [
+              0,
+              0
+            ],
+            "midiNumbers": [
+              65,
+              65
+            ],
+            "pitchRangeSemitones": 0,
+            "contour": "LEVEL",
+            "derivation": "p0_repeat_only"
+          },
+          {
+            "occurrenceId": "MEL-MAT-LEVEL@m026_n001:m026_n002",
+            "measureStart": 26,
+            "measureEnd": 26,
+            "startNoteId": "m026_n001",
+            "endNoteId": "m026_n002",
+            "noteIds": [
+              "m026_n001",
+              "m026_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 2,
+            "degrees": [
+              1,
+              1
+            ],
+            "octaves": [
+              1,
+              1
+            ],
+            "midiNumbers": [
+              72,
+              72
+            ],
+            "pitchRangeSemitones": 0,
+            "contour": "LEVEL",
+            "derivation": "p0_repeat_only"
+          },
+          {
+            "occurrenceId": "MEL-MAT-LEVEL@m027_n001:m027_n002",
+            "measureStart": 27,
+            "measureEnd": 27,
+            "startNoteId": "m027_n001",
+            "endNoteId": "m027_n002",
+            "noteIds": [
+              "m027_n001",
+              "m027_n002"
+            ],
+            "phraseId": null,
+            "noteCount": 2,
+            "degrees": [
+              7,
+              7
+            ],
+            "octaves": [
+              0,
+              0
+            ],
+            "midiNumbers": [
+              71,
+              71
+            ],
+            "pitchRangeSemitones": 0,
+            "contour": "LEVEL",
+            "derivation": "p0_repeat_only"
+          }
+        ],
+        "p0SubsetOnly": true
+      },
+      {
+        "materialId": "MEL-MAT-SHORT-PHRASE",
+        "module": "melody",
+        "name": "适龄短旋律候选",
+        "matchType": "parameterized",
+        "confidence": 1,
+        "reviewRequired": true,
+        "occurrences": [
+          {
+            "occurrenceId": "MEL-MAT-SHORT-PHRASE@m001_n001:m002_n001",
+            "measureStart": 1,
+            "measureEnd": 2,
+            "startNoteId": "m001_n001",
+            "endNoteId": "m002_n001",
+            "noteIds": [
+              "m001_n001",
+              "m001_n002",
+              "m001_n003",
+              "m001_n004",
+              "m002_n001"
+            ],
+            "phraseId": "phrase_01",
+            "noteCount": 5,
+            "degrees": [
+              3,
+              4,
+              5,
+              6,
+              5
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              64,
+              65,
+              67,
+              69,
+              67
+            ],
+            "pitchRangeSemitones": 5,
+            "startMeasure": 1,
+            "endMeasure": 2,
+            "contour": "MIXED",
+            "isVocal": true,
+            "requiresLyrics": true,
+            "reviewStatus": "confirmed"
+          },
+          {
+            "occurrenceId": "MEL-MAT-SHORT-PHRASE@m003_n001:m004_n001",
+            "measureStart": 3,
+            "measureEnd": 4,
+            "startNoteId": "m003_n001",
+            "endNoteId": "m004_n001",
+            "noteIds": [
+              "m003_n001",
+              "m003_n002",
+              "m003_n003",
+              "m003_n004",
+              "m004_n001"
+            ],
+            "phraseId": "phrase_02",
+            "noteCount": 5,
+            "degrees": [
+              3,
+              4,
+              5,
+              6,
+              5
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "midiNumbers": [
+              64,
+              65,
+              67,
+              69,
+              67
+            ],
+            "pitchRangeSemitones": 5,
+            "startMeasure": 3,
+            "endMeasure": 4,
+            "contour": "MIXED",
+            "isVocal": true,
+            "requiresLyrics": true,
+            "reviewStatus": "confirmed"
+          }
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "matchedMaterialIds": [
+      "PAT-01",
+      "PAT-02",
+      "PAT-04",
+      "MEL-MAT-REPEAT-NOTE",
+      "MEL-MAT-ASCENDING",
+      "MEL-MAT-DESCENDING",
+      "MEL-MAT-LEVEL",
+      "MEL-MAT-SHORT-PHRASE"
+    ],
+    "rhythmMaterialCount": 3,
+    "melodyMaterialCount": 5,
+    "occurrenceCount": 48
+  },
+  "unsupportedP0": {
+    "melody": [
+      "MEL-MAT-SIMILAR-PHRASE"
+    ]
+  },
+  "notes": [
+    "Material Match 表示歌曲中客观出现的可识别材料，不等于最终教学推荐。",
+    "MEL-MAT-SHORT-PHRASE 与 MEL-MAT-DMS 仍需要后续 Learning Profile / Human Review 决定是否推荐教学。",
+    "RHY-12-REST-01 是 Curriculum Target，不是 Rhythm Material；休止仅输出在 facts.restOccurrences。"
+  ]
+}

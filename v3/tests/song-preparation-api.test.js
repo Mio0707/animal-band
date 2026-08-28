@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { mkdtemp, readFile, stat } from "node:fs/promises";
+import { mkdtemp, readFile, stat, writeFile } from "node:fs/promises";
 import { spawn } from "node:child_process";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
@@ -47,6 +47,10 @@ test("真实闭环：Song、Recognition、Verified Score 与 Preparation 均可�
   let server = await startServer(dataRoot);
   context.after(async () => stopServer(server.child));
 
+  const rootResponse = await fetch(`${server.baseUrl}/`, { redirect: "manual" });
+  assert.equal(rootResponse.status, 302);
+  assert.equal(rootResponse.headers.get("location"), "/app/teacher/");
+
   const makeForm = (audioName, imageName) => {
     const value = new FormData();
     value.set("title", "持久化测试歌曲"); value.set("stageId", "stage_1"); value.set("metadata", JSON.stringify({ purpose: "closure-test" }));
@@ -80,6 +84,18 @@ test("真实闭环：Song、Recognition、Verified Score 与 Preparation 均可�
   assert.equal((await stat(join(songDir, "recognition", "raw.json"))).isFile(), true);
   assert.equal((await stat(join(songDir, "recognition", "normalized.json"))).isFile(), true);
 
+  const legacyScore = { ...recognized.score, songId: "qwen-smoke-test" };
+  await writeFile(join(songDir, "recognition", "normalized.json"), `${JSON.stringify(legacyScore)}\n`);
+  assert.equal((await request(server.baseUrl, `/api/songs/${song.songId}/score`)).songId, song.songId);
+
+  const pitchesBeforeLyrics = recognized.score.measures.flatMap((measure) => measure.notes.map((note) => [note.degree, note.octave, note.duration]));
+  const lyricsResult = await request(server.baseUrl, `/api/songs/${song.songId}/recognize-lyrics`, { method: "POST" });
+  assert.equal(lyricsResult.score.verificationStatus, "draft");
+  assert.equal(lyricsResult.score.lyricsText?.startsWith("东方"), true);
+  assert.equal(lyricsResult.score.measures[0].notes[0].lyric, "东");
+  assert.deepEqual(lyricsResult.score.measures.flatMap((measure) => measure.notes.map((note) => [note.degree, note.octave, note.duration])), pitchesBeforeLyrics);
+  assert.equal((await stat(join(songDir, "recognition", "lyrics-raw.json"))).isFile(), true);
+
   const verified = JSON.parse(await readFile(verifiedFixture, "utf8"));
   verified.songId = song.songId; verified.title = "已更新歌曲";
   const verifiedResult = await request(server.baseUrl, `/api/songs/${song.songId}/score`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(verified) });
@@ -95,8 +111,10 @@ test("真实闭环：Song、Recognition、Verified Score 与 Preparation 均可�
   const preparation = await request(server.baseUrl, "/api/preparations", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ songId: song.songId }) });
   assert.equal(preparation.status, "DRAFT");
   assert.equal((await request(server.baseUrl, `/api/songs/${song.songId}/preparation`)).preparationId, preparation.preparationId);
-  const savedPreparation = await request(server.baseUrl, `/api/preparations/${preparation.preparationId}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ selectedModules: ["rhythm", "singing"], selectedMaterials: [], selectedPhrases: ["phrase_001"], teacherAdjustments: { notes: "降低速度" }, status: "READY" }) });
-  assert.equal(savedPreparation.status, "READY");
+  const manualReady = await fetch(`${server.baseUrl}/api/preparations/${preparation.preparationId}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ status: "READY" }) });
+  assert.equal(manualReady.status, 400);
+  const savedPreparation = await request(server.baseUrl, `/api/preparations/${preparation.preparationId}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ selectedModules: ["rhythm", "singing"], selectedMaterials: [], selectedPhrases: ["phrase_001"], teacherAdjustments: { notes: "降低速度" } }) });
+  assert.equal(savedPreparation.status, "DRAFT");
   assert.equal((await stat(join(dataRoot, "preparations", `${preparation.preparationId}.json`))).isFile(), true);
 
   await stopServer(server.child);
@@ -104,5 +122,5 @@ test("真实闭环：Song、Recognition、Verified Score 与 Preparation 均可�
   assert.equal((await request(server.baseUrl, `/api/songs/${song.songId}`)).title, "已更新歌曲");
   assert.equal((await request(server.baseUrl, `/api/songs/${song.songId}/score`)).verificationStatus, "reviewed");
   assert.equal((await request(server.baseUrl, `/api/preparations/${preparation.preparationId}`)).teacherAdjustments.notes, "降低速度");
-  assert.equal((await request(server.baseUrl, `/api/songs/${song.songId}/preparation`)).status, "READY");
+  assert.equal((await request(server.baseUrl, `/api/songs/${song.songId}/preparation`)).status, "DRAFT");
 });

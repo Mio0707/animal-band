@@ -100,6 +100,10 @@ def normalize_score(
 
     measures: list[dict[str, Any]] = []
     absolute_offset = 0.0
+    lyric_syllable_index = 0
+    previous_lyric: str | None = None
+    previous_syllable_id: str | None = None
+    recognized_lyrics: list[str] = []
     for measure_index, raw_measure in enumerate(raw_measures[:256]):
         if not isinstance(raw_measure, dict):
             continue
@@ -137,9 +141,25 @@ def normalize_score(
 
             lyric = raw_note.get("lyric")
             lyric = str(lyric) if lyric not in (None, "") else None
+            lyric_continuation = bool(raw_note.get("lyricContinuation")) and not rest
+            if lyric_continuation and not lyric and previous_lyric:
+                lyric = previous_lyric
             if rest and lyric:
                 warnings.append(warning("LYRIC_ON_REST", "blocking", f"{path}.lyric", "休止符不能绑定歌词，已移除。"))
                 lyric = None
+            lyric_syllable_id = None
+            if lyric:
+                if lyric_continuation and previous_syllable_id:
+                    lyric_syllable_id = previous_syllable_id
+                else:
+                    lyric_continuation = False
+                    lyric_syllable_index += 1
+                    lyric_syllable_id = f"syllable_{lyric_syllable_index:03d}"
+                    recognized_lyrics.append(lyric)
+                previous_lyric = lyric
+                previous_syllable_id = lyric_syllable_id
+            else:
+                lyric_continuation = False
             absolute_pitch, midi_number, frequency = pitch_data(tonic, mode, degree, octave)
             normalized_notes.append({
                 "noteId": f"m{number:03d}_n{note_index + 1:03d}",
@@ -155,8 +175,8 @@ def normalize_score(
                 "startBeat": round(absolute_offset + beat, 3),
                 "rest": rest,
                 "lyric": lyric,
-                "lyricSyllableId": None,
-                "lyricContinuation": False,
+                "lyricSyllableId": lyric_syllable_id,
+                "lyricContinuation": lyric_continuation,
                 "phraseId": None,
                 "confidence": confidence,
             })
@@ -177,6 +197,8 @@ def normalize_score(
 
     timestamp = recognized_at or datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     confidence = round(max(0, min(1, as_number(candidate.get("confidence"), 0.5))), 3)
+    raw_lyrics_text = candidate.get("lyricsText")
+    lyrics_text = str(raw_lyrics_text).strip() if raw_lyrics_text not in (None, "") else "".join(recognized_lyrics)
     return {
         "songId": song_id,
         "title": str(title or candidate.get("title") or song_id)[:200],
@@ -185,7 +207,7 @@ def normalize_score(
         "mode": mode,
         "meter": meter,
         "bpm": bpm,
-        "lyricsText": candidate.get("lyricsText"),
+        "lyricsText": lyrics_text or None,
         "measures": measures,
         "phrases": [],
         "source": {

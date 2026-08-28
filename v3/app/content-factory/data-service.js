@@ -35,9 +35,10 @@ export function scoreStatus(song) {
 export function songLifecycle(song) {
   return {
     score: scoreStatus(song),
+    materialMatch: song.materialMatchStatus ?? "NOT_GENERATED",
     learningProfile: song.learningProfileStatus ?? "NOT_GENERATED",
-    teachingAssets: "NOT_RESOLVED",
-    lessonRecipe: "NOT_GENERATED",
+    teachingAssets: song.lessonRecipeStatus === "BLOCKED" ? "BLOCKED" : "NOT_RESOLVED",
+    lessonRecipe: song.lessonRecipeStatus ?? "NOT_GENERATED",
     audio: song.audioStatus ?? (songAsset(song, "originalAudio") ? "ORIGINAL_READY" : "NOT_GENERATED"),
     publication: "NOT_PUBLISHED"
   };
@@ -57,6 +58,12 @@ export async function saveSongScore(songId, score) {
 export async function listPreparations() { return (await fetchJson("/api/preparations", "备课列表读取")).preparations ?? []; }
 export async function getPreparationById(preparationId) { return fetchJson(`/api/preparations/${encodeURIComponent(preparationId)}`, "备课读取"); }
 export async function getActivePreparationForSong(songId) { return fetchJson(`/api/songs/${encodeURIComponent(songId)}/preparation`, "当前备课读取"); }
+export async function getMaterialMatch(songId) { return fetchJson(`/api/songs/${encodeURIComponent(songId)}/material-match`, "歌曲材料分析读取"); }
+export async function getLearningProfile(songId) { return fetchJson(`/api/songs/${encodeURIComponent(songId)}/profile`, "学习内容分析读取"); }
+export async function getLessonRecipe(preparationId) { return fetchJson(`/api/preparations/${encodeURIComponent(preparationId)}/recipe`, "课堂方案读取"); }
+export async function getAudioPlan(preparationId) { return fetchJson(`/api/preparations/${encodeURIComponent(preparationId)}/audio-plan`, "课堂素材需求读取"); }
+export async function getAudioManifest(preparationId) { return fetchJson(`/api/preparations/${encodeURIComponent(preparationId)}/audio-manifest`, "课堂素材清单读取"); }
+export async function getReadiness(preparationId) { return fetchJson(`/api/preparations/${encodeURIComponent(preparationId)}/readiness`, "备课检查读取"); }
 export async function createPreparation(songId) {
   return fetchJson("/api/preparations", "备课创建", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ songId }) });
 }

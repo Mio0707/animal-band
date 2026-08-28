@@ -1,0 +1,246 @@
+{
+  "lyricsText": "东方红，太阳升，中国出了个毛泽东，他为人民谋幸福，呼儿嗨哟，他是人民大救星。",
+  "noteLyrics": [
+    {
+      "noteId": "m001_n001",
+      "lyric": "东",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m001_n002",
+      "lyric": "方",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m001_n003",
+      "lyric": "红",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m002_n001",
+      "lyric": "，",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m003_n001",
+      "lyric": "太",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m003_n002",
+      "lyric": "阳",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m003_n003",
+      "lyric": "升",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m004_n001",
+      "lyric": "，",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m005_n001",
+      "lyric": "中",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m005_n002",
+      "lyric": "国",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m006_n001",
+      "lyric": "出",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m006_n002",
+      "lyric": "了",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m006_n003",
+      "lyric": "个",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m006_n004",
+      "lyric": "毛",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m007_n001",
+      "lyric": "泽",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m007_n002",
+      "lyric": "东",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m007_n003",
+      "lyric": "，",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m008_n001",
+      "lyric": null,
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m009_n001",
+      "lyric": "他",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m009_n002",
+      "lyric": "为",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m010_n001",
+      "lyric": "人",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m010_n002",
+      "lyric": "民",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m010_n003",
+      "lyric": "谋",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m011_n001",
+      "lyric": "幸",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m011_n002",
+      "lyric": "福",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m012_n001",
+      "lyric": "，",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m012_n002",
+      "lyric": "呼",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m012_n003",
+      "lyric": "儿",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m013_n001",
+      "lyric": "嗨",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m013_n002",
+      "lyric": "哟",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m013_n003",
+      "lyric": "，",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m014_n001",
+      "lyric": "他",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m014_n002",
+      "lyric": "是",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m014_n003",
+      "lyric": "人",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m014_n004",
+      "lyric": "民",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m015_n001",
+      "lyric": "大",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m015_n002",
+      "lyric": "救",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m015_n003",
+      "lyric": "星",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m015_n004",
+      "lyric": "。",
+      "lyricContinuation": false,
+      "confidence": 1.0
+    },
+    {
+      "noteId": "m016_n001",
+      "lyric": null,
+      "lyricContinuation": false,
+      "confidence": 1.0
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,29 @@
+{
+  "preparationId": "prep_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "selectedModules": [
+    "rhythm",
+    "solfege"
+  ],
+  "selectedMaterials": [
+    "PAT-02",
+    "PAT-04",
+    "PAT-01"
+  ],
+  "selectedPhrases": [
+    "phrase_01",
+    "phrase_02"
+  ],
+  "lessonRecipeId": "recipe_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "teacherAdjustments": {
+    "recipeReviewedAt": "2026-08-28T10:34:50.659135Z"
+  },
+  "status": "DRAFT",
+  "isActive": true,
+  "createdAt": "2026-08-28T08:46:46.691839Z",
+  "updatedAt": "2026-08-28T10:56:16.190302Z",
+  "lessonRecipeStatus": "READY",
+  "audioPlanStatus": "READY",
+  "audioManifestStatus": "PARTIAL",
+  "recipeReviewStatus": "NOT_REVIEWED"
+}

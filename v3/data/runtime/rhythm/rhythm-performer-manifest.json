@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "assetPackId": "animalbank-stage1-rhythm-performer-v1",
+  "characterId": "DOG",
+  "stageId": "stage_1",
+  "status": "ready_for_runtime_integration",
+  "basePath": "/assets/teaching/rhythm/performer-dog/",
+  "states": {
+    "READY": { "file": "performer-dog-ready.png", "role": "neutral_ready" },
+    "LISTEN": { "file": "performer-dog-listen.png", "role": "listen_cue" },
+    "CLAP": { "file": "performer-dog-clap.png", "role": "rhythm_action" },
+    "PAT_THIGHS": { "file": "performer-dog-pat-thighs.png", "role": "rhythm_action" },
+    "PAT_LEFT": { "file": "performer-dog-pat-left.png", "role": "rhythm_action" },
+    "PAT_RIGHT": { "file": "performer-dog-pat-right.png", "role": "rhythm_action" },
+    "STOMP": { "file": "performer-dog-stomp.png", "role": "rhythm_action" },
+    "STOP": { "file": "performer-dog-stop.png", "role": "rest_freeze" },
+    "HIGH_FIVE": { "file": "performer-dog-high-five.png", "role": "positive_feedback" },
+    "DONE": { "file": "performer-dog-happy-done.png", "role": "activity_complete" }
+  },
+  "fallbackState": "READY",
+  "preload": true
+}

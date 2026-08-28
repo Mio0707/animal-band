@@ -11,6 +11,11 @@ PROCESSING_STATUSES = {
     "SCORE_REVIEWED", "SCORE_VERIFIED", "PROFILE_READY",
 }
 
+MATERIAL_MATCH_STATUSES = {"NOT_GENERATED", "READY", "STALE"}
+LEARNING_PROFILE_STATUSES = {"NOT_GENERATED", "READY", "STALE", "PROFILE_READY"}
+LESSON_RECIPE_STATUSES = {"NOT_GENERATED", "READY", "BLOCKED", "STALE"}
+AUDIO_STATUSES = {"NOT_GENERATED", "ORIGINAL_READY", "PARTIAL", "READY", "STALE"}
+
 
 class SongRepository:
     def __init__(self, data_root: Path, catalog_path: Path | None = None):
@@ -54,6 +59,13 @@ class SongRepository:
         recognition_status = (raw.get("score") or {}).get("recognitionStatus")
         if not recognition_status:
             recognition_status = {"verified": "VERIFIED", "reviewed": "REVIEWED", "draft": "DRAFT"}.get(verification_status, "UPLOADED" if score_image else "NOT_STARTED")
+        # Recognition is a synchronous request. A server restart or failed
+        # request must not leave a song permanently disabled as RECOGNIZING.
+        # Without a draft/verified result there is nothing to review, so the
+        # only truthful recoverable state is SCORE_UPLOADED.
+        if processing_status == "RECOGNIZING" and not (draft_path or verified_path):
+            processing_status = "SCORE_UPLOADED" if score_image else "CREATED"
+            recognition_status = "UPLOADED" if score_image else "NOT_STARTED"
         return {
             "songId": song_id,
             "title": str(raw.get("title") or song_id),
@@ -72,7 +84,10 @@ class SongRepository:
                 "verifiedPath": self._public_path(song_id, verified_path),
             },
             "learningProfileStatus": raw.get("learningProfileStatus") or "NOT_GENERATED",
+            "materialMatchStatus": raw.get("materialMatchStatus") or "NOT_GENERATED",
+            "lessonRecipeStatus": raw.get("lessonRecipeStatus") or "NOT_GENERATED",
             "audioStatus": raw.get("audioStatus") or ("ORIGINAL_READY" if original_audio else "NOT_GENERATED"),
+            "sourceScoreVerifiedAt": raw.get("sourceScoreVerifiedAt"),
             "createdAt": raw.get("createdAt") or utc_now(),
             "updatedAt": raw.get("updatedAt") or raw.get("createdAt") or utc_now(),
         }
@@ -128,6 +143,8 @@ class SongRepository:
                 "verifiedPath": None,
             },
             "learningProfileStatus": "NOT_GENERATED",
+            "materialMatchStatus": "NOT_GENERATED",
+            "lessonRecipeStatus": "NOT_GENERATED",
             "audioStatus": "ORIGINAL_READY",
             "createdAt": timestamp,
             "updatedAt": timestamp,
@@ -141,7 +158,10 @@ class SongRepository:
             raise KeyError(song_id)
         allowed = {"title", "stageId", "metadata"}
         if internal:
-            allowed |= {"processingStatus", "score", "learningProfileStatus", "audioStatus"}
+            allowed |= {
+                "processingStatus", "score", "learningProfileStatus", "materialMatchStatus",
+                "lessonRecipeStatus", "audioStatus", "sourceScoreVerifiedAt"
+            }
         unknown = set(changes) - allowed
         if unknown:
             raise ValueError(f"不允许更新 Song 字段：{', '.join(sorted(unknown))}")
@@ -151,6 +171,14 @@ class SongRepository:
             raise ValueError("stageId 目前只允许 stage_1。")
         if "processingStatus" in changes and changes["processingStatus"] not in PROCESSING_STATUSES:
             raise ValueError("processingStatus 无效。")
+        if "materialMatchStatus" in changes and changes["materialMatchStatus"] not in MATERIAL_MATCH_STATUSES:
+            raise ValueError("materialMatchStatus 无效。")
+        if "learningProfileStatus" in changes and changes["learningProfileStatus"] not in LEARNING_PROFILE_STATUSES:
+            raise ValueError("learningProfileStatus 无效。")
+        if "lessonRecipeStatus" in changes and changes["lessonRecipeStatus"] not in LESSON_RECIPE_STATUSES:
+            raise ValueError("lessonRecipeStatus 无效。")
+        if "audioStatus" in changes and changes["audioStatus"] not in AUDIO_STATUSES:
+            raise ValueError("audioStatus 无效。")
         song.update(deepcopy(changes))
         song["updatedAt"] = utc_now()
         atomic_write_json(self._song_path(song_id), song)
@@ -164,7 +192,32 @@ class SongRepository:
         if not relative:
             return None
         path = self.data_root / relative.removeprefix("data/")
+        if not path.is_file():
+            return None
+        score = read_json(path)
+        if score.get("songId") != song_id:
+            score["songId"] = song_id
+        return score
+
+    def get_verified_score(self, song_id: str) -> dict | None:
+        song_id = require_song_id(song_id)
+        path = self._song_dir(song_id) / "verified-score.json"
         return read_json(path) if path.is_file() else None
+
+    def artifact_path(self, song_id: str, name: str) -> Path:
+        song_id = require_song_id(song_id)
+        allowed = {"material-match.json", "learning-profile.json"}
+        if name not in allowed:
+            raise ValueError(f"不支持的 Song 生成物：{name}")
+        return self._song_dir(song_id) / name
+
+    def get_artifact(self, song_id: str, name: str) -> dict | None:
+        path = self.artifact_path(song_id, name)
+        return read_json(path) if path.is_file() else None
+
+    def save_artifact(self, song_id: str, name: str, value: dict) -> dict:
+        atomic_write_json(self.artifact_path(song_id, name), value)
+        return value
 
     def save_score(self, song_id: str, score: dict) -> dict:
         song = self.get_song_by_id(song_id)
@@ -177,6 +230,7 @@ class SongRepository:
             raise ValueError("verificationStatus 无效。")
         score_copy = deepcopy(score)
         song_score = deepcopy(song["score"])
+        previous_status = song["score"].get("verificationStatus")
         if status == "verified":
             if not str(score_copy.get("verifiedBy") or "").strip() or not str(score_copy.get("verifiedAt") or "").strip():
                 raise ValueError("Verified Score 必须包含 verifiedBy 与 verifiedAt。")
@@ -186,12 +240,26 @@ class SongRepository:
             processing_status = "SCORE_VERIFIED"
             recognition_status = "VERIFIED"
             song_score["verifiedPath"] = f"data/songs/{song_id}/verified-score.json"
+            source_verified_at = score_copy.get("verifiedAt")
         else:
             target = self._song_dir(song_id) / "recognition" / "normalized.json"
             processing_status = "SCORE_REVIEWED" if status == "reviewed" else "SCORE_DRAFT"
             recognition_status = "REVIEWED" if status == "reviewed" else "DRAFT"
             song_score["draftPath"] = f"data/songs/{song_id}/recognition/normalized.json"
+            source_verified_at = None
         atomic_write_json(target, score_copy)
         song_score["recognitionStatus"] = recognition_status
         song_score["verificationStatus"] = status
-        return self.update_song(song_id, {"processingStatus": processing_status, "score": song_score}, internal=True)
+        # Any score save invalidates all downstream products, including a
+        # re-verification of an edited score. Old JSON files remain available
+        # for debugging but their status is no longer usable for the gate.
+        changes = {
+            "processingStatus": processing_status,
+            "score": song_score,
+            "sourceScoreVerifiedAt": source_verified_at,
+            "materialMatchStatus": "STALE" if previous_status in {"reviewed", "verified"} or self.get_artifact(song_id, "material-match.json") else "NOT_GENERATED",
+            "learningProfileStatus": "STALE" if self.get_artifact(song_id, "learning-profile.json") else "NOT_GENERATED",
+            "lessonRecipeStatus": "STALE" if previous_status in {"reviewed", "verified"} else "NOT_GENERATED",
+            "audioStatus": "STALE" if previous_status in {"reviewed", "verified"} else ("ORIGINAL_READY" if song.get("assets", {}).get("originalAudio") else "NOT_GENERATED"),
+        }
+        return self.update_song(song_id, changes, internal=True)

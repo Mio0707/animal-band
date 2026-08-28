@@ -1,0 +1,1189 @@
+{
+  "title": "祖国祖国我们爱你",
+  "tonic": "C",
+  "mode": "Major",
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "bpm": null,
+  "lyricsText": "小小蜻蜓穿花衣，红黄蓝绿多美丽。小朋友们多么欢喜，画个图画比一比。画小鸟飞在蓝天里，画小草长在春天里。你画太阳，我画国旗。祖国祖国，我们爱你。祖国祖国，我们爱你。",
+  "confidence": 0.98,
+  "warnings": [],
+  "measures": [
+    {
+      "notes": [
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "小",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "小",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "蜻",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "蜓",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "笔",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 0,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "rest": true,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "穿",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "花",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "衣",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 0,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "rest": true,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "红",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "黄",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "蓝",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "绿",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 7,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "多",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "rest": false,
+          "lyric": "美",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "lyric": "丽",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 7,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 0,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": true,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "小",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "朋",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "友",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "们",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 0,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "rest": true,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "多",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "么",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "欢",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "喜",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 0,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "rest": true,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "画",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "个",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "图",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "画",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "比",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "一",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "比",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 7,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "画",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 7,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "小",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "lyric": "鸟",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 7,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "飞",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 7,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "在",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "蓝",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 7,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "天",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "lyric": "里",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "画",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "小",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "lyric": "草",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "长",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "在",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "春",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "天",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "lyric": "里",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "你",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "画",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "太",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 1,
+          "duration": 1,
+          "rest": false,
+          "lyric": "阳",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 7,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "我",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 7,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "画",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "国",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "lyric": "旗",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "祖",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "国",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 0,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": true,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "祖",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "国",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 0,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": true,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "我",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "们",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "爱",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "rest": false,
+          "lyric": "你",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "祖",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "国",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 0,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": true,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "祖",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "国",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 0,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": true,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "我",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 4,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "们",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": "爱",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "rest": false,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "rest": false,
+          "lyric": "你",
+          "lyricContinuation": false,
+          "confidence": 1.0
+        },
+        {
+          "degree": 0,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "rest": true,
+          "lyric": null,
+          "lyricContinuation": false,
+          "confidence": 1.0
+        }
+      ]
+    }
+  ]
+}

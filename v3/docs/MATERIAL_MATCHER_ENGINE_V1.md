@@ -28,6 +28,8 @@ Song Learning Profile
 教师看到“这首歌可以学什么”
 ```
 
+---
+
 ## 2. Source of Truth
 
 Engine 不维护第二份课程常量。
@@ -63,6 +65,8 @@ V1 实现：
 
 - MEL-MAT-SIMILAR-PHRASE
 
+---
+
 ## 3. 输入要求
 
 默认只接受：
@@ -93,9 +97,15 @@ phrase.reviewStatus
 
 无需修改 Verified Score Schema。
 
+---
+
 ## 4. Rhythm Matcher V1
 
-每个小节内部扫描连续音符窗口，必须同时满足：
+### 判定原则
+
+每个小节内部扫描连续音符窗口。
+
+必须同时满足：
 
 1. 不包含 rest；
 2. 音符在时间上连续；
@@ -112,21 +122,72 @@ PAT-03
 
 Pattern 定义永远来自 Curriculum，不在 Engine 内重复硬编码。
 
-`RHY-12-REST-01` 是 Curriculum Target，不是 Rhythm Material，因此休止位置只输出到 `facts.restOccurrences`。
+### REST
+
+`RHY-12-REST-01` 是 Curriculum Target，不是 Rhythm Material。
+
+因此 Engine **不得**生成假 Material：
+
+```text
+RHY-12-REST-01
+```
+
+休止位置输出到：
+
+```text
+facts.restOccurrences
+```
+
+由 Learning Profile 后续决定是否形成休止教学推荐。
+
+---
 
 ## 5. Melody Matcher V1
 
-### REPEAT NOTE
+Curriculum 已经定义机器边界，但 ASC/DESC/SHORT-PHRASE 的 P0 阈值属于实现层配置。
 
-连续 >= 2 个非休止音，且 `midiNumber` 完全相同。
+V1 将阈值集中放在：
 
-### LEVEL
+```text
+core/material-matcher-config.js
+```
 
-P0 只识别纯重复音子集，并标记 `p0SubsetOnly: true`。
+而不是写回 Curriculum Source of Truth。
 
-### ASCENDING
+### 5.1 REPEAT NOTE
 
-默认阈值：
+规则：
+
+```text
+连续 >= 2 个非休止音
+midiNumber 完全相同
+```
+
+输出最大连续重复段。
+
+### 5.2 LEVEL
+
+Curriculum 明确：P0 可只识别纯重复音。
+
+因此 V1：
+
+```text
+MEL-MAT-LEVEL
+=
+REPEAT-NOTE 的确定性子集
+```
+
+标记：
+
+```text
+p0SubsetOnly: true
+```
+
+复杂“平稳感”不自动判断。
+
+### 5.3 ASCENDING
+
+V1 默认：
 
 ```text
 最少音符数 = 3
@@ -135,13 +196,38 @@ P0 只识别纯重复音子集，并标记 `p0SubsetOnly: true`。
 单次相邻跳进 <= 5 semitones
 ```
 
-### DESCENDING
+允许：
 
-与 ASCENDING 对称。
+```text
+C C D E
+C D E
+C E G
+```
 
-### DMS
+不允许：
 
-只对 `reviewStatus = confirmed` 的 Phrase 判断：
+```text
+C E D F
+```
+
+当前采用保守、可解释的 P0 规则，优先减少误报。
+
+### 5.4 DESCENDING
+
+与 ASCENDING 对称：
+
+```text
+最少音符数 = 3
+相邻音高必须非上升
+至少有一次真实下降
+单次相邻跳进 <= 5 semitones
+```
+
+### 5.5 DMS
+
+只对 `reviewStatus = confirmed` 的 Phrase 判断。
+
+默认：
 
 ```text
 3–8 个非休止音
@@ -149,13 +235,19 @@ P0 只识别纯重复音子集，并标记 `p0SubsetOnly: true`。
 至少出现 2 个不同 degree
 ```
 
-输出 `reviewRequired = true`。
+输出：
 
-### SHORT PHRASE
+```text
+reviewRequired = true
+```
+
+原因：机器能确定“只使用 do-mi-sol”，但是否值得作为本次教学内容应由后续 Profile 决定。
+
+### 5.6 SHORT PHRASE
 
 只接受 Human Review 已确认 Phrase。
 
-默认候选阈值：
+V1 默认候选阈值：
 
 ```text
 2–8 个非休止音
@@ -164,7 +256,24 @@ pitchRange <= 9 semitones
 reviewStatus = confirmed
 ```
 
-这些参数集中在 `core/material-matcher-config.js`，不是 Curriculum Source of Truth。
+输出：
+
+```text
+phraseId
+startMeasure
+endMeasure
+pitchRangeSemitones
+noteCount
+contour
+degrees
+reviewRequired = true
+```
+
+这些参数是 **P0 实现默认值**，不是改写 Curriculum。
+
+后续可用真实歌曲回归结果调整 config。
+
+---
 
 ## 6. 输出结构
 
@@ -192,7 +301,20 @@ matchSongMaterials(verifiedScore, curriculum)
 }
 ```
 
-每个 occurrence 必须可追溯到：
+每个 Material：
+
+```json
+{
+  "materialId": "PAT-03",
+  "module": "rhythm",
+  "matchType": "deterministic",
+  "confidence": 1,
+  "reviewRequired": false,
+  "occurrences": []
+}
+```
+
+Occurrence 必须可追溯到 Score：
 
 ```text
 measureStart
@@ -201,6 +323,10 @@ startNoteId
 endNoteId
 noteIds
 ```
+
+这样 Teacher UI 后续可以高亮“这段为什么被推荐”。
+
+---
 
 ## 7. Engine 与 Learning Profile 的边界
 
@@ -237,11 +363,15 @@ Profile:
 本课推荐教 PAT-03
 ```
 
+这是必须长期保持的边界。
+
+---
+
 ## 8. 推荐持久化位置
 
 Engine 本身不写文件。
 
-集成层负责保存：
+Codex 集成层负责保存：
 
 ```text
 v3/data/songs/<songId>/material-match.json
@@ -254,9 +384,27 @@ POST /api/songs/:id/match
 GET  /api/songs/:id/material-match
 ```
 
+流程：
+
+```text
+读取 verified-score.json
+↓
+读取 stage1.json
+↓
+matchSongMaterials()
+↓
+保存 material-match.json
+↓
+返回结果
+```
+
+---
+
 ## 9. 失效规则
 
-如果 Verified Score 被重新编辑并从 verified 降级，旧的 Material Match 必须视为 stale。
+如果 Verified Score 被重新编辑并从 verified 降级：
+
+旧的 Material Match 必须视为 stale。
 
 推荐 Song 内记录：
 
@@ -269,7 +417,13 @@ STALE
 
 重新 Verify 后必须重新跑 Matcher。
 
+不要继续使用基于旧 Score 的匹配结果。
+
+---
+
 ## 10. V1 不做
+
+本 Engine 不实现：
 
 - Similar Phrase 相似度算法
 - 音频信号分析
@@ -281,7 +435,11 @@ STALE
 - Lesson Recipe
 - AI 推荐
 
+---
+
 ## 11. 验收标准
+
+必须证明：
 
 1. PAT 定义来自真实 Curriculum；
 2. Verified Score 非 verified 时默认拒绝；

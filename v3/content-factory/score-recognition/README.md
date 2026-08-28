@@ -23,6 +23,6 @@ python3 qwen_score_recognizer.py \
   --output-root ../../data/songs
 ```
 
-The repository `.gitignore` excludes `.env`; never commit or share that file. `raw.json` is immutable recognition output; `normalized.json` is always `draft`. The review tool, not Qwen, performs lyrics, phrase confirmation, and verification.
+The repository `.gitignore` excludes `.env`; never commit or share that file. `raw.json` is immutable recognition output; `normalized.json` is always `draft`. Qwen may recognize and align note-level lyrics, but a human must review lyrics, confirm phrases, and complete verification.
 
 For offline tests, `--raw-input` supplies a fixture and skips network access.

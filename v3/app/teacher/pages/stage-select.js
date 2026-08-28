@@ -1,0 +1,3 @@
+export function renderStageSelect() {
+  return `<main class="stage-page"><section class="stage-hero"><div><p class="eyebrow">教师备课平台</p><h1>今天要为哪个学段备课？</h1><p>选择学段，进入统一歌曲库开始准备课堂。</p></div><img src="../content-factory/assets/avatar-dog.png" alt="动物乐队小助手"></section><section class="stage-options"><a class="stage-card active" href="#/songs?grade=1-2"><span>当前开放</span><strong>1–2年级</strong><p>第一学段</p><b>进入歌曲库 →</b></a><a class="stage-card disabled" href="#/songs?grade=3-5"><span>即将开放</span><strong>3–5年级</strong><p>后续学段</p></a><a class="stage-card disabled" href="#/songs?grade=6-7"><span>即将开放</span><strong>6–7年级</strong><p>后续学段</p></a></section></main>`;
+}

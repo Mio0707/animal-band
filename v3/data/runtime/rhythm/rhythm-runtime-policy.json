@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "policyId": "stage1-rhythm-runtime-policy-v1",
+  "runtimeFlow": ["LISTEN", "WATCH_DOG", "CHANT_AND_PLAY", "PRACTICE", "DONE"],
+  "stateBehavior": {
+    "LISTEN": { "performerState": "LISTEN", "showNotation": true, "showChant": false, "showActionLabel": false, "playTargetRhythmDemo": true },
+    "WATCH_DOG": { "performerStateSource": "bodyActions", "showNotation": true, "showChant": true, "showActionLabel": false, "syncImageToTimeline": true },
+    "CHANT_AND_PLAY": { "performerStateSource": "bodyActions", "showNotation": true, "showChant": true, "highlightCurrentEvent": true, "syncImageToTimeline": true },
+    "PRACTICE": { "performerStateSource": "bodyActions", "showNotation": true, "showChant": "fade_by_round", "syncImageToTimeline": true, "defaultRepeatCount": 8 },
+    "DONE": { "performerState": "DONE", "showNotation": false, "showChant": false }
+  },
+  "timing": { "timeBase": "beats", "eventTimeRule": "cumulative_duration", "returnToReadyBetweenEvents": false, "finalState": "STOP" }
+}

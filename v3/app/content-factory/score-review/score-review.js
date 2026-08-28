@@ -1,13 +1,16 @@
 import { refreshNotePitch } from "../../../core/pitch-utils.js";
 import { createPhrase, deletePhrase, flattenScoreNotes } from "../../../core/phrase-utils.js";
-import { autoAlignLyrics, setNoteLyric } from "../../../core/lyrics-alignment.js";
+import { setNoteLyric } from "../../../core/lyrics-alignment.js";
 import { canMarkReviewed, collectScoreIssues, markScoreEdited, transitionToReviewed, transitionToVerified } from "../../../core/score-verification.js";
 
 let score = null;
 let songId = null;
+let teacherMode = false;
+let returnPath = "/app/teacher/";
 let currentMeasureIndex = 0;
 let confirmedMeasures = new Set();
 let actionMessage = "";
+let lyricsRecognitionPending = false;
 const STATUS_LABELS = Object.freeze({ draft: "草稿", reviewed: "已审核", verified: "已验证" });
 const CONTOUR_LABELS = Object.freeze({ ASCENDING: "上行", DESCENDING: "下行", REPEAT: "同音反复", MIXED: "混合" });
 
@@ -82,7 +85,12 @@ function renderDurationHelp() {
 }
 
 function issuesForMeasure(measureIndex) {
-  return collectScoreIssues(score).errors.filter((item) => item.path.startsWith(`measures[${measureIndex}]`));
+  return issuesBlockingMeasureConfirmation(score, measureIndex);
+}
+
+export function issuesBlockingMeasureConfirmation(targetScore, measureIndex) {
+  const structuralCodes = new Set(["MEASURE_DURATION_MISMATCH", "INVALID_DEGREE", "INVALID_OCTAVE", "INVALID_DURATION", "LYRIC_ON_REST", "MISSING_PITCH", "BLOCKING_REVIEW_ERROR"]);
+  return collectScoreIssues(targetScore).errors.filter((item) => item.path.startsWith(`measures[${measureIndex}]`) && structuralCodes.has(item.code));
 }
 
 function renderNoteCard(note, noteIndex) {
@@ -131,20 +139,38 @@ function renderPhraseTool() {
   const options = flattenScoreNotes(score).map(({ note, measure }) => `<option value="${note.noteId}">第 ${measure.number} 小节 · ${note.noteId} · ${note.rest ? "休止" : note.absolutePitch}</option>`).join("");
   document.querySelector("#phrase-start").innerHTML = options;
   document.querySelector("#phrase-end").innerHTML = options;
-  document.querySelector("#phrases").innerHTML = (score.phrases ?? []).map((phrase) => `<span class="phrase-chip"><b>${escapeHtml(phrase.phraseId)}</b> · 第 ${phrase.startMeasure}–${phrase.endMeasure} 小节 · ${CONTOUR_LABELS[phrase.contour] ?? phrase.contour}<button data-delete-phrase="${phrase.phraseId}" aria-label="删除乐句">×</button></span>`).join("") || `<small>尚未标记乐句。</small>`;
+  const phraseTool = document.querySelector(".phrase-tool");
+  const needsPhrase = score.verificationStatus === "draft" && confirmedMeasures.size === score.measures.length && !(score.phrases ?? []).some((phrase) => phrase.reviewStatus === "confirmed");
+  phraseTool.classList.toggle("needs-action", needsPhrase);
+  const phraseItems = (score.phrases ?? []).map((phrase) => `<span class="phrase-chip"><b>${escapeHtml(phrase.phraseId)}</b> · 第 ${phrase.startMeasure}–${phrase.endMeasure} 小节 · ${CONTOUR_LABELS[phrase.contour] ?? phrase.contour}<button data-delete-phrase="${phrase.phraseId}" aria-label="删除乐句">×</button></span>`).join("");
+  document.querySelector("#phrases").innerHTML = `${needsPhrase ? `<strong class="phrase-next-step">下一步：请选择乐句的起始音和结束音，然后保存乐句。</strong>` : ""}${phraseItems || `<small>尚未标记乐句。</small>`}`;
+}
+
+export function scoreReviewNextStep(targetScore, confirmedCount) {
+  if (targetScore.verificationStatus === "verified") return "乐谱已确认，可以返回备课。";
+  if (targetScore.verificationStatus === "reviewed") return "校对已保存，可以确认乐谱。";
+  if (confirmedCount < targetScore.measures.length) return `请继续确认小节：${confirmedCount}/${targetScore.measures.length}`;
+  const gate = canMarkReviewed(targetScore);
+  if (gate.errors.some((item) => item.code === "PHRASE_MISSING")) return "下一步：请在上方划分并保存至少一个乐句。";
+  if (gate.errors.some((item) => item.code === "LYRIC_MISSING")) return "下一步：请检查并补齐乐句中的歌词。";
+  return gate.allowed ? "小节和乐句已完成，可以完成校对。" : "请完成上方标出的校对项目。";
 }
 
 function renderStatus() {
   const status = score.verificationStatus;
-  document.querySelector("#status-summary").innerHTML = `<span class="status-pill ${status}">${STATUS_LABELS[status] ?? status}</span>${score.verifiedBy ? `<small>${escapeHtml(score.verifiedBy)} · ${escapeHtml(score.verifiedAt)}</small>` : ""}`;
-  document.querySelector("#verification-label").textContent = `当前状态：${STATUS_LABELS[status] ?? status}`;
+  const teacherLabel = { draft: "待检查", reviewed: "等待最终确认", verified: "乐谱已确认" }[status];
+  const displayLabel = teacherMode ? teacherLabel : STATUS_LABELS[status] ?? status;
+  document.querySelector("#status-summary").innerHTML = `<span class="status-pill ${status}">${displayLabel}</span>${!teacherMode && score.verifiedBy ? `<small>${escapeHtml(score.verifiedBy)} · ${escapeHtml(score.verifiedAt)}</small>` : ""}`;
+  document.querySelector("#verification-label").textContent = teacherMode ? displayLabel : `当前状态：${displayLabel}`;
   const allConfirmed = confirmedMeasures.size === score.measures.length;
-  document.querySelector("#verification-detail").textContent = status === "verified" ? "任何编辑都会自动降级为“已审核”" : `已确认 ${confirmedMeasures.size}/${score.measures.length} 小节`;
+  document.querySelector("#verification-detail").textContent = scoreReviewNextStep(score, confirmedMeasures.size);
   document.querySelector("#mark-reviewed").disabled = !allConfirmed || !canMarkReviewed(score).allowed || status !== "draft";
   document.querySelector("#mark-verified").disabled = status !== "reviewed";
+  document.querySelector("#mark-reviewed").hidden = teacherMode && status !== "draft";
+  document.querySelector("#mark-verified").hidden = teacherMode && status !== "reviewed";
   document.querySelector("#download-score").disabled = status !== "verified";
   document.querySelector("#save-draft").disabled = !songId;
-  document.querySelector("#verified-by").value = score.verifiedBy ?? "";
+  document.querySelector("#return-to-preparation").hidden = !teacherMode || status !== "verified";
 }
 
 function render() {
@@ -155,7 +181,10 @@ function render() {
   document.querySelector("#score-title").textContent = score.title;
   document.querySelector("#review-progress").textContent = `校对第 ${currentMeasureIndex + 1} / ${score.measures.length} 小节`;
   document.querySelector("#metadata").innerHTML = `<label>曲名<input data-meta="title" value="${escapeHtml(score.title)}"></label><label>1 = 主音<input data-meta="tonic" value="${escapeHtml(score.tonic)}"></label><label>拍号<input data-meta="meter.beats" type="number" min="1" max="12" value="${score.meter.beats}"></label><label>分母<select data-meta="meter.unit">${[2, 4, 8, 16].map((unit) => `<option ${unit === score.meter.unit ? "selected" : ""}>${unit}</option>`).join("")}</select></label><label>速度<input data-meta="bpm" type="number" min="36" max="240" value="${score.bpm}"> 拍/分钟</label>`;
-  document.querySelector("#lyrics-text").value = score.lyricsText ?? "";
+  const recognizeLyrics = document.querySelector("#recognize-lyrics");
+  recognizeLyrics.disabled = !songId || lyricsRecognitionPending;
+  recognizeLyrics.textContent = lyricsRecognitionPending ? "AI 正在匹配歌词…" : "↻ AI 重新匹配歌词";
+  recognizeLyrics.title = songId ? "重新读取原始简谱并匹配歌词，不修改音高与时值" : "当前页面未绑定歌曲";
   renderPreviewAndNavigation(); renderWarnings(); renderMeasureEditor(); renderPhraseTool(); renderStatus(); bindRenderedEvents();
 }
 
@@ -163,6 +192,7 @@ function editScore(mutator, measureIndex = null) {
   const wasVerified = score.verificationStatus === "verified";
   mutator();
   if (measureIndex !== null) confirmedMeasures.delete(measureIndex);
+  persistConfirmedMeasures();
   markScoreEdited(score);
   recalculateScoreTiming(score);
   actionMessage = wasVerified ? "已修改：状态已自动从“已验证”降级为“已审核”，请保存。" : "修改尚未写回，请保存。";
@@ -232,6 +262,7 @@ function confirmCurrentMeasure() {
   if (issuesForMeasure(currentMeasureIndex).length) return;
   score.measures[currentMeasureIndex].notes.forEach((note) => { note.confidence = 1; });
   confirmedMeasures.add(currentMeasureIndex);
+  persistConfirmedMeasures();
   const next = score.measures.findIndex((_, index) => index > currentMeasureIndex && !confirmedMeasures.has(index));
   if (next >= 0) currentMeasureIndex = next;
   actionMessage = "当前小节已确认。"; render();
@@ -255,11 +286,58 @@ async function persistScore(successMessage) {
   return payload;
 }
 
+async function recognizeLyrics() {
+  if (lyricsRecognitionPending) return;
+  lyricsRecognitionPending = true;
+  renderStatus();
+  try {
+    await persistScore("当前修改已保存，正在匹配歌词…");
+    const response = await fetch(`/api/songs/${encodeURIComponent(songId)}/recognize-lyrics`, { method: "POST" });
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(payload.error || `歌词匹配失败（${response.status}）`);
+    score = payload.score;
+    confirmedMeasures.clear();
+    persistConfirmedMeasures();
+    currentMeasureIndex = 0;
+    actionMessage = "AI 歌词已匹配，请逐音检查。";
+    render();
+  } catch (error) {
+    actionMessage = error.message;
+    render();
+    alert(`歌词匹配失败：${error.message}`);
+  } finally {
+    lyricsRecognitionPending = false;
+    renderStatus();
+  }
+}
+
+function measureReviewSignature(measure) {
+  return JSON.stringify(measure.notes.map((note) => [note.degree, note.octave, note.duration, note.rest, note.lyric, note.lyricContinuation]));
+}
+
+function confirmedStorageKey() { return songId ? `animal-band:score-review:${songId}` : null; }
+
+function persistConfirmedMeasures() {
+  const key = confirmedStorageKey();
+  if (!key || typeof localStorage === "undefined" || !score) return;
+  const value = Object.fromEntries([...confirmedMeasures].map((index) => [index, measureReviewSignature(score.measures[index])]));
+  localStorage.setItem(key, JSON.stringify(value));
+}
+
+function restoreConfirmedMeasures() {
+  const key = confirmedStorageKey();
+  if (!key || typeof localStorage === "undefined") return new Set();
+  try {
+    const saved = JSON.parse(localStorage.getItem(key) || "{}");
+    return new Set(score.measures.map((measure, index) => saved[index] === measureReviewSignature(measure) ? index : null).filter((index) => index !== null));
+  } catch { return new Set(); }
+}
+
 function loadScoreDocument(document) {
   score = document;
   if (!Array.isArray(score.measures) || !score.measures.length) throw new Error("已验证乐谱缺少小节数据。");
   currentMeasureIndex = 0;
-  confirmedMeasures = new Set(score.verificationStatus === "draft" ? [] : score.measures.map((_, index) => index));
+  confirmedMeasures = score.verificationStatus === "draft" ? restoreConfirmedMeasures() : new Set(score.measures.map((_, index) => index));
   actionMessage = "已载入乐谱结构数据。";
   render();
 }
@@ -272,6 +350,14 @@ function showSourceImage(url) {
 }
 
 function bootstrap() {
+  const params = new URLSearchParams(location.search);
+  if (!params.has("songId") && !params.has("score")) {
+    const teacherHome = location.protocol === "file:"
+      ? "http://127.0.0.1:4175/app/teacher/#/songs?grade=1-2"
+      : "/app/teacher/#/songs?grade=1-2";
+    location.replace(teacherHome);
+    return;
+  }
   document.querySelector("#score-file").addEventListener("change", async (event) => {
     try {
       loadScoreDocument(JSON.parse(await event.target.files[0].text()));
@@ -285,7 +371,7 @@ function bootstrap() {
   document.querySelector("#next-measure").addEventListener("click", () => { currentMeasureIndex = Math.min(score.measures.length - 1, currentMeasureIndex + 1); render(); });
   document.querySelector("#preview-measure").addEventListener("click", previewCurrentMeasure);
   document.querySelector("#confirm-measure").addEventListener("click", confirmCurrentMeasure);
-  document.querySelector("#auto-align").addEventListener("click", () => editScore(() => autoAlignLyrics(score, document.querySelector("#lyrics-text").value)));
+  document.querySelector("#recognize-lyrics").addEventListener("click", recognizeLyrics);
   document.querySelector("#create-phrase").addEventListener("click", () => { try { const vocal = document.querySelector("#phrase-vocal").checked; editScore(() => createPhrase(score, document.querySelector("#phrase-start").value, document.querySelector("#phrase-end").value, { isVocal: vocal, requiresLyrics: vocal })); } catch (error) { actionMessage = error.message; render(); } });
   document.querySelector("#save-draft").addEventListener("click", () => persistScore("当前乐谱已保存到 Song。").catch((error) => { actionMessage = error.message; render(); }));
   document.querySelector("#mark-reviewed").addEventListener("click", async () => {
@@ -294,13 +380,28 @@ function bootstrap() {
     try { await persistScore("已审核乐谱已保存到 Song。"); } catch (error) { actionMessage = error.message; render(); }
   });
   document.querySelector("#mark-verified").addEventListener("click", async () => {
-    const result = transitionToVerified(score, document.querySelector("#verified-by").value);
+    const result = transitionToVerified(score, score.verifiedBy || "teacher-review");
     if (!result.allowed) { actionMessage = result.errors.map((item) => item.message).join(" "); return render(); }
     try { await persistScore("验证完成，verified-score.json 已保存。"); } catch (error) { score.verificationStatus = "reviewed"; score.verifiedBy = null; score.verifiedAt = null; actionMessage = error.message; render(); }
   });
   document.querySelector("#download-score").addEventListener("click", downloadJson);
-  const params = new URLSearchParams(location.search);
   songId = params.get("songId");
+  teacherMode = params.get("mode") === "teacher";
+  const requestedReturn = params.get("return");
+  if (requestedReturn?.startsWith("/app/teacher/")) returnPath = requestedReturn;
+  document.querySelector("#go-back").addEventListener("click", () => {
+    if (teacherMode) location.href = returnPath;
+    else if (history.length > 1) history.back();
+    else location.href = "/app/content-factory/";
+  });
+  if (teacherMode) {
+    document.body.classList.add("teacher-mode");
+    document.querySelector("#review-context").textContent = "动物乐队 · 教师备课";
+    document.querySelector("#review-title").textContent = "检查乐谱";
+    document.querySelector("#mark-reviewed").textContent = "完成校对";
+    document.querySelector("#mark-verified").textContent = "确认乐谱";
+    document.querySelector("#return-to-preparation").href = returnPath;
+  }
   const scoreUrl = params.get("score") || (songId ? `/api/songs/${encodeURIComponent(songId)}/score` : null);
   const imageUrl = params.get("image");
   if (imageUrl) showSourceImage(imageUrl);

@@ -7,7 +7,7 @@ import {
   resolveSolfegeAssets
 } from "./lesson-teaching-asset-resolver.js";
 
-export const LESSON_RECIPE_ALGORITHM_VERSION = "1.0.0";
+export const LESSON_RECIPE_ALGORITHM_VERSION = "1.1.0";
 
 function flattenNotes(score) {
   return (score.measures ?? []).flatMap((measure) => (measure.notes ?? []).map((note) => ({ note, measure })));
@@ -98,9 +98,11 @@ export function generateLessonRecipe(preparation, profile, score, teachingAssetL
         materialId,
         occurrenceIds: profileItem.occurrenceIds ?? [],
         notation: asset.notation ?? null,
+        durations: asset.durations ?? [],
         chant: asset.chant ?? [],
         bodyActions: asset.bodyActions ?? [],
-        trainingTempoRef: asset.trainingTempoRef ?? null
+        trainingTempoRef: asset.trainingTempoRef ?? null,
+        trainingBpm: Number(teachingAssetLibrary.trainingTempoPolicy?.[asset.trainingTempoRef]?.preferredBpm ?? score.bpm)
       }
     });
   }).filter(Boolean);

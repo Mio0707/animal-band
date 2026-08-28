@@ -23,7 +23,8 @@ const score = {
 };
 const library = {
   stageId: "stage_1",
-  rhythmTeachingAssets: [{ assetId: "TA-RHY-PAT-03", materialId: "PAT-03", notation: "♪♪ ♩", chant: ["de","de","da"], bodyActions: ["CLAP","CLAP","PAT"], trainingTempoRef: "simplePatterns" }],
+  trainingTempoPolicy: { simplePatterns: { preferredBpm: 80 } },
+  rhythmTeachingAssets: [{ assetId: "TA-RHY-PAT-03", materialId: "PAT-03", notation: "♪♪ ♩", durations: [0.5,0.5,1], chant: ["de","de","da"], bodyActions: ["CLAP","CLAP","PAT"], trainingTempoRef: "simplePatterns" }],
   melodyTeachingAssets: [{ assetId: "TA-MEL-PHRASE-CORE", materialId: "MEL-MAT-SHORT-PHRASE" }],
   melodyFeatureSupportAssets: [{ assetId: "TA-MEL-FEATURE-ASCENDING", materialId: "MEL-MAT-ASCENDING" }, { assetId: "TA-MEL-FEATURE-DMS", materialId: "MEL-MAT-DMS" }],
   solfegeTeachingAssets: [{ assetId: "TA-SOL-DEGREE-NAME" }, { assetId: "TA-SOL-SCORE-READ" }],
@@ -42,6 +43,8 @@ test("integrated recipe binds frozen teaching assets to teacher selection", () =
   assert.ok(recipe.teachingAssetResolution.resolvedAssetIds.includes("TA-SING-TUTOR-CORE"));
   assert.ok(recipe.teachingAssetResolution.resolvedAssetIds.includes("TA-ENS-RHY-SING-01"));
   assert.equal(recipe.activities.find((item) => item.activityId === "act_phrase_1").bindings.solfege.join("-"), "do-mi-sol");
+  assert.deepEqual(recipe.activities.find((item) => item.activityId === "act_rhythm_1").bindings.durations, [0.5, 0.5, 1]);
+  assert.equal(recipe.activities.find((item) => item.activityId === "act_rhythm_1").bindings.trainingBpm, 80);
 });
 
 test("recipe blocks when a required teaching asset cannot resolve", () => {

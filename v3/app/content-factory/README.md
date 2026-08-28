@@ -1,4 +1,4 @@
-# Animal Bank V3 Content Factory
+# animal band V3 Internal Content Factory
 
 Start from the repository root:
 

@@ -1,0 +1,441 @@
+{
+  "schemaVersion": "2.0.0",
+  "algorithmVersion": "1.1.0",
+  "recipeId": "recipe_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "preparationId": "prep_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "stageId": "stage_1",
+  "generatedAt": "2026-08-28T10:54:25.850Z",
+  "mode": "INTEGRATED",
+  "source": {
+    "learningProfileAlgorithmVersion": "1.0.0",
+    "learningProfileGeneratedAt": "2026-08-28T09:51:31.276Z",
+    "scoreVerifiedAt": "2026-08-28T09:51:25.805Z"
+  },
+  "songContext": {
+    "meter": {
+      "beats": 2,
+      "unit": 4
+    },
+    "bpm": 72
+  },
+  "selection": {
+    "modules": [
+      "rhythm",
+      "solfege"
+    ],
+    "rhythmMaterialIds": [
+      "PAT-02",
+      "PAT-04",
+      "PAT-01"
+    ],
+    "phraseIds": [
+      "phrase_01",
+      "phrase_02"
+    ]
+  },
+  "classFlow": [
+    {
+      "phase": "EXPERIENCE_SONG",
+      "active": true
+    },
+    {
+      "phase": "RHYTHM_LEARNING",
+      "active": true
+    },
+    {
+      "phase": "MELODY_SINGING",
+      "active": true
+    },
+    {
+      "phase": "GROUP_REHEARSAL",
+      "active": true
+    },
+    {
+      "phase": "FINAL_ENSEMBLE",
+      "active": true
+    }
+  ],
+  "activities": [
+    {
+      "activityId": "act_experience_song",
+      "phase": "EXPERIENCE_SONG",
+      "module": "shared",
+      "teachingAssetIds": [],
+      "materialIds": [],
+      "phraseIds": [],
+      "bindings": {
+        "source": "original_audio"
+      }
+    },
+    {
+      "activityId": "act_rhythm_1",
+      "phase": "RHYTHM_LEARNING",
+      "module": "rhythm",
+      "teachingAssetIds": [
+        "TA-RHY-PAT-02"
+      ],
+      "materialIds": [
+        "PAT-02"
+      ],
+      "phraseIds": [],
+      "bindings": {
+        "materialId": "PAT-02",
+        "occurrenceIds": [
+          "PAT-02@m1:m001_n001",
+          "PAT-02@m3:m003_n001",
+          "PAT-02@m5:m005_n001",
+          "PAT-02@m9:m009_n001",
+          "PAT-02@m11:m011_n001",
+          "PAT-02@m13:m013_n001",
+          "PAT-02@m14:m014_n001",
+          "PAT-02@m16:m016_n001",
+          "PAT-02@m19:m019_n001",
+          "PAT-02@m23:m023_n001",
+          "PAT-02@m27:m027_n001",
+          "PAT-02@m31:m031_n001",
+          "PAT-02@m35:m035_n001"
+        ],
+        "notation": "♪♪ ♪♪",
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5
+        ],
+        "chant": [
+          "de",
+          "de",
+          "de",
+          "de"
+        ],
+        "bodyActions": [
+          "CLAP",
+          "CLAP",
+          "CLAP",
+          "CLAP"
+        ],
+        "trainingTempoRef": "simplePatterns",
+        "trainingBpm": 80
+      }
+    },
+    {
+      "activityId": "act_rhythm_2",
+      "phase": "RHYTHM_LEARNING",
+      "module": "rhythm",
+      "teachingAssetIds": [
+        "TA-RHY-PAT-04"
+      ],
+      "materialIds": [
+        "PAT-04"
+      ],
+      "phraseIds": [],
+      "bindings": {
+        "materialId": "PAT-04",
+        "occurrenceIds": [
+          "PAT-04@m15:m015_n001",
+          "PAT-04@m17:m017_n001",
+          "PAT-04@m21:m021_n001",
+          "PAT-04@m25:m025_n001"
+        ],
+        "notation": "♩ ♪♪",
+        "durations": [
+          1,
+          0.5,
+          0.5
+        ],
+        "chant": [
+          "da",
+          "de",
+          "de"
+        ],
+        "bodyActions": [
+          "PAT",
+          "CLAP",
+          "CLAP"
+        ],
+        "trainingTempoRef": "simplePatterns",
+        "trainingBpm": 80
+      }
+    },
+    {
+      "activityId": "act_rhythm_3",
+      "phase": "RHYTHM_LEARNING",
+      "module": "rhythm",
+      "teachingAssetIds": [
+        "TA-RHY-PAT-01"
+      ],
+      "materialIds": [
+        "PAT-01"
+      ],
+      "phraseIds": [],
+      "bindings": {
+        "materialId": "PAT-01",
+        "occurrenceIds": [
+          "PAT-01@m6:m006_n001",
+          "PAT-01@m26:m026_n001"
+        ],
+        "notation": "♩ ♩",
+        "durations": [
+          1,
+          1
+        ],
+        "chant": [
+          "da",
+          "da"
+        ],
+        "bodyActions": [
+          "STOMP",
+          "STOMP"
+        ],
+        "trainingTempoRef": "simplePatterns",
+        "trainingBpm": 80
+      }
+    },
+    {
+      "activityId": "act_phrase_1",
+      "phase": "MELODY_SINGING",
+      "module": "melody_singing",
+      "teachingAssetIds": [
+        "TA-MEL-PHRASE-CORE",
+        "TA-MEL-FEATURE-ASCENDING",
+        "TA-SOL-DEGREE-NAME",
+        "TA-SOL-SCORE-READ",
+        "TA-SING-READY",
+        "TA-SING-TUTOR-CORE"
+      ],
+      "materialIds": [
+        "MEL-MAT-SHORT-PHRASE",
+        "MEL-MAT-ASCENDING"
+      ],
+      "phraseIds": [
+        "phrase_01"
+      ],
+      "bindings": {
+        "phraseId": "phrase_01",
+        "absolutePitches": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          null
+        ],
+        "degrees": [
+          3,
+          4,
+          5,
+          6,
+          5,
+          0
+        ],
+        "octaves": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "solfege": [
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "sol",
+          "rest"
+        ],
+        "lyrics": [
+          "小",
+          "小",
+          "蜡",
+          "蜡",
+          "笔",
+          null
+        ],
+        "restMask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "noteIds": [
+          "m001_n001",
+          "m001_n002",
+          "m001_n003",
+          "m001_n004",
+          "m002_n001",
+          "m002_n002"
+        ],
+        "contour": "MIXED",
+        "startMeasure": 1,
+        "endMeasure": 2,
+        "isVocal": true,
+        "requiresLyrics": true
+      }
+    },
+    {
+      "activityId": "act_phrase_2",
+      "phase": "MELODY_SINGING",
+      "module": "melody_singing",
+      "teachingAssetIds": [
+        "TA-MEL-PHRASE-CORE",
+        "TA-MEL-FEATURE-ASCENDING",
+        "TA-SOL-DEGREE-NAME",
+        "TA-SOL-SCORE-READ",
+        "TA-SING-READY",
+        "TA-SING-TUTOR-CORE"
+      ],
+      "materialIds": [
+        "MEL-MAT-SHORT-PHRASE",
+        "MEL-MAT-ASCENDING"
+      ],
+      "phraseIds": [
+        "phrase_02"
+      ],
+      "bindings": {
+        "phraseId": "phrase_02",
+        "absolutePitches": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          null
+        ],
+        "degrees": [
+          3,
+          4,
+          5,
+          6,
+          5,
+          0
+        ],
+        "octaves": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "solfege": [
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "sol",
+          "rest"
+        ],
+        "lyrics": [
+          "穿",
+          "穿",
+          "花",
+          "花",
+          "衣",
+          null
+        ],
+        "restMask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "noteIds": [
+          "m003_n001",
+          "m003_n002",
+          "m003_n003",
+          "m003_n004",
+          "m004_n001",
+          "m004_n002"
+        ],
+        "contour": "MIXED",
+        "startMeasure": 3,
+        "endMeasure": 4,
+        "isVocal": true,
+        "requiresLyrics": true
+      }
+    },
+    {
+      "activityId": "act_group_rehearsal",
+      "phase": "GROUP_REHEARSAL",
+      "module": "ensemble",
+      "teachingAssetIds": [
+        "TA-ENS-RHY-SING-01"
+      ],
+      "materialIds": [
+        "PAT-02",
+        "PAT-04",
+        "PAT-01"
+      ],
+      "phraseIds": [
+        "phrase_01",
+        "phrase_02"
+      ],
+      "bindings": {
+        "groupA": "Rhythm",
+        "groupB": "Singing"
+      }
+    },
+    {
+      "activityId": "act_final_ensemble",
+      "phase": "FINAL_ENSEMBLE",
+      "module": "ensemble",
+      "teachingAssetIds": [
+        "TA-ENS-RHY-SING-01"
+      ],
+      "materialIds": [
+        "PAT-02",
+        "PAT-04",
+        "PAT-01"
+      ],
+      "phraseIds": [
+        "phrase_01",
+        "phrase_02"
+      ],
+      "bindings": {
+        "performance": "rhythm_plus_singing"
+      }
+    }
+  ],
+  "teachingAssetResolution": {
+    "resolvedAssetIds": [
+      "TA-RHY-PAT-02",
+      "TA-RHY-PAT-04",
+      "TA-RHY-PAT-01",
+      "TA-MEL-PHRASE-CORE",
+      "TA-MEL-FEATURE-ASCENDING",
+      "TA-SOL-DEGREE-NAME",
+      "TA-SOL-SCORE-READ",
+      "TA-SING-READY",
+      "TA-SING-TUTOR-CORE",
+      "TA-ENS-RHY-SING-01"
+    ],
+    "unresolvedRequired": [],
+    "unresolvedOptional": [],
+    "allRequiredResolved": true
+  },
+  "generationStatus": "READY_FOR_ASSETS",
+  "reviewStatus": "NOT_REVIEWED",
+  "warnings": []
+}

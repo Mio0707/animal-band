@@ -9,9 +9,9 @@ export const NAVIGATION = Object.freeze([
 
 export function sidebar(activeRoute) {
   const groups = NAVIGATION.map(({ group, items }) => `<section class="nav-group">${group ? `<small>${escapeHtml(group)}</small>` : ""}${items.map((item) => `<a href="#/${item.route}" class="${activeRoute === item.route ? "active" : ""}"><span>${item.icon}</span>${escapeHtml(item.label)}</a>`).join("")}</section>`).join("");
-  return `<aside class="sidebar"><div class="brand"><img src="assets/avatar-dog.png" alt=""><div><strong>动物银行</strong><span>内容工厂</span></div></div><nav>${groups}</nav><footer><span class="system-dot"></span> 第一阶段 · 内部工具</footer></aside>`;
+  return `<aside class="sidebar"><div class="brand"><img src="assets/avatar-dog.png" alt=""><div><strong>动物乐队</strong><span>内部工作台</span></div></div><nav>${groups}</nav><footer><span class="system-dot"></span> 第一学段 · 开发与审计</footer></aside>`;
 }
 
 export function topHeader(routeLabel) {
-  return `<header class="workspace-header"><button class="sidebar-toggle" data-toggle-sidebar aria-label="切换导航">☰</button><div><small>动物银行 V3</small><strong>${escapeHtml(routeLabel)}</strong></div><span class="environment-badge">本地环境 · V1</span></header>`;
+  return `<header class="workspace-header"><button class="sidebar-toggle" data-toggle-sidebar aria-label="切换导航">☰</button><div><small>动物乐队 V3 · Internal</small><strong>${escapeHtml(routeLabel)}</strong></div><span class="environment-badge">本地环境 · V1</span></header>`;
 }

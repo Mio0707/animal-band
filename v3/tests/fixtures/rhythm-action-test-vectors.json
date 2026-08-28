@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "vectors": [
+    { "materialId": "PAT-01", "durations": [1, 1], "bodyActions": ["STOMP", "STOMP"], "expectedStates": ["STOMP", "STOMP"] },
+    { "materialId": "PAT-02", "durations": [0.5, 0.5, 0.5, 0.5], "bodyActions": ["CLAP", "CLAP", "CLAP", "CLAP"], "expectedStates": ["CLAP", "CLAP", "CLAP", "CLAP"] },
+    { "materialId": "PAT-03", "durations": [0.5, 0.5, 1], "bodyActions": ["CLAP", "CLAP", "PAT"], "expectedStates": ["CLAP", "CLAP", "PAT_THIGHS"] },
+    { "materialId": "PAT-04", "durations": [1, 0.5, 0.5], "bodyActions": ["PAT", "CLAP", "CLAP"], "expectedStates": ["PAT_THIGHS", "CLAP", "CLAP"] },
+    { "materialId": "PAT-05", "durations": [0.25, 0.25, 0.25, 0.25], "bodyActions": ["PAT_LEFT", "PAT_RIGHT", "PAT_LEFT", "PAT_RIGHT"], "expectedStates": ["PAT_LEFT", "PAT_RIGHT", "PAT_LEFT", "PAT_RIGHT"] },
+    { "materialId": "PAT-06", "durations": [0.25, 0.25, 0.5], "bodyActions": ["PAT_LEFT", "PAT_RIGHT", "CLAP"], "expectedStates": ["PAT_LEFT", "PAT_RIGHT", "CLAP"] },
+    { "materialId": "PAT-07", "durations": [0.5, 0.25, 0.25], "bodyActions": ["CLAP", "PAT_LEFT", "PAT_RIGHT"], "expectedStates": ["CLAP", "PAT_LEFT", "PAT_RIGHT"] },
+    { "materialId": "REST", "durations": [1], "bodyActions": ["FREEZE"], "expectedStates": ["STOP"] }
+  ]
+}

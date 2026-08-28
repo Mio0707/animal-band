@@ -1,0 +1,703 @@
+{
+  "schemaVersion": "1.0.0",
+  "algorithmVersion": "1.0.0",
+  "planId": "audio_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "preparationId": "prep_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "recipeId": "recipe_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "sourceRecipeGeneratedAt": "2026-08-28T10:54:25.850Z",
+  "generatedAt": "2026-08-28T10:56:12.681Z",
+  "slots": [
+    {
+      "slotId": "original_audio",
+      "kind": "ORIGINAL_AUDIO",
+      "required": true,
+      "fulfillment": "EXISTING",
+      "requiresReview": false,
+      "existingPath": null,
+      "source": "song.assets.originalAudio"
+    },
+    {
+      "slotId": "rhythm_training:PAT-02",
+      "kind": "RHYTHM_TRAINING",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "materialId": "PAT-02",
+      "activityId": "act_rhythm_1",
+      "spec": {
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "preferredBpm": 80,
+        "minBpm": 60,
+        "maxBpm": 96,
+        "repeatCount": 8,
+        "structure": [
+          "count_in",
+          "pulse",
+          "target_pattern"
+        ]
+      }
+    },
+    {
+      "slotId": "rhythm_training:PAT-04",
+      "kind": "RHYTHM_TRAINING",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "materialId": "PAT-04",
+      "activityId": "act_rhythm_2",
+      "spec": {
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "preferredBpm": 80,
+        "minBpm": 60,
+        "maxBpm": 96,
+        "repeatCount": 8,
+        "structure": [
+          "count_in",
+          "pulse",
+          "target_pattern"
+        ]
+      }
+    },
+    {
+      "slotId": "rhythm_training:PAT-01",
+      "kind": "RHYTHM_TRAINING",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "materialId": "PAT-01",
+      "activityId": "act_rhythm_3",
+      "spec": {
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "preferredBpm": 80,
+        "minBpm": 60,
+        "maxBpm": 96,
+        "repeatCount": 8,
+        "structure": [
+          "count_in",
+          "pulse",
+          "target_pattern"
+        ]
+      }
+    },
+    {
+      "slotId": "reference_pitch:phrase_01",
+      "kind": "REFERENCE_PITCH_OR_PIANO",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "activityId": "act_phrase_1",
+      "phraseId": "phrase_01",
+      "spec": {
+        "phraseId": "phrase_01",
+        "noteIds": [
+          "m001_n001",
+          "m001_n002",
+          "m001_n003",
+          "m001_n004",
+          "m002_n001",
+          "m002_n002"
+        ],
+        "absolutePitches": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          null
+        ],
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "solfege": [
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "sol",
+          "rest"
+        ],
+        "lyrics": [
+          "小",
+          "小",
+          "蜡",
+          "蜡",
+          "笔",
+          null
+        ],
+        "restMask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "sourceBpm": 72
+      }
+    },
+    {
+      "slotId": "solfege_vocal:phrase_01",
+      "kind": "SOLFEGE_VOCAL",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "activityId": "act_phrase_1",
+      "phraseId": "phrase_01",
+      "spec": {
+        "phraseId": "phrase_01",
+        "noteIds": [
+          "m001_n001",
+          "m001_n002",
+          "m001_n003",
+          "m001_n004",
+          "m002_n001",
+          "m002_n002"
+        ],
+        "absolutePitches": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          null
+        ],
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "solfege": [
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "sol",
+          "rest"
+        ],
+        "lyrics": [
+          "小",
+          "小",
+          "蜡",
+          "蜡",
+          "笔",
+          null
+        ],
+        "restMask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "sourceBpm": 72
+      }
+    },
+    {
+      "slotId": "melody_practice:phrase_01",
+      "kind": "MELODY_PRACTICE",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "activityId": "act_phrase_1",
+      "phraseId": "phrase_01",
+      "spec": {
+        "phraseId": "phrase_01",
+        "noteIds": [
+          "m001_n001",
+          "m001_n002",
+          "m001_n003",
+          "m001_n004",
+          "m002_n001",
+          "m002_n002"
+        ],
+        "absolutePitches": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          null
+        ],
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "solfege": [
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "sol",
+          "rest"
+        ],
+        "lyrics": [
+          "小",
+          "小",
+          "蜡",
+          "蜡",
+          "笔",
+          null
+        ],
+        "restMask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "sourceBpm": 72,
+        "structure": [
+          "count_in",
+          "practice_accompaniment"
+        ]
+      }
+    },
+    {
+      "slotId": "reference_vocal:phrase_01",
+      "kind": "REFERENCE_VOCAL",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "activityId": "act_phrase_1",
+      "phraseId": "phrase_01",
+      "spec": {
+        "phraseId": "phrase_01",
+        "noteIds": [
+          "m001_n001",
+          "m001_n002",
+          "m001_n003",
+          "m001_n004",
+          "m002_n001",
+          "m002_n002"
+        ],
+        "absolutePitches": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          null
+        ],
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "solfege": [
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "sol",
+          "rest"
+        ],
+        "lyrics": [
+          "小",
+          "小",
+          "蜡",
+          "蜡",
+          "笔",
+          null
+        ],
+        "restMask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "sourceBpm": 72
+      }
+    },
+    {
+      "slotId": "reference_pitch:phrase_02",
+      "kind": "REFERENCE_PITCH_OR_PIANO",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "activityId": "act_phrase_2",
+      "phraseId": "phrase_02",
+      "spec": {
+        "phraseId": "phrase_02",
+        "noteIds": [
+          "m003_n001",
+          "m003_n002",
+          "m003_n003",
+          "m003_n004",
+          "m004_n001",
+          "m004_n002"
+        ],
+        "absolutePitches": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          null
+        ],
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "solfege": [
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "sol",
+          "rest"
+        ],
+        "lyrics": [
+          "穿",
+          "穿",
+          "花",
+          "花",
+          "衣",
+          null
+        ],
+        "restMask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "sourceBpm": 72
+      }
+    },
+    {
+      "slotId": "solfege_vocal:phrase_02",
+      "kind": "SOLFEGE_VOCAL",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "activityId": "act_phrase_2",
+      "phraseId": "phrase_02",
+      "spec": {
+        "phraseId": "phrase_02",
+        "noteIds": [
+          "m003_n001",
+          "m003_n002",
+          "m003_n003",
+          "m003_n004",
+          "m004_n001",
+          "m004_n002"
+        ],
+        "absolutePitches": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          null
+        ],
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "solfege": [
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "sol",
+          "rest"
+        ],
+        "lyrics": [
+          "穿",
+          "穿",
+          "花",
+          "花",
+          "衣",
+          null
+        ],
+        "restMask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "sourceBpm": 72
+      }
+    },
+    {
+      "slotId": "melody_practice:phrase_02",
+      "kind": "MELODY_PRACTICE",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "activityId": "act_phrase_2",
+      "phraseId": "phrase_02",
+      "spec": {
+        "phraseId": "phrase_02",
+        "noteIds": [
+          "m003_n001",
+          "m003_n002",
+          "m003_n003",
+          "m003_n004",
+          "m004_n001",
+          "m004_n002"
+        ],
+        "absolutePitches": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          null
+        ],
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "solfege": [
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "sol",
+          "rest"
+        ],
+        "lyrics": [
+          "穿",
+          "穿",
+          "花",
+          "花",
+          "衣",
+          null
+        ],
+        "restMask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "sourceBpm": 72,
+        "structure": [
+          "count_in",
+          "practice_accompaniment"
+        ]
+      }
+    },
+    {
+      "slotId": "reference_vocal:phrase_02",
+      "kind": "REFERENCE_VOCAL",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "activityId": "act_phrase_2",
+      "phraseId": "phrase_02",
+      "spec": {
+        "phraseId": "phrase_02",
+        "noteIds": [
+          "m003_n001",
+          "m003_n002",
+          "m003_n003",
+          "m003_n004",
+          "m004_n001",
+          "m004_n002"
+        ],
+        "absolutePitches": [
+          "E4",
+          "F4",
+          "G4",
+          "A4",
+          "G4",
+          null
+        ],
+        "durations": [
+          0.5,
+          0.5,
+          0.5,
+          0.5,
+          1,
+          1
+        ],
+        "solfege": [
+          "mi",
+          "fa",
+          "sol",
+          "la",
+          "sol",
+          "rest"
+        ],
+        "lyrics": [
+          "穿",
+          "穿",
+          "花",
+          "花",
+          "衣",
+          null
+        ],
+        "restMask": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "sourceBpm": 72
+      }
+    },
+    {
+      "slotId": "group_rehearsal:rhythm_group",
+      "kind": "GROUP_REHEARSAL",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "variant": "rhythm_group",
+      "spec": {
+        "rhythmMaterialIds": [
+          "PAT-02",
+          "PAT-04",
+          "PAT-01"
+        ],
+        "phraseIds": [
+          "phrase_01",
+          "phrase_02"
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "bpm": 72
+      }
+    },
+    {
+      "slotId": "group_rehearsal:singing_group",
+      "kind": "GROUP_REHEARSAL",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "variant": "singing_group",
+      "spec": {
+        "rhythmMaterialIds": [
+          "PAT-02",
+          "PAT-04",
+          "PAT-01"
+        ],
+        "phraseIds": [
+          "phrase_01",
+          "phrase_02"
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "bpm": 72
+      }
+    },
+    {
+      "slotId": "group_rehearsal:together",
+      "kind": "GROUP_REHEARSAL",
+      "required": true,
+      "fulfillment": "GENERATE_OR_CACHE",
+      "requiresReview": true,
+      "variant": "together",
+      "spec": {
+        "rhythmMaterialIds": [
+          "PAT-02",
+          "PAT-04",
+          "PAT-01"
+        ],
+        "phraseIds": [
+          "phrase_01",
+          "phrase_02"
+        ],
+        "meter": {
+          "beats": 2,
+          "unit": 4
+        },
+        "bpm": 72
+      }
+    }
+  ],
+  "summary": {
+    "requiredSlotCount": 15,
+    "generationSlotCount": 14,
+    "existingSlotCount": 1
+  },
+  "notes": [
+    "Audio Plan 只定义课堂所需音频，不代表音频已经生成。",
+    "GENERATE_OR_CACHE 槽位必须在 Content Preparation 阶段生成或命中缓存，并在进入 READY 前完成审核。",
+    "课堂 Runtime 不实时调用生成式 AI。"
+  ]
+}

@@ -2,11 +2,21 @@
   "songId": "dongfanghong",
   "title": "东方红",
   "stageId": "stage_1",
-  "cover": null,
-  "originalAudio": null,
-  "scoreImage": "source/score-image.jpg",
-  "draftScore": "recognition/normalized.json",
+  "source": "preset",
+  "assets": {
+    "originalAudio": null,
+    "scoreImage": "data/songs/dongfanghong/source/score-image.jpg"
+  },
   "metadata": {},
+  "processingStatus": "SCORE_DRAFT",
+  "score": {
+    "recognitionStatus": "DRAFT",
+    "verificationStatus": "draft",
+    "draftPath": "data/songs/dongfanghong/recognition/normalized.json",
+    "verifiedPath": null
+  },
+  "learningProfileStatus": "NOT_GENERATED",
+  "audioStatus": "NOT_GENERATED",
   "createdAt": "2026-08-27T00:00:00Z",
-  "updatedAt": "2026-08-27T12:00:00Z"
+  "updatedAt": "2026-08-28T06:53:02.040196Z"
 }
