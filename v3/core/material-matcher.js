@@ -53,6 +53,7 @@ export function matchSongMaterials(score, curriculum, options = {}) {
     songId: score.songId,
     stageId: curriculum.stage_id,
     sourceScoreStatus: score.verificationStatus,
+    sourceScoreVerifiedAt: score.verifiedAt ?? null,
     generatedAt,
     facts: buildScoreFacts(score),
     materials: {
