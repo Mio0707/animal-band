@@ -1,0 +1,8 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://animalbank.local/schemas/audio-asset-manifest.schema.json","title":"Animal Bank Audio Asset Manifest","type":"object","additionalProperties":false,
+  "required":["planId","preparationId","songId","sourcePlanGeneratedAt","assets","updatedAt"],
+  "properties":{
+    "planId":{"type":"string","minLength":1},"preparationId":{"type":"string","minLength":1},"songId":{"type":"string","minLength":1},"sourcePlanGeneratedAt":{"type":["string","null"]},"updatedAt":{"type":"string","minLength":1},
+    "assets":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["slotId","status","path","reviewStatus"],"properties":{"slotId":{"type":"string","minLength":1},"status":{"enum":["MISSING","GENERATING","READY","STALE","FAILED"]},"path":{"type":["string","null"]},"reviewStatus":{"enum":["NOT_REQUIRED","NOT_REVIEWED","REVIEWED"]},"generatedAt":{"type":["string","null"]},"reviewedAt":{"type":["string","null"]},"error":{"type":["string","null"]}}}}
+  }
+}
