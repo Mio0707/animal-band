@@ -1,50 +1,64 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://animalbank.local/schemas/song-learning-profile.schema.json",
-  "title": "SongLearningProfile",
+  "title": "Animal Bank Song Learning Profile V2",
   "type": "object",
   "additionalProperties": false,
-  "required": ["songId", "stage", "scoreId", "modules", "status"],
+  "required": ["schemaVersion","algorithmVersion","songId","stageId","sourceMatchAlgorithmVersion","sourceMatchGeneratedAt","sourceScoreVerifiedAt","generatedAt","generationStatus","reviewStatus","modules","teacherCandidates","limitations"],
   "properties": {
-    "songId": { "type": "string", "minLength": 1 },
-    "stage": { "type": "string", "pattern": "^stage_[0-9]+$" },
-    "scoreId": { "type": "string", "minLength": 1 },
+    "schemaVersion": {"const":"2.0.0"},
+    "algorithmVersion": {"type":"string","minLength":1},
+    "songId": {"type":"string","minLength":1},
+    "stageId": {"const":"stage_1"},
+    "sourceMatchAlgorithmVersion": {"type":"string","minLength":1},
+    "sourceMatchGeneratedAt": {"type":["string","null"]},
+    "sourceScoreVerifiedAt": {"type":["string","null"]},
+    "generatedAt": {"type":"string","minLength":1},
+    "generationStatus": {"const":"READY"},
+    "reviewStatus": {"enum":["NOT_REVIEWED","REVIEWED"]},
     "modules": {
-      "type": "object",
-      "additionalProperties": false,
+      "type":"object","additionalProperties":false,"required":["rhythm","melody","solfege","singing"],
       "properties": {
-        "rhythm": { "$ref": "#/$defs/moduleProfile" },
-        "melody": { "$ref": "#/$defs/moduleProfile" },
-        "solfege": { "$ref": "#/$defs/moduleProfile" },
-        "singing": { "$ref": "#/$defs/moduleProfile" }
+        "rhythm":{"$ref":"#/$defs/rhythmModule"},"melody":{"$ref":"#/$defs/melodyModule"},"solfege":{"$ref":"#/$defs/solfegeModule"},"singing":{"$ref":"#/$defs/singingModule"}
       }
     },
-    "status": { "enum": ["draft", "reviewed", "published"] },
-    "warnings": { "type": "array", "items": { "type": "string" } }
+    "teacherCandidates": {
+      "type":"object","additionalProperties":false,"required":["rhythmMaterialIds","melodyPhraseIds","singingPhraseIds"],
+      "properties": {
+        "rhythmMaterialIds":{"type":"array","items":{"type":"string"}},"melodyPhraseIds":{"type":"array","items":{"type":"string"}},"singingPhraseIds":{"type":"array","items":{"type":"string"}}
+      }
+    },
+    "limitations":{"type":"array","items":{"type":"string"}}
   },
   "$defs": {
-    "moduleProfile": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["available", "materials"],
-      "properties": {
-        "available": { "type": "boolean" },
-        "targets": { "type": "array", "items": { "type": "string" } },
-        "materials": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["materialId", "count", "recommended"],
-            "properties": {
-              "materialId": { "type": "string", "minLength": 1 },
-              "count": { "type": "integer", "minimum": 0 },
-              "recommended": { "type": "boolean" },
-              "phraseIds": { "type": "array", "items": { "type": "string" } }
-            }
-          }
-        }
-      }
+    "recommendation":{"enum":["RECOMMENDED","AVAILABLE","SUPPORT_ONLY","EXPERIENCE_ONLY"]},
+    "targetCandidate": {
+      "type":"object","additionalProperties":false,"required":["targetId","recommendation","reason"],
+      "properties":{"targetId":{"type":"string","minLength":1},"recommendation":{"$ref":"#/$defs/recommendation"},"reason":{"type":"string","minLength":1}}
+    },
+    "materialCandidate": {
+      "type":"object","additionalProperties":true,"required":["materialId","name","occurrenceCount","recommendation","reason","phraseIds","occurrenceIds"],
+      "properties":{"materialId":{"type":"string","minLength":1},"name":{"type":"string","minLength":1},"curriculumLevel":{"type":"string"},"occurrenceCount":{"type":"integer","minimum":0},"recommendation":{"$ref":"#/$defs/recommendation"},"reason":{"type":"string","minLength":1},"reviewRequired":{"type":"boolean"},"phraseIds":{"type":"array","items":{"type":"string"}},"occurrenceIds":{"type":"array","items":{"type":"string"}}}
+    },
+    "phraseCandidate": {
+      "type":"object","additionalProperties":true,"required":["phraseId","recommendation"],
+      "properties":{"phraseId":{"type":"string","minLength":1},"recommendation":{"$ref":"#/$defs/recommendation"},"suitabilityScore":{"type":"number"}}
+    },
+    "rhythmModule": {
+      "type":"object","additionalProperties":false,"required":["available","targets","materials"],
+      "properties":{"available":{"type":"boolean"},"targets":{"type":"array","items":{"$ref":"#/$defs/targetCandidate"}},"materials":{"type":"array","items":{"$ref":"#/$defs/materialCandidate"}}}
+    },
+    "melodyModule": {
+      "type":"object","additionalProperties":false,"required":["available","targets","materials","phraseCandidates"],
+      "properties":{"available":{"type":"boolean"},"targets":{"type":"array","items":{"$ref":"#/$defs/targetCandidate"}},"materials":{"type":"array","items":{"$ref":"#/$defs/materialCandidate"}},"phraseCandidates":{"type":"array","items":{"$ref":"#/$defs/phraseCandidate"}}}
+    },
+    "solfegeModule": {
+      "type":"object","additionalProperties":false,"required":["available","targets","usedDegrees","octaves"],
+      "properties":{"available":{"type":"boolean"},"targets":{"type":"array","items":{"$ref":"#/$defs/targetCandidate"}},"usedDegrees":{"type":"array","items":{"type":"integer","minimum":1,"maximum":7}},"octaves":{"type":"array","items":{"type":"integer"}}}
+    },
+    "singingModule": {
+      "type":"object","additionalProperties":false,"required":["available","targets","phraseCandidates"],
+      "properties":{"available":{"type":"boolean"},"targets":{"type":"array","items":{"$ref":"#/$defs/targetCandidate"}},"phraseCandidates":{"type":"array","items":{"$ref":"#/$defs/phraseCandidate"}}}
     }
   }
 }
