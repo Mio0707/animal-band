@@ -59,6 +59,17 @@ test("manifest paths resolve, files exist, and preload failure falls back to REA
   assert.equal(performerAssetUrl(manifest, "CLAP", failed), `${manifest.basePath}${manifest.states.READY.file}`);
 });
 
+test("学节奏和合奏必须在启动音频前预解码统一动作资源", async () => {
+  const learning = await readFile(`${root}/app/teacher/rhythm-learning-controller.js`, "utf8");
+  const ensemble = await readFile(`${root}/app/teacher/ensemble-activity-v3-controller.js`, "utf8");
+  assert.match(learning, /preloadPerformerAssets/);
+  assert.match(learning, /await performerAssetsReady/);
+  assert.match(learning, /performerAssetUrl\(manifest, state\)/);
+  assert.match(ensemble, /preloadPerformerAssets/);
+  assert.match(ensemble, /await performerAssetsReady;await original\.play/);
+  assert.match(learning, /rhythm-runtime\.js\?v=/);
+});
+
 test("听歌动作通过同一份 Performer Manifest 一一解析到动作图片", async () => {
   const plan = { actions: Object.entries(manifest.actions).map(([actionId, value]) => ({ actionId, label: value.label })) };
   const validation = validateListeningActionManifest(plan, manifest);

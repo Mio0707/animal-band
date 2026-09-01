@@ -148,7 +148,10 @@ export function preloadPerformerAssets(manifest, makeImage = () => new Image()) 
   return Promise.all(Object.entries(manifest?.states ?? {}).map(([state, item]) => new Promise((resolve) => {
     const src = `${manifest.basePath ?? ""}${item.file}`;
     const image = makeImage();
-    image.onload = () => resolve({ state, src, ok: true });
+    image.onload = async () => {
+      try { await image.decode?.(); } catch { /* onload already confirms a usable image */ }
+      resolve({ state, src, ok: true });
+    };
     image.onerror = () => resolve({ state, src, ok: false });
     image.src = src;
   })));

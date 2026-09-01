@@ -1099,21 +1099,17 @@ class Handler(SimpleHTTPRequestHandler):
 
     def end_headers(self) -> None:
         # API responses and mutable song/preparation data must always be fresh.
-        # Bundled JS/CSS, runtime manifests and teaching assets are content
-        # addressed by the deployed build, so allowing the browser to cache
-        # them avoids re-downloading the same large files on every classroom
-        # step (the old global no-store header made navigation feel slow).
+        # Source files use stable, human-readable names, so JS/CSS/HTML/JSON
+        # must revalidate after a deployment. Heavy media may stay cached.
         path = urlparse(self.path).path
-        immutable = (
-            path.startswith("/app/")
-            or path.startswith("/core/")
-            or path.startswith("/assets/")
-            or path.startswith("/data/runtime/")
-            or path.startswith("/data/curriculum/")
-            or path.startswith("/data/teaching-assets/")
-            or path.startswith("/data/gestures/")
-        )
-        self.send_header("Cache-Control", "public, max-age=86400, stale-while-revalidate=3600" if immutable else "no-store")
+        suffix = Path(path).suffix.lower()
+        if suffix in {".html", ".js", ".css", ".json"}:
+            cache_control = "no-cache"
+        elif path.startswith("/assets/") or path.startswith("/deliverables/"):
+            cache_control = "public, max-age=86400, stale-while-revalidate=3600"
+        else:
+            cache_control = "no-store"
+        self.send_header("Cache-Control", cache_control)
         self.send_header("Accept-Ranges", "bytes")
         super().end_headers()
 

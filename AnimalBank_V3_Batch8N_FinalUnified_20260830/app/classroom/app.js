@@ -12,9 +12,9 @@ import { renderStickerArrangementActivity } from "../teacher/pages/classroom-sti
 
 import { bindListenActivity } from "../teacher/listen-activity-controller.js";
 import { bindMelodyTraceActivity } from "../teacher/melody-trace-controller.js";
-import { bindRhythmLearningActivity } from "../teacher/rhythm-learning-controller.js";
+import { bindRhythmLearningActivity } from "../teacher/rhythm-learning-controller.js?v=20260902-rhythm-actions";
 import { bindSingingActivity } from "../teacher/singing-controller.js";
-import { bindEnsembleV3Activity } from "../teacher/ensemble-activity-v3-controller.js";
+import { bindEnsembleV3Activity } from "../teacher/ensemble-activity-v3-controller.js?v=20260902-rhythm-actions";
 import { bindStickerArrangementActivity } from "../teacher/sticker-arrangement-controller.js";
 
 export function parseClassroomLocation(search = "") {

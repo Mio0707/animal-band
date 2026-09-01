@@ -1,5 +1,5 @@
 import { buildRhythmGamePlan, rhythmGameLevelIndexForPattern, rhythmGameSnapshot, rhythmPatternIndexForGameLevel } from "../../core/rhythm-game-runtime.js";
-import { performerAssetUrl } from "../../core/rhythm-runtime.js";
+import { performerAssetUrl, preloadPerformerAssets } from "../../core/rhythm-runtime.js?v=20260902-rhythm-actions";
 import { rhythmSongBodySnapshot } from "../../core/rhythm-song-body-plan.js";
 import { continuousSegmentWindow, segmentIndexAtPlaybackTime } from "../../core/continuous-segment-playback.js";
 
@@ -19,6 +19,7 @@ export async function bindRhythmLearningActivity(root, data) {
   let gamePlan = parseJson(container, "[data-rhythm-game-plan]") ?? buildRhythmGamePlan(patterns, { repeatCount: GAME_REPEAT_COUNT });
   const actionMap = data.rhythmConfig?.actionMap?.mapping ?? {};
   const manifest = data.rhythmConfig?.manifest;
+  const performerAssetsReady = preloadPerformerAssets(manifest);
   const songAudio = container.dataset.songAudioUrl ? new Audio(container.dataset.songAudioUrl) : null;
   if (songAudio) songAudio.preload = "auto";
   let patternIndex = 0;
@@ -269,7 +270,9 @@ export async function bindRhythmLearningActivity(root, data) {
         const title = container.querySelector("[data-body-action-title]");
         if (title) title.textContent = playing ? actionLabel : "跟着 DOG 一起做";
         if (image) {
-          image.src = performerAssetUrl(manifest, playing ? state : "READY") ?? image.src;
+          // Paused/reset views still show the selected Pattern's first/current
+          // body action instead of a generic READY pose.
+          image.src = performerAssetUrl(manifest, state) ?? image.src;
           retriggerBodyMotion(image, action, snap.index);
         }
       }
@@ -324,6 +327,7 @@ export async function bindRhythmLearningActivity(root, data) {
       if (songAudio.currentTime < Number(segment.startSec) || songAudio.currentTime >= Number(segment.endSec)) songAudio.currentTime = Number(segment.startSec);
       songAudio.playbackRate = Number(rate.value || 1);
       try {
+        await performerAssetsReady;
         if (songAudio.readyState === 0) songAudio.load();
         await songAudio.play();
         playing = true;
@@ -332,7 +336,7 @@ export async function bindRhythmLearningActivity(root, data) {
       return;
     }
     if (playing) { elapsed = currentElapsed(); playing = false; draw(); } else {
-      if (step === "chant" || step === "body") await prepareNoteSounds();
+      if (step === "chant" || step === "body") await Promise.all([prepareNoteSounds(), performerAssetsReady]);
       else { const context = ensureSoundContext(); try { await context?.resume?.(); } catch { /* browser autoplay policy */ } }
       startedAt = performance.now(); playing = true; draw();
     }
@@ -347,6 +351,7 @@ export async function bindRhythmLearningActivity(root, data) {
     songAudio.currentTime = Number(songSegment()?.startSec ?? 0);
     songAudio.playbackRate = Number(rate.value || 1);
     try {
+      await performerAssetsReady;
       if (songAudio.readyState === 0) songAudio.load();
       await songAudio.play();
       playing = true;
