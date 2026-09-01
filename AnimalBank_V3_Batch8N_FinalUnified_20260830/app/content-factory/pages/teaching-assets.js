@@ -13,7 +13,7 @@ function rhythmPreview(asset, library) {
   const bpm = library.trainingTempoPolicy?.[asset.trainingTempoRef]?.preferredBpm ?? 80;
   return `<div class="rhythm-knowledge-preview" data-rhythm-knowledge-preview data-preview-metadata="${escapeHtml(asset.previewMetadata)}" data-action-labels="${escapeHtml(JSON.stringify(asset.bodyActionsZh ?? asset.bodyActions ?? []))}" data-preview-bpm="${escapeHtml(bpm)}">
     <div class="rhythm-preview-performer"><img data-rhythm-preview-performer alt="${escapeHtml(asset.materialId)} 小狗动作预览"><strong data-rhythm-preview-action>准备</strong></div>
-    <audio preload="metadata" src="${escapeHtml(asset.previewAudio)}" data-rhythm-preview-audio></audio>
+    <audio preload="auto" src="${escapeHtml(asset.previewAudio)}" data-rhythm-preview-audio></audio>
     <button class="button compact" type="button" data-rhythm-preview-play>▶ 试听音频与动作</button>
   </div>`;
 }

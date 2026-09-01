@@ -50,10 +50,21 @@ test("知识库页面支持同步试听节奏音频和小狗动作", async () =>
   assert.match(page, /试听音频与动作/);
   assert.match(controller, /previewMetadata/);
   assert.match(controller, /requestAnimationFrame/);
+  assert.match(controller, /preloadImage/);
+  assert.match(controller, /image\.decode/);
+  assert.match(controller, /await prepare\(preview\)/);
   assert.match(controller, /rhythmPerformerManifest/);
   assert.match(teacherPage, /data-rhythm-knowledge-preview/);
   assert.match(teacherPage, /data-rhythm-preview-audio/);
   assert.match(teacherApp, /bindRhythmKnowledgePreviews/);
+});
+
+test("知识库动作图片在音频播放前完成预加载和解码", async () => {
+  const manifest = await json("data/runtime/rhythm/rhythm-performer-manifest.json");
+  for (const [state, entry] of Object.entries(manifest.states)) {
+    assert.match(entry.file, /\.webp$/, `${state} 应使用轻量 WebP`);
+    await access(resolve(ROOT, manifest.basePath.replace(/^\//, ""), entry.file));
+  }
 });
 
 test("歌曲节奏匹配严格限制在单个小节内，并允许同一标准 PAT 重复命中", async () => {

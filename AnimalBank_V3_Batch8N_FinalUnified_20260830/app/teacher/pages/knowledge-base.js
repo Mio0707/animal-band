@@ -15,7 +15,7 @@ function rhythmPreview(asset, library) {
   const labels = JSON.stringify(asset.bodyActionsZh ?? asset.bodyActions ?? []);
   return `<div class="knowledge-rhythm-preview" data-rhythm-knowledge-preview data-preview-metadata="${escapeHtml(asset.previewMetadata)}" data-action-labels="${escapeHtml(labels)}" data-preview-bpm="${escapeHtml(bpm)}">
     <div class="knowledge-rhythm-performer rhythm-preview-performer"><img data-rhythm-preview-performer alt="${escapeHtml(asset.materialId)} 小狗动作预览"><strong data-rhythm-preview-action>准备</strong></div>
-    <audio preload="metadata" src="${escapeHtml(asset.previewAudio)}" data-rhythm-preview-audio></audio>
+    <audio preload="auto" src="${escapeHtml(asset.previewAudio)}" data-rhythm-preview-audio></audio>
     <button class="button knowledge-preview-button" type="button" data-rhythm-preview-play>▶ 试听音频与动作</button>
   </div>`;
 }
