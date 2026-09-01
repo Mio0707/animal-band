@@ -1,0 +1,51 @@
+{
+  "preparationId": "prep_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "selectedActivities": [
+    "listen",
+    "melody_trace",
+    "rhythm_learning",
+    "singing",
+    "ensemble",
+    "sticker_arrangement"
+  ],
+  "lessonRecipeId": "recipe_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "lessonRecipeStatus": "READY",
+  "recipeReviewStatus": "REVIEWED",
+  "readinessStatus": "CURRENT",
+  "teacherAdjustments": {
+    "recipeReviewHistory": [
+      {
+        "recipeId": "recipe_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+        "recipeGeneratedAt": "2026-08-30T04:20:40.061Z",
+        "reviewedAt": "2026-08-30T04:20:46.294683Z",
+        "superseded": true,
+        "reason": "song_pipeline_changed"
+      },
+      {
+        "recipeId": "recipe_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+        "recipeGeneratedAt": "2026-08-31T10:27:37.247Z",
+        "reviewedAt": "2026-08-31T10:28:00.607405Z",
+        "superseded": true,
+        "reason": "recipe_regenerated"
+      },
+      {
+        "recipeId": "recipe_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+        "recipeGeneratedAt": "2026-08-31T13:09:01.707Z",
+        "reviewedAt": "2026-08-31T13:09:04.135705Z",
+        "superseded": true,
+        "reason": "recipe_regenerated"
+      }
+    ],
+    "recipeReviewedAt": "2026-08-31T13:15:33.637762Z",
+    "recipeReview": {
+      "recipeId": "recipe_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+      "recipeGeneratedAt": "2026-08-31T13:11:05.460Z",
+      "reviewedAt": "2026-08-31T13:15:33.637762Z"
+    }
+  },
+  "status": "READY",
+  "isActive": true,
+  "createdAt": "2026-08-28T08:46:46.691839Z",
+  "updatedAt": "2026-08-31T13:48:24.087746Z"
+}

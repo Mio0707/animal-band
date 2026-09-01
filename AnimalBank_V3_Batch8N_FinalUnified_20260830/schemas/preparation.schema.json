@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animalbank.local/schemas/preparation.schema.json",
+  "title": "Preparation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "preparationId",
+    "songId",
+    "selectedActivities",
+    "lessonRecipeId",
+    "lessonRecipeStatus",
+    "recipeReviewStatus",
+    "readinessStatus",
+    "teacherAdjustments",
+    "status",
+    "isActive",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "preparationId": {
+      "type": "string",
+      "pattern": "^prep_[A-Za-z0-9_-]+$"
+    },
+    "songId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+    },
+    "selectedActivities": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "listen",
+          "melody_trace",
+          "rhythm_learning",
+          "singing",
+          "ensemble",
+          "sticker_arrangement"
+        ]
+      }
+    },
+    "lessonRecipeId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lessonRecipeStatus": {
+      "enum": [
+        "NOT_GENERATED",
+        "READY",
+        "BLOCKED",
+        "STALE"
+      ]
+    },
+    "recipeReviewStatus": {
+      "enum": [
+        "NOT_REVIEWED",
+        "REVIEWED"
+      ]
+    },
+    "readinessStatus": {
+      "enum": [
+        "NOT_EVALUATED",
+        "CURRENT",
+        "STALE"
+      ]
+    },
+    "teacherAdjustments": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "status": {
+      "enum": [
+        "DRAFT",
+        "READY"
+      ]
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "createdAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "2.0.0",
+  "songId": "dongfanghong",
+  "sourceScoreVerifiedAt": "2026-08-31T14:27:05.314Z",
+  "updatedAt": "2026-09-01T01:31:37.981991Z",
+  "calibration": {
+    "startMeasure": 1,
+    "endMeasure": 4,
+    "startSec": 48.453,
+    "endSec": 55.28
+  },
+  "anchors": [],
+  "segments": [
+    {
+      "segmentId": "lesson_segment_m005_m008",
+      "startMeasure": 5,
+      "endMeasure": 8,
+      "lessonSegmentId": "lesson_segment_m005_m008",
+      "startSec": 55.28,
+      "endSec": 62.7,
+      "source": "teacher"
+    },
+    {
+      "segmentId": "lesson_segment_m009_m012",
+      "startMeasure": 9,
+      "endMeasure": 12,
+      "lessonSegmentId": "lesson_segment_m009_m012",
+      "startSec": 62.9,
+      "endSec": 68.93,
+      "source": "teacher"
+    },
+    {
+      "segmentId": "lesson_segment_m013_m016",
+      "startMeasure": 13,
+      "endMeasure": 16,
+      "lessonSegmentId": "lesson_segment_m013_m016",
+      "startSec": 70.01,
+      "endSec": 77.0,
+      "source": "teacher"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": "1.2.0",
+  "policyId": "stage1-rhythm-runtime-visual-policy-v1_2",
+  "sourceOfTeachingFlow": "data/teaching-assets/stage1-teaching-assets.json#rhythmTeachingPolicy.runtimeFlow",
+  "stateBehavior": {
+    "LISTEN": {
+      "performerState": "LISTEN",
+      "showNotation": true,
+      "showChant": false,
+      "playTargetRhythmDemo": true
+    },
+    "WATCH_DOG": {
+      "performerStateSource": "bodyActions",
+      "showNotation": true,
+      "showChant": true,
+      "syncImageToTimeline": true
+    },
+    "CHANT": {
+      "performerState": "READY",
+      "showNotation": true,
+      "showChant": true,
+      "highlightCurrentEvent": true,
+      "syncImageToTimeline": true
+    },
+    "BODY_PLAY": {
+      "performerStateSource": "bodyActions",
+      "showNotation": true,
+      "showChant": true,
+      "highlightCurrentEvent": true,
+      "syncImageToTimeline": true
+    },
+    "PRACTICE": {
+      "performerStateSource": "bodyActions",
+      "showNotation": true,
+      "showChant": "fade_by_round",
+      "syncImageToTimeline": true
+    },
+    "SONG_PLAY": {
+      "performerStateSource": "bodyActions",
+      "showNotation": true,
+      "showChant": false,
+      "syncImageToTimeline": true,
+      "audioSource": "original_song"
+    },
+    "DONE": {
+      "performerState": "DONE",
+      "showNotation": false,
+      "showChant": false
+    }
+  },
+  "timing": {
+    "timeBase": "beats",
+    "eventTimeRule": "cumulative_duration",
+    "returnToReadyBetweenEvents": false,
+    "finalState": "STOP"
+  },
+  "audioSync": {
+    "whenTrainingAudioReady": "audio_current_time_master_clock",
+    "whenOriginalSongReady": "song_audio_current_time_master_clock",
+    "previewFallback": "bpm_clock_only_when_audio_missing",
+    "cueMetadataSource": "lesson-recipe.rhythm.bindings.patterns[].previewMetadata",
+    "countInBehavior": "no_pattern_event_before_patternStartBeat",
+    "sharedClockConsumers": [
+      "performer_state",
+      "notation_highlight",
+      "chant_highlight",
+      "round_counter"
+    ]
+  }
+}

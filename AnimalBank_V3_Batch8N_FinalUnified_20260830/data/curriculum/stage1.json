@@ -1,0 +1,909 @@
+{
+  "schema_version": "1.0.0",
+  "library_id": "animalbank_stage1_curriculum_v1",
+  "title": "Animal Bank 第一学段（1–2年级）音乐学习 Library V1.0",
+  "stage_id": "stage_1",
+  "grades": [
+    1,
+    2
+  ],
+  "course_form": "唱游·音乐",
+  "status": "frozen_for_v3_p0",
+  "product_scope": {
+    "p0_modules": [
+      "rhythm",
+      "melody",
+      "solfege",
+      "singing"
+    ],
+    "supporting_modules": [
+      "expression_aural"
+    ],
+    "experience_modules": [
+      "timbre",
+      "structure"
+    ],
+    "cross_module": [
+      "ensemble",
+      "creative_practice"
+    ],
+    "teacher_ui_grouping": [
+      "Rhythm",
+      "Melody & Singing"
+    ]
+  },
+  "principles": {
+    "learning_path": [
+      "listen",
+      "imitate",
+      "sing",
+      "move",
+      "read_simple_symbols",
+      "apply_in_song",
+      "cooperate",
+      "make_short_variation"
+    ],
+    "library_layers": {
+      "curriculum_targets": "回答1–2年级应该形成什么能力",
+      "machine_materials": "回答Verified Score JSON中有哪些可被程序识别、匹配并拿来教学的音乐材料"
+    }
+  },
+  "modules": {
+    "rhythm": {
+      "status": "frozen",
+      "teaching_language": {
+        "quarter_note": "da",
+        "eighth_note": "de",
+        "sixteenth_note": "di",
+        "rest": "kong"
+      },
+      "targets": {
+        "core": [
+          {
+            "id": "RHY-12-BEAT-01",
+            "name": "稳定均拍",
+            "description": "能够随音乐找到并用踏步、拍腿、点头、拍手等动作保持基本稳定的共同拍。"
+          },
+          {
+            "id": "RHY-12-TEMPO-01",
+            "name": "感受并跟随速度",
+            "description": "能够听辨明显快慢，并根据音乐速度调整身体动作。"
+          },
+          {
+            "id": "RHY-12-DURATION-01",
+            "name": "基本时值长短关系",
+            "description": "通过听、唱、动作和符号，感知并表现全音符、二分音符、四分音符、八分音符、十六分音符的长短关系。"
+          },
+          {
+            "id": "RHY-12-CHANT-01",
+            "name": "使用时值唱名读节奏",
+            "description": "能够看简单节奏唱出、听后模仿，并在唱熟后转为身体或打击乐演奏。"
+          },
+          {
+            "id": "RHY-12-REST-01",
+            "name": "休止与准确返回",
+            "description": "理解休止也有时值长度，能够身体停止，并在休止结束后准确返回共同拍。",
+            "sequence": [
+              "MOVE",
+              "FREEZE",
+              "RETURN"
+            ]
+          },
+          {
+            "id": "RHY-12-GROUP-02",
+            "name": "两拍组织",
+            "grouping": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": "RHY-12-GROUP-03",
+            "name": "三拍组织",
+            "grouping": [
+              1,
+              2,
+              3
+            ]
+          },
+          {
+            "id": "RHY-12-GROUP-04",
+            "name": "四拍组织",
+            "grouping": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "id": "RHY-12-MEMORY-01",
+            "name": "节奏记忆",
+            "description": "能够听后模仿并记住1–4 beat的简单节奏，在Call & Response中保持基本节拍。"
+          },
+          {
+            "id": "RHY-12-ACCOMP-01",
+            "name": "歌曲伴奏应用",
+            "description": "能够把已学简单Pattern放入真实歌曲，用声势、身体打击乐或简单打击乐器伴奏。"
+          },
+          {
+            "id": "RHY-12-ENSEMBLE-01",
+            "name": "简单合作与合奏",
+            "description": "能够根据Cue进入、知道自己的轮次、与同伴一起结束。",
+            "allowed_forms": [
+              "A组→B组轮流",
+              "A问→B答",
+              "A=Stable Pulse, B=Very Simple Pattern"
+            ]
+          }
+        ],
+        "progression": [
+          "RHY-12-PAT-05",
+          "RHY-12-PAT-06",
+          "RHY-12-PAT-07"
+        ],
+        "experience_extension": [
+          "RHY-12-PAT-08"
+        ]
+      },
+      "material_catalog": [
+        {
+          "id": "PAT-01",
+          "name": "一拍一次",
+          "level": "core",
+          "notation": "♩ ♩",
+          "chant": [
+            "da",
+            "da"
+          ],
+          "durations": [
+            1,
+            1
+          ]
+        },
+        {
+          "id": "PAT-02",
+          "name": "一拍两次",
+          "level": "core",
+          "notation": "♪♪ ♪♪",
+          "chant": [
+            "de",
+            "de",
+            "de",
+            "de"
+          ],
+          "durations": [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "id": "PAT-03",
+          "name": "前密后疏",
+          "level": "core",
+          "notation": "♪♪ ♩",
+          "chant": [
+            "de",
+            "de",
+            "da"
+          ],
+          "durations": [
+            0.5,
+            0.5,
+            1
+          ]
+        },
+        {
+          "id": "PAT-04",
+          "name": "前疏后密",
+          "level": "core",
+          "notation": "♩ ♪♪",
+          "chant": [
+            "da",
+            "de",
+            "de"
+          ],
+          "durations": [
+            1,
+            0.5,
+            0.5
+          ]
+        },
+        {
+          "id": "PAT-05",
+          "name": "一拍四次",
+          "level": "core_progression",
+          "notation": "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯",
+          "chant": [
+            "di",
+            "di",
+            "di",
+            "di"
+          ],
+          "durations": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "id": "PAT-06",
+          "name": "前十六型",
+          "level": "progression",
+          "notation": "𝅘𝅥𝅯𝅘𝅥𝅯♪",
+          "chant": [
+            "di",
+            "di",
+            "de"
+          ],
+          "durations": [
+            0.25,
+            0.25,
+            0.5
+          ]
+        },
+        {
+          "id": "PAT-07",
+          "name": "后十六型",
+          "level": "progression",
+          "notation": "♪𝅘𝅥𝅯𝅘𝅥𝅯",
+          "chant": [
+            "de",
+            "di",
+            "di"
+          ],
+          "durations": [
+            0.5,
+            0.25,
+            0.25
+          ]
+        },
+        {
+          "id": "PAT-08",
+          "name": "小切分体验",
+          "level": "experience_extension",
+          "notation": "♪ ♩ ♪",
+          "chant": [
+            "de",
+            "da",
+            "de"
+          ],
+          "durations": [
+            0.5,
+            1,
+            0.5
+          ],
+          "teaching_note": "只要求能听、能唱、能模仿、能身体表现，不要求解释切分概念。"
+        }
+      ],
+      "capability_path": [
+        "HEAR",
+        "CHANT",
+        "IMITATE",
+        "BODY_PLAY",
+        "REPEAT",
+        "SONG_PLAY",
+        "COOPERATE"
+      ]
+    },
+    "melody": {
+      "targets": {
+        "core": [
+          {
+            "id": "MEL-12-HILO-01",
+            "name": "分辨高与低",
+            "description": "通过听觉和身体动作分辨明显的高音与低音。"
+          },
+          {
+            "id": "MEL-12-ORDER-01",
+            "name": "感受音高顺序",
+            "description": "能够感知并表现越来越高、越来越低、保持差不多。"
+          },
+          {
+            "id": "MEL-12-CONTOUR-01",
+            "name": "旋律走向",
+            "allowed_contours": [
+              "UP",
+              "DOWN",
+              "LEVEL",
+              "MIXED"
+            ],
+            "description": "能够听辨、模仿和表现短旋律中的基本走向。"
+          },
+          {
+            "id": "MEL-12-MATCH-01",
+            "name": "听后模唱",
+            "learning_path": [
+              "LISTEN",
+              "COPY",
+              "CHECK_BY_EAR",
+              "REPEAT"
+            ]
+          },
+          {
+            "id": "MEL-12-PHRASE-01",
+            "name": "短旋律乐句",
+            "description": "能够听、记忆并模唱短小旋律乐句。"
+          },
+          {
+            "id": "MEL-12-REPEAT-01",
+            "name": "重复音/重复旋律感知",
+            "description": "能够发现同一个音重复，或相同/相似短旋律再次出现。"
+          },
+          {
+            "id": "MEL-12-ASC-DESC-01",
+            "name": "上行/下行演唱",
+            "description": "能够跟随示范唱出简单上行、下行音组，并用动作辅助音高变化。"
+          }
+        ],
+        "progression": [
+          {
+            "id": "MEL-12-PITCH-GROUP-01",
+            "name": "小音组快速识读",
+            "description": "能够把连续的2–3个音作为一个小音组识读和模唱。"
+          }
+        ]
+      },
+      "pitch_materials": [
+        {
+          "id": "PITCH-SET-DMS",
+          "name": "do–mi–sol音组",
+          "level": "core_implementation_material",
+          "degrees": [
+            1,
+            3,
+            5
+          ],
+          "solfege": [
+            "do",
+            "mi",
+            "sol"
+          ],
+          "uses": [
+            "音高记忆",
+            "简单接唱",
+            "短旋律编创",
+            "身体高低映射"
+          ]
+        },
+        {
+          "id": "PITCH-SCALE-7",
+          "name": "基本七音唱名",
+          "level": "core_recognition",
+          "degrees": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "solfege": [
+            "do",
+            "re",
+            "mi",
+            "fa",
+            "sol",
+            "la",
+            "si"
+          ]
+        },
+        {
+          "id": "PITCH-OCTAVE-VARIANT",
+          "name": "高/中/低音区同名音",
+          "level": "progression",
+          "schema": {
+            "degree": "1..7",
+            "octave": [
+              -1,
+              0,
+              1
+            ]
+          }
+        }
+      ],
+      "machine_materials": [
+        {
+          "id": "MEL-MAT-REPEAT-NOTE",
+          "name": "重复音",
+          "match_type": "deterministic",
+          "rule": "连续两个及以上非休止音，degree与octave均相同。"
+        },
+        {
+          "id": "MEL-MAT-ASCENDING",
+          "name": "简单上行",
+          "match_type": "semi_deterministic",
+          "rule": "连续短音组总体向上，至少发生一次真实升高，不允许出现明显反向大跳；P0阈值由实现层配置。"
+        },
+        {
+          "id": "MEL-MAT-DESCENDING",
+          "name": "简单下行",
+          "match_type": "semi_deterministic",
+          "rule": "与简单上行相反；P0阈值由实现层配置。"
+        },
+        {
+          "id": "MEL-MAT-LEVEL",
+          "name": "平稳/重复为主",
+          "match_type": "hybrid",
+          "rule": "P0可只识别纯重复音，复杂平稳感由人工标签补充。"
+        },
+        {
+          "id": "MEL-MAT-DMS",
+          "name": "do-mi-sol音组片段",
+          "match_type": "deterministic_plus_review",
+          "rule": "片段只使用degree 1/3/5，并具有足够重复或清晰短句特征。"
+        },
+        {
+          "id": "MEL-MAT-SHORT-PHRASE",
+          "name": "适龄短旋律候选",
+          "match_type": "parameterized",
+          "output_fields": [
+            "phraseId",
+            "startMeasure",
+            "endMeasure",
+            "pitchRangeSemitones",
+            "noteCount",
+            "contour",
+            "degrees"
+          ],
+          "requires_human_review": true
+        },
+        {
+          "id": "MEL-MAT-SIMILAR-PHRASE",
+          "name": "相同/相似乐句",
+          "level": "progression",
+          "match_type": "future_algorithm_or_manual",
+          "p0_implementation": "允许人工标注similarToPhraseId，不做复杂旋律相似度算法。"
+        }
+      ]
+    },
+    "solfege": {
+      "targets": {
+        "core": [
+          {
+            "id": "SOL-12-NAME-01",
+            "name": "基本唱名",
+            "degree_to_solfege": {
+              "1": "do",
+              "2": "re",
+              "3": "mi",
+              "4": "fa",
+              "5": "sol",
+              "6": "la",
+              "7": "si"
+            },
+            "display_note": "如需严格对应教材可通过displayLabel显示xi；产品内部统一使用si。"
+          },
+          {
+            "id": "SOL-12-DEGREE-01",
+            "name": "唱名与简谱数字对应",
+            "description": "建立数字音级↔唱名↔实际音高之间的基本联系。"
+          },
+          {
+            "id": "SOL-12-ORDER-01",
+            "name": "音阶顺序",
+            "description": "能够按顺序唱出基本音阶，并感受上行、下行。"
+          },
+          {
+            "id": "SOL-12-READ-01",
+            "name": "简单乐谱识读",
+            "learning_path": [
+              "先看节奏",
+              "再看音高",
+              "用唱名唱",
+              "加入歌词"
+            ]
+          }
+        ],
+        "progression": [
+          {
+            "id": "SOL-12-OCTAVE-01",
+            "name": "高低音加点",
+            "description": "知道简谱数字上方/下方的点表示同一唱名处在更高/更低音区。"
+          },
+          {
+            "id": "SOL-12-AHEAD-01",
+            "name": "提前看谱",
+            "description": "初步形成眼睛走在声音前面的读谱习惯。"
+          }
+        ]
+      }
+    },
+    "singing": {
+      "targets": {
+        "core": [
+          {
+            "id": "SING-12-POSTURE-01",
+            "name": "正确歌唱姿势"
+          },
+          {
+            "id": "SING-12-NATURAL-01",
+            "name": "自然声音",
+            "avoid": [
+              "喊唱",
+              "挤压",
+              "刻意追求成人化音色"
+            ]
+          },
+          {
+            "id": "SING-12-PITCH-01",
+            "name": "基本音准",
+            "learning_path": [
+              "听示范",
+              "模唱",
+              "与集体保持基本相同音高"
+            ]
+          },
+          {
+            "id": "SING-12-RHYTHM-01",
+            "name": "歌词节奏基本正确",
+            "criteria": [
+              "歌词进入位置",
+              "音符长短",
+              "休止"
+            ]
+          },
+          {
+            "id": "SING-12-LYRIC-01",
+            "name": "词曲完整对应",
+            "learning_path": [
+              "SOLFEGE",
+              "NEUTRAL_SYLLABLE_OR_HUMMING_OPTIONAL",
+              "LYRICS"
+            ]
+          },
+          {
+            "id": "SING-12-FOLLOW-01",
+            "name": "一句一跟",
+            "pattern": [
+              "系统/老师唱一句",
+              "儿童跟一句"
+            ]
+          },
+          {
+            "id": "SING-12-CALL-01",
+            "name": "接唱/问答",
+            "forms": [
+              "老师→学生",
+              "A组→B组",
+              "系统→全班"
+            ]
+          },
+          {
+            "id": "SING-12-UNISON-01",
+            "name": "齐唱与共同进入",
+            "criteria": [
+              "共同开始",
+              "与同伴齐唱",
+              "根据Cue停止",
+              "基本保持统一速度和歌曲进程"
+            ]
+          },
+          {
+            "id": "SING-12-BREATH-01",
+            "name": "基础换气与气息",
+            "contextual": true,
+            "experiences": [
+              "短促",
+              "连贯",
+              "悠长"
+            ]
+          },
+          {
+            "id": "SING-12-EXPRESSION-01",
+            "name": "简单有表情演唱",
+            "dimensions": [
+              "轻/响",
+              "快/慢",
+              "连贯/跳跃",
+              "情绪与表情"
+            ]
+          }
+        ],
+        "progression": [
+          {
+            "id": "SING-12-INDEPENDENT-01",
+            "name": "短句独立演唱",
+            "description": "在充分听唱和模仿后，能够独立完成一个短小目标乐句。"
+          }
+        ]
+      },
+      "tutor_p0_flow": [
+        "LISTEN",
+        "FOLLOW",
+        "SOLFEGE",
+        "CONTOUR",
+        "LYRICS",
+        "SING"
+      ]
+    },
+    "expression_aural": {
+      "targets": {
+        "core": [
+          {
+            "id": "EXP-12-DYN-01",
+            "name": "强弱",
+            "concepts": [
+              "响",
+              "轻"
+            ]
+          },
+          {
+            "id": "EXP-12-TEMPO-01",
+            "name": "快慢",
+            "shared_with": "RHY-12-TEMPO-01"
+          },
+          {
+            "id": "EXP-12-CHARACTER-01",
+            "name": "音乐情绪与表现"
+          }
+        ],
+        "experience_progression": [
+          {
+            "id": "EXP-12-ARTICULATION-01",
+            "name": "连贯/跳跃体验",
+            "concepts": [
+              "连贯",
+              "短促/跳跃"
+            ]
+          }
+        ]
+      }
+    },
+    "timbre": {
+      "targets": {
+        "experience": [
+          {
+            "id": "TIM-12-HUMAN-01",
+            "name": "人声差异"
+          },
+          {
+            "id": "TIM-12-INST-01",
+            "name": "乐器/生活声音差异",
+            "learning_actions": [
+              "听",
+              "比较",
+              "描述",
+              "模仿"
+            ]
+          },
+          {
+            "id": "TIM-12-MIMIC-01",
+            "name": "模仿音色"
+          }
+        ]
+      }
+    },
+    "structure": {
+      "targets": {
+        "experience": [
+          {
+            "id": "STR-12-REPEAT-01",
+            "name": "重复"
+          },
+          {
+            "id": "STR-12-CONTRAST-01",
+            "name": "明显变化",
+            "examples": [
+              "前后不一样",
+              "声音变强/变弱",
+              "速度变化",
+              "旋律明显变化"
+            ]
+          },
+          {
+            "id": "STR-12-CALL-RESPONSE-01",
+            "name": "问答结构"
+          }
+        ]
+      }
+    },
+    "creative_practice": {
+      "allowed": [
+        "选择已有音高",
+        "给已有节奏填入音高",
+        "用少量音编短旋律",
+        "改变短音组",
+        "问答式即兴"
+      ],
+      "recommended_min_flow": [
+        "已有节拍/节奏",
+        "选择少量音高",
+        "试听",
+        "调整",
+        "唱/奏出来"
+      ],
+      "not_required": [
+        "复杂和声",
+        "和弦进行",
+        "调式分析",
+        "长篇作曲",
+        "复杂多声部写作"
+      ]
+    },
+    "ensemble": {
+      "targets": {
+        "core": [
+          {
+            "id": "ENS-12-CUE-01",
+            "name": "听Cue进入与结束"
+          },
+          {
+            "id": "ENS-12-TURN-01",
+            "name": "轮流",
+            "pattern": "A→B"
+          },
+          {
+            "id": "ENS-12-CALL-01",
+            "name": "问答",
+            "pattern": "A问→B答"
+          },
+          {
+            "id": "ENS-12-RHY-SING-01",
+            "name": "节奏+演唱双组合作",
+            "role_plan": {
+              "group_a": "Rhythm",
+              "group_b": "Singing"
+            },
+            "criteria": [
+              "知道自己的角色",
+              "能按Cue进入",
+              "保持基本共同速度",
+              "一起结束"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "melody_teaching_asset_schema": {
+    "materialId": "MEL_PHRASE_001",
+    "sourcePhraseId": "phrase_01",
+    "degrees": [
+      1,
+      3,
+      5,
+      3
+    ],
+    "octaves": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "durations": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "solfege": [
+      "do",
+      "mi",
+      "sol",
+      "mi"
+    ],
+    "lyrics": [
+      "..."
+    ],
+    "contour": "up_then_down",
+    "referenceVocal": "...",
+    "solfegeVocal": "...",
+    "practiceAudio": "...",
+    "countIn": "...",
+    "practiceTempo": 72
+  },
+  "score_matcher_capability": {
+    "can_determine_or_assist": [
+      "音符音高",
+      "音符时值",
+      "休止",
+      "小节",
+      "唱名",
+      "高低八度",
+      "重复音",
+      "简单上行",
+      "简单下行",
+      "do-mi-sol音组",
+      "音域",
+      "短旋律候选",
+      "相同/高相似旋律（后续）"
+    ],
+    "cannot_determine_from_score_alone": [
+      "孩子是否唱准",
+      "声音是否自然",
+      "气息是否合适",
+      "歌曲情绪",
+      "音色特点",
+      "是否适合某种表情处理",
+      "某段是否教学体验良好"
+    ],
+    "requires": [
+      "Teaching Asset",
+      "Human Review",
+      "或Classroom Runtime"
+    ]
+  },
+  "stage1_not_core": [
+    "精确BPM数值理解",
+    "复杂乐理定义背诵",
+    "大量音符书写",
+    "复杂切分分析",
+    "复杂复合拍理论",
+    "长Pattern独立记忆",
+    "3–4个真正独立声部",
+    "复杂音程名称和计算",
+    "和弦/和声理论",
+    "调式调性系统分析",
+    "复杂转调",
+    "复杂五线谱理论",
+    "大跨度视唱训练",
+    "成人声乐技术",
+    "复杂多声部合唱",
+    "复杂曲式分析",
+    "长篇旋律默写",
+    "以术语测试代替音乐实践"
+  ],
+  "p0_classroom_flow": [
+    "感受歌曲",
+    "Rhythm Learning",
+    "Melody / Solfege / Singing",
+    "Group Rehearsal",
+    "Rhythm + Singing Ensemble"
+  ],
+  "teaching_asset_build_order": [
+    {
+      "step": 1,
+      "module": "rhythm",
+      "assets": [
+        "固定Body Action",
+        "notation",
+        "chant",
+        "count-in",
+        "training audio"
+      ]
+    },
+    {
+      "step": 2,
+      "module": "melody",
+      "assets": [
+        "contour visual",
+        "score display",
+        "solfege",
+        "reference pitch/piano",
+        "reference vocal"
+      ]
+    },
+    {
+      "step": 3,
+      "module": "singing",
+      "assets": [
+        "follow phrase",
+        "solfege vocal",
+        "lyric vocal",
+        "breath cue",
+        "entry cue"
+      ]
+    },
+    {
+      "step": 4,
+      "module": "shared",
+      "assets": [
+        "DOG cue",
+        "count-in",
+        "success cue",
+        "rehearsal audio"
+      ]
+    }
+  ],
+  "source_hierarchy": [
+    "《义务教育艺术课程标准（2022年版）》",
+    "第十二套人教《艺术·唱游·音乐》及人教社官方教学设计",
+    "England KS1 National Curriculum / Model Music Curriculum",
+    "Animal Bank 产品约束"
+  ]
+}

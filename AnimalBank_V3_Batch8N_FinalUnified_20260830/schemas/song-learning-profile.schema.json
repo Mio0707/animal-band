@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animalbank.local/schemas/song-learning-profile.schema.json",
+  "title": "Animal Bank Song Learning Profile V3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "algorithmVersion",
+    "songId",
+    "stageId",
+    "sourceMatchAlgorithmVersion",
+    "sourceMatchGeneratedAt",
+    "sourceScoreVerifiedAt",
+    "generatedAt",
+    "generationStatus",
+    "reviewStatus",
+    "modules",
+    "teacherCandidates",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "3.0.0"
+    },
+    "algorithmVersion": {
+      "type": "string"
+    },
+    "songId": {
+      "type": "string"
+    },
+    "stageId": {
+      "const": "stage_1"
+    },
+    "sourceMatchAlgorithmVersion": {
+      "type": "string"
+    },
+    "sourceMatchGeneratedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sourceScoreVerifiedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "generationStatus": {
+      "const": "READY"
+    },
+    "reviewStatus": {
+      "enum": [
+        "NOT_REVIEWED",
+        "REVIEWED"
+      ]
+    },
+    "modules": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "teacherCandidates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rhythmMaterialIds"
+      ],
+      "properties": {
+        "rhythmMaterialIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

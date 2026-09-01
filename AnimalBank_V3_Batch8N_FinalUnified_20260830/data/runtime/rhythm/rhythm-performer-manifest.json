@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "assetPackId": "animalbank-stage1-rhythm-performer-v1",
+  "characterId": "DOG",
+  "stageId": "stage_1",
+  "status": "ready_for_runtime_integration",
+  "basePath": "/assets/teaching/rhythm/performer-dog/",
+  "states": {
+    "READY": { "file": "performer-dog-ready.png", "role": "neutral_ready" },
+    "LISTEN": { "file": "performer-dog-listen.png", "role": "listen_cue" },
+    "SWAY_L": { "file": "performer-dog-sway-left.webp", "role": "listen_action_sway_left", "motion": "sway-left" },
+    "SWAY_R": { "file": "performer-dog-sway-right.webp", "role": "listen_action_sway_right", "motion": "sway-right" },
+    "ARMS_UP": { "file": "performer-dog-arms-up.webp", "role": "listen_action_arms_up", "motion": "arms-up" },
+    "ONE_HAND_UP": { "file": "performer-dog-one-hand-up.webp", "role": "listen_action_one_hand_up", "motion": "one-hand-up" },
+    "STEP": { "file": "performer-dog-step.webp", "role": "listen_action_step", "motion": "step" },
+    "PAT": { "file": "performer-dog-pat.webp", "role": "listen_action_pat", "motion": "pat" },
+    "CLAP": { "file": "performer-dog-clap.png", "role": "rhythm_action" },
+    "PAT_THIGHS": { "file": "performer-dog-pat-thighs.png", "role": "rhythm_action" },
+    "PAT_LEFT": { "file": "performer-dog-pat-left.png", "role": "rhythm_action" },
+    "PAT_RIGHT": { "file": "performer-dog-pat-right.png", "role": "rhythm_action" },
+    "STOMP": { "file": "performer-dog-stomp.png", "role": "rhythm_action" },
+    "STOP": { "file": "performer-dog-stop.png", "role": "rest_freeze" },
+    "HIGH_FIVE": { "file": "performer-dog-high-five.png", "role": "positive_feedback" },
+    "DONE": { "file": "performer-dog-happy-done.png", "role": "activity_complete" }
+  },
+  "actions": {
+    "SWAY_L": { "state": "SWAY_L", "label": "身体向左摆一摆", "motion": "sway-left", "sound": false },
+    "SWAY_R": { "state": "SWAY_R", "label": "身体向右摆一摆", "motion": "sway-right", "sound": false },
+    "LISTEN": { "state": "LISTEN", "label": "手放耳边听一听", "motion": "listen", "sound": false },
+    "ARMS_UP": { "state": "ARMS_UP", "label": "双手举起来", "motion": "arms-up", "sound": false },
+    "ONE_HAND_UP": { "state": "ONE_HAND_UP", "label": "举起一只手", "motion": "one-hand-up", "sound": false },
+    "STEP": { "state": "STEP", "label": "抬脚踏一步", "motion": "step", "sound": false },
+    "CLAP": { "state": "CLAP", "label": "拍一下手", "motion": "clap", "sound": true },
+    "PAT": { "state": "PAT", "label": "拍一下腿", "motion": "pat", "sound": true }
+  },
+  "fallbackState": "READY",
+  "preload": true
+}

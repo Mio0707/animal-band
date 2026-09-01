@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.1.0",
+  "renderer": "rhythm-note-drums-preview-v1.0.0",
+  "audioSource": "stage1-rhythm-note-drums-v1",
+  "source": "local FluidSynth / MuseScore_General.sf3 General MIDI percussion bank",
+  "kind": "RHYTHM_KNOWLEDGE_PREVIEW",
+  "slotId": "knowledge_preview:PAT-02",
+  "materialId": "PAT-02",
+  "sampleRate": 44100,
+  "channels": 2,
+  "format": "wav",
+  "bpm": 80.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "countInBeats": 2,
+  "patternStartBeat": 2.0,
+  "patternBeats": 2.0,
+  "repeatCount": 4,
+  "totalBeats": 10.0,
+  "totalSeconds": 8.199977,
+  "events": [
+    {
+      "index": 0,
+      "atBeat": 0.0,
+      "durationBeats": 0.5,
+      "chant": "de",
+      "action": "CLAP",
+      "actionLabel": "拍手",
+      "drumSoundKey": "0.5"
+    },
+    {
+      "index": 1,
+      "atBeat": 0.5,
+      "durationBeats": 0.5,
+      "chant": "de",
+      "action": "CLAP",
+      "actionLabel": "拍手",
+      "drumSoundKey": "0.5"
+    },
+    {
+      "index": 2,
+      "atBeat": 1.0,
+      "durationBeats": 0.5,
+      "chant": "de",
+      "action": "CLAP",
+      "actionLabel": "拍手",
+      "drumSoundKey": "0.5"
+    },
+    {
+      "index": 3,
+      "atBeat": 1.5,
+      "durationBeats": 0.5,
+      "chant": "de",
+      "action": "CLAP",
+      "actionLabel": "拍手",
+      "drumSoundKey": "0.5"
+    }
+  ],
+  "repeatStartBeats": [
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "contentSha256": "56d36eaee860dd97cc662cf6355b729476391635b9add91aa1ef29c81591ab18",
+  "playbackContract": "same_duration_drum_samples_as_rhythm_learning"
+}

@@ -1,0 +1,506 @@
+{
+  "schemaVersion": "1.0.0",
+  "libraryId": "child-friendly-melody-gestures-v1",
+  "language": "zh-CN",
+  "purpose": "把逐小节旋律分析结果匹配为儿童容易模仿的手臂动作图",
+  "globalConstraints": {
+    "targetAction": "单臂或双臂的大动作",
+    "defaultDifficulty": "standard",
+    "maxDirectionChangesDefault": 4,
+    "maxDirectionChangesStandard": 6,
+    "maxGesturesPerMeasure": 1,
+    "maxConsecutiveSameGestureGroups": 2,
+    "defaultMeasuresPerScreen": 2,
+    "preferImitabilityOverExactPitchTracing": true,
+    "avoid": [
+      "逐音符描摹",
+      "细小折线",
+      "同一小节叠加多个图形",
+      "需要精细手指控制的动作",
+      "仅靠颜色区分的动作"
+    ]
+  },
+  "analysisInput": {
+    "requiredPerMeasure": [
+      "measureNumber",
+      "startSec",
+      "endSec",
+      "isSilent",
+      "contour",
+      "pitchDirection",
+      "motionType",
+      "noteDensity",
+      "sustainRatio",
+      "accentCount",
+      "phraseContinuesToNext",
+      "similarityToNext",
+      "continuityScore",
+      "meterNumerator",
+      "pitchRangeSemitones",
+      "netPitchChangeSemitones",
+      "turningPoints",
+      "peakPosition",
+      "lowestPointPosition",
+      "endingSustainRatio",
+      "endingPitchNearStartingPitch",
+      "phraseHasRoundedReturn",
+      "rhythmRegularity",
+      "contourSmoothness",
+      "shortNoteRatio",
+      "repeatedPitchRatio"
+    ],
+    "allowedValues": {
+      "contour": ["flat", "rise", "fall", "arch", "valley", "loop", "angular", "wave", "pulse"],
+      "pitchDirection": ["steady", "up", "down", "up_down", "down_up", "cyclic", "mixed"],
+      "motionType": ["smooth", "stepped", "repeated", "sustained"],
+      "noteDensity": ["sparse", "medium", "dense"]
+    },
+    "numericRanges": {
+      "sustainRatio": [0, 1],
+      "similarityToNext": [0, 1],
+      "continuityScore": [0, 1],
+      "peakPosition": [0, 1],
+      "lowestPointPosition": [0, 1],
+      "endingSustainRatio": [0, 1],
+      "rhythmRegularity": [0, 1],
+      "contourSmoothness": [0, 1],
+      "shortNoteRatio": [0, 1],
+      "repeatedPitchRatio": [0, 1],
+      "accentCount": [0, 8],
+      "turningPoints": [0, 8]
+    }
+  },
+  "pairingRules": [
+    {
+      "priority": 1,
+      "result": "merged",
+      "whenAny": [
+        "current.phraseContinuesToNext == true AND current.continuityScore >= 0.72",
+        "next.sustainRatio >= 0.65 AND current.phraseContinuesToNext == true"
+      ],
+      "instruction": "使用一张横跨两个小节的手势图；第二小节为长音时保持动作，不重新起手。"
+    },
+    {
+      "priority": 2,
+      "result": "repeat",
+      "whenAny": [
+        "current.similarityToNext >= 0.78 AND current.phraseContinuesToNext == false",
+        "current.bestGestureId == next.bestGestureId AND current.phraseContinuesToNext == false"
+      ],
+      "instruction": "两个小节各显示一张图，但重复使用同一个手势。"
+    },
+    {
+      "priority": 3,
+      "result": "split",
+      "when": "不满足 merged 或 repeat",
+      "instruction": "两个小节分别选择和显示手势图。"
+    }
+  ],
+  "matchingWeights": {
+    "contour": 0.4,
+    "pitchDirection": 0.2,
+    "motionType": 0.15,
+    "noteDensity": 0.1,
+    "sustain": 0.1,
+    "childImitability": 0.05
+  },
+  "scopeSystem": {
+    "universal": "所有拍号都可以使用",
+    "3/4": "只在 3/4 拍中使用",
+    "4/4": "只在 4/4 拍中使用",
+    "selection": "先提供 universal 手势，再叠加与当前拍号一致的专用手势"
+  },
+  "selectionRules": [
+    "先排除 avoidWhen 命中的手势，再计算匹配分数。",
+    "若第一名与第二名分差小于 0.08，同时返回两者供老师选择。",
+    "同一乐句内避免连续使用三个以上不同手势。",
+    "相邻小节差异不明显时优先重复已有手势，降低记忆负担。",
+    "同一张手势图最多连续出现两组；第三组从相同动作家族中选择方向一致但轨迹明显不同的变化图。",
+    "几何图形只表达整小节的主要运动感觉，不要求逐音符对应。",
+    "默认优先 standard 手势；support 手势只用于长音、纯上行、纯下行或没有更合适候选的情况。",
+    "系统不得自动发布，必须输出 requiresTeacherConfirmation=true。"
+  ],
+  "gestures": [
+    {
+      "id": "rest_line",
+      "name": "休止横线",
+      "image": "library/gesture-rest-line.svg",
+      "childInstruction": "双手在胸前画一条水平线，然后停住",
+      "scope": "universal",
+      "kind": "rest",
+      "difficulty": "support",
+      "complexity": 1,
+      "features": {
+        "contour": ["flat"],
+        "pitchDirection": ["steady"],
+        "motionType": ["sustained"],
+        "noteDensity": ["sparse"]
+      },
+      "preferWhen": ["isSilent == true"],
+      "avoidWhen": ["isSilent == false"]
+    },
+    {
+      "id": "hold",
+      "name": "平稳延伸",
+      "image": "library/gesture-hold.png",
+      "childInstruction": "手臂平稳向旁边移动",
+      "scope": "universal",
+      "difficulty": "support",
+      "complexity": 1,
+      "features": {
+        "contour": ["flat"],
+        "pitchDirection": ["steady"],
+        "motionType": ["sustained", "smooth"],
+        "noteDensity": ["sparse"]
+      },
+      "preferWhen": ["sustainRatio >= 0.55", "pitchRangeSemitones <= 2"],
+      "avoidWhen": ["accentCount >= 3", "noteDensity == dense"]
+    },
+    {
+      "id": "rise",
+      "name": "慢慢升高",
+      "image": "library/gesture-rise.png",
+      "childInstruction": "手臂从低处慢慢举高",
+      "scope": "universal",
+      "difficulty": "support",
+      "complexity": 1,
+      "features": {
+        "contour": ["rise"],
+        "pitchDirection": ["up"],
+        "motionType": ["smooth"],
+        "noteDensity": ["sparse", "medium"]
+      },
+      "preferWhen": ["netPitchChangeSemitones >= 3"],
+      "avoidWhen": ["pitchDirection == down"]
+    },
+    {
+      "id": "fall",
+      "name": "慢慢落下",
+      "image": "library/gesture-fall.png",
+      "childInstruction": "手臂从高处慢慢放低",
+      "scope": "universal",
+      "difficulty": "support",
+      "complexity": 1,
+      "features": {
+        "contour": ["fall"],
+        "pitchDirection": ["down"],
+        "motionType": ["smooth"],
+        "noteDensity": ["sparse", "medium"]
+      },
+      "preferWhen": ["netPitchChangeSemitones <= -3"],
+      "avoidWhen": ["pitchDirection == up"]
+    },
+    {
+      "id": "arch",
+      "name": "大拱形",
+      "image": "library/gesture-arch.png",
+      "childInstruction": "手臂举高，再轻轻落下",
+      "scope": "universal",
+      "difficulty": "standard",
+      "complexity": 2,
+      "features": {
+        "contour": ["arch"],
+        "pitchDirection": ["up_down"],
+        "motionType": ["smooth"],
+        "noteDensity": ["sparse", "medium"]
+      },
+      "preferWhen": ["turningPoints == 1", "peakPosition >= 0.3 AND peakPosition <= 0.7"],
+      "avoidWhen": ["turningPoints >= 3"]
+    },
+    {
+      "id": "valley",
+      "name": "大山谷",
+      "image": "library/gesture-valley.png",
+      "childInstruction": "手臂落下，再慢慢举高",
+      "scope": "universal",
+      "difficulty": "standard",
+      "complexity": 2,
+      "features": {
+        "contour": ["valley", "wave"],
+        "pitchDirection": ["down_up", "mixed"],
+        "motionType": ["smooth"],
+        "noteDensity": ["sparse", "medium"]
+      },
+      "preferWhen": ["turningPoints == 1", "lowestPointPosition >= 0.25 AND lowestPointPosition <= 0.55"],
+      "avoidWhen": ["pitchDirection == up", "pitchDirection == down"]
+    },
+    {
+      "id": "climb_arcs",
+      "name": "四拍上行拱线",
+      "image": "library/gesture-climb-arcs.png",
+      "childInstruction": "一拍一个，连续画四个向上走的小拱线",
+      "scope": "4/4",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": {
+        "contour": ["wave", "rise"],
+        "pitchDirection": ["up"],
+        "motionType": ["smooth", "repeated"],
+        "noteDensity": ["medium", "dense"]
+      },
+      "preferWhen": ["meterNumerator == 4", "netPitchChangeSemitones >= 3", "turningPoints >= 2", "contourSmoothness >= 0.6"],
+      "avoidWhen": ["meterNumerator != 4", "sustainRatio >= 0.6", "pitchDirection == down"]
+    },
+    {
+      "id": "descend_arcs",
+      "name": "四拍下行拱线",
+      "image": "library/gesture-descend-arcs.png",
+      "childInstruction": "一拍一个，连续画四个向下走的小拱线",
+      "scope": "4/4",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": {
+        "contour": ["wave", "fall"],
+        "pitchDirection": ["down"],
+        "motionType": ["smooth", "repeated"],
+        "noteDensity": ["medium", "dense"]
+      },
+      "preferWhen": ["meterNumerator == 4", "netPitchChangeSemitones <= -3", "turningPoints >= 2", "contourSmoothness >= 0.6"],
+      "avoidWhen": ["meterNumerator != 4", "sustainRatio >= 0.6", "pitchDirection == up"]
+    },
+    {
+      "id": "climb_arcs_three",
+      "name": "三拍上行拱线",
+      "image": "library/gesture-climb-arcs-three.svg",
+      "childInstruction": "一拍一个，连续画三个向上走的小拱线",
+      "scope": "3/4",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": {
+        "contour": ["wave", "rise"],
+        "pitchDirection": ["up"],
+        "motionType": ["smooth", "repeated"],
+        "noteDensity": ["medium", "dense"]
+      },
+      "preferWhen": ["meterNumerator == 3", "netPitchChangeSemitones >= 3", "turningPoints >= 2"],
+      "avoidWhen": ["meterNumerator != 3", "sustainRatio >= 0.6", "pitchDirection == down"]
+    },
+    {
+      "id": "descend_arcs_three",
+      "name": "三拍下行拱线",
+      "image": "library/gesture-descend-arcs-three.svg",
+      "childInstruction": "一拍一个，连续画三个向下走的小拱线",
+      "scope": "3/4",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": {
+        "contour": ["wave", "fall"],
+        "pitchDirection": ["down"],
+        "motionType": ["smooth", "repeated"],
+        "noteDensity": ["medium", "dense"]
+      },
+      "preferWhen": ["meterNumerator == 3", "netPitchChangeSemitones <= -3", "turningPoints >= 2"],
+      "avoidWhen": ["meterNumerator != 3", "sustainRatio >= 0.6", "pitchDirection == up"]
+    },
+    {
+      "id": "accent_hold",
+      "name": "转折后保持",
+      "image": "library/gesture-accent-hold.png",
+      "childInstruction": "抬高、落下，然后向前伸展",
+      "scope": "universal",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": {
+        "contour": ["angular", "flat"],
+        "pitchDirection": ["up_down", "steady"],
+        "motionType": ["stepped", "sustained"],
+        "noteDensity": ["sparse", "medium"]
+      },
+      "preferWhen": ["accentCount >= 1", "endingSustainRatio >= 0.45"],
+      "avoidWhen": ["noteDensity == dense", "endingSustainRatio < 0.25"]
+    },
+    {
+      "id": "bounces",
+      "name": "四个弹跳",
+      "image": "library/gesture-bounces.png",
+      "childInstruction": "跟着四个音画四个大拱线",
+      "scope": "4/4",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": {
+        "contour": ["pulse", "wave"],
+        "pitchDirection": ["steady", "mixed"],
+        "motionType": ["repeated", "smooth"],
+        "noteDensity": ["medium"]
+      },
+      "preferWhen": ["accentCount >= 3", "rhythmRegularity >= 0.7", "shortNoteRatio >= 0.45"],
+      "avoidWhen": ["sustainRatio >= 0.55", "rhythmRegularity < 0.45"]
+    },
+    {
+      "id": "circle",
+      "name": "大圆圈",
+      "image": "library/gesture-circle.png",
+      "childInstruction": "用整条手臂画一个大圆圈",
+      "scope": "universal",
+      "difficulty": "standard",
+      "complexity": 2,
+      "features": {
+        "contour": ["loop"],
+        "pitchDirection": ["cyclic"],
+        "motionType": ["smooth", "repeated"],
+        "noteDensity": ["medium"]
+      },
+      "preferWhen": ["endingPitchNearStartingPitch == true", "phraseHasRoundedReturn == true"],
+      "avoidWhen": ["motionType == stepped", "accentCount >= 3"]
+    },
+    {
+      "id": "triangle",
+      "name": "三角形",
+      "image": "library/gesture-triangle.png",
+      "childInstruction": "向上、转弯，再回到起点",
+      "scope": "3/4",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": {
+        "contour": ["angular", "arch"],
+        "pitchDirection": ["up_down"],
+        "motionType": ["stepped"],
+        "noteDensity": ["sparse", "medium"]
+      },
+      "preferWhen": ["accentCount >= 2", "turningPoints == 2"],
+      "avoidWhen": ["motionType == smooth AND accentCount == 0", "noteDensity == dense"]
+    },
+    {
+      "id": "square",
+      "name": "正方形",
+      "image": "library/gesture-square.png",
+      "childInstruction": "跟着四拍画一个大方框",
+      "scope": "4/4",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": {
+        "contour": ["angular"],
+        "pitchDirection": ["mixed"],
+        "motionType": ["stepped", "repeated"],
+        "noteDensity": ["medium"]
+      },
+      "preferWhen": ["meterNumerator == 4", "accentCount >= 3", "rhythmRegularity >= 0.75"],
+      "avoidWhen": ["motionType == smooth", "meterNumerator != 4"]
+    },
+    {
+      "id": "wave",
+      "name": "大波浪",
+      "image": "library/gesture-wave.png",
+      "childInstruction": "手臂连续画两个大波浪",
+      "scope": "universal",
+      "difficulty": "standard",
+      "complexity": 2,
+      "features": {
+        "contour": ["wave"],
+        "pitchDirection": ["mixed"],
+        "motionType": ["smooth", "repeated"],
+        "noteDensity": ["medium", "dense"]
+      },
+      "preferWhen": ["turningPoints >= 2", "contourSmoothness >= 0.65"],
+      "avoidWhen": ["turningPoints < 2", "motionType == stepped"]
+    },
+    {
+      "id": "waltz_sway",
+      "name": "三拍摇摆",
+      "image": "library/gesture-waltz-sway.png",
+      "childInstruction": "第一拍落下，第二拍展开，第三拍轻轻回来",
+      "scope": "3/4",
+      "difficulty": "standard",
+      "complexity": 2,
+      "features": { "contour": ["wave", "valley"], "pitchDirection": ["mixed", "down_up"], "motionType": ["smooth"], "noteDensity": ["medium"] },
+      "preferWhen": ["meterNumerator == 3", "contourSmoothness >= 0.6"],
+      "avoidWhen": ["meterNumerator != 3", "motionType == stepped"]
+    },
+    {
+      "id": "three_beat_sweep",
+      "name": "三拍大回旋",
+      "image": "library/gesture-three-beat-sweep.png",
+      "childInstruction": "向下、向外，再向上收回",
+      "scope": "3/4",
+      "difficulty": "standard",
+      "complexity": 2,
+      "features": { "contour": ["arch", "valley"], "pitchDirection": ["up_down", "down_up"], "motionType": ["smooth"], "noteDensity": ["sparse", "medium"] },
+      "preferWhen": ["meterNumerator == 3", "turningPoints >= 1"],
+      "avoidWhen": ["meterNumerator != 3", "accentCount >= 5"]
+    },
+    {
+      "id": "three_petal",
+      "name": "三叶花",
+      "image": "library/gesture-three-petal.png",
+      "childInstruction": "从下方开口出发，连续画出三片大花瓣",
+      "scope": "3/4",
+      "difficulty": "standard",
+      "complexity": 4,
+      "features": { "contour": ["loop"], "pitchDirection": ["cyclic", "mixed"], "motionType": ["smooth", "repeated"], "noteDensity": ["medium"] },
+      "preferWhen": ["meterNumerator == 3", "endingPitchNearStartingPitch == true", "turningPoints >= 4"],
+      "avoidWhen": ["meterNumerator != 3", "noteDensity == dense"]
+    },
+    {
+      "id": "infinity",
+      "name": "无穷形",
+      "image": "library/gesture-infinity.png",
+      "childInstruction": "从左侧开口出发，穿过中间画完两边",
+      "scope": "universal",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": { "contour": ["loop"], "pitchDirection": ["cyclic"], "motionType": ["smooth"], "noteDensity": ["sparse", "medium"] },
+      "preferWhen": ["endingPitchNearStartingPitch == true", "turningPoints >= 2"],
+      "avoidWhen": ["motionType == stepped", "accentCount >= 5"]
+    },
+    {
+      "id": "spiral",
+      "name": "大螺旋",
+      "image": "library/gesture-spiral.png",
+      "childInstruction": "从大圆慢慢收到中心",
+      "scope": "3/4",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": { "contour": ["loop"], "pitchDirection": ["cyclic", "mixed"], "motionType": ["smooth"], "noteDensity": ["medium"] },
+      "preferWhen": ["meterNumerator == 3", "endingPitchNearStartingPitch == true", "pitchRangeSemitones >= 6"],
+      "avoidWhen": ["motionType == stepped", "sustainRatio >= 0.7"]
+    },
+    {
+      "id": "three_peaks",
+      "name": "三峰皇冠",
+      "image": "library/gesture-three-peaks.png",
+      "childInstruction": "每一拍向上伸展一次，共做三次",
+      "scope": "3/4",
+      "difficulty": "standard",
+      "complexity": 3,
+      "features": { "contour": ["angular", "pulse"], "pitchDirection": ["mixed"], "motionType": ["stepped", "repeated"], "noteDensity": ["medium", "dense"] },
+      "preferWhen": ["meterNumerator == 3", "accentCount >= 3", "rhythmRegularity >= 0.58"],
+      "avoidWhen": ["meterNumerator != 3", "sustainRatio >= 0.65"]
+    },
+    {
+      "id": "pulses",
+      "name": "四个短点",
+      "image": "library/gesture-pulses.png",
+      "childInstruction": "跟着四拍轻轻点四下",
+      "scope": "4/4",
+      "difficulty": "support",
+      "complexity": 1,
+      "features": {
+        "contour": ["pulse", "flat"],
+        "pitchDirection": ["steady"],
+        "motionType": ["repeated"],
+        "noteDensity": ["medium", "dense"]
+      },
+      "preferWhen": ["meterNumerator == 4", "shortNoteRatio >= 0.65", "repeatedPitchRatio >= 0.5"],
+      "avoidWhen": ["meterNumerator != 4", "sustainRatio >= 0.5", "motionType == smooth"]
+    }
+  ],
+  "output": {
+    "requiredFields": [
+      "musicTitle",
+      "meter",
+      "measures",
+      "screenGroups",
+      "requiresTeacherConfirmation"
+    ],
+    "screenGroupShape": {
+      "measures": "长度为2的整数数组",
+      "mode": "split | repeat | merged | rest",
+      "gestureIds": "split/repeat 为2项，merged 为1项",
+      "startSec": "数字",
+      "endSec": "数字",
+      "reason": "面向老师的一句中文解释",
+      "confidence": "0到1"
+    },
+    "requiresTeacherConfirmation": true
+  }
+}

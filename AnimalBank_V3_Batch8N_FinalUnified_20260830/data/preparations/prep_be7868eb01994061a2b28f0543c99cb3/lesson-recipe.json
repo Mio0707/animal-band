@@ -1,0 +1,3946 @@
+{
+  "schemaVersion": "4.0.0",
+  "algorithmVersion": "4.4.0",
+  "recipeId": "recipe_be7868eb01994061a2b28f0543c99cb3",
+  "preparationId": "prep_be7868eb01994061a2b28f0543c99cb3",
+  "songId": "dongfanghong",
+  "stageId": "stage_1",
+  "generatedAt": "2026-09-01T02:05:39.186Z",
+  "mode": "ACTIVITY_SEQUENCE",
+  "source": {
+    "learningProfileAlgorithmVersion": "1.1.0",
+    "learningProfileGeneratedAt": "2026-08-31T16:51:14.414Z",
+    "scoreVerifiedAt": "2026-08-31T14:27:05.314Z"
+  },
+  "songContext": {
+    "meter": {
+      "beats": 2,
+      "unit": 4
+    },
+    "bpm": 72
+  },
+  "selection": {
+    "activityTypes": [
+      "listen",
+      "melody_trace",
+      "rhythm_learning",
+      "singing",
+      "ensemble",
+      "sticker_arrangement"
+    ],
+    "rhythmMaterialIds": [
+      "PAT-04",
+      "PAT-01",
+      "PAT-02"
+    ],
+    "measuresPerUnit": 4
+  },
+  "classFlow": [
+    {
+      "activityId": "act_listen",
+      "type": "listen",
+      "order": 1
+    },
+    {
+      "activityId": "act_melody_trace",
+      "type": "melody_trace",
+      "order": 2
+    },
+    {
+      "activityId": "act_rhythm_learning",
+      "type": "rhythm_learning",
+      "order": 3
+    },
+    {
+      "activityId": "act_singing",
+      "type": "singing",
+      "order": 4
+    },
+    {
+      "activityId": "act_ensemble",
+      "type": "ensemble",
+      "order": 5
+    },
+    {
+      "activityId": "act_sticker_arrangement",
+      "type": "sticker_arrangement",
+      "order": 6
+    }
+  ],
+  "activities": [
+    {
+      "activityId": "act_listen",
+      "type": "listen",
+      "teachingAssetIds": [],
+      "materialIds": [],
+      "teachingUnitIds": [],
+      "bindings": {
+        "scope": {
+          "type": "full_song"
+        },
+        "source": "original_audio",
+        "bodyWarmup": true,
+        "bodyPlanId": "song_listening_body_plan"
+      }
+    },
+    {
+      "activityId": "act_melody_trace",
+      "type": "melody_trace",
+      "teachingAssetIds": [],
+      "materialIds": [],
+      "teachingUnitIds": [
+        "lesson_segment_m001_m004",
+        "lesson_segment_m005_m008",
+        "lesson_segment_m009_m012",
+        "lesson_segment_m013_m016"
+      ],
+      "bindings": {
+        "scope": {
+          "type": "lesson_segments"
+        },
+        "tracePlanId": "song_melody_trace_plan",
+        "measureAlignmentId": "song_measure_alignment",
+        "measuresPerUnit": 4,
+        "lessonSegments": [
+          {
+            "segmentId": "lesson_segment_m001_m004",
+            "index": 0,
+            "label": "第 1–4 小节",
+            "startMeasure": 1,
+            "endMeasure": 4,
+            "measureCount": 4,
+            "measures": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m005_m008",
+            "index": 1,
+            "label": "第 5–8 小节",
+            "startMeasure": 5,
+            "endMeasure": 8,
+            "measureCount": 4,
+            "measures": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m009_m012",
+            "index": 2,
+            "label": "第 9–12 小节",
+            "startMeasure": 9,
+            "endMeasure": 12,
+            "measureCount": 4,
+            "measures": [
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m013_m016",
+            "index": 3,
+            "label": "第 13–16 小节",
+            "startMeasure": 13,
+            "endMeasure": 16,
+            "measureCount": 4,
+            "measures": [
+              13,
+              14,
+              15,
+              16
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "activityId": "act_rhythm_learning",
+      "type": "rhythm_learning",
+      "teachingAssetIds": [
+        "TA-RHY-PAT-04",
+        "TA-RHY-PAT-01",
+        "TA-RHY-PAT-02"
+      ],
+      "materialIds": [
+        "PAT-04",
+        "PAT-01",
+        "PAT-02"
+      ],
+      "teachingUnitIds": [
+        "lesson_segment_m001_m004",
+        "lesson_segment_m005_m008",
+        "lesson_segment_m009_m012",
+        "lesson_segment_m013_m016"
+      ],
+      "bindings": {
+        "patternIds": [
+          "PAT-04",
+          "PAT-01",
+          "PAT-02"
+        ],
+        "patterns": [
+          {
+            "materialId": "PAT-04",
+            "teachingAssetId": "TA-RHY-PAT-04",
+            "occurrenceIds": [
+              "PAT-04@m1:m001_n001",
+              "PAT-04@m3:m003_n001",
+              "PAT-04@m7:m007_n001",
+              "PAT-04@m10:m010_n001",
+              "PAT-04@m12:m012_n001",
+              "PAT-04@m13:m013_n001"
+            ],
+            "notation": "♩ ♪♪",
+            "durations": [
+              1,
+              0.5,
+              0.5
+            ],
+            "chant": [
+              "da",
+              "de",
+              "de"
+            ],
+            "bodyActions": [
+              "PAT",
+              "CLAP",
+              "CLAP"
+            ],
+            "bodyActionsZh": [
+              "双手拍腿",
+              "拍手",
+              "拍手"
+            ],
+            "bodyMappingSource": "knowledge_base_teaching_asset",
+            "previewAudio": "/assets/audio/rhythm/patterns/pat-04.wav",
+            "previewMetadata": "/assets/audio/rhythm/patterns/pat-04.metadata.json",
+            "trainingTempoRef": "simplePatterns",
+            "trainingBpm": 80
+          },
+          {
+            "materialId": "PAT-01",
+            "teachingAssetId": "TA-RHY-PAT-01",
+            "occurrenceIds": [
+              "PAT-01@m5:m005_n001",
+              "PAT-01@m9:m009_n001",
+              "PAT-01@m11:m011_n001"
+            ],
+            "notation": "♩ ♩",
+            "durations": [
+              1,
+              1
+            ],
+            "chant": [
+              "da",
+              "da"
+            ],
+            "bodyActions": [
+              "STOMP",
+              "STOMP"
+            ],
+            "bodyActionsZh": [
+              "原地跺脚",
+              "原地跺脚"
+            ],
+            "bodyMappingSource": "knowledge_base_teaching_asset",
+            "previewAudio": "/assets/audio/rhythm/patterns/pat-01.wav",
+            "previewMetadata": "/assets/audio/rhythm/patterns/pat-01.metadata.json",
+            "trainingTempoRef": "simplePatterns",
+            "trainingBpm": 80
+          },
+          {
+            "materialId": "PAT-02",
+            "teachingAssetId": "TA-RHY-PAT-02",
+            "occurrenceIds": [
+              "PAT-02@m6:m006_n001",
+              "PAT-02@m14:m014_n001",
+              "PAT-02@m15:m015_n001"
+            ],
+            "notation": "♪♪ ♪♪",
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "chant": [
+              "de",
+              "de",
+              "de",
+              "de"
+            ],
+            "bodyActions": [
+              "CLAP",
+              "CLAP",
+              "CLAP",
+              "CLAP"
+            ],
+            "bodyActionsZh": [
+              "拍手",
+              "拍手",
+              "拍手",
+              "拍手"
+            ],
+            "bodyMappingSource": "knowledge_base_teaching_asset",
+            "previewAudio": "/assets/audio/rhythm/patterns/pat-02.wav",
+            "previewMetadata": "/assets/audio/rhythm/patterns/pat-02.metadata.json",
+            "trainingTempoRef": "simplePatterns",
+            "trainingBpm": 80
+          }
+        ],
+        "lessonSegments": [
+          {
+            "segmentId": "lesson_segment_m001_m004",
+            "index": 0,
+            "label": "第 1–4 小节",
+            "startMeasure": 1,
+            "endMeasure": 4,
+            "measureCount": 4,
+            "measures": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m005_m008",
+            "index": 1,
+            "label": "第 5–8 小节",
+            "startMeasure": 5,
+            "endMeasure": 8,
+            "measureCount": 4,
+            "measures": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m009_m012",
+            "index": 2,
+            "label": "第 9–12 小节",
+            "startMeasure": 9,
+            "endMeasure": 12,
+            "measureCount": 4,
+            "measures": [
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m013_m016",
+            "index": 3,
+            "label": "第 13–16 小节",
+            "startMeasure": 13,
+            "endMeasure": 16,
+            "measureCount": 4,
+            "measures": [
+              13,
+              14,
+              15,
+              16
+            ]
+          }
+        ],
+        "measuresPerUnit": 4,
+        "measureAlignmentId": "song_measure_alignment",
+        "bodySongPlan": {
+          "schemaVersion": "1.0.0",
+          "planId": "song_rhythm_body_plan",
+          "songId": "dongfanghong",
+          "source": "rhythm_learning_pattern_occurrences",
+          "mappingContract": "knowledge_base_pattern_actions",
+          "unmatchedBehavior": "READY_LISTEN",
+          "segments": [
+            {
+              "segmentId": "lesson_segment_m001_m004",
+              "index": 0,
+              "label": "第 1–4 小节",
+              "startMeasure": 1,
+              "endMeasure": 4,
+              "measureCount": 4,
+              "measures": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "events": [
+                {
+                  "eventId": "PAT-04@m1:m001_n001#0",
+                  "occurrenceId": "PAT-04@m1:m001_n001",
+                  "materialId": "PAT-04",
+                  "measure": 1,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 0,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m1:m001_n001#1",
+                  "occurrenceId": "PAT-04@m1:m001_n001",
+                  "materialId": "PAT-04",
+                  "measure": 1,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 1,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m1:m001_n001#2",
+                  "occurrenceId": "PAT-04@m1:m001_n001",
+                  "materialId": "PAT-04",
+                  "measure": 1,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 1.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m3:m003_n001#0",
+                  "occurrenceId": "PAT-04@m3:m003_n001",
+                  "materialId": "PAT-04",
+                  "measure": 3,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 4,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m3:m003_n001#1",
+                  "occurrenceId": "PAT-04@m3:m003_n001",
+                  "materialId": "PAT-04",
+                  "measure": 3,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m3:m003_n001#2",
+                  "occurrenceId": "PAT-04@m3:m003_n001",
+                  "materialId": "PAT-04",
+                  "measure": 3,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 5.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                }
+              ],
+              "materialIds": [
+                "PAT-04"
+              ],
+              "mappingSource": "rhythm_learning_patterns"
+            },
+            {
+              "segmentId": "lesson_segment_m005_m008",
+              "index": 1,
+              "label": "第 5–8 小节",
+              "startMeasure": 5,
+              "endMeasure": 8,
+              "measureCount": 4,
+              "measures": [
+                5,
+                6,
+                7,
+                8
+              ],
+              "events": [
+                {
+                  "eventId": "PAT-01@m5:m005_n001#0",
+                  "occurrenceId": "PAT-01@m5:m005_n001",
+                  "materialId": "PAT-01",
+                  "measure": 5,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 8,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-01@m5:m005_n001#1",
+                  "occurrenceId": "PAT-01@m5:m005_n001",
+                  "materialId": "PAT-01",
+                  "measure": 5,
+                  "beat": 1,
+                  "durationBeats": 1,
+                  "absoluteBeat": 9,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m6:m006_n001#0",
+                  "occurrenceId": "PAT-02@m6:m006_n001",
+                  "materialId": "PAT-02",
+                  "measure": 6,
+                  "beat": 0,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 10,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m6:m006_n001#1",
+                  "occurrenceId": "PAT-02@m6:m006_n001",
+                  "materialId": "PAT-02",
+                  "measure": 6,
+                  "beat": 0.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 10.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m6:m006_n001#2",
+                  "occurrenceId": "PAT-02@m6:m006_n001",
+                  "materialId": "PAT-02",
+                  "measure": 6,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 11,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m6:m006_n001#3",
+                  "occurrenceId": "PAT-02@m6:m006_n001",
+                  "materialId": "PAT-02",
+                  "measure": 6,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 11.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m7:m007_n001#0",
+                  "occurrenceId": "PAT-04@m7:m007_n001",
+                  "materialId": "PAT-04",
+                  "measure": 7,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 12,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m7:m007_n001#1",
+                  "occurrenceId": "PAT-04@m7:m007_n001",
+                  "materialId": "PAT-04",
+                  "measure": 7,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 13,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m7:m007_n001#2",
+                  "occurrenceId": "PAT-04@m7:m007_n001",
+                  "materialId": "PAT-04",
+                  "measure": 7,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 13.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                }
+              ],
+              "materialIds": [
+                "PAT-04",
+                "PAT-01",
+                "PAT-02"
+              ],
+              "mappingSource": "rhythm_learning_patterns"
+            },
+            {
+              "segmentId": "lesson_segment_m009_m012",
+              "index": 2,
+              "label": "第 9–12 小节",
+              "startMeasure": 9,
+              "endMeasure": 12,
+              "measureCount": 4,
+              "measures": [
+                9,
+                10,
+                11,
+                12
+              ],
+              "events": [
+                {
+                  "eventId": "PAT-01@m9:m009_n001#0",
+                  "occurrenceId": "PAT-01@m9:m009_n001",
+                  "materialId": "PAT-01",
+                  "measure": 9,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 16,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-01@m9:m009_n001#1",
+                  "occurrenceId": "PAT-01@m9:m009_n001",
+                  "materialId": "PAT-01",
+                  "measure": 9,
+                  "beat": 1,
+                  "durationBeats": 1,
+                  "absoluteBeat": 17,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m10:m010_n001#0",
+                  "occurrenceId": "PAT-04@m10:m010_n001",
+                  "materialId": "PAT-04",
+                  "measure": 10,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 18,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m10:m010_n001#1",
+                  "occurrenceId": "PAT-04@m10:m010_n001",
+                  "materialId": "PAT-04",
+                  "measure": 10,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 19,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m10:m010_n001#2",
+                  "occurrenceId": "PAT-04@m10:m010_n001",
+                  "materialId": "PAT-04",
+                  "measure": 10,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 19.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-01@m11:m011_n001#0",
+                  "occurrenceId": "PAT-01@m11:m011_n001",
+                  "materialId": "PAT-01",
+                  "measure": 11,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 20,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-01@m11:m011_n001#1",
+                  "occurrenceId": "PAT-01@m11:m011_n001",
+                  "materialId": "PAT-01",
+                  "measure": 11,
+                  "beat": 1,
+                  "durationBeats": 1,
+                  "absoluteBeat": 21,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m12:m012_n001#0",
+                  "occurrenceId": "PAT-04@m12:m012_n001",
+                  "materialId": "PAT-04",
+                  "measure": 12,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 22,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m12:m012_n001#1",
+                  "occurrenceId": "PAT-04@m12:m012_n001",
+                  "materialId": "PAT-04",
+                  "measure": 12,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 23,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m12:m012_n001#2",
+                  "occurrenceId": "PAT-04@m12:m012_n001",
+                  "materialId": "PAT-04",
+                  "measure": 12,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 23.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                }
+              ],
+              "materialIds": [
+                "PAT-04",
+                "PAT-01"
+              ],
+              "mappingSource": "rhythm_learning_patterns"
+            },
+            {
+              "segmentId": "lesson_segment_m013_m016",
+              "index": 3,
+              "label": "第 13–16 小节",
+              "startMeasure": 13,
+              "endMeasure": 16,
+              "measureCount": 4,
+              "measures": [
+                13,
+                14,
+                15,
+                16
+              ],
+              "events": [
+                {
+                  "eventId": "PAT-04@m13:m013_n001#0",
+                  "occurrenceId": "PAT-04@m13:m013_n001",
+                  "materialId": "PAT-04",
+                  "measure": 13,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 24,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m13:m013_n001#1",
+                  "occurrenceId": "PAT-04@m13:m013_n001",
+                  "materialId": "PAT-04",
+                  "measure": 13,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 25,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m13:m013_n001#2",
+                  "occurrenceId": "PAT-04@m13:m013_n001",
+                  "materialId": "PAT-04",
+                  "measure": 13,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 25.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m14:m014_n001#0",
+                  "occurrenceId": "PAT-02@m14:m014_n001",
+                  "materialId": "PAT-02",
+                  "measure": 14,
+                  "beat": 0,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 26,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m14:m014_n001#1",
+                  "occurrenceId": "PAT-02@m14:m014_n001",
+                  "materialId": "PAT-02",
+                  "measure": 14,
+                  "beat": 0.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 26.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m14:m014_n001#2",
+                  "occurrenceId": "PAT-02@m14:m014_n001",
+                  "materialId": "PAT-02",
+                  "measure": 14,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 27,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m14:m014_n001#3",
+                  "occurrenceId": "PAT-02@m14:m014_n001",
+                  "materialId": "PAT-02",
+                  "measure": 14,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 27.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m15:m015_n001#0",
+                  "occurrenceId": "PAT-02@m15:m015_n001",
+                  "materialId": "PAT-02",
+                  "measure": 15,
+                  "beat": 0,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 28,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m15:m015_n001#1",
+                  "occurrenceId": "PAT-02@m15:m015_n001",
+                  "materialId": "PAT-02",
+                  "measure": 15,
+                  "beat": 0.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 28.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m15:m015_n001#2",
+                  "occurrenceId": "PAT-02@m15:m015_n001",
+                  "materialId": "PAT-02",
+                  "measure": 15,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 29,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m15:m015_n001#3",
+                  "occurrenceId": "PAT-02@m15:m015_n001",
+                  "materialId": "PAT-02",
+                  "measure": 15,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 29.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                }
+              ],
+              "materialIds": [
+                "PAT-04",
+                "PAT-02"
+              ],
+              "mappingSource": "rhythm_learning_patterns"
+            }
+          ],
+          "events": [
+            {
+              "eventId": "PAT-04@m1:m001_n001#0",
+              "occurrenceId": "PAT-04@m1:m001_n001",
+              "materialId": "PAT-04",
+              "measure": 1,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 0,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m1:m001_n001#1",
+              "occurrenceId": "PAT-04@m1:m001_n001",
+              "materialId": "PAT-04",
+              "measure": 1,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 1,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m1:m001_n001#2",
+              "occurrenceId": "PAT-04@m1:m001_n001",
+              "materialId": "PAT-04",
+              "measure": 1,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 1.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m3:m003_n001#0",
+              "occurrenceId": "PAT-04@m3:m003_n001",
+              "materialId": "PAT-04",
+              "measure": 3,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 4,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m3:m003_n001#1",
+              "occurrenceId": "PAT-04@m3:m003_n001",
+              "materialId": "PAT-04",
+              "measure": 3,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m3:m003_n001#2",
+              "occurrenceId": "PAT-04@m3:m003_n001",
+              "materialId": "PAT-04",
+              "measure": 3,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 5.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m5:m005_n001#0",
+              "occurrenceId": "PAT-01@m5:m005_n001",
+              "materialId": "PAT-01",
+              "measure": 5,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 8,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m5:m005_n001#1",
+              "occurrenceId": "PAT-01@m5:m005_n001",
+              "materialId": "PAT-01",
+              "measure": 5,
+              "beat": 1,
+              "durationBeats": 1,
+              "absoluteBeat": 9,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m6:m006_n001#0",
+              "occurrenceId": "PAT-02@m6:m006_n001",
+              "materialId": "PAT-02",
+              "measure": 6,
+              "beat": 0,
+              "durationBeats": 0.5,
+              "absoluteBeat": 10,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m6:m006_n001#1",
+              "occurrenceId": "PAT-02@m6:m006_n001",
+              "materialId": "PAT-02",
+              "measure": 6,
+              "beat": 0.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 10.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m6:m006_n001#2",
+              "occurrenceId": "PAT-02@m6:m006_n001",
+              "materialId": "PAT-02",
+              "measure": 6,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 11,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m6:m006_n001#3",
+              "occurrenceId": "PAT-02@m6:m006_n001",
+              "materialId": "PAT-02",
+              "measure": 6,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 11.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m7:m007_n001#0",
+              "occurrenceId": "PAT-04@m7:m007_n001",
+              "materialId": "PAT-04",
+              "measure": 7,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 12,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m7:m007_n001#1",
+              "occurrenceId": "PAT-04@m7:m007_n001",
+              "materialId": "PAT-04",
+              "measure": 7,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 13,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m7:m007_n001#2",
+              "occurrenceId": "PAT-04@m7:m007_n001",
+              "materialId": "PAT-04",
+              "measure": 7,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 13.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m9:m009_n001#0",
+              "occurrenceId": "PAT-01@m9:m009_n001",
+              "materialId": "PAT-01",
+              "measure": 9,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 16,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m9:m009_n001#1",
+              "occurrenceId": "PAT-01@m9:m009_n001",
+              "materialId": "PAT-01",
+              "measure": 9,
+              "beat": 1,
+              "durationBeats": 1,
+              "absoluteBeat": 17,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m10:m010_n001#0",
+              "occurrenceId": "PAT-04@m10:m010_n001",
+              "materialId": "PAT-04",
+              "measure": 10,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 18,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m10:m010_n001#1",
+              "occurrenceId": "PAT-04@m10:m010_n001",
+              "materialId": "PAT-04",
+              "measure": 10,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 19,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m10:m010_n001#2",
+              "occurrenceId": "PAT-04@m10:m010_n001",
+              "materialId": "PAT-04",
+              "measure": 10,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 19.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m11:m011_n001#0",
+              "occurrenceId": "PAT-01@m11:m011_n001",
+              "materialId": "PAT-01",
+              "measure": 11,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 20,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m11:m011_n001#1",
+              "occurrenceId": "PAT-01@m11:m011_n001",
+              "materialId": "PAT-01",
+              "measure": 11,
+              "beat": 1,
+              "durationBeats": 1,
+              "absoluteBeat": 21,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m12:m012_n001#0",
+              "occurrenceId": "PAT-04@m12:m012_n001",
+              "materialId": "PAT-04",
+              "measure": 12,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 22,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m12:m012_n001#1",
+              "occurrenceId": "PAT-04@m12:m012_n001",
+              "materialId": "PAT-04",
+              "measure": 12,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 23,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m12:m012_n001#2",
+              "occurrenceId": "PAT-04@m12:m012_n001",
+              "materialId": "PAT-04",
+              "measure": 12,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 23.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m13:m013_n001#0",
+              "occurrenceId": "PAT-04@m13:m013_n001",
+              "materialId": "PAT-04",
+              "measure": 13,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 24,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m13:m013_n001#1",
+              "occurrenceId": "PAT-04@m13:m013_n001",
+              "materialId": "PAT-04",
+              "measure": 13,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 25,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m13:m013_n001#2",
+              "occurrenceId": "PAT-04@m13:m013_n001",
+              "materialId": "PAT-04",
+              "measure": 13,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 25.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m14:m014_n001#0",
+              "occurrenceId": "PAT-02@m14:m014_n001",
+              "materialId": "PAT-02",
+              "measure": 14,
+              "beat": 0,
+              "durationBeats": 0.5,
+              "absoluteBeat": 26,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m14:m014_n001#1",
+              "occurrenceId": "PAT-02@m14:m014_n001",
+              "materialId": "PAT-02",
+              "measure": 14,
+              "beat": 0.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 26.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m14:m014_n001#2",
+              "occurrenceId": "PAT-02@m14:m014_n001",
+              "materialId": "PAT-02",
+              "measure": 14,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 27,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m14:m014_n001#3",
+              "occurrenceId": "PAT-02@m14:m014_n001",
+              "materialId": "PAT-02",
+              "measure": 14,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 27.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m15:m015_n001#0",
+              "occurrenceId": "PAT-02@m15:m015_n001",
+              "materialId": "PAT-02",
+              "measure": 15,
+              "beat": 0,
+              "durationBeats": 0.5,
+              "absoluteBeat": 28,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m15:m015_n001#1",
+              "occurrenceId": "PAT-02@m15:m015_n001",
+              "materialId": "PAT-02",
+              "measure": 15,
+              "beat": 0.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 28.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m15:m015_n001#2",
+              "occurrenceId": "PAT-02@m15:m015_n001",
+              "materialId": "PAT-02",
+              "measure": 15,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 29,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m15:m015_n001#3",
+              "occurrenceId": "PAT-02@m15:m015_n001",
+              "materialId": "PAT-02",
+              "measure": 15,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 29.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            }
+          ],
+          "coverage": {
+            "segmentCount": 4,
+            "eventCount": 36,
+            "activeMeasureCount": 12,
+            "totalMeasureCount": 16
+          }
+        },
+        "bodyMappingContract": "knowledge_base_pattern_actions",
+        "songPlayAudioSource": "original_audio",
+        "learningSequence": [
+          "chant",
+          "body_demo",
+          "rhythm_game",
+          "song_play"
+        ],
+        "selectionSource": "curriculum_material_match"
+      }
+    },
+    {
+      "activityId": "act_singing",
+      "type": "singing",
+      "teachingAssetIds": [
+        "TA-SOL-DEGREE-NAME",
+        "TA-SOL-SCORE-READ"
+      ],
+      "materialIds": [],
+      "teachingUnitIds": [
+        "singing_unit_m001_m004",
+        "singing_unit_m005_m008",
+        "singing_unit_m009_m012",
+        "singing_unit_m013_m016"
+      ],
+      "bindings": {
+        "teachingUnits": [
+          {
+            "teachingUnitId": "singing_unit_m001_m004",
+            "lessonSegmentId": "lesson_segment_m001_m004",
+            "label": "第 1–4 小节",
+            "startMeasure": 1,
+            "endMeasure": 4,
+            "measureCount": 4,
+            "absolutePitches": [
+              "C5",
+              "C5",
+              "D5",
+              "G4",
+              "F4",
+              "F4",
+              "D4",
+              "G4"
+            ],
+            "midiNumbers": [
+              72,
+              72,
+              74,
+              67,
+              65,
+              65,
+              62,
+              67
+            ],
+            "frequencies": [
+              523.251,
+              523.251,
+              587.33,
+              391.995,
+              349.228,
+              349.228,
+              293.665,
+              391.995
+            ],
+            "degrees": [
+              5,
+              5,
+              6,
+              2,
+              1,
+              1,
+              6,
+              2
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              -1,
+              0
+            ],
+            "durations": [
+              1,
+              0.5,
+              0.5,
+              2,
+              1,
+              0.5,
+              0.5,
+              2
+            ],
+            "solfege": [
+              "sol",
+              "sol",
+              "la",
+              "re",
+              "do",
+              "do",
+              "la",
+              "re"
+            ],
+            "lyrics": [
+              "东",
+              "方",
+              null,
+              "红",
+              "太",
+              "阳",
+              null,
+              "升"
+            ],
+            "lyricContinuations": [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+              true,
+              false
+            ],
+            "lyricSyllableIds": [
+              "syllable_001",
+              "syllable_002",
+              "syllable_002",
+              "syllable_003",
+              "syllable_004",
+              "syllable_005",
+              "syllable_005",
+              "syllable_006"
+            ],
+            "restMask": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "noteIds": [
+              "m001_n001",
+              "m001_n002",
+              "m001_n003",
+              "m002_n001",
+              "m003_n001",
+              "m003_n002",
+              "m003_n003",
+              "m004_n001"
+            ]
+          },
+          {
+            "teachingUnitId": "singing_unit_m005_m008",
+            "lessonSegmentId": "lesson_segment_m005_m008",
+            "label": "第 5–8 小节",
+            "startMeasure": 5,
+            "endMeasure": 8,
+            "measureCount": 4,
+            "absolutePitches": [
+              "C5",
+              "C5",
+              "D5",
+              "F5",
+              "D5",
+              "C5",
+              "F4",
+              "F4",
+              "D4",
+              "G4"
+            ],
+            "midiNumbers": [
+              72,
+              72,
+              74,
+              77,
+              74,
+              72,
+              65,
+              65,
+              62,
+              67
+            ],
+            "frequencies": [
+              523.251,
+              523.251,
+              587.33,
+              698.456,
+              587.33,
+              523.251,
+              349.228,
+              349.228,
+              293.665,
+              391.995
+            ],
+            "degrees": [
+              5,
+              5,
+              6,
+              1,
+              6,
+              5,
+              1,
+              1,
+              6,
+              2
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              -1,
+              0
+            ],
+            "durations": [
+              1,
+              1,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              1,
+              0.5,
+              0.5,
+              2
+            ],
+            "solfege": [
+              "sol",
+              "sol",
+              "la",
+              "do",
+              "la",
+              "sol",
+              "do",
+              "do",
+              "la",
+              "re"
+            ],
+            "lyrics": [
+              "中",
+              "国",
+              "出",
+              null,
+              "了",
+              "个",
+              "毛",
+              "泽",
+              null,
+              "东"
+            ],
+            "lyricContinuations": [
+              false,
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+              false,
+              true,
+              false
+            ],
+            "lyricSyllableIds": [
+              "syllable_007",
+              "syllable_008",
+              "syllable_009",
+              "syllable_009",
+              "syllable_011",
+              "syllable_035",
+              "syllable_013",
+              "syllable_014",
+              "syllable_014",
+              "syllable_033"
+            ],
+            "restMask": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "noteIds": [
+              "m005_n001",
+              "m005_n002",
+              "m006_n001",
+              "m006_n002",
+              "m006_n003",
+              "m006_n004",
+              "m007_n001",
+              "m007_n002",
+              "m007_n003",
+              "m008_n001"
+            ]
+          },
+          {
+            "teachingUnitId": "singing_unit_m009_m012",
+            "lessonSegmentId": "lesson_segment_m009_m012",
+            "label": "第 9–12 小节",
+            "startMeasure": 9,
+            "endMeasure": 12,
+            "measureCount": 4,
+            "absolutePitches": [
+              "C5",
+              "G4",
+              "F4",
+              "E4",
+              "D4",
+              "C4",
+              "C5",
+              "G4",
+              "A4",
+              "G4"
+            ],
+            "midiNumbers": [
+              72,
+              67,
+              65,
+              64,
+              62,
+              60,
+              72,
+              67,
+              69,
+              67
+            ],
+            "frequencies": [
+              523.251,
+              391.995,
+              349.228,
+              329.628,
+              293.665,
+              261.626,
+              523.251,
+              391.995,
+              440,
+              391.995
+            ],
+            "degrees": [
+              5,
+              2,
+              1,
+              7,
+              6,
+              5,
+              5,
+              2,
+              3,
+              2
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              -1,
+              -1,
+              -1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "durations": [
+              1,
+              1,
+              1,
+              0.5,
+              0.5,
+              1,
+              1,
+              1,
+              0.5,
+              0.5
+            ],
+            "solfege": [
+              "sol",
+              "re",
+              "do",
+              "si",
+              "la",
+              "sol",
+              "sol",
+              "re",
+              "mi",
+              "re"
+            ],
+            "lyrics": [
+              "他",
+              "为",
+              "人",
+              "民",
+              null,
+              "谋",
+              "幸",
+              "福",
+              "呼",
+              "儿"
+            ],
+            "lyricContinuations": [
+              false,
+              false,
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "lyricSyllableIds": [
+              "syllable_015",
+              "syllable_016",
+              "syllable_017",
+              "syllable_018",
+              "syllable_018",
+              "syllable_020",
+              "syllable_021",
+              "syllable_036",
+              "syllable_022",
+              "syllable_023"
+            ],
+            "restMask": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "noteIds": [
+              "m009_n001",
+              "m009_n002",
+              "m010_n001",
+              "m010_n002",
+              "m010_n003",
+              "m011_n001",
+              "m011_n002",
+              "m012_n001",
+              "m012_n002",
+              "m012_n003"
+            ]
+          },
+          {
+            "teachingUnitId": "singing_unit_m013_m016",
+            "lessonSegmentId": "lesson_segment_m013_m016",
+            "label": "第 13–16 小节",
+            "startMeasure": 13,
+            "endMeasure": 16,
+            "measureCount": 4,
+            "absolutePitches": [
+              "F4",
+              "F4",
+              "D4",
+              "G4",
+              "A4",
+              "G4",
+              "F4",
+              "G4",
+              "F4",
+              "E4",
+              "D4",
+              "C4"
+            ],
+            "midiNumbers": [
+              65,
+              65,
+              62,
+              67,
+              69,
+              67,
+              65,
+              67,
+              65,
+              64,
+              62,
+              60
+            ],
+            "frequencies": [
+              349.228,
+              349.228,
+              293.665,
+              391.995,
+              440,
+              391.995,
+              349.228,
+              391.995,
+              349.228,
+              329.628,
+              293.665,
+              261.626
+            ],
+            "degrees": [
+              1,
+              1,
+              6,
+              2,
+              3,
+              2,
+              1,
+              2,
+              1,
+              7,
+              6,
+              5
+            ],
+            "octaves": [
+              0,
+              0,
+              -1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              -1,
+              -1,
+              -1
+            ],
+            "durations": [
+              1,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              2
+            ],
+            "solfege": [
+              "do",
+              "do",
+              "la",
+              "re",
+              "mi",
+              "re",
+              "do",
+              "re",
+              "do",
+              "si",
+              "la",
+              "sol"
+            ],
+            "lyrics": [
+              "嗨",
+              "哟",
+              null,
+              "他",
+              "是",
+              "人",
+              "民",
+              "大",
+              null,
+              "救",
+              null,
+              "星"
+            ],
+            "lyricContinuations": [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              true,
+              false,
+              true,
+              false
+            ],
+            "lyricSyllableIds": [
+              "syllable_024",
+              "syllable_025",
+              "syllable_025",
+              "syllable_026",
+              "syllable_027",
+              "syllable_028",
+              "syllable_029",
+              "syllable_030",
+              "syllable_030",
+              "syllable_032",
+              "syllable_032",
+              "syllable_034"
+            ],
+            "restMask": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "noteIds": [
+              "m013_n001",
+              "m013_n002",
+              "m013_n003",
+              "m014_n001",
+              "m014_n002",
+              "m014_n003",
+              "m014_n004",
+              "m015_n001",
+              "m015_n002",
+              "m015_n003",
+              "m015_n004",
+              "m016_n001"
+            ]
+          }
+        ],
+        "lessonSegments": [
+          {
+            "segmentId": "lesson_segment_m001_m004",
+            "index": 0,
+            "label": "第 1–4 小节",
+            "startMeasure": 1,
+            "endMeasure": 4,
+            "measureCount": 4,
+            "measures": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m005_m008",
+            "index": 1,
+            "label": "第 5–8 小节",
+            "startMeasure": 5,
+            "endMeasure": 8,
+            "measureCount": 4,
+            "measures": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m009_m012",
+            "index": 2,
+            "label": "第 9–12 小节",
+            "startMeasure": 9,
+            "endMeasure": 12,
+            "measureCount": 4,
+            "measures": [
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m013_m016",
+            "index": 3,
+            "label": "第 13–16 小节",
+            "startMeasure": 13,
+            "endMeasure": 16,
+            "measureCount": 4,
+            "measures": [
+              13,
+              14,
+              15,
+              16
+            ]
+          }
+        ],
+        "measuresPerUnit": 4,
+        "playbackModes": [
+          "piano",
+          "solfege",
+          "original"
+        ],
+        "defaultPlaybackMode": "piano",
+        "measureAlignmentId": "song_measure_alignment"
+      }
+    },
+    {
+      "activityId": "act_ensemble",
+      "type": "ensemble",
+      "teachingAssetIds": [
+        "TA-RHY-PAT-04",
+        "TA-RHY-PAT-01",
+        "TA-RHY-PAT-02"
+      ],
+      "materialIds": [
+        "PAT-04",
+        "PAT-01",
+        "PAT-02"
+      ],
+      "teachingUnitIds": [
+        "singing_unit_m001_m004",
+        "singing_unit_m005_m008",
+        "singing_unit_m009_m012",
+        "singing_unit_m013_m016"
+      ],
+      "bindings": {
+        "roles": [
+          "singing",
+          "body_rhythm",
+          "melody_gesture"
+        ],
+        "rhythmMaterialIds": [
+          "PAT-04",
+          "PAT-01",
+          "PAT-02"
+        ],
+        "rhythmParts": [
+          {
+            "materialId": "PAT-04",
+            "teachingAssetId": "TA-RHY-PAT-04",
+            "occurrenceIds": [
+              "PAT-04@m1:m001_n001",
+              "PAT-04@m3:m003_n001",
+              "PAT-04@m7:m007_n001",
+              "PAT-04@m10:m010_n001",
+              "PAT-04@m12:m012_n001",
+              "PAT-04@m13:m013_n001"
+            ],
+            "notation": "♩ ♪♪",
+            "durations": [
+              1,
+              0.5,
+              0.5
+            ],
+            "chant": [
+              "da",
+              "de",
+              "de"
+            ],
+            "bodyActions": [
+              "PAT",
+              "CLAP",
+              "CLAP"
+            ],
+            "bodyActionsZh": [
+              "双手拍腿",
+              "拍手",
+              "拍手"
+            ],
+            "bodyMappingSource": "knowledge_base_teaching_asset",
+            "previewAudio": "/assets/audio/rhythm/patterns/pat-04.wav",
+            "previewMetadata": "/assets/audio/rhythm/patterns/pat-04.metadata.json",
+            "trainingTempoRef": "simplePatterns",
+            "trainingBpm": 80
+          },
+          {
+            "materialId": "PAT-01",
+            "teachingAssetId": "TA-RHY-PAT-01",
+            "occurrenceIds": [
+              "PAT-01@m5:m005_n001",
+              "PAT-01@m9:m009_n001",
+              "PAT-01@m11:m011_n001"
+            ],
+            "notation": "♩ ♩",
+            "durations": [
+              1,
+              1
+            ],
+            "chant": [
+              "da",
+              "da"
+            ],
+            "bodyActions": [
+              "STOMP",
+              "STOMP"
+            ],
+            "bodyActionsZh": [
+              "原地跺脚",
+              "原地跺脚"
+            ],
+            "bodyMappingSource": "knowledge_base_teaching_asset",
+            "previewAudio": "/assets/audio/rhythm/patterns/pat-01.wav",
+            "previewMetadata": "/assets/audio/rhythm/patterns/pat-01.metadata.json",
+            "trainingTempoRef": "simplePatterns",
+            "trainingBpm": 80
+          },
+          {
+            "materialId": "PAT-02",
+            "teachingAssetId": "TA-RHY-PAT-02",
+            "occurrenceIds": [
+              "PAT-02@m6:m006_n001",
+              "PAT-02@m14:m014_n001",
+              "PAT-02@m15:m015_n001"
+            ],
+            "notation": "♪♪ ♪♪",
+            "durations": [
+              0.5,
+              0.5,
+              0.5,
+              0.5
+            ],
+            "chant": [
+              "de",
+              "de",
+              "de",
+              "de"
+            ],
+            "bodyActions": [
+              "CLAP",
+              "CLAP",
+              "CLAP",
+              "CLAP"
+            ],
+            "bodyActionsZh": [
+              "拍手",
+              "拍手",
+              "拍手",
+              "拍手"
+            ],
+            "bodyMappingSource": "knowledge_base_teaching_asset",
+            "previewAudio": "/assets/audio/rhythm/patterns/pat-02.wav",
+            "previewMetadata": "/assets/audio/rhythm/patterns/pat-02.metadata.json",
+            "trainingTempoRef": "simplePatterns",
+            "trainingBpm": 80
+          }
+        ],
+        "bodySongPlan": {
+          "schemaVersion": "1.0.0",
+          "planId": "song_rhythm_body_plan",
+          "songId": "dongfanghong",
+          "source": "rhythm_learning_pattern_occurrences",
+          "mappingContract": "knowledge_base_pattern_actions",
+          "unmatchedBehavior": "READY_LISTEN",
+          "segments": [
+            {
+              "segmentId": "lesson_segment_m001_m004",
+              "index": 0,
+              "label": "第 1–4 小节",
+              "startMeasure": 1,
+              "endMeasure": 4,
+              "measureCount": 4,
+              "measures": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "events": [
+                {
+                  "eventId": "PAT-04@m1:m001_n001#0",
+                  "occurrenceId": "PAT-04@m1:m001_n001",
+                  "materialId": "PAT-04",
+                  "measure": 1,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 0,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m1:m001_n001#1",
+                  "occurrenceId": "PAT-04@m1:m001_n001",
+                  "materialId": "PAT-04",
+                  "measure": 1,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 1,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m1:m001_n001#2",
+                  "occurrenceId": "PAT-04@m1:m001_n001",
+                  "materialId": "PAT-04",
+                  "measure": 1,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 1.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m3:m003_n001#0",
+                  "occurrenceId": "PAT-04@m3:m003_n001",
+                  "materialId": "PAT-04",
+                  "measure": 3,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 4,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m3:m003_n001#1",
+                  "occurrenceId": "PAT-04@m3:m003_n001",
+                  "materialId": "PAT-04",
+                  "measure": 3,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m3:m003_n001#2",
+                  "occurrenceId": "PAT-04@m3:m003_n001",
+                  "materialId": "PAT-04",
+                  "measure": 3,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 5.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                }
+              ],
+              "materialIds": [
+                "PAT-04"
+              ],
+              "mappingSource": "rhythm_learning_patterns"
+            },
+            {
+              "segmentId": "lesson_segment_m005_m008",
+              "index": 1,
+              "label": "第 5–8 小节",
+              "startMeasure": 5,
+              "endMeasure": 8,
+              "measureCount": 4,
+              "measures": [
+                5,
+                6,
+                7,
+                8
+              ],
+              "events": [
+                {
+                  "eventId": "PAT-01@m5:m005_n001#0",
+                  "occurrenceId": "PAT-01@m5:m005_n001",
+                  "materialId": "PAT-01",
+                  "measure": 5,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 8,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-01@m5:m005_n001#1",
+                  "occurrenceId": "PAT-01@m5:m005_n001",
+                  "materialId": "PAT-01",
+                  "measure": 5,
+                  "beat": 1,
+                  "durationBeats": 1,
+                  "absoluteBeat": 9,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m6:m006_n001#0",
+                  "occurrenceId": "PAT-02@m6:m006_n001",
+                  "materialId": "PAT-02",
+                  "measure": 6,
+                  "beat": 0,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 10,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m6:m006_n001#1",
+                  "occurrenceId": "PAT-02@m6:m006_n001",
+                  "materialId": "PAT-02",
+                  "measure": 6,
+                  "beat": 0.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 10.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m6:m006_n001#2",
+                  "occurrenceId": "PAT-02@m6:m006_n001",
+                  "materialId": "PAT-02",
+                  "measure": 6,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 11,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m6:m006_n001#3",
+                  "occurrenceId": "PAT-02@m6:m006_n001",
+                  "materialId": "PAT-02",
+                  "measure": 6,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 11.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m7:m007_n001#0",
+                  "occurrenceId": "PAT-04@m7:m007_n001",
+                  "materialId": "PAT-04",
+                  "measure": 7,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 12,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m7:m007_n001#1",
+                  "occurrenceId": "PAT-04@m7:m007_n001",
+                  "materialId": "PAT-04",
+                  "measure": 7,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 13,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m7:m007_n001#2",
+                  "occurrenceId": "PAT-04@m7:m007_n001",
+                  "materialId": "PAT-04",
+                  "measure": 7,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 13.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                }
+              ],
+              "materialIds": [
+                "PAT-04",
+                "PAT-01",
+                "PAT-02"
+              ],
+              "mappingSource": "rhythm_learning_patterns"
+            },
+            {
+              "segmentId": "lesson_segment_m009_m012",
+              "index": 2,
+              "label": "第 9–12 小节",
+              "startMeasure": 9,
+              "endMeasure": 12,
+              "measureCount": 4,
+              "measures": [
+                9,
+                10,
+                11,
+                12
+              ],
+              "events": [
+                {
+                  "eventId": "PAT-01@m9:m009_n001#0",
+                  "occurrenceId": "PAT-01@m9:m009_n001",
+                  "materialId": "PAT-01",
+                  "measure": 9,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 16,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-01@m9:m009_n001#1",
+                  "occurrenceId": "PAT-01@m9:m009_n001",
+                  "materialId": "PAT-01",
+                  "measure": 9,
+                  "beat": 1,
+                  "durationBeats": 1,
+                  "absoluteBeat": 17,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m10:m010_n001#0",
+                  "occurrenceId": "PAT-04@m10:m010_n001",
+                  "materialId": "PAT-04",
+                  "measure": 10,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 18,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m10:m010_n001#1",
+                  "occurrenceId": "PAT-04@m10:m010_n001",
+                  "materialId": "PAT-04",
+                  "measure": 10,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 19,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m10:m010_n001#2",
+                  "occurrenceId": "PAT-04@m10:m010_n001",
+                  "materialId": "PAT-04",
+                  "measure": 10,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 19.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-01@m11:m011_n001#0",
+                  "occurrenceId": "PAT-01@m11:m011_n001",
+                  "materialId": "PAT-01",
+                  "measure": 11,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 20,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-01@m11:m011_n001#1",
+                  "occurrenceId": "PAT-01@m11:m011_n001",
+                  "materialId": "PAT-01",
+                  "measure": 11,
+                  "beat": 1,
+                  "durationBeats": 1,
+                  "absoluteBeat": 21,
+                  "action": "STOMP",
+                  "actionLabel": "原地跺脚",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m12:m012_n001#0",
+                  "occurrenceId": "PAT-04@m12:m012_n001",
+                  "materialId": "PAT-04",
+                  "measure": 12,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 22,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m12:m012_n001#1",
+                  "occurrenceId": "PAT-04@m12:m012_n001",
+                  "materialId": "PAT-04",
+                  "measure": 12,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 23,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m12:m012_n001#2",
+                  "occurrenceId": "PAT-04@m12:m012_n001",
+                  "materialId": "PAT-04",
+                  "measure": 12,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 23.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                }
+              ],
+              "materialIds": [
+                "PAT-04",
+                "PAT-01"
+              ],
+              "mappingSource": "rhythm_learning_patterns"
+            },
+            {
+              "segmentId": "lesson_segment_m013_m016",
+              "index": 3,
+              "label": "第 13–16 小节",
+              "startMeasure": 13,
+              "endMeasure": 16,
+              "measureCount": 4,
+              "measures": [
+                13,
+                14,
+                15,
+                16
+              ],
+              "events": [
+                {
+                  "eventId": "PAT-04@m13:m013_n001#0",
+                  "occurrenceId": "PAT-04@m13:m013_n001",
+                  "materialId": "PAT-04",
+                  "measure": 13,
+                  "beat": 0,
+                  "durationBeats": 1,
+                  "absoluteBeat": 24,
+                  "action": "PAT",
+                  "actionLabel": "双手拍腿",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m13:m013_n001#1",
+                  "occurrenceId": "PAT-04@m13:m013_n001",
+                  "materialId": "PAT-04",
+                  "measure": 13,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 25,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-04@m13:m013_n001#2",
+                  "occurrenceId": "PAT-04@m13:m013_n001",
+                  "materialId": "PAT-04",
+                  "measure": 13,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 25.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m14:m014_n001#0",
+                  "occurrenceId": "PAT-02@m14:m014_n001",
+                  "materialId": "PAT-02",
+                  "measure": 14,
+                  "beat": 0,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 26,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m14:m014_n001#1",
+                  "occurrenceId": "PAT-02@m14:m014_n001",
+                  "materialId": "PAT-02",
+                  "measure": 14,
+                  "beat": 0.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 26.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m14:m014_n001#2",
+                  "occurrenceId": "PAT-02@m14:m014_n001",
+                  "materialId": "PAT-02",
+                  "measure": 14,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 27,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m14:m014_n001#3",
+                  "occurrenceId": "PAT-02@m14:m014_n001",
+                  "materialId": "PAT-02",
+                  "measure": 14,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 27.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m15:m015_n001#0",
+                  "occurrenceId": "PAT-02@m15:m015_n001",
+                  "materialId": "PAT-02",
+                  "measure": 15,
+                  "beat": 0,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 28,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m15:m015_n001#1",
+                  "occurrenceId": "PAT-02@m15:m015_n001",
+                  "materialId": "PAT-02",
+                  "measure": 15,
+                  "beat": 0.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 28.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m15:m015_n001#2",
+                  "occurrenceId": "PAT-02@m15:m015_n001",
+                  "materialId": "PAT-02",
+                  "measure": 15,
+                  "beat": 1,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 29,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                },
+                {
+                  "eventId": "PAT-02@m15:m015_n001#3",
+                  "occurrenceId": "PAT-02@m15:m015_n001",
+                  "materialId": "PAT-02",
+                  "measure": 15,
+                  "beat": 1.5,
+                  "durationBeats": 0.5,
+                  "absoluteBeat": 29.5,
+                  "action": "CLAP",
+                  "actionLabel": "拍手",
+                  "bodyMappingSource": "knowledge_base_teaching_asset"
+                }
+              ],
+              "materialIds": [
+                "PAT-04",
+                "PAT-02"
+              ],
+              "mappingSource": "rhythm_learning_patterns"
+            }
+          ],
+          "events": [
+            {
+              "eventId": "PAT-04@m1:m001_n001#0",
+              "occurrenceId": "PAT-04@m1:m001_n001",
+              "materialId": "PAT-04",
+              "measure": 1,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 0,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m1:m001_n001#1",
+              "occurrenceId": "PAT-04@m1:m001_n001",
+              "materialId": "PAT-04",
+              "measure": 1,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 1,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m1:m001_n001#2",
+              "occurrenceId": "PAT-04@m1:m001_n001",
+              "materialId": "PAT-04",
+              "measure": 1,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 1.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m3:m003_n001#0",
+              "occurrenceId": "PAT-04@m3:m003_n001",
+              "materialId": "PAT-04",
+              "measure": 3,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 4,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m3:m003_n001#1",
+              "occurrenceId": "PAT-04@m3:m003_n001",
+              "materialId": "PAT-04",
+              "measure": 3,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m3:m003_n001#2",
+              "occurrenceId": "PAT-04@m3:m003_n001",
+              "materialId": "PAT-04",
+              "measure": 3,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 5.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m5:m005_n001#0",
+              "occurrenceId": "PAT-01@m5:m005_n001",
+              "materialId": "PAT-01",
+              "measure": 5,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 8,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m5:m005_n001#1",
+              "occurrenceId": "PAT-01@m5:m005_n001",
+              "materialId": "PAT-01",
+              "measure": 5,
+              "beat": 1,
+              "durationBeats": 1,
+              "absoluteBeat": 9,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m6:m006_n001#0",
+              "occurrenceId": "PAT-02@m6:m006_n001",
+              "materialId": "PAT-02",
+              "measure": 6,
+              "beat": 0,
+              "durationBeats": 0.5,
+              "absoluteBeat": 10,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m6:m006_n001#1",
+              "occurrenceId": "PAT-02@m6:m006_n001",
+              "materialId": "PAT-02",
+              "measure": 6,
+              "beat": 0.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 10.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m6:m006_n001#2",
+              "occurrenceId": "PAT-02@m6:m006_n001",
+              "materialId": "PAT-02",
+              "measure": 6,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 11,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m6:m006_n001#3",
+              "occurrenceId": "PAT-02@m6:m006_n001",
+              "materialId": "PAT-02",
+              "measure": 6,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 11.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m7:m007_n001#0",
+              "occurrenceId": "PAT-04@m7:m007_n001",
+              "materialId": "PAT-04",
+              "measure": 7,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 12,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m7:m007_n001#1",
+              "occurrenceId": "PAT-04@m7:m007_n001",
+              "materialId": "PAT-04",
+              "measure": 7,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 13,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m7:m007_n001#2",
+              "occurrenceId": "PAT-04@m7:m007_n001",
+              "materialId": "PAT-04",
+              "measure": 7,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 13.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m9:m009_n001#0",
+              "occurrenceId": "PAT-01@m9:m009_n001",
+              "materialId": "PAT-01",
+              "measure": 9,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 16,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m9:m009_n001#1",
+              "occurrenceId": "PAT-01@m9:m009_n001",
+              "materialId": "PAT-01",
+              "measure": 9,
+              "beat": 1,
+              "durationBeats": 1,
+              "absoluteBeat": 17,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m10:m010_n001#0",
+              "occurrenceId": "PAT-04@m10:m010_n001",
+              "materialId": "PAT-04",
+              "measure": 10,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 18,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m10:m010_n001#1",
+              "occurrenceId": "PAT-04@m10:m010_n001",
+              "materialId": "PAT-04",
+              "measure": 10,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 19,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m10:m010_n001#2",
+              "occurrenceId": "PAT-04@m10:m010_n001",
+              "materialId": "PAT-04",
+              "measure": 10,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 19.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m11:m011_n001#0",
+              "occurrenceId": "PAT-01@m11:m011_n001",
+              "materialId": "PAT-01",
+              "measure": 11,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 20,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-01@m11:m011_n001#1",
+              "occurrenceId": "PAT-01@m11:m011_n001",
+              "materialId": "PAT-01",
+              "measure": 11,
+              "beat": 1,
+              "durationBeats": 1,
+              "absoluteBeat": 21,
+              "action": "STOMP",
+              "actionLabel": "原地跺脚",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m12:m012_n001#0",
+              "occurrenceId": "PAT-04@m12:m012_n001",
+              "materialId": "PAT-04",
+              "measure": 12,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 22,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m12:m012_n001#1",
+              "occurrenceId": "PAT-04@m12:m012_n001",
+              "materialId": "PAT-04",
+              "measure": 12,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 23,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m12:m012_n001#2",
+              "occurrenceId": "PAT-04@m12:m012_n001",
+              "materialId": "PAT-04",
+              "measure": 12,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 23.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m13:m013_n001#0",
+              "occurrenceId": "PAT-04@m13:m013_n001",
+              "materialId": "PAT-04",
+              "measure": 13,
+              "beat": 0,
+              "durationBeats": 1,
+              "absoluteBeat": 24,
+              "action": "PAT",
+              "actionLabel": "双手拍腿",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m13:m013_n001#1",
+              "occurrenceId": "PAT-04@m13:m013_n001",
+              "materialId": "PAT-04",
+              "measure": 13,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 25,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-04@m13:m013_n001#2",
+              "occurrenceId": "PAT-04@m13:m013_n001",
+              "materialId": "PAT-04",
+              "measure": 13,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 25.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m14:m014_n001#0",
+              "occurrenceId": "PAT-02@m14:m014_n001",
+              "materialId": "PAT-02",
+              "measure": 14,
+              "beat": 0,
+              "durationBeats": 0.5,
+              "absoluteBeat": 26,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m14:m014_n001#1",
+              "occurrenceId": "PAT-02@m14:m014_n001",
+              "materialId": "PAT-02",
+              "measure": 14,
+              "beat": 0.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 26.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m14:m014_n001#2",
+              "occurrenceId": "PAT-02@m14:m014_n001",
+              "materialId": "PAT-02",
+              "measure": 14,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 27,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m14:m014_n001#3",
+              "occurrenceId": "PAT-02@m14:m014_n001",
+              "materialId": "PAT-02",
+              "measure": 14,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 27.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m15:m015_n001#0",
+              "occurrenceId": "PAT-02@m15:m015_n001",
+              "materialId": "PAT-02",
+              "measure": 15,
+              "beat": 0,
+              "durationBeats": 0.5,
+              "absoluteBeat": 28,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m15:m015_n001#1",
+              "occurrenceId": "PAT-02@m15:m015_n001",
+              "materialId": "PAT-02",
+              "measure": 15,
+              "beat": 0.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 28.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m15:m015_n001#2",
+              "occurrenceId": "PAT-02@m15:m015_n001",
+              "materialId": "PAT-02",
+              "measure": 15,
+              "beat": 1,
+              "durationBeats": 0.5,
+              "absoluteBeat": 29,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            },
+            {
+              "eventId": "PAT-02@m15:m015_n001#3",
+              "occurrenceId": "PAT-02@m15:m015_n001",
+              "materialId": "PAT-02",
+              "measure": 15,
+              "beat": 1.5,
+              "durationBeats": 0.5,
+              "absoluteBeat": 29.5,
+              "action": "CLAP",
+              "actionLabel": "拍手",
+              "bodyMappingSource": "knowledge_base_teaching_asset"
+            }
+          ],
+          "coverage": {
+            "segmentCount": 4,
+            "eventCount": 36,
+            "activeMeasureCount": 12,
+            "totalMeasureCount": 16
+          }
+        },
+        "bodyMappingContract": "reuse_rhythm_learning_song_play",
+        "singingParts": [
+          {
+            "teachingUnitId": "singing_unit_m001_m004",
+            "lessonSegmentId": "lesson_segment_m001_m004",
+            "label": "第 1–4 小节",
+            "startMeasure": 1,
+            "endMeasure": 4,
+            "measureCount": 4,
+            "absolutePitches": [
+              "C5",
+              "C5",
+              "D5",
+              "G4",
+              "F4",
+              "F4",
+              "D4",
+              "G4"
+            ],
+            "midiNumbers": [
+              72,
+              72,
+              74,
+              67,
+              65,
+              65,
+              62,
+              67
+            ],
+            "frequencies": [
+              523.251,
+              523.251,
+              587.33,
+              391.995,
+              349.228,
+              349.228,
+              293.665,
+              391.995
+            ],
+            "degrees": [
+              5,
+              5,
+              6,
+              2,
+              1,
+              1,
+              6,
+              2
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              -1,
+              0
+            ],
+            "durations": [
+              1,
+              0.5,
+              0.5,
+              2,
+              1,
+              0.5,
+              0.5,
+              2
+            ],
+            "solfege": [
+              "sol",
+              "sol",
+              "la",
+              "re",
+              "do",
+              "do",
+              "la",
+              "re"
+            ],
+            "lyrics": [
+              "东",
+              "方",
+              null,
+              "红",
+              "太",
+              "阳",
+              null,
+              "升"
+            ],
+            "lyricContinuations": [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+              true,
+              false
+            ],
+            "lyricSyllableIds": [
+              "syllable_001",
+              "syllable_002",
+              "syllable_002",
+              "syllable_003",
+              "syllable_004",
+              "syllable_005",
+              "syllable_005",
+              "syllable_006"
+            ],
+            "restMask": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "noteIds": [
+              "m001_n001",
+              "m001_n002",
+              "m001_n003",
+              "m002_n001",
+              "m003_n001",
+              "m003_n002",
+              "m003_n003",
+              "m004_n001"
+            ]
+          },
+          {
+            "teachingUnitId": "singing_unit_m005_m008",
+            "lessonSegmentId": "lesson_segment_m005_m008",
+            "label": "第 5–8 小节",
+            "startMeasure": 5,
+            "endMeasure": 8,
+            "measureCount": 4,
+            "absolutePitches": [
+              "C5",
+              "C5",
+              "D5",
+              "F5",
+              "D5",
+              "C5",
+              "F4",
+              "F4",
+              "D4",
+              "G4"
+            ],
+            "midiNumbers": [
+              72,
+              72,
+              74,
+              77,
+              74,
+              72,
+              65,
+              65,
+              62,
+              67
+            ],
+            "frequencies": [
+              523.251,
+              523.251,
+              587.33,
+              698.456,
+              587.33,
+              523.251,
+              349.228,
+              349.228,
+              293.665,
+              391.995
+            ],
+            "degrees": [
+              5,
+              5,
+              6,
+              1,
+              6,
+              5,
+              1,
+              1,
+              6,
+              2
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              -1,
+              0
+            ],
+            "durations": [
+              1,
+              1,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              1,
+              0.5,
+              0.5,
+              2
+            ],
+            "solfege": [
+              "sol",
+              "sol",
+              "la",
+              "do",
+              "la",
+              "sol",
+              "do",
+              "do",
+              "la",
+              "re"
+            ],
+            "lyrics": [
+              "中",
+              "国",
+              "出",
+              null,
+              "了",
+              "个",
+              "毛",
+              "泽",
+              null,
+              "东"
+            ],
+            "lyricContinuations": [
+              false,
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+              false,
+              true,
+              false
+            ],
+            "lyricSyllableIds": [
+              "syllable_007",
+              "syllable_008",
+              "syllable_009",
+              "syllable_009",
+              "syllable_011",
+              "syllable_035",
+              "syllable_013",
+              "syllable_014",
+              "syllable_014",
+              "syllable_033"
+            ],
+            "restMask": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "noteIds": [
+              "m005_n001",
+              "m005_n002",
+              "m006_n001",
+              "m006_n002",
+              "m006_n003",
+              "m006_n004",
+              "m007_n001",
+              "m007_n002",
+              "m007_n003",
+              "m008_n001"
+            ]
+          },
+          {
+            "teachingUnitId": "singing_unit_m009_m012",
+            "lessonSegmentId": "lesson_segment_m009_m012",
+            "label": "第 9–12 小节",
+            "startMeasure": 9,
+            "endMeasure": 12,
+            "measureCount": 4,
+            "absolutePitches": [
+              "C5",
+              "G4",
+              "F4",
+              "E4",
+              "D4",
+              "C4",
+              "C5",
+              "G4",
+              "A4",
+              "G4"
+            ],
+            "midiNumbers": [
+              72,
+              67,
+              65,
+              64,
+              62,
+              60,
+              72,
+              67,
+              69,
+              67
+            ],
+            "frequencies": [
+              523.251,
+              391.995,
+              349.228,
+              329.628,
+              293.665,
+              261.626,
+              523.251,
+              391.995,
+              440,
+              391.995
+            ],
+            "degrees": [
+              5,
+              2,
+              1,
+              7,
+              6,
+              5,
+              5,
+              2,
+              3,
+              2
+            ],
+            "octaves": [
+              0,
+              0,
+              0,
+              -1,
+              -1,
+              -1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "durations": [
+              1,
+              1,
+              1,
+              0.5,
+              0.5,
+              1,
+              1,
+              1,
+              0.5,
+              0.5
+            ],
+            "solfege": [
+              "sol",
+              "re",
+              "do",
+              "si",
+              "la",
+              "sol",
+              "sol",
+              "re",
+              "mi",
+              "re"
+            ],
+            "lyrics": [
+              "他",
+              "为",
+              "人",
+              "民",
+              null,
+              "谋",
+              "幸",
+              "福",
+              "呼",
+              "儿"
+            ],
+            "lyricContinuations": [
+              false,
+              false,
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "lyricSyllableIds": [
+              "syllable_015",
+              "syllable_016",
+              "syllable_017",
+              "syllable_018",
+              "syllable_018",
+              "syllable_020",
+              "syllable_021",
+              "syllable_036",
+              "syllable_022",
+              "syllable_023"
+            ],
+            "restMask": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "noteIds": [
+              "m009_n001",
+              "m009_n002",
+              "m010_n001",
+              "m010_n002",
+              "m010_n003",
+              "m011_n001",
+              "m011_n002",
+              "m012_n001",
+              "m012_n002",
+              "m012_n003"
+            ]
+          },
+          {
+            "teachingUnitId": "singing_unit_m013_m016",
+            "lessonSegmentId": "lesson_segment_m013_m016",
+            "label": "第 13–16 小节",
+            "startMeasure": 13,
+            "endMeasure": 16,
+            "measureCount": 4,
+            "absolutePitches": [
+              "F4",
+              "F4",
+              "D4",
+              "G4",
+              "A4",
+              "G4",
+              "F4",
+              "G4",
+              "F4",
+              "E4",
+              "D4",
+              "C4"
+            ],
+            "midiNumbers": [
+              65,
+              65,
+              62,
+              67,
+              69,
+              67,
+              65,
+              67,
+              65,
+              64,
+              62,
+              60
+            ],
+            "frequencies": [
+              349.228,
+              349.228,
+              293.665,
+              391.995,
+              440,
+              391.995,
+              349.228,
+              391.995,
+              349.228,
+              329.628,
+              293.665,
+              261.626
+            ],
+            "degrees": [
+              1,
+              1,
+              6,
+              2,
+              3,
+              2,
+              1,
+              2,
+              1,
+              7,
+              6,
+              5
+            ],
+            "octaves": [
+              0,
+              0,
+              -1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              -1,
+              -1,
+              -1
+            ],
+            "durations": [
+              1,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              0.5,
+              2
+            ],
+            "solfege": [
+              "do",
+              "do",
+              "la",
+              "re",
+              "mi",
+              "re",
+              "do",
+              "re",
+              "do",
+              "si",
+              "la",
+              "sol"
+            ],
+            "lyrics": [
+              "嗨",
+              "哟",
+              null,
+              "他",
+              "是",
+              "人",
+              "民",
+              "大",
+              null,
+              "救",
+              null,
+              "星"
+            ],
+            "lyricContinuations": [
+              false,
+              false,
+              true,
+              false,
+              false,
+              false,
+              false,
+              false,
+              true,
+              false,
+              true,
+              false
+            ],
+            "lyricSyllableIds": [
+              "syllable_024",
+              "syllable_025",
+              "syllable_025",
+              "syllable_026",
+              "syllable_027",
+              "syllable_028",
+              "syllable_029",
+              "syllable_030",
+              "syllable_030",
+              "syllable_032",
+              "syllable_032",
+              "syllable_034"
+            ],
+            "restMask": [
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false,
+              false
+            ],
+            "noteIds": [
+              "m013_n001",
+              "m013_n002",
+              "m013_n003",
+              "m014_n001",
+              "m014_n002",
+              "m014_n003",
+              "m014_n004",
+              "m015_n001",
+              "m015_n002",
+              "m015_n003",
+              "m015_n004",
+              "m016_n001"
+            ]
+          }
+        ],
+        "lessonSegments": [
+          {
+            "segmentId": "lesson_segment_m001_m004",
+            "index": 0,
+            "label": "第 1–4 小节",
+            "startMeasure": 1,
+            "endMeasure": 4,
+            "measureCount": 4,
+            "measures": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m005_m008",
+            "index": 1,
+            "label": "第 5–8 小节",
+            "startMeasure": 5,
+            "endMeasure": 8,
+            "measureCount": 4,
+            "measures": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m009_m012",
+            "index": 2,
+            "label": "第 9–12 小节",
+            "startMeasure": 9,
+            "endMeasure": 12,
+            "measureCount": 4,
+            "measures": [
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m013_m016",
+            "index": 3,
+            "label": "第 13–16 小节",
+            "startMeasure": 13,
+            "endMeasure": 16,
+            "measureCount": 4,
+            "measures": [
+              13,
+              14,
+              15,
+              16
+            ]
+          }
+        ],
+        "measuresPerUnit": 4,
+        "melodyTracePlanId": "song_melody_trace_plan",
+        "measureAlignmentId": "song_measure_alignment",
+        "gesturePlanSource": "song_melody_trace_plan",
+        "audioSource": "original_audio",
+        "segmentJoinKey": "lessonSegmentId",
+        "audioWindowSource": "measure_alignment",
+        "interactionModel": "prototype_collaboration_roles",
+        "targetFlow": [
+          "ROLE_SELECT",
+          "ROLE_PRACTICE",
+          "TOGETHER"
+        ],
+        "selectionSource": "curriculum_material_match"
+      }
+    },
+    {
+      "activityId": "act_sticker_arrangement",
+      "type": "sticker_arrangement",
+      "teachingAssetIds": [],
+      "materialIds": [],
+      "teachingUnitIds": [],
+      "bindings": {
+        "measureCount": 16,
+        "segmentCount": 4,
+        "lessonSegments": [
+          {
+            "segmentId": "lesson_segment_m001_m004",
+            "index": 0,
+            "label": "第 1–4 小节",
+            "startMeasure": 1,
+            "endMeasure": 4,
+            "measureCount": 4,
+            "measures": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m005_m008",
+            "index": 1,
+            "label": "第 5–8 小节",
+            "startMeasure": 5,
+            "endMeasure": 8,
+            "measureCount": 4,
+            "measures": [
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m009_m012",
+            "index": 2,
+            "label": "第 9–12 小节",
+            "startMeasure": 9,
+            "endMeasure": 12,
+            "measureCount": 4,
+            "measures": [
+              9,
+              10,
+              11,
+              12
+            ]
+          },
+          {
+            "segmentId": "lesson_segment_m013_m016",
+            "index": 3,
+            "label": "第 13–16 小节",
+            "startMeasure": 13,
+            "endMeasure": 16,
+            "measureCount": 4,
+            "measures": [
+              13,
+              14,
+              15,
+              16
+            ]
+          }
+        ],
+        "measuresPerUnit": 4,
+        "tracks": [
+          {
+            "trackId": "dog",
+            "label": "小狗",
+            "instrument": "drums",
+            "role": "鼓组",
+            "emoji": "🐶",
+            "imagePath": "assets/stickers/performers/performer-dog.png"
+          },
+          {
+            "trackId": "bear",
+            "label": "小熊",
+            "instrument": "keyboard",
+            "role": "键盘",
+            "emoji": "🐻",
+            "imagePath": "assets/stickers/performers/performer-bear.png"
+          },
+          {
+            "trackId": "cat",
+            "label": "小猫",
+            "instrument": "bass",
+            "role": "贝斯",
+            "emoji": "🐱",
+            "imagePath": "assets/stickers/performers/performer-cat.png"
+          },
+          {
+            "trackId": "lion",
+            "label": "小狮子",
+            "instrument": "alto_sax",
+            "role": "萨克斯",
+            "emoji": "🦁",
+            "imagePath": "assets/stickers/performers/performer-lion.png"
+          }
+        ],
+        "stemPackId": "song_sticker_stems",
+        "switching": "lesson_segment_boundary",
+        "arrangementUnit": "lesson_segment",
+        "saveTarget": "preparation_sticker_arrangement"
+      }
+    }
+  ],
+  "teachingAssetResolution": {
+    "resolvedAssetIds": [
+      "TA-RHY-PAT-04",
+      "TA-RHY-PAT-01",
+      "TA-RHY-PAT-02",
+      "TA-SOL-DEGREE-NAME",
+      "TA-SOL-SCORE-READ"
+    ],
+    "unresolvedRequired": [],
+    "unresolvedOptional": [],
+    "allRequiredResolved": true
+  },
+  "generationStatus": "READY_FOR_ASSETS",
+  "reviewStatus": "REVIEWED",
+  "warnings": [
+    "合奏固定为 A 唱 · B 身体节奏 · C 旋律手势。"
+  ]
+}

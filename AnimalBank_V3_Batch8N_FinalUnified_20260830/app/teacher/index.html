@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>动物乐队 · 教师备课</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="teacher-app" class="teacher-loading"><strong>动物乐队</strong><span>正在打开教师备课平台…</span></div>
+  <dialog id="new-song-dialog" class="teacher-dialog">
+    <form id="new-song-form">
+      <header><div><small>第一学段 · 1–2年级</small><h2>新增歌曲</h2></div><button type="button" class="dialog-close" data-close-dialog aria-label="关闭">×</button></header>
+      <label>歌曲名称<input name="title" required placeholder="请输入歌曲名称"></label>
+      <label class="upload-field"><span>歌曲音频<small>支持 MP3、WAV、M4A</small></span><input name="originalAudio" type="file" accept="audio/*" required></label>
+      <label class="upload-field"><span>简谱图片<small>支持 JPG、PNG、WEBP</small></span><input name="scoreImage" type="file" accept="image/*" required></label>
+      <footer><button type="button" class="button secondary" data-close-dialog>取消</button><button type="submit" class="button primary">开始准备歌曲</button></footer>
+    </form>
+  </dialog>
+  <script type="module" src="app.js"></script>
+  <script type="module" src="classroom-launch-bridge.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "measure-alignment.schema.json",
+  "title": "Animal Bank Measure Alignment",
+  "type": "object",
+  "required": ["schemaVersion", "songId", "calibration"],
+  "properties": {
+    "schemaVersion": { "const": "2.0.0" },
+    "songId": { "type": "string", "minLength": 1 },
+    "calibration": {
+      "type": "object",
+      "required": ["startMeasure", "endMeasure", "startSec", "endSec"],
+      "properties": {
+        "startMeasure": { "type": "integer", "minimum": 1 },
+        "endMeasure": { "type": "integer", "minimum": 1 },
+        "startSec": { "type": "number", "minimum": 0 },
+        "endSec": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "anchors": { "type": "array", "items": { "type": "object" } }
+  },
+  "additionalProperties": true
+}

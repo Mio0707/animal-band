@@ -1,0 +1,805 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animalbank.local/schemas/teaching-asset.schema.json",
+  "title": "Stage1TeachingAssetLibrary",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "libraryId",
+    "title",
+    "stageId",
+    "grades",
+    "status",
+    "purpose",
+    "corePrinciples",
+    "namingRules",
+    "actionVocabulary",
+    "rhythmTeachingPolicy",
+    "countInPolicy",
+    "trainingTempoPolicy",
+    "sharedAudioSpecs",
+    "rhythmTeachingAssets",
+    "sharedRhythmTeachingAssets",
+    "melodyTeachingArchitecture",
+    "melodyTeachingAssets",
+    "melodyFeatureSupportAssets",
+    "pitchVisualPolicy",
+    "solfegeTeachingAssets",
+    "singingTeachingAssets",
+    "ensembleTeachingAssets",
+    "visualAssetTemplates",
+    "resolverRules",
+    "teachingAssetReviewGate",
+    "preparationReadinessGate",
+    "p0FreezeSet"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "1.4.0"
+    },
+    "libraryId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stageId": {
+      "const": "stage_1"
+    },
+    "grades": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "status": {
+      "const": "frozen_for_v3_p0"
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "corePrinciples": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "namingRules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "characterName",
+        "forbiddenLegacyNames",
+        "runtimeExample",
+        "assetPrefixExample"
+      ],
+      "properties": {
+        "characterName": {
+          "const": "DOG"
+        },
+        "forbiddenLegacyNames": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "BEGO",
+              "bego"
+            ]
+          }
+        },
+        "runtimeExample": {
+          "type": "string"
+        },
+        "assetPrefixExample": {
+          "type": "string"
+        }
+      }
+    },
+    "actionVocabulary": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/actionDefinition"
+      }
+    },
+    "rhythmTeachingPolicy": {
+      "type": "object"
+    },
+    "countInPolicy": {
+      "type": "object",
+      "required": [
+        "unit",
+        "measures",
+        "deriveBeatsFromMeter",
+        "examples"
+      ],
+      "properties": {
+        "unit": {
+          "const": "measure"
+        },
+        "measures": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "deriveBeatsFromMeter": {
+          "const": true
+        },
+        "examples": {
+          "type": "object",
+          "required": [
+            "2/4",
+            "3/4",
+            "4/4"
+          ],
+          "properties": {
+            "2/4": {
+              "const": 2
+            },
+            "3/4": {
+              "const": 3
+            },
+            "4/4": {
+              "const": 4
+            }
+          }
+        }
+      }
+    },
+    "trainingTempoPolicy": {
+      "type": "object"
+    },
+    "sharedAudioSpecs": {
+      "type": "object"
+    },
+    "rhythmTeachingAssets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/rhythmPatternAsset"
+          },
+          {
+            "$ref": "#/$defs/rhythmRestAsset"
+          }
+        ]
+      }
+    },
+    "sharedRhythmTeachingAssets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sharedRhythmAsset"
+      }
+    },
+    "melodyTeachingArchitecture": {
+      "type": "object"
+    },
+    "melodyTeachingAssets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/melodyCoreAsset"
+      }
+    },
+    "melodyFeatureSupportAssets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/melodyFeatureAsset"
+      }
+    },
+    "pitchVisualPolicy": {
+      "type": "object",
+      "required": [
+        "visualPitchSource",
+        "rule",
+        "allowedDerivedInputs"
+      ],
+      "properties": {
+        "visualPitchSource": {
+          "const": "absolutePitch"
+        },
+        "rule": {
+          "type": "string",
+          "minLength": 1
+        },
+        "allowedDerivedInputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "solfegeTeachingAssets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/solfegeAsset"
+      }
+    },
+    "singingTeachingAssets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/singingAsset"
+      }
+    },
+    "ensembleTeachingAssets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/ensembleAsset"
+      }
+    },
+    "visualAssetTemplates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/visualTemplate"
+      }
+    },
+    "resolverRules": {
+      "type": "object"
+    },
+    "teachingAssetReviewGate": {
+      "type": "object"
+    },
+    "p0FreezeSet": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "preparationReadinessGate": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "actionDefinition": {
+      "type": "object",
+      "required": [
+        "labelZh",
+        "instructionZh",
+        "bodyZone",
+        "motorType",
+        "soundProducing"
+      ],
+      "properties": {
+        "labelZh": {
+          "type": "string"
+        },
+        "instructionZh": {
+          "type": "string"
+        },
+        "bodyZone": {
+          "type": "string"
+        },
+        "motorType": {
+          "const": "gross_motor"
+        },
+        "soundProducing": {
+          "type": "boolean"
+        },
+        "internalPulseContinues": {
+          "type": "boolean"
+        }
+      }
+    },
+    "rhythmPatternAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assetId",
+        "materialId",
+        "name",
+        "level",
+        "notation",
+        "chant",
+        "durations",
+        "bodyActions",
+        "bodyActionsZh",
+        "trainingTempoRef",
+        "previewAudio",
+        "previewMetadata",
+        "p0Eligible"
+      ],
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "pattern": "^TA-RHY-PAT-[0-9]{2}$"
+        },
+        "materialId": {
+          "type": "string",
+          "pattern": "^PAT-[0-9]{2}$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        },
+        "notation": {
+          "type": "string"
+        },
+        "chant": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "durations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          }
+        },
+        "bodyActions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "CLAP",
+              "PAT",
+              "PAT_LEFT",
+              "PAT_RIGHT",
+              "STOMP",
+              "FREEZE"
+            ]
+          }
+        },
+        "bodyActionsZh": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "trainingTempoRef": {
+          "type": "string"
+        },
+        "previewAudio": {
+          "type": "string",
+          "pattern": "^/assets/audio/rhythm/patterns/pat-[0-9]{2}\\.wav$"
+        },
+        "previewMetadata": {
+          "type": "string",
+          "pattern": "^/assets/audio/rhythm/patterns/pat-[0-9]{2}\\.metadata\\.json$"
+        },
+        "p0Eligible": {
+          "type": "boolean"
+        }
+      }
+    },
+    "rhythmRestAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assetId",
+        "targetId",
+        "name",
+        "level",
+        "chant",
+        "bodyActions",
+        "bodyActionsZh",
+        "internalPulseContinues",
+        "learningSequence",
+        "p0Eligible"
+      ],
+      "properties": {
+        "assetId": {
+          "const": "TA-RHY-REST-01"
+        },
+        "targetId": {
+          "const": "RHY-12-REST-01"
+        },
+        "name": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        },
+        "chant": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bodyActions": {
+          "type": "array",
+          "items": {
+            "const": "FREEZE"
+          }
+        },
+        "bodyActionsZh": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "internalPulseContinues": {
+          "const": true
+        },
+        "learningSequence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "p0Eligible": {
+          "type": "boolean"
+        }
+      }
+    },
+    "sharedRhythmAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assetId",
+        "name"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "targetId"
+          ]
+        },
+        {
+          "required": [
+            "targetIds"
+          ]
+        }
+      ],
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "pattern": "^TA-RHY-"
+        },
+        "targetId": {
+          "type": "string"
+        },
+        "targetIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "defaultAction": {
+          "type": "string"
+        },
+        "defaultActionZh": {
+          "type": "string"
+        },
+        "visualConcepts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "learningSequence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "childFacingMode": {
+          "type": "string"
+        },
+        "patterns": {
+          "type": "object"
+        }
+      }
+    },
+    "melodyCoreAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assetId",
+        "materialId",
+        "name",
+        "status",
+        "requiredBindings",
+        "runtimeFlow",
+        "requiredGeneratedAssets"
+      ],
+      "properties": {
+        "assetId": {
+          "const": "TA-MEL-PHRASE-CORE"
+        },
+        "materialId": {
+          "const": "MEL-MAT-SHORT-PHRASE"
+        },
+        "name": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "requiredBindings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "runtimeFlow": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "requiredGeneratedAssets": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "melodyFeatureAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assetId",
+        "materialId",
+        "name",
+        "visual"
+      ],
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "pattern": "^TA-MEL-FEATURE-"
+        },
+        "materialId": {
+          "type": "string",
+          "pattern": "^MEL-MAT-"
+        },
+        "name": {
+          "type": "string"
+        },
+        "visual": {
+          "type": "string"
+        },
+        "gesture": {
+          "type": "string"
+        },
+        "allowedDegrees": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          }
+        }
+      }
+    },
+    "solfegeAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assetId",
+        "name"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "targetId"
+          ]
+        },
+        {
+          "required": [
+            "targetIds"
+          ]
+        }
+      ],
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "pattern": "^TA-SOL-"
+        },
+        "targetId": {
+          "type": "string"
+        },
+        "targetIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "mapping": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "learningSequence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ascending": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "descending": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "teachingGoal": {
+          "type": "string"
+        }
+      }
+    },
+    "singingAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assetId",
+        "name"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "targetId"
+          ]
+        },
+        {
+          "required": [
+            "supportsTargets"
+          ]
+        }
+      ],
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "pattern": "^TA-SING-"
+        },
+        "targetId": {
+          "type": "string"
+        },
+        "supportsTargets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "name": {
+          "type": "string"
+        },
+        "childGuidanceZh": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "runtimeUsage": {
+          "type": "string"
+        },
+        "requiredBindings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "states": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rule": {
+          "type": "string"
+        }
+      }
+    },
+    "ensembleAsset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assetId",
+        "targetId",
+        "name",
+        "groupA",
+        "groupB",
+        "runtimeFlow",
+        "teachingGoal"
+      ],
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "pattern": "^TA-ENS-"
+        },
+        "targetId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "groupA": {
+          "const": "Rhythm"
+        },
+        "groupB": {
+          "const": "Singing"
+        },
+        "runtimeFlow": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "teachingGoal": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "visualTemplate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assetId",
+        "name",
+        "input"
+      ],
+      "properties": {
+        "assetId": {
+          "type": "string",
+          "pattern": "^VIS-"
+        },
+        "name": {
+          "type": "string"
+        },
+        "input": {
+          "type": "string"
+        },
+        "rule": {
+          "type": "string"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

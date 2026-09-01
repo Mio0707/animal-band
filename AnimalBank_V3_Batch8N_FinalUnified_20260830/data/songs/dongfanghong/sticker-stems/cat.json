@@ -1,0 +1,181 @@
+{
+  "label": "小猫",
+  "instrument": "bass",
+  "role": "贝斯",
+  "program": 33,
+  "channel": 1,
+  "trackId": "cat",
+  "events": [
+    {
+      "startBeat": 0,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 68
+    },
+    {
+      "startBeat": 2,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 4,
+      "durationBeats": 1.0,
+      "midi": 34,
+      "velocity": 68
+    },
+    {
+      "startBeat": 6,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 8,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 68
+    },
+    {
+      "startBeat": 9.0,
+      "durationBeats": 1.0,
+      "midi": 48,
+      "velocity": 62
+    },
+    {
+      "startBeat": 10,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 68
+    },
+    {
+      "startBeat": 11.0,
+      "durationBeats": 1.0,
+      "midi": 48,
+      "velocity": 62
+    },
+    {
+      "startBeat": 12,
+      "durationBeats": 1.0,
+      "midi": 34,
+      "velocity": 68
+    },
+    {
+      "startBeat": 13.0,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 62
+    },
+    {
+      "startBeat": 14,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 15.0,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 62
+    },
+    {
+      "startBeat": 16,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 68
+    },
+    {
+      "startBeat": 17.0,
+      "durationBeats": 1.0,
+      "midi": 48,
+      "velocity": 62
+    },
+    {
+      "startBeat": 18,
+      "durationBeats": 1.0,
+      "midi": 34,
+      "velocity": 68
+    },
+    {
+      "startBeat": 19.0,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 62
+    },
+    {
+      "startBeat": 20,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 68
+    },
+    {
+      "startBeat": 21.0,
+      "durationBeats": 1.0,
+      "midi": 48,
+      "velocity": 62
+    },
+    {
+      "startBeat": 22,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 23.0,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 62
+    },
+    {
+      "startBeat": 24,
+      "durationBeats": 1.0,
+      "midi": 34,
+      "velocity": 68
+    },
+    {
+      "startBeat": 25.0,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 62
+    },
+    {
+      "startBeat": 26,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 27.0,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 62
+    },
+    {
+      "startBeat": 28,
+      "durationBeats": 1.0,
+      "midi": 34,
+      "velocity": 68
+    },
+    {
+      "startBeat": 29.0,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 62
+    },
+    {
+      "startBeat": 30,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 68
+    }
+  ],
+  "schemaVersion": "1.0.0",
+  "songId": "dongfanghong",
+  "bpm": 72.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "measureCount": 16,
+  "totalBeats": 32
+}

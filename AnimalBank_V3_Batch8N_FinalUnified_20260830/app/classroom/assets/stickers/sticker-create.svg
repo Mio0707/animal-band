@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" role="img" aria-label="动物贴纸创作">
+  <rect width="360" height="240" rx="34" fill="#fff4e8"/>
+  <g font-family="Apple Color Emoji, Segoe UI Emoji, sans-serif" font-size="70" text-anchor="middle">
+    <text x="92" y="105">🐻</text><text x="190" y="92">🐶</text><text x="274" y="118">🐰</text><text x="165" y="190">🐱</text>
+  </g>
+  <g fill="none" stroke="#ef9b68" stroke-width="6" stroke-linecap="round" opacity=".7">
+    <path d="M44 177h44M258 178h58M44 151h28M290 151h26"/>
+  </g>
+  <circle cx="316" cy="44" r="18" fill="#f4c667"/><path d="M308 44h16M316 36v16" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+</svg>

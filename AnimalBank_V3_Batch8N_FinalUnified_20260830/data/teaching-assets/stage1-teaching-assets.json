@@ -1,0 +1,886 @@
+{
+  "schemaVersion": "1.4.0",
+  "libraryId": "animalbank_stage1_teaching_asset_library_v1_4",
+  "title": "Animal Bank 第一学段 Teaching Asset Library V1.4 Final",
+  "stageId": "stage_1",
+  "grades": [
+    1,
+    2
+  ],
+  "status": "frozen_for_v3_p0",
+  "purpose": "把 Curriculum Library 中已经确定的音乐材料，转成可被 Content Factory、Teaching Asset Resolver、Lesson Recipe Generator 与 Classroom Runtime 直接调用的标准教学资产。",
+  "corePrinciples": [
+    "Teaching Asset 回答“这个音乐材料怎么教”。",
+    "Teaching Asset 与具体歌曲解耦。",
+    "第一学段 Rhythm 教学采用时值唱名与身体动作同步教学。",
+    "身体动作优先大动作、高对比、低精细度，适合1–2年级儿童执行。",
+    "一个 Rhythm Pattern 最多使用2类主要身体动作；左右拍腿视为同一类交替动作体系。",
+    "DOG 负责清楚示范，不承担动作评分。",
+    "训练音频在 Content Factory 阶段预生成或缓存，课堂不依赖实时生成。",
+    "Melody/Singing 的具体 pitch、solfege、lyrics、duration 必须来自 Verified Score。",
+    "短旋律 Phrase 是旋律教学的主对象；上行、下行、重复音、do-mi-sol 等作为 Feature Support。",
+    "Teaching Asset 审核与具体 Preparation Readiness 检查分开。"
+  ],
+  "namingRules": {
+    "characterName": "DOG",
+    "forbiddenLegacyNames": [
+      "BEGO",
+      "bego"
+    ],
+    "runtimeExample": "WATCH_DOG",
+    "assetPrefixExample": "dog_rhythm_pat03"
+  },
+  "actionVocabulary": {
+    "CLAP": {
+      "labelZh": "拍手",
+      "instructionZh": "双手在胸前自然拍一下。",
+      "bodyZone": "上半身",
+      "motorType": "gross_motor",
+      "soundProducing": true
+    },
+    "PAT": {
+      "labelZh": "双手拍腿",
+      "instructionZh": "双手同时拍两侧大腿一下。",
+      "bodyZone": "大腿",
+      "motorType": "gross_motor",
+      "soundProducing": true
+    },
+    "PAT_LEFT": {
+      "labelZh": "左手拍左腿",
+      "instructionZh": "左手拍左侧大腿一下。",
+      "bodyZone": "左侧大腿",
+      "motorType": "gross_motor",
+      "soundProducing": true
+    },
+    "PAT_RIGHT": {
+      "labelZh": "右手拍右腿",
+      "instructionZh": "右手拍右侧大腿一下。",
+      "bodyZone": "右侧大腿",
+      "motorType": "gross_motor",
+      "soundProducing": true
+    },
+    "STOMP": {
+      "labelZh": "原地跺脚",
+      "instructionZh": "原地自然踩地一下，不要求跳起。",
+      "bodyZone": "脚下",
+      "motorType": "gross_motor",
+      "soundProducing": true
+    },
+    "FREEZE": {
+      "labelZh": "张开双手定格",
+      "instructionZh": "双手自然张开在身体两侧，身体和声音同时停住，心里继续数拍。",
+      "bodyZone": "全身",
+      "motorType": "gross_motor",
+      "soundProducing": false,
+      "internalPulseContinues": true
+    }
+  },
+  "rhythmTeachingPolicy": {
+    "runtimeFlow": [
+      "LISTEN",
+      "WATCH_DOG",
+      "CHANT",
+      "BODY_PLAY",
+      "PRACTICE",
+      "SONG_PLAY",
+      "DONE"
+    ],
+    "stateDefinitions": {
+      "LISTEN": {
+        "system": "播放目标节奏示范。",
+        "child": "先听，不要求立即动作。"
+      },
+      "WATCH_DOG": {
+        "system": "DOG 同步示范身体动作。",
+        "child": "观察节奏符号、时值唱名和动作的对应关系。"
+      },
+      "CHANT": {
+        "system": "显示节奏符号与时值唱名，并按节拍高亮。",
+        "child": "先只唱时值唱名，不做身体动作。"
+      },
+      "BODY_PLAY": {
+        "system": "按同一节拍高亮节奏符号、时值唱名与 DOG 动作。",
+        "child": "一边唱时值唱名，一边做对应身体动作。",
+        "synchronized": true
+      },
+      "PRACTICE": {
+        "system": "播放 Training Audio 循环或使用 BPM 时钟连续练习。",
+        "child": "连续重复“嘴巴唱 + 身体做”，熟悉后逐渐弱化唱名提示。"
+      },
+      "SONG_PLAY": {
+        "system": "回到真实歌曲，使用已学 Pattern 进行身体伴奏。",
+        "child": "跟随歌曲共同速度，把 Pattern 放进真实音乐中。"
+      },
+      "DONE": {
+        "system": "结束当前 Pattern 学习。",
+        "child": "完成目标 Pattern 的“听 → 唱 → 动 → 练 → 歌曲应用”。"
+      }
+    },
+    "teachingMapping": {
+      "notation": "节奏符号",
+      "chant": "时值唱名",
+      "bodyAction": "身体动作",
+      "goal": "建立节奏符号 ↔ 时值唱名 ↔ 身体动作的三重对应"
+    },
+    "chantSystem": {
+      "quarter": "da",
+      "eighth": "de",
+      "sixteenth": "di",
+      "rest": "kong"
+    },
+    "bodyDesignRules": [
+      "动作必须清楚明确，儿童看一次即可模仿。",
+      "优先使用拍手、拍腿、跺脚、定格等大动作。",
+      "不同动作之间身体位置差异要明显。",
+      "不使用手指轻点等精细动作作为核心节奏动作。",
+      "不要求动作角度、力度或拍击位置高度精确。",
+      "教学目标是节奏结构外化，不是舞蹈动作精度。",
+      "Runtime 不对儿童具体姿势进行动作评分。"
+    ],
+    "performerAssetPack": {
+      "assetPackId": "animalbank-stage1-rhythm-performer-v1",
+      "mode": "compose_from_body_actions",
+      "manifestPath": "data/runtime/rhythm/rhythm-performer-manifest.json",
+      "actionMapPath": "data/runtime/rhythm/rhythm-action-map.json",
+      "availability": "ready"
+    }
+  },
+  "countInPolicy": {
+    "unit": "measure",
+    "measures": 1,
+    "deriveBeatsFromMeter": true,
+    "examples": {
+      "2/4": 2,
+      "3/4": 3,
+      "4/4": 4
+    }
+  },
+  "trainingTempoPolicy": {
+    "status": "product_default",
+    "note": "以下为产品训练默认值，不是课程标准规定值；Lesson Recipe 可在审核后覆盖。",
+    "simplePatterns": {
+      "materialIds": [
+        "PAT-01",
+        "PAT-02",
+        "PAT-03",
+        "PAT-04"
+      ],
+      "preferredBpm": 80,
+      "minBpm": 60,
+      "maxBpm": 96
+    },
+    "sixteenthPatterns": {
+      "materialIds": [
+        "PAT-05",
+        "PAT-06",
+        "PAT-07"
+      ],
+      "preferredBpm": 64,
+      "minBpm": 52,
+      "maxBpm": 76
+    },
+    "extensionPatterns": {
+      "materialIds": [
+        "PAT-08"
+      ],
+      "preferredBpm": 72,
+      "minBpm": 60,
+      "maxBpm": 84
+    }
+  },
+  "sharedAudioSpecs": {
+    "rhythmTrainingAudio": {
+      "structure": [
+        "count_in",
+        "pulse",
+        "target_pattern"
+      ],
+      "defaultRepeatCount": 8,
+      "delivery": "pre_generated_or_cached",
+      "renderer": "RHYTHM_TRAINING_RENDER",
+      "rendererVersion": "rhythm-training-renderer-v1.0.0",
+      "sampleRate": 48000,
+      "format": "wav_pcm16_mono",
+      "chantAssetPack": "assets/audio/rhythm/chant",
+      "chantTokens": [
+        "da",
+        "de",
+        "di",
+        "kong"
+      ],
+      "layers": [
+        "count_in",
+        "pulse",
+        "chant",
+        "body_action_hit"
+      ],
+      "cueMetadataRequired": true,
+      "clockPolicy": "audio_current_time_is_source_of_truth_when_ready",
+      "chantScaffolding": "full → reduced → body/pulse only across practice rounds"
+    },
+    "melodyReferenceAudio": {
+      "variants": [
+        "reference_vocal",
+        "solfege_vocal",
+        "reference_pitch_or_piano"
+      ]
+    },
+    "melodyPracticeAudio": {
+      "structure": [
+        "count_in",
+        "practice_accompaniment"
+      ],
+      "optional": [
+        "reference_pitch"
+      ]
+    }
+  },
+  "rhythmTeachingAssets": [
+    {
+      "assetId": "TA-RHY-PAT-01",
+      "materialId": "PAT-01",
+      "name": "一拍一次",
+      "level": "core",
+      "notation": "♩ ♩",
+      "chant": [
+        "da",
+        "da"
+      ],
+      "durations": [
+        1,
+        1
+      ],
+      "bodyActions": [
+        "STOMP",
+        "STOMP"
+      ],
+      "bodyActionsZh": [
+        "原地跺脚",
+        "原地跺脚"
+      ],
+      "trainingTempoRef": "simplePatterns",
+      "previewAudio": "/assets/audio/rhythm/patterns/pat-01.wav",
+      "previewMetadata": "/assets/audio/rhythm/patterns/pat-01.metadata.json",
+      "p0Eligible": true
+    },
+    {
+      "assetId": "TA-RHY-PAT-02",
+      "materialId": "PAT-02",
+      "name": "一拍两次",
+      "level": "core",
+      "notation": "♪♪ ♪♪",
+      "chant": [
+        "de",
+        "de",
+        "de",
+        "de"
+      ],
+      "durations": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "bodyActions": [
+        "CLAP",
+        "CLAP",
+        "CLAP",
+        "CLAP"
+      ],
+      "bodyActionsZh": [
+        "拍手",
+        "拍手",
+        "拍手",
+        "拍手"
+      ],
+      "trainingTempoRef": "simplePatterns",
+      "previewAudio": "/assets/audio/rhythm/patterns/pat-02.wav",
+      "previewMetadata": "/assets/audio/rhythm/patterns/pat-02.metadata.json",
+      "p0Eligible": true
+    },
+    {
+      "assetId": "TA-RHY-PAT-03",
+      "materialId": "PAT-03",
+      "name": "前密后疏",
+      "level": "core",
+      "notation": "♪♪ ♩",
+      "chant": [
+        "de",
+        "de",
+        "da"
+      ],
+      "durations": [
+        0.5,
+        0.5,
+        1
+      ],
+      "bodyActions": [
+        "CLAP",
+        "CLAP",
+        "PAT"
+      ],
+      "bodyActionsZh": [
+        "拍手",
+        "拍手",
+        "双手拍腿"
+      ],
+      "trainingTempoRef": "simplePatterns",
+      "previewAudio": "/assets/audio/rhythm/patterns/pat-03.wav",
+      "previewMetadata": "/assets/audio/rhythm/patterns/pat-03.metadata.json",
+      "p0Eligible": true
+    },
+    {
+      "assetId": "TA-RHY-PAT-04",
+      "materialId": "PAT-04",
+      "name": "前疏后密",
+      "level": "core",
+      "notation": "♩ ♪♪",
+      "chant": [
+        "da",
+        "de",
+        "de"
+      ],
+      "durations": [
+        1,
+        0.5,
+        0.5
+      ],
+      "bodyActions": [
+        "PAT",
+        "CLAP",
+        "CLAP"
+      ],
+      "bodyActionsZh": [
+        "双手拍腿",
+        "拍手",
+        "拍手"
+      ],
+      "trainingTempoRef": "simplePatterns",
+      "previewAudio": "/assets/audio/rhythm/patterns/pat-04.wav",
+      "previewMetadata": "/assets/audio/rhythm/patterns/pat-04.metadata.json",
+      "p0Eligible": true
+    },
+    {
+      "assetId": "TA-RHY-PAT-05",
+      "materialId": "PAT-05",
+      "name": "一拍四次",
+      "level": "core_progression",
+      "notation": "𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯𝅘𝅥𝅯",
+      "chant": [
+        "di",
+        "di",
+        "di",
+        "di"
+      ],
+      "durations": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "bodyActions": [
+        "PAT_LEFT",
+        "PAT_RIGHT",
+        "PAT_LEFT",
+        "PAT_RIGHT"
+      ],
+      "bodyActionsZh": [
+        "左手拍左腿",
+        "右手拍右腿",
+        "左手拍左腿",
+        "右手拍右腿"
+      ],
+      "trainingTempoRef": "sixteenthPatterns",
+      "previewAudio": "/assets/audio/rhythm/patterns/pat-05.wav",
+      "previewMetadata": "/assets/audio/rhythm/patterns/pat-05.metadata.json",
+      "p0Eligible": true
+    },
+    {
+      "assetId": "TA-RHY-PAT-06",
+      "materialId": "PAT-06",
+      "name": "前十六型",
+      "level": "progression",
+      "notation": "𝅘𝅥𝅯𝅘𝅥𝅯♪",
+      "chant": [
+        "di",
+        "di",
+        "de"
+      ],
+      "durations": [
+        0.25,
+        0.25,
+        0.5
+      ],
+      "bodyActions": [
+        "PAT_LEFT",
+        "PAT_RIGHT",
+        "CLAP"
+      ],
+      "bodyActionsZh": [
+        "左手拍左腿",
+        "右手拍右腿",
+        "拍手"
+      ],
+      "trainingTempoRef": "sixteenthPatterns",
+      "previewAudio": "/assets/audio/rhythm/patterns/pat-06.wav",
+      "previewMetadata": "/assets/audio/rhythm/patterns/pat-06.metadata.json",
+      "p0Eligible": true
+    },
+    {
+      "assetId": "TA-RHY-PAT-07",
+      "materialId": "PAT-07",
+      "name": "后十六型",
+      "level": "progression",
+      "notation": "♪𝅘𝅥𝅯𝅘𝅥𝅯",
+      "chant": [
+        "de",
+        "di",
+        "di"
+      ],
+      "durations": [
+        0.5,
+        0.25,
+        0.25
+      ],
+      "bodyActions": [
+        "CLAP",
+        "PAT_LEFT",
+        "PAT_RIGHT"
+      ],
+      "bodyActionsZh": [
+        "拍手",
+        "左手拍左腿",
+        "右手拍右腿"
+      ],
+      "trainingTempoRef": "sixteenthPatterns",
+      "previewAudio": "/assets/audio/rhythm/patterns/pat-07.wav",
+      "previewMetadata": "/assets/audio/rhythm/patterns/pat-07.metadata.json",
+      "p0Eligible": true
+    },
+    {
+      "assetId": "TA-RHY-PAT-08",
+      "materialId": "PAT-08",
+      "name": "小切分体验",
+      "level": "experience_extension",
+      "notation": "♪ ♩ ♪",
+      "chant": [
+        "de",
+        "da",
+        "de"
+      ],
+      "durations": [
+        0.5,
+        1,
+        0.5
+      ],
+      "bodyActions": [
+        "CLAP",
+        "PAT",
+        "CLAP"
+      ],
+      "bodyActionsZh": [
+        "拍手",
+        "双手拍腿",
+        "拍手"
+      ],
+      "trainingTempoRef": "extensionPatterns",
+      "previewAudio": "/assets/audio/rhythm/patterns/pat-08.wav",
+      "previewMetadata": "/assets/audio/rhythm/patterns/pat-08.metadata.json",
+      "p0Eligible": false
+    },
+    {
+      "assetId": "TA-RHY-REST-01",
+      "targetId": "RHY-12-REST-01",
+      "name": "休止与准确返回",
+      "level": "core",
+      "chant": [
+        "kong"
+      ],
+      "bodyActions": [
+        "FREEZE"
+      ],
+      "bodyActionsZh": [
+        "张开双手定格"
+      ],
+      "internalPulseContinues": true,
+      "learningSequence": [
+        "MOVE",
+        "FREEZE",
+        "RETURN"
+      ],
+      "p0Eligible": true
+    }
+  ],
+  "sharedRhythmTeachingAssets": [
+    {
+      "assetId": "TA-RHY-PULSE-01",
+      "targetId": "RHY-12-BEAT-01",
+      "name": "稳定均拍",
+      "defaultAction": "STOMP",
+      "defaultActionZh": "原地跺脚",
+      "learningSequence": [
+        "LISTEN",
+        "FIND_PULSE",
+        "MOVE_WITH_PULSE",
+        "KEEP_GOING"
+      ]
+    },
+    {
+      "assetId": "TA-RHY-TEMPO-01",
+      "targetId": "RHY-12-TEMPO-01",
+      "name": "快慢体验",
+      "visualConcepts": [
+        "快",
+        "慢"
+      ],
+      "learningSequence": [
+        "LISTEN",
+        "COMPARE",
+        "MOVE",
+        "SWITCH"
+      ]
+    },
+    {
+      "assetId": "TA-RHY-GROUPING-01",
+      "targetIds": [
+        "RHY-12-GROUP-02",
+        "RHY-12-GROUP-03",
+        "RHY-12-GROUP-04"
+      ],
+      "name": "两拍/三拍/四拍组织",
+      "childFacingMode": "body_experience_not_definition",
+      "patterns": {
+        "2": [
+          "1",
+          "2"
+        ],
+        "3": [
+          "1",
+          "2",
+          "3"
+        ],
+        "4": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      }
+    }
+  ],
+  "melodyTeachingArchitecture": {
+    "principle": "短旋律 Phrase 是主教学对象；旋律特征只提供辅助教学，不各自生成一套完整重复课程。",
+    "coreAsset": "TA-MEL-PHRASE-CORE",
+    "featureSupportAssets": [
+      "TA-MEL-FEATURE-REPEAT",
+      "TA-MEL-FEATURE-ASCENDING",
+      "TA-MEL-FEATURE-DESCENDING",
+      "TA-MEL-FEATURE-DMS"
+    ],
+    "levelFeature": {
+      "status": "future",
+      "reason": "P0 避免与重复音特征重复匹配。"
+    }
+  },
+  "melodyTeachingAssets": [
+    {
+      "assetId": "TA-MEL-PHRASE-CORE",
+      "materialId": "MEL-MAT-SHORT-PHRASE",
+      "name": "短旋律乐句核心教学模板",
+      "status": "frozen_template",
+      "requiredBindings": [
+        "phraseId",
+        "absolutePitches",
+        "degrees",
+        "octaves",
+        "durations",
+        "solfege",
+        "lyrics",
+        "contour",
+        "startMeasure",
+        "endMeasure"
+      ],
+      "runtimeFlow": [
+        "LISTEN",
+        "FOLLOW",
+        "SOLFEGE",
+        "LYRICS",
+        "SING"
+      ],
+      "requiredGeneratedAssets": [
+        "score_display",
+        "reference_pitch_or_piano",
+        "solfege_vocal",
+        "reference_vocal",
+        "practice_audio"
+      ]
+    }
+  ],
+  "melodyFeatureSupportAssets": [
+    {
+      "assetId": "TA-MEL-FEATURE-REPEAT",
+      "materialId": "MEL-MAT-REPEAT-NOTE",
+      "name": "重复音辅助",
+      "visual": "相同音高使用相同垂直高度的点位",
+      "gesture": "手势保持同一高度"
+    },
+    {
+      "assetId": "TA-MEL-FEATURE-ASCENDING",
+      "materialId": "MEL-MAT-ASCENDING",
+      "name": "上行辅助",
+      "visual": "点位从低到高",
+      "gesture": "DOG 手势从低位逐步抬高"
+    },
+    {
+      "assetId": "TA-MEL-FEATURE-DESCENDING",
+      "materialId": "MEL-MAT-DESCENDING",
+      "name": "下行辅助",
+      "visual": "点位从高到低",
+      "gesture": "DOG 手势从高位逐步降低"
+    },
+    {
+      "assetId": "TA-MEL-FEATURE-DMS",
+      "materialId": "MEL-MAT-DMS",
+      "name": "do-mi-sol 三音组辅助",
+      "visual": "do、mi、sol 使用三个清楚的纵向高度层级",
+      "allowedDegrees": [
+        1,
+        3,
+        5
+      ]
+    }
+  ],
+  "pitchVisualPolicy": {
+    "visualPitchSource": "absolutePitch",
+    "rule": "点位高低必须由绝对音高决定，不能仅按 degree 1–7 比较。",
+    "allowedDerivedInputs": [
+      "midiNumber",
+      "degree_plus_octave_to_absolute_index"
+    ]
+  },
+  "solfegeTeachingAssets": [
+    {
+      "assetId": "TA-SOL-DEGREE-NAME",
+      "targetIds": [
+        "SOL-12-NAME-01",
+        "SOL-12-DEGREE-01"
+      ],
+      "name": "简谱数字与唱名对应",
+      "mapping": {
+        "1": "do",
+        "2": "re",
+        "3": "mi",
+        "4": "fa",
+        "5": "sol",
+        "6": "la",
+        "7": "si"
+      },
+      "learningSequence": [
+        "SEE_NUMBER",
+        "HEAR_PITCH",
+        "SAY_SOLFEGE",
+        "SING_SOLFEGE"
+      ]
+    },
+    {
+      "assetId": "TA-SOL-SCALE-ORDER",
+      "targetId": "SOL-12-ORDER-01",
+      "name": "基本音阶顺序",
+      "ascending": [
+        "do",
+        "re",
+        "mi",
+        "fa",
+        "sol",
+        "la",
+        "si"
+      ],
+      "descending": [
+        "si",
+        "la",
+        "sol",
+        "fa",
+        "mi",
+        "re",
+        "do"
+      ]
+    },
+    {
+      "assetId": "TA-SOL-OCTAVE-DOT",
+      "targetId": "SOL-12-OCTAVE-01",
+      "name": "高低音加点",
+      "teachingGoal": "能认、能听、能跟唱，不进行复杂音域理论。"
+    },
+    {
+      "assetId": "TA-SOL-SCORE-READ",
+      "targetId": "SOL-12-READ-01",
+      "name": "简单乐谱识读",
+      "learningSequence": [
+        "READ_RHYTHM",
+        "READ_PITCH",
+        "SING_SOLFEGE",
+        "ADD_LYRICS"
+      ]
+    }
+  ],
+  "singingTeachingAssets": [
+    {
+      "assetId": "TA-SING-READY",
+      "name": "歌唱准备",
+      "supportsTargets": [
+        "SING-12-POSTURE-01",
+        "SING-12-NATURAL-01"
+      ],
+      "childGuidanceZh": [
+        "身体坐好或站好。",
+        "肩膀放松。",
+        "用自然的声音唱，不喊。"
+      ],
+      "runtimeUsage": "进入 Singing Tutor 时短暂提示，不单独形成一节课。"
+    },
+    {
+      "assetId": "TA-SING-TUTOR-CORE",
+      "name": "第一学段 Singing Tutor 核心模板",
+      "supportsTargets": [
+        "SING-12-PITCH-01",
+        "SING-12-RHYTHM-01",
+        "SING-12-LYRIC-01",
+        "SING-12-FOLLOW-01",
+        "SING-12-INDEPENDENT-01"
+      ],
+      "requiredBindings": [
+        "phraseId",
+        "pitch",
+        "degree",
+        "octave",
+        "duration",
+        "solfege",
+        "lyric"
+      ],
+      "states": [
+        "LISTEN",
+        "FOLLOW",
+        "SOLFEGE",
+        "LYRICS",
+        "SING"
+      ]
+    },
+    {
+      "assetId": "TA-SING-CALL-RESPONSE",
+      "targetId": "SING-12-CALL-01",
+      "name": "接唱/问答模板",
+      "forms": [
+        "teacher_to_students",
+        "system_to_class",
+        "group_a_to_group_b"
+      ]
+    },
+    {
+      "assetId": "TA-SING-UNISON",
+      "targetId": "SING-12-UNISON-01",
+      "name": "齐唱模板",
+      "cues": [
+        "READY",
+        "ENTRY",
+        "KEEP",
+        "ENDING"
+      ]
+    },
+    {
+      "assetId": "TA-SING-BREATH",
+      "targetId": "SING-12-BREATH-01",
+      "name": "基础换气提示",
+      "rule": "换气位置由歌曲 Phrase 与 Human Review 确认，不由通用 Asset 自动猜测。"
+    }
+  ],
+  "ensembleTeachingAssets": [
+    {
+      "assetId": "TA-ENS-RHY-SING-01",
+      "targetId": "ENS-12-RHY-SING-01",
+      "name": "节奏组 + 演唱组合作模板",
+      "groupA": "Rhythm",
+      "groupB": "Singing",
+      "runtimeFlow": [
+        "READY",
+        "RHYTHM_GROUP",
+        "SINGING_GROUP",
+        "TOGETHER",
+        "ENDING"
+      ],
+      "teachingGoal": [
+        "知道自己的组别和角色",
+        "按 Cue 进入",
+        "保持基本共同速度",
+        "两组同时完成结束"
+      ]
+    }
+  ],
+  "visualAssetTemplates": [
+    {
+      "assetId": "VIS-MEL-PITCH-DOTS",
+      "name": "旋律点位图",
+      "input": "absolutePitchSequence",
+      "rule": "纵向位置表现真实相对音高。"
+    },
+    {
+      "assetId": "VIS-SCORE-SIMPLE",
+      "name": "简谱高亮",
+      "input": "verified_score_phrase",
+      "features": [
+        "current_note_highlight",
+        "optional_next_note_hint",
+        "solfege_label",
+        "lyric_label"
+      ]
+    }
+  ],
+  "resolverRules": {
+    "rhythm": "Rhythm Material 命中后解析同 materialId 的固定 Teaching Asset；DOG 画面由 bodyActions 经统一 Performer Asset Pack 动态组合，不为每个 PAT 单独制作动画。",
+    "melody": "Matcher 输出短 Phrase 及其 Feature；Resolver 使用 TA-MEL-PHRASE-CORE 作为主模板，再叠加 Feature Support。",
+    "singing": "固定使用 TA-SING-READY + TA-SING-TUTOR-CORE，并绑定目标 Phrase 的 Verified Score 数据。",
+    "ensemble": "综合课调用 TA-ENS-RHY-SING-01。"
+  },
+  "teachingAssetReviewGate": {
+    "requiredChecks": [
+      "material_or_target_exists_in_curriculum_library",
+      "teaching_method_is_age_appropriate",
+      "body_action_is_clear_and_executable_if_rhythm",
+      "performer_asset_pack_is_available_if_rhythm",
+      "audio_spec_is_defined_if_required",
+      "visual_spec_is_correct_if_required",
+      "no_song_specific_data_is_hardcoded_into_generic_asset"
+    ]
+  },
+  "p0FreezeSet": [
+    "TA-RHY-PAT-01",
+    "TA-RHY-PAT-02",
+    "TA-RHY-PAT-03",
+    "TA-RHY-PAT-04",
+    "TA-RHY-PAT-05",
+    "TA-RHY-PAT-06",
+    "TA-RHY-PAT-07",
+    "TA-RHY-REST-01",
+    "TA-MEL-PHRASE-CORE",
+    "TA-MEL-FEATURE-REPEAT",
+    "TA-MEL-FEATURE-ASCENDING",
+    "TA-MEL-FEATURE-DESCENDING",
+    "TA-MEL-FEATURE-DMS",
+    "TA-SOL-DEGREE-NAME",
+    "TA-SOL-SCORE-READ",
+    "TA-SING-READY",
+    "TA-SING-TUTOR-CORE",
+    "TA-ENS-RHY-SING-01"
+  ],
+  "preparationReadinessGate": {
+    "requiredChecks": [
+      "score_is_verified",
+      "lyrics_are_aligned_to_verified_score",
+      "material_match_is_correct",
+      "curriculum_match_is_correct",
+      "teaching_assets_resolve_successfully",
+      "training_audio_is_reviewed",
+      "lesson_recipe_is_reviewed",
+      "ensemble_plan_is_executable"
+    ]
+  }
+}

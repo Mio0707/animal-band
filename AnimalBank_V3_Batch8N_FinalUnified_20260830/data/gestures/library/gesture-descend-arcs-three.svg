@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title desc">
+  <title id="title">三拍下行拱线</title>
+  <desc id="desc">从左上向右下连续画三个拱线</desc>
+  <rect width="640" height="360" rx="0" fill="#20283b"/>
+  <path d="M55 126 C99 82 151 91 198 162 C244 101 299 111 350 218 C402 157 474 173 553 279"
+        fill="none" stroke="#4eb3f9" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

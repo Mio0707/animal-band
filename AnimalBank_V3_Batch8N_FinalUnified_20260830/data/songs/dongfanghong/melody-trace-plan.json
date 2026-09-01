@@ -1,0 +1,152 @@
+{
+  "schemaVersion": "1.0.0",
+  "songId": "dongfanghong",
+  "sourceScoreVerifiedAt": "2026-08-31T14:27:05.314Z",
+  "source": "reviewed_generated",
+  "segmentSource": "verified_score_teaching_segments",
+  "gestureSelectionSource": "teacher_reviewed",
+  "measuresPerSegment": 4,
+  "durationSec": 77,
+  "sourceAudioDurationSec": 74.64899999999999,
+  "segments": [
+    {
+      "segmentId": "lesson_segment_m001_m004",
+      "lessonSegmentId": "lesson_segment_m001_m004",
+      "startSec": 48.453,
+      "endSec": 55.28,
+      "gestureId": "valley",
+      "teacherGestureId": "valley",
+      "label": "第 1–4 小节",
+      "bars": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "mixed",
+        "motionType": "smooth",
+        "noteDensity": "sparse",
+        "pitchRangeSemitones": 12,
+        "netPitchChangeSemitones": -5,
+        "turningPoints": 2,
+        "confidence": 0.545,
+        "alternatives": [
+          {
+            "gestureId": "wave",
+            "score": 0.89
+          },
+          {
+            "gestureId": "infinity",
+            "score": 0.39
+          }
+        ]
+      },
+      "gestureSelectionSource": "teacher"
+    },
+    {
+      "segmentId": "lesson_segment_m005_m008",
+      "lessonSegmentId": "lesson_segment_m005_m008",
+      "startSec": 55.28,
+      "endSec": 62.7,
+      "gestureId": "arch",
+      "label": "第 5–8 小节",
+      "bars": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "gestureMatch": {
+        "contour": "arch",
+        "pitchDirection": "up_down",
+        "motionType": "smooth",
+        "noteDensity": "medium",
+        "pitchRangeSemitones": 15,
+        "netPitchChangeSemitones": -5,
+        "turningPoints": 2,
+        "confidence": 0.995,
+        "alternatives": [
+          {
+            "gestureId": "accent_hold",
+            "score": 0.495
+          },
+          {
+            "gestureId": "wave",
+            "score": 0.445
+          }
+        ]
+      }
+    },
+    {
+      "segmentId": "lesson_segment_m009_m012",
+      "lessonSegmentId": "lesson_segment_m009_m012",
+      "startSec": 62.9,
+      "endSec": 68.93,
+      "gestureId": "wave",
+      "label": "第 9–12 小节",
+      "bars": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "mixed",
+        "motionType": "smooth",
+        "noteDensity": "medium",
+        "pitchRangeSemitones": 12,
+        "netPitchChangeSemitones": -5,
+        "turningPoints": 4,
+        "confidence": 0.61,
+        "alternatives": [
+          {
+            "gestureId": "valley",
+            "score": 0.935
+          },
+          {
+            "gestureId": "infinity",
+            "score": 0.39
+          }
+        ]
+      }
+    },
+    {
+      "segmentId": "lesson_segment_m013_m016",
+      "lessonSegmentId": "lesson_segment_m013_m016",
+      "startSec": 70.01,
+      "endSec": 77,
+      "gestureId": "wave",
+      "label": "第 13–16 小节",
+      "bars": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "mixed",
+        "motionType": "repeated",
+        "noteDensity": "medium",
+        "pitchRangeSemitones": 9,
+        "netPitchChangeSemitones": -5,
+        "turningPoints": 4,
+        "confidence": 0.76,
+        "alternatives": [
+          {
+            "gestureId": "valley",
+            "score": 0.785
+          },
+          {
+            "gestureId": "circle",
+            "score": 0.335
+          }
+        ]
+      }
+    }
+  ],
+  "updatedAt": "2026-09-01T01:56:29.582126Z"
+}

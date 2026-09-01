@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animalbank.local/schemas/curriculum-material.schema.json",
+  "title": "CurriculumMaterialLibrary",
+  "type": "object",
+  "required": ["schema_version", "library_id", "stage_id", "modules"],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "library_id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string" },
+    "stage_id": { "type": "string", "pattern": "^stage_[0-9]+$" },
+    "grades": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+    "course_form": { "type": "string" },
+    "status": { "type": "string" },
+    "product_scope": { "type": "object" },
+    "principles": { "type": "object" },
+    "modules": {
+      "type": "object",
+      "required": ["rhythm", "melody", "solfege", "singing"],
+      "properties": {
+        "rhythm": {
+          "type": "object",
+          "required": ["targets", "material_catalog"],
+          "properties": {
+            "targets": { "$ref": "#/$defs/targetGroups" },
+            "material_catalog": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/rhythmMaterial" }
+            }
+          }
+        },
+        "melody": {
+          "type": "object",
+          "required": ["targets", "machine_materials"],
+          "properties": {
+            "targets": { "$ref": "#/$defs/targetGroups" },
+            "pitch_materials": { "type": "array", "items": { "$ref": "#/$defs/namedMaterial" } },
+            "machine_materials": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "$ref": "#/$defs/namedMaterial" }
+            }
+          }
+        },
+        "solfege": {
+          "type": "object",
+          "required": ["targets"],
+          "properties": { "targets": { "$ref": "#/$defs/targetGroups" } }
+        },
+        "singing": {
+          "type": "object",
+          "required": ["targets"],
+          "properties": { "targets": { "$ref": "#/$defs/targetGroups" } }
+        }
+      }
+    },
+    "melody_teaching_asset_schema": { "type": "object" },
+    "score_matcher_capability": { "type": "object" },
+    "stage1_not_core": { "type": "array", "items": { "type": "string" } },
+    "p0_classroom_flow": { "type": "array", "items": { "type": "string" } },
+    "teaching_asset_build_order": { "type": "array", "items": { "type": "object" } },
+    "source_hierarchy": { "type": "array", "items": { "type": "string" } }
+  },
+  "$defs": {
+    "target": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 }
+      }
+    },
+    "targetGroups": {
+      "type": "object",
+      "properties": {
+        "core": { "type": "array", "items": { "$ref": "#/$defs/target" } },
+        "progression": { "type": "array", "items": { "anyOf": [{ "type": "string" }, { "$ref": "#/$defs/target" }] } },
+        "experience": { "type": "array", "items": { "$ref": "#/$defs/target" } },
+        "experience_extension": { "type": "array", "items": { "anyOf": [{ "type": "string" }, { "$ref": "#/$defs/target" }] } }
+      }
+    },
+    "namedMaterial": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 }
+      }
+    },
+    "rhythmMaterial": {
+      "type": "object",
+      "required": ["id", "name", "notation", "chant", "durations"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^PAT-[0-9]{2}$" },
+        "name": { "type": "string", "minLength": 1 },
+        "level": { "type": "string" },
+        "notation": { "type": "string", "minLength": 1 },
+        "chant": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "durations": { "type": "array", "minItems": 1, "items": { "type": "number", "exclusiveMinimum": 0 } },
+        "teaching_note": { "type": "string" }
+      }
+    }
+  }
+}

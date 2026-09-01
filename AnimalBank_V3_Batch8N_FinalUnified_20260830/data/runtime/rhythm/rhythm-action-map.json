@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "mapping": {
+    "SWAY_L": "SWAY_L",
+    "SWAY_R": "SWAY_R",
+    "LISTEN": "LISTEN",
+    "ARMS_UP": "ARMS_UP",
+    "ONE_HAND_UP": "ONE_HAND_UP",
+    "STEP": "STOMP",
+    "CLAP": "CLAP",
+    "PAT": "PAT_THIGHS",
+    "PAT_LEFT": "PAT_LEFT",
+    "PAT_RIGHT": "PAT_RIGHT",
+    "STOMP": "STOMP",
+    "FREEZE": "STOP"
+  },
+  "runtimeStates": {
+    "READY": "READY",
+    "LISTEN": "LISTEN",
+    "DONE": "DONE"
+  },
+  "unknownActionFallback": "READY"
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "2.0.0",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "sourceScoreVerifiedAt": "2026-08-30T04:20:26.669Z",
+  "updatedAt": "2026-08-31T02:36:27.664291Z",
+  "calibration": {
+    "startMeasure": 1,
+    "endMeasure": 4,
+    "startSec": 7.901,
+    "endSec": 11.851
+  },
+  "anchors": []
+}

@@ -1,0 +1,465 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animalbank.local/schemas/verified-score.schema.json",
+  "title": "VerifiedScore",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "songId",
+    "title",
+    "tonic",
+    "key",
+    "mode",
+    "meter",
+    "bpm",
+    "lyricsText",
+    "measures",
+    "source",
+    "recognitionMetadata",
+    "verificationStatus",
+    "verifiedBy",
+    "verifiedAt",
+    "warnings"
+  ],
+  "properties": {
+    "songId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tonic": {
+      "type": "string",
+      "pattern": "^[A-G](#|b)?$"
+    },
+    "key": {
+      "type": "string",
+      "pattern": "^[A-G](#|b)?( major| minor)?$"
+    },
+    "mode": {
+      "enum": [
+        "major",
+        "minor",
+        "dorian",
+        "mixolydian",
+        "pentatonic",
+        "other"
+      ]
+    },
+    "meter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "beats",
+        "unit"
+      ],
+      "properties": {
+        "beats": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "unit": {
+          "enum": [
+            2,
+            4,
+            8,
+            16
+          ]
+        }
+      }
+    },
+    "bpm": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "lyricsText": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "measures": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/measure"
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "reference",
+        "humanReviewed",
+        "recognitionModel",
+        "recognizedAt",
+        "reviewedAt"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "qwen_score_recognition",
+            "ai_recognition",
+            "manual_entry",
+            "imported_score"
+          ]
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "humanReviewed": {
+          "type": "boolean"
+        },
+        "recognitionModel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "recognizedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviewedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "recognitionMetadata": {
+      "type": "object",
+      "properties": {
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "verificationStatus": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "verified"
+      ]
+    },
+    "verifiedBy": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "verifiedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/warning"
+      }
+    },
+    "teachingConfig": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "singingMeasuresPerUnit"
+      ],
+      "properties": {
+        "singingMeasuresPerUnit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "verificationStatus": {
+            "const": "verified"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "verifiedBy": {
+            "type": "string",
+            "minLength": 1
+          },
+          "verifiedAt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "properties": {
+              "humanReviewed": {
+                "const": true
+              }
+            }
+          }
+        },
+        "required": [
+          "teachingConfig"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "warning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "code",
+        "severity",
+        "path",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "blocking"
+          ]
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "measure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "number",
+        "pickup",
+        "notes"
+      ],
+      "properties": {
+        "number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pickup": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/note"
+          }
+        }
+      }
+    },
+    "note": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "noteId",
+        "degree",
+        "octave",
+        "pitch",
+        "absolutePitch",
+        "midiNumber",
+        "frequency",
+        "solfege",
+        "duration",
+        "beat",
+        "startBeat",
+        "rest",
+        "lyric",
+        "lyricSyllableId",
+        "lyricContinuation",
+        "confidence"
+      ],
+      "properties": {
+        "noteId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "degree": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 7
+        },
+        "octave": {
+          "type": "integer",
+          "minimum": -3,
+          "maximum": 3
+        },
+        "pitch": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-G](#|b)?-?[0-9]+$"
+        },
+        "absolutePitch": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[A-G](#|b)?-?[0-9]+$"
+        },
+        "midiNumber": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 127
+        },
+        "frequency": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "solfege": {
+          "enum": [
+            "do",
+            "re",
+            "mi",
+            "fa",
+            "sol",
+            "la",
+            "si",
+            "rest"
+          ]
+        },
+        "duration": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "beat": {
+          "type": "number",
+          "minimum": 0
+        },
+        "startBeat": {
+          "type": "number",
+          "minimum": 0
+        },
+        "rest": {
+          "type": "boolean"
+        },
+        "lyric": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lyricSyllableId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lyricContinuation": {
+          "type": "boolean"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "rest": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "degree": {
+                "const": 0
+              },
+              "pitch": {
+                "type": "null"
+              },
+              "absolutePitch": {
+                "type": "null"
+              },
+              "midiNumber": {
+                "type": "null"
+              },
+              "frequency": {
+                "type": "null"
+              },
+              "solfege": {
+                "const": "rest"
+              },
+              "lyric": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "degree": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 7
+              },
+              "pitch": {
+                "type": "string",
+                "pattern": "^[A-G](#|b)?-?[0-9]+$"
+              },
+              "absolutePitch": {
+                "type": "string",
+                "pattern": "^[A-G](#|b)?-?[0-9]+$"
+              },
+              "midiNumber": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 127
+              },
+              "frequency": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "solfege": {
+                "enum": [
+                  "do",
+                  "re",
+                  "mi",
+                  "fa",
+                  "sol",
+                  "la",
+                  "si"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

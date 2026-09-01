@@ -1,0 +1,68 @@
+{
+  "ready": true,
+  "desiredPreparationStatus": "READY",
+  "checks": [
+    {
+      "id": "ACTIVITIES_SELECTED",
+      "ok": true,
+      "message": "课堂活动已选择"
+    },
+    {
+      "id": "ORIGINAL_AUDIO_READY",
+      "ok": true,
+      "message": "歌曲音频已准备"
+    },
+    {
+      "id": "SCORE_VERIFIED",
+      "ok": true,
+      "message": "简谱数据已确认"
+    },
+    {
+      "id": "LISTENING_BODY_PLAN_READY",
+      "ok": true,
+      "message": "听歌身体热身方案已准备"
+    },
+    {
+      "id": "MATERIAL_MATCH_READY",
+      "ok": true,
+      "message": "歌曲节奏材料分析已完成"
+    },
+    {
+      "id": "LEARNING_PROFILE_READY",
+      "ok": true,
+      "message": "节奏教学材料推荐已生成"
+    },
+    {
+      "id": "MELODY_TRACE_PLAN_READY",
+      "ok": true,
+      "message": "画旋律方案已准备"
+    },
+    {
+      "id": "MEASURE_ALIGNMENT_READY",
+      "ok": true,
+      "message": "原曲小节已对齐"
+    },
+    {
+      "id": "STICKER_STEMS_READY",
+      "ok": true,
+      "message": "动物贴纸四条乐器音轨已准备"
+    },
+    {
+      "id": "LESSON_RECIPE_READY",
+      "ok": true,
+      "message": "课堂方案已生成"
+    },
+    {
+      "id": "LESSON_RECIPE_REVIEWED",
+      "ok": true,
+      "message": "课堂方案已确认"
+    },
+    {
+      "id": "PIPELINE_FRESH",
+      "ok": true,
+      "message": "备课数据为最新结果"
+    }
+  ],
+  "blockers": [],
+  "warnings": []
+}

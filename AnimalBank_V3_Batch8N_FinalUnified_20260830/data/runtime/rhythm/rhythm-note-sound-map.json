@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "libraryId": "stage1-rhythm-note-drums-v1",
+  "source": "local FluidSynth / MuseScore_General.sf3 General MIDI percussion bank",
+  "assets": {
+    "4": {
+      "path": "assets/audio/rhythm/drums/whole-note.wav",
+      "label": "全音符",
+      "durationBeats": 4,
+      "midiNote": 36,
+      "instrument": "低音大鼓"
+    },
+    "2": {
+      "path": "assets/audio/rhythm/drums/half-note.wav",
+      "label": "二分音符",
+      "durationBeats": 2,
+      "midiNote": 45,
+      "instrument": "筒鼓"
+    },
+    "1": {
+      "path": "assets/audio/rhythm/drums/quarter-note.wav",
+      "label": "四分音符 · da",
+      "durationBeats": 1,
+      "midiNote": 38,
+      "instrument": "军鼓"
+    },
+    "0.5": {
+      "path": "assets/audio/rhythm/drums/eighth-note.wav",
+      "label": "八分音符 · de",
+      "durationBeats": 0.5,
+      "midiNote": 42,
+      "instrument": "闭镲"
+    },
+    "0.25": {
+      "path": "assets/audio/rhythm/drums/sixteenth-note.wav",
+      "label": "十六分音符 · di",
+      "durationBeats": 0.25,
+      "midiNote": 70,
+      "instrument": "沙锤"
+    }
+  },
+  "rest": {
+    "token": "kong",
+    "path": null,
+    "label": "休止 · kong",
+    "behavior": "silence"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "动物乐队离线课包导入权限",
+  "windows": ["main"],
+  "permissions": ["core:default", "dialog:allow-open"]
+}

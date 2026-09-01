@@ -1,0 +1,231 @@
+{
+  "schemaVersion": "1.0.0",
+  "songId": "dongfanghong",
+  "sourceScoreVerifiedAt": "2026-08-31T14:27:05.314Z",
+  "generator": {
+    "type": "qwen_shared_arrangement",
+    "model": "qwen3.8-flash",
+    "fallback": false
+  },
+  "bpm": 72.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "measureCount": 16,
+  "arrangementPlan": {
+    "harmony": [
+      {
+        "measure": 1,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 5
+      },
+      {
+        "measure": 2,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 3,
+        "degree": 4,
+        "quality": "major",
+        "rootPc": 10
+      },
+      {
+        "measure": 4,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 5,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 5
+      },
+      {
+        "measure": 6,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 5
+      },
+      {
+        "measure": 7,
+        "degree": 4,
+        "quality": "major",
+        "rootPc": 10
+      },
+      {
+        "measure": 8,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 9,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 5
+      },
+      {
+        "measure": 10,
+        "degree": 4,
+        "quality": "major",
+        "rootPc": 10
+      },
+      {
+        "measure": 11,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 5
+      },
+      {
+        "measure": 12,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 13,
+        "degree": 4,
+        "quality": "major",
+        "rootPc": 10
+      },
+      {
+        "measure": 14,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 15,
+        "degree": 4,
+        "quality": "major",
+        "rootPc": 10
+      },
+      {
+        "measure": 16,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 5
+      }
+    ],
+    "measurePlans": [
+      {
+        "measure": 1,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 2,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 3,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 4,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 5,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 6,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 7,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 8,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 9,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 10,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 11,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 12,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 13,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 14,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 15,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 16,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      }
+    ],
+    "notes": []
+  }
+}

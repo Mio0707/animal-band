@@ -1,0 +1,320 @@
+{
+  "schemaVersion": "1.0.0",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "sourceScoreVerifiedAt": "2026-08-30T04:20:26.669Z",
+  "source": "reviewed_generated",
+  "segmentSource": "verified_score_teaching_segments",
+  "gestureSelectionSource": "child-friendly-melody-gestures-v1",
+  "measuresPerSegment": 4,
+  "durationSec": 43.45100000000001,
+  "sourceAudioDurationSec": null,
+  "segments": [
+    {
+      "segmentId": "lesson_segment_m001_m004",
+      "lessonSegmentId": "lesson_segment_m001_m004",
+      "startSec": 7.901,
+      "endSec": 11.851,
+      "gestureId": "wave",
+      "label": "第 1–4 小节",
+      "bars": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "mixed",
+        "motionType": "repeated",
+        "noteDensity": "medium",
+        "pitchRangeSemitones": 5,
+        "netPitchChangeSemitones": 3,
+        "turningPoints": 3,
+        "confidence": 0.76,
+        "alternatives": [
+          {
+            "gestureId": "valley",
+            "score": 0.785
+          },
+          {
+            "gestureId": "circle",
+            "score": 0.335
+          }
+        ]
+      }
+    },
+    {
+      "segmentId": "lesson_segment_m005_m008",
+      "lessonSegmentId": "lesson_segment_m005_m008",
+      "startSec": 11.851,
+      "endSec": 15.801000000000002,
+      "gestureId": "wave",
+      "label": "第 5–8 小节",
+      "bars": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "mixed",
+        "motionType": "smooth",
+        "noteDensity": "medium",
+        "pitchRangeSemitones": 8,
+        "netPitchChangeSemitones": 3,
+        "turningPoints": 3,
+        "confidence": 0.61,
+        "alternatives": [
+          {
+            "gestureId": "valley",
+            "score": 0.935
+          },
+          {
+            "gestureId": "infinity",
+            "score": 0.39
+          }
+        ]
+      }
+    },
+    {
+      "segmentId": "lesson_segment_m009_m012",
+      "lessonSegmentId": "lesson_segment_m009_m012",
+      "startSec": 15.801000000000002,
+      "endSec": 19.751000000000005,
+      "gestureId": "valley",
+      "label": "第 9–12 小节",
+      "bars": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "mixed",
+        "motionType": "repeated",
+        "noteDensity": "medium",
+        "pitchRangeSemitones": 5,
+        "netPitchChangeSemitones": 3,
+        "turningPoints": 3,
+        "confidence": 0.5,
+        "alternatives": [
+          {
+            "gestureId": "wave",
+            "score": 1.045
+          },
+          {
+            "gestureId": "circle",
+            "score": 0.335
+          }
+        ]
+      }
+    },
+    {
+      "segmentId": "lesson_segment_m013_m016",
+      "lessonSegmentId": "lesson_segment_m013_m016",
+      "startSec": 19.751000000000005,
+      "endSec": 23.701000000000004,
+      "gestureId": "wave",
+      "label": "第 13–16 小节",
+      "bars": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "up",
+        "motionType": "repeated",
+        "noteDensity": "medium",
+        "pitchRangeSemitones": 11,
+        "netPitchChangeSemitones": 9,
+        "turningPoints": 2,
+        "confidence": 0.911,
+        "alternatives": [
+          {
+            "gestureId": "rise",
+            "score": 0.434
+          },
+          {
+            "gestureId": "circle",
+            "score": 0.335
+          }
+        ]
+      }
+    },
+    {
+      "segmentId": "lesson_segment_m017_m020",
+      "lessonSegmentId": "lesson_segment_m017_m020",
+      "startSec": 23.701000000000004,
+      "endSec": 27.651000000000007,
+      "gestureId": "valley",
+      "label": "第 17–20 小节",
+      "bars": [
+        17,
+        18,
+        19,
+        20
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "mixed",
+        "motionType": "smooth",
+        "noteDensity": "sparse",
+        "pitchRangeSemitones": 5,
+        "netPitchChangeSemitones": -5,
+        "turningPoints": 6,
+        "confidence": 0.5,
+        "alternatives": [
+          {
+            "gestureId": "wave",
+            "score": 0.945
+          },
+          {
+            "gestureId": "infinity",
+            "score": 0.39
+          }
+        ]
+      }
+    },
+    {
+      "segmentId": "lesson_segment_m021_m024",
+      "lessonSegmentId": "lesson_segment_m021_m024",
+      "startSec": 27.651000000000007,
+      "endSec": 31.601000000000006,
+      "gestureId": "wave",
+      "label": "第 21–24 小节",
+      "bars": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "mixed",
+        "motionType": "smooth",
+        "noteDensity": "sparse",
+        "pitchRangeSemitones": 7,
+        "netPitchChangeSemitones": -7,
+        "turningPoints": 6,
+        "confidence": 0.51,
+        "alternatives": [
+          {
+            "gestureId": "valley",
+            "score": 0.935
+          },
+          {
+            "gestureId": "infinity",
+            "score": 0.39
+          }
+        ]
+      }
+    },
+    {
+      "segmentId": "lesson_segment_m025_m028",
+      "lessonSegmentId": "lesson_segment_m025_m028",
+      "startSec": 31.601000000000006,
+      "endSec": 35.551,
+      "gestureId": "arch",
+      "label": "第 25–28 小节",
+      "bars": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "gestureMatch": {
+        "contour": "arch",
+        "pitchDirection": "up_down",
+        "motionType": "smooth",
+        "noteDensity": "medium",
+        "pitchRangeSemitones": 12,
+        "netPitchChangeSemitones": 9,
+        "turningPoints": 2,
+        "confidence": 0.995,
+        "alternatives": [
+          {
+            "gestureId": "accent_hold",
+            "score": 0.495
+          },
+          {
+            "gestureId": "wave",
+            "score": 0.445
+          }
+        ]
+      }
+    },
+    {
+      "segmentId": "lesson_segment_m029_m032",
+      "lessonSegmentId": "lesson_segment_m029_m032",
+      "startSec": 35.551,
+      "endSec": 39.501000000000005,
+      "gestureId": "wave",
+      "label": "第 29–32 小节",
+      "bars": [
+        29,
+        30,
+        31,
+        32
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "mixed",
+        "motionType": "repeated",
+        "noteDensity": "medium",
+        "pitchRangeSemitones": 12,
+        "netPitchChangeSemitones": -7,
+        "turningPoints": 5,
+        "confidence": 0.705,
+        "alternatives": [
+          {
+            "gestureId": "valley",
+            "score": 0.785
+          },
+          {
+            "gestureId": "accent_hold",
+            "score": 0.295
+          }
+        ]
+      }
+    },
+    {
+      "segmentId": "lesson_segment_m033_m036",
+      "lessonSegmentId": "lesson_segment_m033_m036",
+      "startSec": 39.501000000000005,
+      "endSec": 43.45100000000001,
+      "gestureId": "wave",
+      "label": "第 33–36 小节",
+      "bars": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "gestureMatch": {
+        "contour": "wave",
+        "pitchDirection": "mixed",
+        "motionType": "repeated",
+        "noteDensity": "medium",
+        "pitchRangeSemitones": 12,
+        "netPitchChangeSemitones": -7,
+        "turningPoints": 5,
+        "confidence": 0.705,
+        "alternatives": [
+          {
+            "gestureId": "valley",
+            "score": 0.785
+          },
+          {
+            "gestureId": "accent_hold",
+            "score": 0.295
+          }
+        ]
+      }
+    }
+  ],
+  "updatedAt": "2026-08-31T02:36:27.696524Z"
+}

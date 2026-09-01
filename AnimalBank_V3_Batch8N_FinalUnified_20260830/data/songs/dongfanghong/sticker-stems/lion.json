@@ -1,0 +1,259 @@
+{
+  "label": "小狮子",
+  "instrument": "alto_sax",
+  "role": "萨克斯主旋律",
+  "program": 65,
+  "channel": 2,
+  "trackId": "lion",
+  "events": [
+    {
+      "startBeat": 0.0,
+      "durationBeats": 0.94,
+      "midi": 72,
+      "velocity": 72
+    },
+    {
+      "startBeat": 1.0,
+      "durationBeats": 0.47,
+      "midi": 72,
+      "velocity": 72
+    },
+    {
+      "startBeat": 1.5,
+      "durationBeats": 0.47,
+      "midi": 74,
+      "velocity": 72
+    },
+    {
+      "startBeat": 2.0,
+      "durationBeats": 1.88,
+      "midi": 67,
+      "velocity": 72
+    },
+    {
+      "startBeat": 4.0,
+      "durationBeats": 0.94,
+      "midi": 65,
+      "velocity": 72
+    },
+    {
+      "startBeat": 5.0,
+      "durationBeats": 0.47,
+      "midi": 65,
+      "velocity": 72
+    },
+    {
+      "startBeat": 5.5,
+      "durationBeats": 0.47,
+      "midi": 62,
+      "velocity": 72
+    },
+    {
+      "startBeat": 6.0,
+      "durationBeats": 1.88,
+      "midi": 67,
+      "velocity": 72
+    },
+    {
+      "startBeat": 8.0,
+      "durationBeats": 0.94,
+      "midi": 72,
+      "velocity": 72
+    },
+    {
+      "startBeat": 9.0,
+      "durationBeats": 0.94,
+      "midi": 72,
+      "velocity": 72
+    },
+    {
+      "startBeat": 10.0,
+      "durationBeats": 0.47,
+      "midi": 74,
+      "velocity": 72
+    },
+    {
+      "startBeat": 10.5,
+      "durationBeats": 0.47,
+      "midi": 77,
+      "velocity": 72
+    },
+    {
+      "startBeat": 11.0,
+      "durationBeats": 0.47,
+      "midi": 74,
+      "velocity": 72
+    },
+    {
+      "startBeat": 11.5,
+      "durationBeats": 0.47,
+      "midi": 72,
+      "velocity": 72
+    },
+    {
+      "startBeat": 12.0,
+      "durationBeats": 0.94,
+      "midi": 65,
+      "velocity": 72
+    },
+    {
+      "startBeat": 13.0,
+      "durationBeats": 0.47,
+      "midi": 65,
+      "velocity": 72
+    },
+    {
+      "startBeat": 13.5,
+      "durationBeats": 0.47,
+      "midi": 62,
+      "velocity": 72
+    },
+    {
+      "startBeat": 14.0,
+      "durationBeats": 1.88,
+      "midi": 67,
+      "velocity": 72
+    },
+    {
+      "startBeat": 16.0,
+      "durationBeats": 0.94,
+      "midi": 72,
+      "velocity": 72
+    },
+    {
+      "startBeat": 17.0,
+      "durationBeats": 0.94,
+      "midi": 67,
+      "velocity": 72
+    },
+    {
+      "startBeat": 18.0,
+      "durationBeats": 0.94,
+      "midi": 65,
+      "velocity": 72
+    },
+    {
+      "startBeat": 19.0,
+      "durationBeats": 0.47,
+      "midi": 64,
+      "velocity": 72
+    },
+    {
+      "startBeat": 19.5,
+      "durationBeats": 0.47,
+      "midi": 62,
+      "velocity": 72
+    },
+    {
+      "startBeat": 20.0,
+      "durationBeats": 0.94,
+      "midi": 60,
+      "velocity": 72
+    },
+    {
+      "startBeat": 21.0,
+      "durationBeats": 0.94,
+      "midi": 72,
+      "velocity": 72
+    },
+    {
+      "startBeat": 22.0,
+      "durationBeats": 0.94,
+      "midi": 67,
+      "velocity": 72
+    },
+    {
+      "startBeat": 23.0,
+      "durationBeats": 0.47,
+      "midi": 69,
+      "velocity": 72
+    },
+    {
+      "startBeat": 23.5,
+      "durationBeats": 0.47,
+      "midi": 67,
+      "velocity": 72
+    },
+    {
+      "startBeat": 24.0,
+      "durationBeats": 0.94,
+      "midi": 65,
+      "velocity": 72
+    },
+    {
+      "startBeat": 25.0,
+      "durationBeats": 0.47,
+      "midi": 65,
+      "velocity": 72
+    },
+    {
+      "startBeat": 25.5,
+      "durationBeats": 0.47,
+      "midi": 62,
+      "velocity": 72
+    },
+    {
+      "startBeat": 26.0,
+      "durationBeats": 0.47,
+      "midi": 67,
+      "velocity": 72
+    },
+    {
+      "startBeat": 26.5,
+      "durationBeats": 0.47,
+      "midi": 69,
+      "velocity": 72
+    },
+    {
+      "startBeat": 27.0,
+      "durationBeats": 0.47,
+      "midi": 67,
+      "velocity": 72
+    },
+    {
+      "startBeat": 27.5,
+      "durationBeats": 0.47,
+      "midi": 65,
+      "velocity": 72
+    },
+    {
+      "startBeat": 28.0,
+      "durationBeats": 0.47,
+      "midi": 67,
+      "velocity": 72
+    },
+    {
+      "startBeat": 28.5,
+      "durationBeats": 0.47,
+      "midi": 65,
+      "velocity": 72
+    },
+    {
+      "startBeat": 29.0,
+      "durationBeats": 0.47,
+      "midi": 64,
+      "velocity": 72
+    },
+    {
+      "startBeat": 29.5,
+      "durationBeats": 0.47,
+      "midi": 62,
+      "velocity": 72
+    },
+    {
+      "startBeat": 30.0,
+      "durationBeats": 1.88,
+      "midi": 60,
+      "velocity": 72
+    }
+  ],
+  "schemaVersion": "1.0.0",
+  "songId": "dongfanghong",
+  "bpm": 72.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "measureCount": 16,
+  "totalBeats": 32
+}

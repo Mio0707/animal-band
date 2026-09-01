@@ -1,0 +1,401 @@
+{
+  "title": "《东方红》",
+  "tonic": "F",
+  "mode": "major",
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "bpm": 64,
+  "confidence": 1,
+  "measures": [
+    {
+      "number": 1,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "lyric": "东"
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "lyric": "方"
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "lyric": "红"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "lyric": "太"
+        },
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "lyric": "阳"
+        },
+        {
+          "degree": 6,
+          "octave": -1,
+          "beat": 1.5,
+          "duration": 0.5
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "lyric": "升"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "lyric": "中"
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "lyric": "国"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "lyric": "出"
+        },
+        {
+          "degree": 1,
+          "octave": 1,
+          "beat": 0.5,
+          "duration": 0.5
+        },
+        {
+          "degree": 6,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "lyric": "了"
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "lyric": "个"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "lyric": "毛"
+        },
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "lyric": "泽"
+        },
+        {
+          "degree": 6,
+          "octave": -1,
+          "beat": 1.5,
+          "duration": 0.5
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 2,
+          "lyric": "东"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "lyric": "他"
+        },
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "lyric": "为"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "lyric": "人"
+        },
+        {
+          "degree": 7,
+          "octave": -1,
+          "beat": 1,
+          "duration": 0.5,
+          "lyric": "民"
+        },
+        {
+          "degree": 6,
+          "octave": -1,
+          "beat": 1.5,
+          "duration": 0.5
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 5,
+          "octave": -1,
+          "beat": 0,
+          "duration": 1,
+          "lyric": "谋"
+        },
+        {
+          "degree": 5,
+          "octave": 0,
+          "beat": 1,
+          "duration": 1,
+          "lyric": "幸"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "lyric": "福"
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "lyric": "呼"
+        },
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "lyric": "儿"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0,
+          "duration": 1,
+          "lyric": "嗨"
+        },
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "lyric": "哟"
+        },
+        {
+          "degree": 6,
+          "octave": -1,
+          "beat": 1.5,
+          "duration": 0.5
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "lyric": "他"
+        },
+        {
+          "degree": 3,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5,
+          "lyric": "是"
+        },
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 1,
+          "duration": 0.5,
+          "lyric": "人"
+        },
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 1.5,
+          "duration": 0.5,
+          "lyric": "民"
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 2,
+          "octave": 0,
+          "beat": 0,
+          "duration": 0.5,
+          "lyric": "大"
+        },
+        {
+          "degree": 1,
+          "octave": 0,
+          "beat": 0.5,
+          "duration": 0.5
+        },
+        {
+          "degree": 7,
+          "octave": -1,
+          "beat": 1,
+          "duration": 0.5,
+          "lyric": "救"
+        },
+        {
+          "degree": 6,
+          "octave": -1,
+          "beat": 1.5,
+          "duration": 0.5
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "beats": 2,
+      "meter": "2/4",
+      "notes": [
+        {
+          "degree": 5,
+          "octave": -1,
+          "beat": 0,
+          "duration": 2,
+          "lyric": "星"
+        }
+      ]
+    }
+  ],
+  "source": "human-curated",
+  "warnings": [
+    "课堂按原谱四行旋律拆成4页，每页显示4个小节。"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "title": "祖国祖国我们爱你",
+  "stageId": "stage_1",
+  "source": "preset",
+  "assets": {
+    "originalAudio": "data/songs/zuguo-zuguo-women-ai-ni/source/original-audio.mp3",
+    "scoreImage": "data/songs/zuguo-zuguo-women-ai-ni/source/score-image-combined.png"
+  },
+  "metadata": {},
+  "processingStatus": "PROFILE_READY",
+  "score": {
+    "recognitionStatus": "VERIFIED",
+    "verificationStatus": "verified",
+    "draftPath": "data/songs/zuguo-zuguo-women-ai-ni/recognition/normalized.json",
+    "verifiedPath": "data/songs/zuguo-zuguo-women-ai-ni/verified-score.json"
+  },
+  "learningProfileStatus": "READY",
+  "materialMatchStatus": "READY",
+  "sourceScoreVerifiedAt": "2026-08-30T04:20:26.669Z",
+  "createdAt": "2026-08-27T12:10:00Z",
+  "updatedAt": "2026-08-30T09:35:06.527510Z"
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "melody-trace-plan.schema.json",
+  "title": "Animal Bank Melody Trace Plan",
+  "type": "object",
+  "required": ["schemaVersion", "songId", "segments"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "songId": { "type": "string", "minLength": 1 },
+    "source": { "enum": ["teacher_curated", "reviewed_generated", "imported"] },
+    "durationSec": { "type": "number", "minimum": 0 },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["segmentId", "startSec", "endSec", "gestureId"],
+        "properties": {
+          "segmentId": { "type": "string", "minLength": 1 },
+          "startSec": { "type": "number", "minimum": 0 },
+          "endSec": { "type": "number", "exclusiveMinimum": 0 },
+          "gestureId": { "type": "string", "minLength": 1 },
+          "label": { "type": "string" },
+          "bars": { "type": "array", "items": { "type": "integer", "minimum": 1 } }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

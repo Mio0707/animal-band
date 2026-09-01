@@ -1,0 +1,319 @@
+{
+  "label": "小猫",
+  "instrument": "bass",
+  "role": "贝斯",
+  "program": 33,
+  "channel": 1,
+  "trackId": "cat",
+  "events": [
+    {
+      "startBeat": 0,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 2,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 3.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 4,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 6,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 7.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 8,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 10,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 11.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 12,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 14,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 15.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 16,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 18,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 19.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 20,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 22,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 23.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 24,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 68
+    },
+    {
+      "startBeat": 26,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 27.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 28,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 30,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 68
+    },
+    {
+      "startBeat": 32,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 33.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 34,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 36,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 37.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 38,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 40,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 41.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 42,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 44,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 45.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 46,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 48,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 50,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 52,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 53.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 54,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 56,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 58,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 59.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 60,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 68
+    },
+    {
+      "startBeat": 62,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 64,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    },
+    {
+      "startBeat": 66,
+      "durationBeats": 1.0,
+      "midi": 43,
+      "velocity": 68
+    },
+    {
+      "startBeat": 67.0,
+      "durationBeats": 1.0,
+      "midi": 50,
+      "velocity": 62
+    },
+    {
+      "startBeat": 68,
+      "durationBeats": 1.0,
+      "midi": 41,
+      "velocity": 68
+    },
+    {
+      "startBeat": 70,
+      "durationBeats": 1.0,
+      "midi": 36,
+      "velocity": 68
+    }
+  ],
+  "schemaVersion": "1.0.0",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "bpm": 72.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "measureCount": 36,
+  "totalBeats": 72
+}

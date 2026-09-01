@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.1.0",
+  "planId": "song_listening_body_plan",
+  "songId": "dongfanghong",
+  "source": "verified_score_warmup_adapter",
+  "sourceScoreVerifiedAt": "2026-08-31T14:27:05.314Z",
+  "generatedAt": "2026-08-31T14:27:15.657930Z",
+  "durationSec": 77.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "bpm": 72.0,
+  "policy": {
+    "barsPerAction": 4,
+    "preCueSec": 0.8,
+    "goal": "listening_attention_warmup",
+    "silentActionTarget": 0.75,
+    "note": "身体动作只用于保持注意力和整体音乐感受，不承担节奏型教学。"
+  },
+  "actions": [
+    {
+      "actionId": "SWAY_L",
+      "label": "身体向左摆一摆",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-ready.png",
+      "motion": "sway-left"
+    },
+    {
+      "actionId": "SWAY_R",
+      "label": "身体向右摆一摆",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-ready.png",
+      "motion": "sway-right"
+    },
+    {
+      "actionId": "LISTEN",
+      "label": "手放耳边听一听",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-listen.png",
+      "motion": "listen"
+    },
+    {
+      "actionId": "ARMS_UP",
+      "label": "双手举起来",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-happy-done.png",
+      "motion": "arms-up"
+    },
+    {
+      "actionId": "ONE_HAND_UP",
+      "label": "举起一只手",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-high-five.png",
+      "motion": "one-hand-up"
+    },
+    {
+      "actionId": "STEP",
+      "label": "抬脚踏一步",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-stomp.png",
+      "motion": "step"
+    },
+    {
+      "actionId": "CLAP",
+      "label": "拍一下手",
+      "sound": true,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-clap.png",
+      "motion": "clap"
+    },
+    {
+      "actionId": "PAT",
+      "label": "拍一下腿",
+      "sound": true,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-pat-thighs.png",
+      "motion": "pat"
+    }
+  ],
+  "segments": [
+    {
+      "segmentId": "warmup_01",
+      "startSec": 48.453,
+      "endSec": 55.28,
+      "startBar": 1,
+      "endBar": 4,
+      "actionId": "SWAY_L",
+      "label": "身体向左摆一摆",
+      "energy": "MID",
+      "timingSource": "measure_alignment"
+    },
+    {
+      "segmentId": "warmup_02",
+      "startSec": 55.28,
+      "endSec": 62.7,
+      "startBar": 5,
+      "endBar": 8,
+      "actionId": "SWAY_R",
+      "label": "身体向右摆一摆",
+      "energy": "LOW",
+      "timingSource": "measure_alignment"
+    },
+    {
+      "segmentId": "warmup_03",
+      "startSec": 62.9,
+      "endSec": 68.93,
+      "startBar": 9,
+      "endBar": 12,
+      "actionId": "ARMS_UP",
+      "label": "双手举起来",
+      "energy": "MID",
+      "timingSource": "measure_alignment"
+    },
+    {
+      "segmentId": "warmup_04",
+      "startSec": 70.01,
+      "endSec": 77.0,
+      "startBar": 13,
+      "endBar": 16,
+      "actionId": "SWAY_L",
+      "label": "身体向左摆一摆",
+      "energy": "HIGH",
+      "timingSource": "measure_alignment"
+    }
+  ],
+  "sourceMeasureAlignmentUpdatedAt": "2026-09-01T01:31:37.981991Z",
+  "updatedAt": "2026-09-01T01:31:38.012167Z"
+}

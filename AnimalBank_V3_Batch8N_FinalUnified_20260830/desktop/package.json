@@ -1,0 +1,18 @@
+{
+  "name": "animal-band-classroom-desktop",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tauri dev",
+    "icons": "tauri icon ../assets/teaching/rhythm/performer-dog/performer-dog-ready.png",
+    "prebuild": "npm run icons",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.0"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.8.0",
+    "@tauri-apps/plugin-dialog": "^2.4.0"
+  }
+}

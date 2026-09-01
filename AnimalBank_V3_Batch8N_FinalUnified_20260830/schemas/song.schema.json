@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animalbank.local/schemas/song.schema.json",
+  "title": "Song",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "songId",
+    "title",
+    "stageId",
+    "source",
+    "assets",
+    "metadata",
+    "processingStatus",
+    "score",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "songId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,79}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stageId": {
+      "type": "string",
+      "enum": [
+        "stage_1"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "preset",
+        "teacher_added"
+      ]
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "originalAudio",
+        "scoreImage"
+      ],
+      "properties": {
+        "originalAudio": {
+          "$ref": "#/$defs/assetPath"
+        },
+        "scoreImage": {
+          "$ref": "#/$defs/assetPath"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "processingStatus": {
+      "type": "string",
+      "enum": [
+        "CREATED",
+        "SCORE_UPLOADED",
+        "RECOGNIZING",
+        "SCORE_DRAFT",
+        "SCORE_REVIEWED",
+        "SCORE_VERIFIED",
+        "PROFILE_READY"
+      ]
+    },
+    "score": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recognitionStatus",
+        "verificationStatus",
+        "draftPath",
+        "verifiedPath"
+      ],
+      "properties": {
+        "recognitionStatus": {
+          "type": "string",
+          "enum": [
+            "NOT_STARTED",
+            "UPLOADED",
+            "RECOGNIZING",
+            "DRAFT",
+            "REVIEWED",
+            "VERIFIED"
+          ]
+        },
+        "verificationStatus": {
+          "type": "string",
+          "enum": [
+            "none",
+            "draft",
+            "reviewed",
+            "verified"
+          ]
+        },
+        "draftPath": {
+          "$ref": "#/$defs/assetPath"
+        },
+        "verifiedPath": {
+          "$ref": "#/$defs/assetPath"
+        }
+      }
+    },
+    "materialMatchStatus": {
+      "type": "string",
+      "enum": [
+        "NOT_GENERATED",
+        "READY",
+        "STALE"
+      ]
+    },
+    "learningProfileStatus": {
+      "type": "string",
+      "enum": [
+        "NOT_GENERATED",
+        "READY",
+        "PROFILE_READY",
+        "STALE"
+      ]
+    },
+    "sourceScoreVerifiedAt": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "createdAt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "$defs": {
+    "assetPath": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*\\.\\.)[A-Za-z0-9_./-]+$"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.2.0",
+  "libraryId": "katy-human-solfege-original-preview",
+  "voiceMode": "human_solfege_sample",
+  "descriptionZh": "Katy 原始真人唱名预览切片。直接使用仓库保留的最原始 Freesound Katy 预览资源，不再优先使用后加工 voice-katy WAV。",
+  "license": "CC BY 4.0",
+  "author": "digifishmusic",
+  "sourcePack": "Katy",
+  "sourceUrl": "https://freesound.org/people/digifishmusic/packs/2576/",
+  "projectSource": "prototype/assets/solfege/source/freesound-katy-preview",
+  "offlineNoteZh": "原始 MP3 已固化为项目 assets；课堂运行时只读取本地资源。",
+  "samples": {
+    "do":  {"path":"assets/audio/solfege/voice-katy/do.mp3",  "basePitch":"C4", "baseMidi":60},
+    "re":  {"path":"assets/audio/solfege/voice-katy/re.mp3",  "basePitch":"D4", "baseMidi":62},
+    "mi":  {"path":"assets/audio/solfege/voice-katy/mi.mp3",  "basePitch":"E4", "baseMidi":64, "sourcePronunciation":"me"},
+    "fa":  {"path":"assets/audio/solfege/voice-katy/fa.mp3",  "basePitch":"F4", "baseMidi":65},
+    "sol": {"path":"assets/audio/solfege/voice-katy/sol.mp3", "basePitch":"G4", "baseMidi":67, "sourcePronunciation":"so"},
+    "la":  {"path":"assets/audio/solfege/voice-katy/la.mp3",  "basePitch":"A4", "baseMidi":69},
+    "si":  {"path":"assets/audio/solfege/voice-katy/si.mp3",  "basePitch":"B4", "baseMidi":71, "sourcePronunciation":"ti"}
+  }
+}

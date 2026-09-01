@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "1.1.0",
+  "planId": "song_listening_body_plan",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "source": "verified_score_warmup_adapter",
+  "sourceScoreVerifiedAt": "2026-08-30T04:20:26.669Z",
+  "generatedAt": "2026-08-31T02:36:31.985728Z",
+  "durationSec": 60.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "bpm": 72.0,
+  "policy": {
+    "barsPerAction": 4,
+    "preCueSec": 0.8,
+    "goal": "listening_attention_warmup",
+    "silentActionTarget": 0.75,
+    "note": "身体动作只用于保持注意力和整体音乐感受，不承担节奏型教学。"
+  },
+  "actions": [
+    {
+      "actionId": "SWAY_L",
+      "label": "身体向左摆一摆",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-ready.png",
+      "motion": "sway-left"
+    },
+    {
+      "actionId": "SWAY_R",
+      "label": "身体向右摆一摆",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-ready.png",
+      "motion": "sway-right"
+    },
+    {
+      "actionId": "LISTEN",
+      "label": "手放耳边听一听",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-listen.png",
+      "motion": "listen"
+    },
+    {
+      "actionId": "ARMS_UP",
+      "label": "双手举起来",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-happy-done.png",
+      "motion": "arms-up"
+    },
+    {
+      "actionId": "ONE_HAND_UP",
+      "label": "举起一只手",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-high-five.png",
+      "motion": "one-hand-up"
+    },
+    {
+      "actionId": "STEP",
+      "label": "抬脚踏一步",
+      "sound": false,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-stomp.png",
+      "motion": "step"
+    },
+    {
+      "actionId": "CLAP",
+      "label": "拍一下手",
+      "sound": true,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-clap.png",
+      "motion": "clap"
+    },
+    {
+      "actionId": "PAT",
+      "label": "拍一下腿",
+      "sound": true,
+      "asset": "assets/teaching/rhythm/performer-dog/performer-dog-pat-thighs.png",
+      "motion": "pat"
+    }
+  ],
+  "segments": [
+    {
+      "segmentId": "warmup_01",
+      "startSec": 0.0,
+      "endSec": 6.667,
+      "startBar": 1,
+      "endBar": 4,
+      "actionId": "SWAY_L",
+      "label": "身体向左摆一摆",
+      "energy": "MID"
+    },
+    {
+      "segmentId": "warmup_02",
+      "startSec": 6.667,
+      "endSec": 13.333,
+      "startBar": 5,
+      "endBar": 8,
+      "actionId": "SWAY_R",
+      "label": "身体向右摆一摆",
+      "energy": "MID"
+    },
+    {
+      "segmentId": "warmup_03",
+      "startSec": 13.333,
+      "endSec": 20.0,
+      "startBar": 9,
+      "endBar": 12,
+      "actionId": "ARMS_UP",
+      "label": "双手举起来",
+      "energy": "MID"
+    },
+    {
+      "segmentId": "warmup_04",
+      "startSec": 20.0,
+      "endSec": 26.667,
+      "startBar": 13,
+      "endBar": 16,
+      "actionId": "ONE_HAND_UP",
+      "label": "举起一只手",
+      "energy": "MID"
+    },
+    {
+      "segmentId": "warmup_05",
+      "startSec": 26.667,
+      "endSec": 33.333,
+      "startBar": 17,
+      "endBar": 20,
+      "actionId": "CLAP",
+      "label": "拍一下手",
+      "energy": "MID"
+    },
+    {
+      "segmentId": "warmup_06",
+      "startSec": 33.333,
+      "endSec": 40.0,
+      "startBar": 21,
+      "endBar": 24,
+      "actionId": "SWAY_L",
+      "label": "身体向左摆一摆",
+      "energy": "MID"
+    },
+    {
+      "segmentId": "warmup_07",
+      "startSec": 40.0,
+      "endSec": 46.667,
+      "startBar": 25,
+      "endBar": 28,
+      "actionId": "SWAY_R",
+      "label": "身体向右摆一摆",
+      "energy": "MID"
+    },
+    {
+      "segmentId": "warmup_08",
+      "startSec": 46.667,
+      "endSec": 53.333,
+      "startBar": 29,
+      "endBar": 32,
+      "actionId": "ARMS_UP",
+      "label": "双手举起来",
+      "energy": "MID"
+    },
+    {
+      "segmentId": "warmup_09",
+      "startSec": 53.333,
+      "endSec": 60.0,
+      "startBar": 33,
+      "endBar": 36,
+      "actionId": "ONE_HAND_UP",
+      "label": "举起一只手",
+      "energy": "MID"
+    }
+  ]
+}

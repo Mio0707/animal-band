@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>动物乐队 · 简谱人工校对</title>
+  <link rel="stylesheet" href="score-review.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="review-title-row"><button id="go-back" class="button ghost">← 返回上一个页面</button><div><small id="review-context">内部工作台 · 乐谱工具</small><h1 id="review-title">简谱人工校对</h1></div></div>
+    <div class="loaders developer-tools">
+      <label class="button">打开 normalized.json<input id="score-file" type="file" accept="application/json"></label>
+      <label class="button secondary">打开原始简谱<input id="image-file" type="file" accept="image/*"></label>
+    </div>
+  </header>
+  <main>
+    <div id="empty-state" class="empty-state"><strong>请打开待校对的乐谱</strong><span>识别结果必须经过人工检查才能确认。</span></div>
+    <div id="review-app" hidden>
+      <section class="review-heading">
+        <div><small id="review-progress"></small><h2 id="score-title"></h2></div>
+        <div id="status-summary" class="status-summary"></div>
+      </section>
+      <section id="metadata" class="metadata"></section>
+      <section class="score-live-preview" aria-label="实时简谱预览">
+        <div class="score-live-preview-head"><div><strong>当前简谱</strong><small>点击小节进行校对；修改后立即更新</small></div></div>
+        <div id="score-preview-grid" class="score-preview-grid"></div>
+      </section>
+      <div class="score-review-layout">
+        <aside class="score-source-panel"><div id="source-empty">请选择原始简谱图片</div><img id="source-image" alt="原始简谱"><small>原始乐谱仅供人工逐项核对</small></aside>
+        <section class="score-review-main">
+          <nav class="score-measure-navigator"><button id="previous-measure" class="button ghost" aria-label="上一小节">←</button><div id="measure-nav"></div><button id="next-measure" class="button ghost" aria-label="下一小节">→</button></nav>
+          <section id="warnings" class="warnings"></section>
+          <section id="measure-editor"></section>
+          <div class="score-review-actions"><button id="recognize-lyrics" class="button ghost">↻ AI 重新匹配歌词</button><button id="preview-measure" class="button secondary">▶ 试听这个小节</button><button id="confirm-measure" class="button primary">确认这个小节</button></div>
+          <p id="qwen-key-notice" class="qwen-key-notice" hidden>当前功能需要 Qwen API Key，请联系开发者使用。</p>
+        </section>
+      </div>
+      <section id="score-measure-alignment" class="score-measure-alignment" aria-label="原曲小节核对"></section>
+      <footer class="verification-bar">
+        <div><strong id="verification-label"></strong><small id="verification-detail"></small></div>
+        <button id="save-draft" class="button ghost">保存当前乐谱</button>
+        <button id="mark-reviewed" class="button secondary">标记为已审核</button>
+        <button id="mark-verified" class="button primary">验证并保存</button>
+        <button id="download-score" class="button ghost developer-tools">调试：下载 JSON</button>
+        <a id="return-to-preparation" class="button primary teacher-return" href="/app/teacher/" hidden>返回备课</a>
+      </footer>
+    </div>
+  </main>
+  <script type="module" src="score-review.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "3.0.0",
+  "runtimeVersion": "3.0.0",
+  "preparationId": "prep_be7868eb01994061a2b28f0543c99cb3",
+  "songId": "dongfanghong",
+  "segmentCount": 4,
+  "lessonSegments": [
+    {
+      "segmentId": "lesson_segment_m001_m004",
+      "index": 0,
+      "label": "第 1–4 小节",
+      "startMeasure": 1,
+      "endMeasure": 4,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m005_m008",
+      "index": 1,
+      "label": "第 5–8 小节",
+      "startMeasure": 5,
+      "endMeasure": 8,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m009_m012",
+      "index": 2,
+      "label": "第 9–12 小节",
+      "startMeasure": 9,
+      "endMeasure": 12,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m013_m016",
+      "index": 3,
+      "label": "第 13–16 小节",
+      "startMeasure": 13,
+      "endMeasure": 16,
+      "measureCount": 4
+    }
+  ],
+  "trackIds": [
+    "dog",
+    "bear",
+    "cat",
+    "lion"
+  ],
+  "segmentStates": [
+    {
+      "segmentId": "lesson_segment_m001_m004",
+      "activeTrackIds": [
+        "dog",
+        "bear",
+        "lion"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m005_m008",
+      "activeTrackIds": [
+        "dog",
+        "cat",
+        "lion"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m009_m012",
+      "activeTrackIds": [
+        "bear",
+        "lion"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m013_m016",
+      "activeTrackIds": [
+        "dog",
+        "bear",
+        "cat",
+        "lion"
+      ]
+    }
+  ],
+  "updatedAt": "2026-09-01T03:10:34.395750Z"
+}

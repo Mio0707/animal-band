@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "3.0.0",
+  "runtimeVersion": "3.0.0",
+  "preparationId": "prep_bd23f5227b3f41dc8ebdaaf3cbcdc53d",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "segmentCount": 9,
+  "lessonSegments": [
+    {
+      "segmentId": "lesson_segment_m001_m004",
+      "index": 0,
+      "label": "第 1–4 小节",
+      "startMeasure": 1,
+      "endMeasure": 4,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m005_m008",
+      "index": 1,
+      "label": "第 5–8 小节",
+      "startMeasure": 5,
+      "endMeasure": 8,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m009_m012",
+      "index": 2,
+      "label": "第 9–12 小节",
+      "startMeasure": 9,
+      "endMeasure": 12,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m013_m016",
+      "index": 3,
+      "label": "第 13–16 小节",
+      "startMeasure": 13,
+      "endMeasure": 16,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m017_m020",
+      "index": 4,
+      "label": "第 17–20 小节",
+      "startMeasure": 17,
+      "endMeasure": 20,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m021_m024",
+      "index": 5,
+      "label": "第 21–24 小节",
+      "startMeasure": 21,
+      "endMeasure": 24,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m025_m028",
+      "index": 6,
+      "label": "第 25–28 小节",
+      "startMeasure": 25,
+      "endMeasure": 28,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m029_m032",
+      "index": 7,
+      "label": "第 29–32 小节",
+      "startMeasure": 29,
+      "endMeasure": 32,
+      "measureCount": 4
+    },
+    {
+      "segmentId": "lesson_segment_m033_m036",
+      "index": 8,
+      "label": "第 33–36 小节",
+      "startMeasure": 33,
+      "endMeasure": 36,
+      "measureCount": 4
+    }
+  ],
+  "trackIds": [
+    "dog",
+    "bear",
+    "cat",
+    "lion"
+  ],
+  "segmentStates": [
+    {
+      "segmentId": "lesson_segment_m001_m004",
+      "activeTrackIds": [
+        "dog",
+        "bear",
+        "cat",
+        "lion"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m005_m008",
+      "activeTrackIds": [
+        "dog"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m009_m012",
+      "activeTrackIds": [
+        "dog",
+        "bear",
+        "cat"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m013_m016",
+      "activeTrackIds": [
+        "dog",
+        "cat"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m017_m020",
+      "activeTrackIds": [
+        "dog",
+        "bear",
+        "cat",
+        "lion"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m021_m024",
+      "activeTrackIds": [
+        "dog",
+        "bear"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m025_m028",
+      "activeTrackIds": [
+        "cat",
+        "lion"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m029_m032",
+      "activeTrackIds": [
+        "cat",
+        "lion"
+      ]
+    },
+    {
+      "segmentId": "lesson_segment_m033_m036",
+      "activeTrackIds": [
+        "dog",
+        "bear",
+        "lion"
+      ]
+    }
+  ],
+  "updatedAt": "2026-08-30T16:10:12.157770Z"
+}

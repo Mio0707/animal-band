@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "1.0.0",
+  "songId": "dongfanghong",
+  "sourceScoreVerifiedAt": "2026-08-31T14:27:05.314Z",
+  "bpm": 72.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "measureCount": 16,
+  "renderer": "sticker-stems-fluidsynth@2.0.0",
+  "generator": {
+    "type": "qwen_shared_arrangement",
+    "model": "qwen3.8-flash",
+    "fallback": false
+  },
+  "tracks": [
+    {
+      "trackId": "dog",
+      "label": "小狗",
+      "instrument": "drums",
+      "role": "鼓组",
+      "jsonPath": "data/songs/dongfanghong/sticker-stems/dog.json",
+      "midiPath": "data/songs/dongfanghong/sticker-stems/dog.mid",
+      "wavPath": "data/songs/dongfanghong/sticker-stems/dog.wav",
+      "metadata": {
+        "bpm": 72.0,
+        "totalBeats": 32.0,
+        "eventCount": 54,
+        "channel": 9,
+        "program": null,
+        "soundfont": "/Users/mio/Documents/ChatGPT/Animal bank/.audio-tools/sounds/MuseScore_General.sf3",
+        "wavBytes": 5057068,
+        "midiBytes": 519,
+        "channels": 2,
+        "sampleWidth": 2,
+        "sampleRate": 44100,
+        "frames": 1176000,
+        "durationSec": 26.666666666666668
+      }
+    },
+    {
+      "trackId": "bear",
+      "label": "小熊",
+      "instrument": "keyboard",
+      "role": "键盘和声",
+      "jsonPath": "data/songs/dongfanghong/sticker-stems/bear.json",
+      "midiPath": "data/songs/dongfanghong/sticker-stems/bear.mid",
+      "wavPath": "data/songs/dongfanghong/sticker-stems/bear.wav",
+      "metadata": {
+        "bpm": 72.0,
+        "totalBeats": 32.0,
+        "eventCount": 81,
+        "channel": 0,
+        "program": 0,
+        "soundfont": "/Users/mio/Documents/ChatGPT/Animal bank/.audio-tools/sounds/MuseScore_General.sf3",
+        "wavBytes": 5164076,
+        "midiBytes": 711,
+        "channels": 2,
+        "sampleWidth": 2,
+        "sampleRate": 44100,
+        "frames": 1176000,
+        "durationSec": 26.666666666666668
+      }
+    },
+    {
+      "trackId": "cat",
+      "label": "小猫",
+      "instrument": "bass",
+      "role": "贝斯",
+      "jsonPath": "data/songs/dongfanghong/sticker-stems/cat.json",
+      "midiPath": "data/songs/dongfanghong/sticker-stems/cat.mid",
+      "wavPath": "data/songs/dongfanghong/sticker-stems/cat.wav",
+      "metadata": {
+        "bpm": 72.0,
+        "totalBeats": 32.0,
+        "eventCount": 27,
+        "channel": 1,
+        "program": 33,
+        "soundfont": "/Users/mio/Documents/ChatGPT/Animal bank/.audio-tools/sounds/MuseScore_General.sf3",
+        "wavBytes": 5057068,
+        "midiBytes": 284,
+        "channels": 2,
+        "sampleWidth": 2,
+        "sampleRate": 44100,
+        "frames": 1176000,
+        "durationSec": 26.666666666666668
+      }
+    },
+    {
+      "trackId": "lion",
+      "label": "小狮子",
+      "instrument": "alto_sax",
+      "role": "萨克斯主旋律",
+      "jsonPath": "data/songs/dongfanghong/sticker-stems/lion.json",
+      "midiPath": "data/songs/dongfanghong/sticker-stems/lion.mid",
+      "wavPath": "data/songs/dongfanghong/sticker-stems/lion.wav",
+      "metadata": {
+        "bpm": 72.0,
+        "totalBeats": 32.0,
+        "eventCount": 40,
+        "channel": 2,
+        "program": 65,
+        "soundfont": "/Users/mio/Documents/ChatGPT/Animal bank/.audio-tools/sounds/MuseScore_General.sf3",
+        "wavBytes": 5091628,
+        "midiBytes": 396,
+        "channels": 2,
+        "sampleWidth": 2,
+        "sampleRate": 44100,
+        "frames": 1176000,
+        "durationSec": 26.666666666666668
+      }
+    }
+  ],
+  "previewMixPath": "data/songs/dongfanghong/sticker-stems/preview-mix.wav",
+  "qa": {
+    "trackCount": 4,
+    "durationToleranceSec": 0.0,
+    "aligned": true,
+    "previewDurationSec": 26.666666666666668
+  }
+}

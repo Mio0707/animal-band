@@ -1,0 +1,491 @@
+{
+  "schemaVersion": "1.0.0",
+  "songId": "zuguo-zuguo-women-ai-ni",
+  "sourceScoreVerifiedAt": "2026-08-30T04:20:26.669Z",
+  "generator": {
+    "type": "qwen_shared_arrangement",
+    "model": "qwen3.8-flash",
+    "fallback": false
+  },
+  "bpm": 72.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "measureCount": 36,
+  "arrangementPlan": {
+    "harmony": [
+      {
+        "measure": 1,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 2,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 3,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 4,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 5,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 6,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 7,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 8,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 9,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 10,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 11,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 12,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 13,
+        "degree": 4,
+        "quality": "major",
+        "rootPc": 5
+      },
+      {
+        "measure": 14,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 15,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 16,
+        "degree": 4,
+        "quality": "major",
+        "rootPc": 5
+      },
+      {
+        "measure": 17,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 18,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 19,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 20,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 21,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 22,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 23,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 24,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 25,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 26,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 27,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 28,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 29,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 30,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 31,
+        "degree": 4,
+        "quality": "major",
+        "rootPc": 5
+      },
+      {
+        "measure": 32,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 33,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      },
+      {
+        "measure": 34,
+        "degree": 5,
+        "quality": "major",
+        "rootPc": 7
+      },
+      {
+        "measure": 35,
+        "degree": 4,
+        "quality": "major",
+        "rootPc": 5
+      },
+      {
+        "measure": 36,
+        "degree": 1,
+        "quality": "major",
+        "rootPc": 0
+      }
+    ],
+    "measurePlans": [
+      {
+        "measure": 1,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 2,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root_fifth",
+        "sax": "rest"
+      },
+      {
+        "measure": 3,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 4,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root_fifth",
+        "sax": "rest"
+      },
+      {
+        "measure": 5,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 6,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 7,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 8,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 9,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 10,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root_fifth",
+        "sax": "rest"
+      },
+      {
+        "measure": 11,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 12,
+        "drums": "light",
+        "keys": "hold",
+        "bass": "root_fifth",
+        "sax": "rest"
+      },
+      {
+        "measure": 13,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 14,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 15,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 16,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 17,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 18,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 19,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 20,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 21,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 22,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 23,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 24,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 25,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 26,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 27,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 28,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 29,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 30,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 31,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 32,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 33,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 34,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root_fifth",
+        "sax": "melody"
+      },
+      {
+        "measure": 35,
+        "drums": "full",
+        "keys": "pulse",
+        "bass": "root",
+        "sax": "melody"
+      },
+      {
+        "measure": 36,
+        "drums": "full",
+        "keys": "hold",
+        "bass": "root",
+        "sax": "rest"
+      }
+    ],
+    "notes": []
+  }
+}

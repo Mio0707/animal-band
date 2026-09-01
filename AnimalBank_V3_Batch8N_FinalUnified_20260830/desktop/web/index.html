@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#fff8ed">
+  <title>动物乐队课堂</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="desktop-shell">
+    <header class="desktop-header">
+      <div class="brand"><span class="brand-mark">♪</span><div><strong>动物乐队课堂</strong><small>离线课堂播放器</small></div></div>
+      <button class="import-button" data-import-course>＋ 导入离线课</button>
+    </header>
+    <section class="course-list" data-course-list aria-live="polite"></section>
+  </main>
+  <dialog data-confirm-delete><form method="dialog"><h2>删除本地课程？</h2><p>只会删除这台电脑上的离线课包，网页备课不会受到影响。</p><div><button value="cancel">取消</button><button class="danger" value="confirm">删除</button></div></form></dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

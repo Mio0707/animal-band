@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://animalbank.local/schemas/listening-body-plan.schema.json",
+  "title": "Listening Body Warmup Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "planId",
+    "songId",
+    "source",
+    "durationSec",
+    "meter",
+    "bpm",
+    "actions",
+    "segments"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "enum": [
+        "1.0.0",
+        "1.1.0"
+      ]
+    },
+    "planId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "songId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generatedAt": {
+      "type": "string"
+    },
+    "durationSec": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "meter": {
+      "type": "object"
+    },
+    "bpm": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "policy": {
+      "type": "object"
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "actionId",
+          "label",
+          "sound",
+          "asset",
+          "motion"
+        ],
+        "properties": {
+          "actionId": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "sound": {
+            "type": "boolean"
+          },
+          "asset": {
+            "type": "string"
+          },
+          "motion": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "segments": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "segmentId",
+          "startSec",
+          "endSec",
+          "startBar",
+          "endBar",
+          "actionId",
+          "label",
+          "energy"
+        ],
+        "properties": {
+          "segmentId": {
+            "type": "string"
+          },
+          "startSec": {
+            "type": "number",
+            "minimum": 0
+          },
+          "endSec": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "startBar": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "endBar": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "actionId": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "energy": {
+            "enum": [
+              "LOW",
+              "MID",
+              "HIGH"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

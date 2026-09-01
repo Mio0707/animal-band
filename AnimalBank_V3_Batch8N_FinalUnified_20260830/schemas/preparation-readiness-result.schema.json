@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://animalbank.local/schemas/preparation-readiness-result.schema.json","title":"Animal Bank Preparation Readiness Result","type":"object","additionalProperties":false,
+  "required":["ready","desiredPreparationStatus","checks","blockers","warnings"],
+  "properties":{
+    "ready":{"type":"boolean"},"desiredPreparationStatus":{"enum":["DRAFT","READY"]},
+    "checks":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["id","ok","message"],"properties":{"id":{"type":"string","minLength":1},"ok":{"type":"boolean"},"message":{"type":"string","minLength":1}}}},
+    "blockers":{"type":"array","items":{"type":"string"}},"warnings":{"type":"array","items":{"type":"string"}}
+  }
+}

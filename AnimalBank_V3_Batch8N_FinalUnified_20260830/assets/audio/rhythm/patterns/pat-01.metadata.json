@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.1.0",
+  "renderer": "rhythm-note-drums-preview-v1.0.0",
+  "audioSource": "stage1-rhythm-note-drums-v1",
+  "source": "local FluidSynth / MuseScore_General.sf3 General MIDI percussion bank",
+  "kind": "RHYTHM_KNOWLEDGE_PREVIEW",
+  "slotId": "knowledge_preview:PAT-01",
+  "materialId": "PAT-01",
+  "sampleRate": 44100,
+  "channels": 2,
+  "format": "wav",
+  "bpm": 80.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "countInBeats": 2,
+  "patternStartBeat": 2.0,
+  "patternBeats": 2.0,
+  "repeatCount": 4,
+  "totalBeats": 10.0,
+  "totalSeconds": 8.199977,
+  "events": [
+    {
+      "index": 0,
+      "atBeat": 0.0,
+      "durationBeats": 1.0,
+      "chant": "da",
+      "action": "STOMP",
+      "actionLabel": "原地跺脚",
+      "drumSoundKey": "1"
+    },
+    {
+      "index": 1,
+      "atBeat": 1.0,
+      "durationBeats": 1.0,
+      "chant": "da",
+      "action": "STOMP",
+      "actionLabel": "原地跺脚",
+      "drumSoundKey": "1"
+    }
+  ],
+  "repeatStartBeats": [
+    2.0,
+    4.0,
+    6.0,
+    8.0
+  ],
+  "contentSha256": "0cd3bab4d3b5c138b22f68eef46cf60242d0ce1c55c6e5da2423e4f8f7c126c7",
+  "playbackContract": "same_duration_drum_samples_as_rhythm_learning"
+}

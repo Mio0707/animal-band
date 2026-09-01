@@ -1,0 +1,44 @@
+{
+  "preparationId": "prep_be7868eb01994061a2b28f0543c99cb3",
+  "songId": "dongfanghong",
+  "selectedActivities": [
+    "listen",
+    "melody_trace",
+    "rhythm_learning",
+    "singing",
+    "ensemble",
+    "sticker_arrangement"
+  ],
+  "lessonRecipeId": "recipe_be7868eb01994061a2b28f0543c99cb3",
+  "lessonRecipeStatus": "READY",
+  "recipeReviewStatus": "REVIEWED",
+  "readinessStatus": "CURRENT",
+  "teacherAdjustments": {
+    "recipeReviewHistory": [
+      {
+        "recipeId": "recipe_be7868eb01994061a2b28f0543c99cb3",
+        "recipeGeneratedAt": "2026-08-31T16:41:10.251Z",
+        "reviewedAt": "2026-08-31T16:41:14.919036Z",
+        "superseded": true,
+        "reason": "song_pipeline_changed"
+      },
+      {
+        "recipeId": "recipe_be7868eb01994061a2b28f0543c99cb3",
+        "recipeGeneratedAt": "2026-08-31T16:51:14.445Z",
+        "reviewedAt": "2026-08-31T16:51:17.763852Z",
+        "superseded": true,
+        "reason": "recipe_regenerated"
+      }
+    ],
+    "recipeReviewedAt": "2026-09-01T02:05:40.435952Z",
+    "recipeReview": {
+      "recipeId": "recipe_be7868eb01994061a2b28f0543c99cb3",
+      "recipeGeneratedAt": "2026-09-01T02:05:39.186Z",
+      "reviewedAt": "2026-09-01T02:05:40.435952Z"
+    }
+  },
+  "status": "READY",
+  "isActive": true,
+  "createdAt": "2026-08-31T13:07:07.540991Z",
+  "updatedAt": "2026-09-01T02:07:30.756881Z"
+}

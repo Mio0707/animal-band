@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>下载桌面播放器 · 动物乐队</title>
+  <style>
+    :root{font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:#292532;background:#f8f3e8}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 15% 0,#fff8d7 0,transparent 32%),#f8f3e8}
+    main{width:min(760px,calc(100% - 32px));margin:0 auto;padding:52px 0 80px}.back{color:#726c7b;text-decoration:none;font-weight:800}
+    section{margin-top:28px;padding:34px;border:1px solid #e6dcc8;border-radius:28px;background:#fffdf8;box-shadow:0 18px 50px rgba(72,52,30,.12)}
+    h1{margin:10px 0;font-size:clamp(32px,6vw,48px);letter-spacing:-.04em}p{color:#726c7b;line-height:1.7}.eyebrow{margin:0;color:#b65e38;font-size:12px;font-weight:900;letter-spacing:.14em}
+    .downloads{display:grid;gap:14px;margin-top:24px}.download{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;border:1px solid #b8d5c1;border-radius:16px;color:#2f6b49;background:#eef8f1;text-decoration:none;font-weight:900}.download small{display:block;margin-top:4px;color:#65786c;font-weight:600}.download span{white-space:nowrap;padding:10px 14px;border-radius:12px;color:white;background:#ec794c}
+    .note{margin-top:22px;padding:13px 15px;border-radius:12px;background:#fff4df;color:#80552f;font-size:13px}.steps{margin:26px 0 0;padding:22px;border-radius:18px;background:#f7f2e9}.steps h2{margin:0 0 12px;font-size:18px}.steps ol{margin:0;padding-left:22px;color:#625b69;line-height:1.9}.pending{display:flex;justify-content:space-between;gap:16px;padding:18px 20px;border:1px dashed #d8cdbb;border-radius:16px;color:#756d78;background:#faf7f1;font-weight:800}.pending small{display:block;margin-top:4px;font-weight:500}
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="/app/teacher/#/songs?grade=1-2">← 返回歌曲库</a>
+    <section>
+      <p class="eyebrow">离线课堂播放器</p>
+      <h1>下载桌面版</h1>
+      <p>桌面播放器用于打开网页下载的 <code>.animalclass</code> 课程包。安装一次后，老师不需要 Node.js 或构建环境，双击应用即可导入并离线上课。</p>
+      <div class="downloads" data-desktop-releases><p>正在读取可用版本…</p></div>
+      <div class="note" data-desktop-note hidden>当前构建还没有对应系统的安装包。管理员发布新版本后，这里会自动出现下载入口。</div>
+      <div class="steps"><h2>安装和上课</h2><ol><li>下载适合电脑系统的播放器；macOS 下载后解压并将应用拖入“应用程序”。</li><li>第一次在 macOS 打开时，如系统提示安全限制，请右键应用并选择“打开”。</li><li>回到歌曲库下载 <code>.animalclass</code> 课程包，再在播放器中点击“导入离线课”。</li><li>断开网络后打开播放器，点击课程卡即可上课。</li></ol></div>
+    </section>
+  </main>
+  <script>
+    const list = document.querySelector('[data-desktop-releases]');
+    const note = document.querySelector('[data-desktop-note]');
+    const size = (bytes) => bytes > 1024 * 1024 ? `${(bytes / 1024 / 1024).toFixed(1)} MB` : `${Math.ceil(bytes / 1024)} KB`;
+    fetch('/api/desktop/releases', { cache: 'no-store' }).then((response) => response.json()).then(({ releases = [] }) => {
+      const available = releases.map((release) => `<a class="download" href="${release.href}" download><div>${release.platform}<small>${release.name} · ${size(release.size)}</small></div><span>下载播放器</span></a>`).join('');
+      const hasWindows = releases.some((release) => release.platform.startsWith('Windows'));
+      list.innerHTML = available + (hasWindows ? '' : '<div class="pending"><div>Windows 版<small>构建产物发布后会自动显示下载按钮</small></div><span>待发布</span></div>');
+      if (!releases.length) note.hidden = false;
+    }).catch(() => { list.innerHTML = ''; note.hidden = false; });
+  </script>
+</body>
+</html>

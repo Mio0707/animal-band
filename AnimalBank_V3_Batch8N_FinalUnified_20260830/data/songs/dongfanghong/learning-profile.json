@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "3.0.0",
+  "algorithmVersion": "1.1.0",
+  "songId": "dongfanghong",
+  "stageId": "stage_1",
+  "sourceMatchAlgorithmVersion": "1.0.0",
+  "sourceMatchGeneratedAt": "2026-08-31T16:51:14.372Z",
+  "sourceScoreVerifiedAt": "2026-08-31T14:27:05.314Z",
+  "generatedAt": "2026-08-31T16:51:14.414Z",
+  "generationStatus": "READY",
+  "reviewStatus": "NOT_REVIEWED",
+  "modules": {
+    "rhythm": {
+      "available": true,
+      "targets": [
+        {
+          "targetId": "RHY-12-BEAT-01",
+          "recommendation": "AVAILABLE",
+          "reason": "歌曲具有明确拍号，可用于稳定均拍与共同速度练习。"
+        },
+        {
+          "targetId": "RHY-12-TEMPO-01",
+          "recommendation": "AVAILABLE",
+          "reason": "歌曲具有明确速度，可用于感受并跟随音乐快慢。"
+        },
+        {
+          "targetId": "RHY-12-CHANT-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "匹配到标准 Rhythm Material，可直接使用时值唱名教学。"
+        }
+      ],
+      "materials": [
+        {
+          "materialId": "PAT-04",
+          "name": "前疏后密",
+          "curriculumLevel": "core",
+          "occurrenceCount": 6,
+          "recommendation": "RECOMMENDED",
+          "reason": "歌曲中稳定出现 6 次，可形成重复练习。",
+          "occurrenceIds": [
+            "PAT-04@m1:m001_n001",
+            "PAT-04@m3:m003_n001",
+            "PAT-04@m7:m007_n001",
+            "PAT-04@m10:m010_n001",
+            "PAT-04@m12:m012_n001",
+            "PAT-04@m13:m013_n001"
+          ]
+        },
+        {
+          "materialId": "PAT-01",
+          "name": "一拍一次",
+          "curriculumLevel": "core",
+          "occurrenceCount": 3,
+          "recommendation": "RECOMMENDED",
+          "reason": "歌曲中稳定出现 3 次，可形成重复练习。",
+          "occurrenceIds": [
+            "PAT-01@m5:m005_n001",
+            "PAT-01@m9:m009_n001",
+            "PAT-01@m11:m011_n001"
+          ]
+        },
+        {
+          "materialId": "PAT-02",
+          "name": "一拍两次",
+          "curriculumLevel": "core",
+          "occurrenceCount": 3,
+          "recommendation": "RECOMMENDED",
+          "reason": "歌曲中稳定出现 3 次，可形成重复练习。",
+          "occurrenceIds": [
+            "PAT-02@m6:m006_n001",
+            "PAT-02@m14:m014_n001",
+            "PAT-02@m15:m015_n001"
+          ]
+        }
+      ]
+    },
+    "melody": {
+      "available": true,
+      "targets": [
+        {
+          "targetId": "MEL-12-CONTOUR-01",
+          "recommendation": "AVAILABLE",
+          "reason": "歌曲存在可分析的旋律走向。"
+        }
+      ],
+      "materials": [
+        {
+          "materialId": "MEL-MAT-REPEAT-NOTE",
+          "name": "重复音",
+          "occurrenceCount": 5,
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "旋律材料供自动分析与画旋律方案参考，不要求教师逐句选择。",
+          "occurrenceIds": [
+            "MEL-MAT-REPEAT-NOTE@m001_n001:m001_n002",
+            "MEL-MAT-REPEAT-NOTE@m003_n001:m003_n002",
+            "MEL-MAT-REPEAT-NOTE@m005_n001:m005_n002",
+            "MEL-MAT-REPEAT-NOTE@m007_n001:m007_n002",
+            "MEL-MAT-REPEAT-NOTE@m013_n001:m013_n002"
+          ]
+        },
+        {
+          "materialId": "MEL-MAT-ASCENDING",
+          "name": "简单上行",
+          "occurrenceCount": 4,
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "旋律材料供自动分析与画旋律方案参考，不要求教师逐句选择。",
+          "occurrenceIds": [
+            "MEL-MAT-ASCENDING@m001_n001:m001_n003",
+            "MEL-MAT-ASCENDING@m003_n003:m006_n002",
+            "MEL-MAT-ASCENDING@m007_n003:m009_n001",
+            "MEL-MAT-ASCENDING@m013_n003:m014_n002"
+          ]
+        },
+        {
+          "materialId": "MEL-MAT-DESCENDING",
+          "name": "简单下行",
+          "occurrenceCount": 7,
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "旋律材料供自动分析与画旋律方案参考，不要求教师逐句选择。",
+          "occurrenceIds": [
+            "MEL-MAT-DESCENDING@m002_n001:m003_n003",
+            "MEL-MAT-DESCENDING@m006_n002:m006_n004",
+            "MEL-MAT-DESCENDING@m007_n001:m007_n003",
+            "MEL-MAT-DESCENDING@m009_n001:m011_n001",
+            "MEL-MAT-DESCENDING@m012_n002:m013_n003",
+            "MEL-MAT-DESCENDING@m014_n002:m014_n004",
+            "MEL-MAT-DESCENDING@m015_n001:m016_n001"
+          ]
+        },
+        {
+          "materialId": "MEL-MAT-LEVEL",
+          "name": "平稳/重复为主",
+          "occurrenceCount": 5,
+          "recommendation": "SUPPORT_ONLY",
+          "reason": "旋律材料供自动分析与画旋律方案参考，不要求教师逐句选择。",
+          "occurrenceIds": [
+            "MEL-MAT-LEVEL@m001_n001:m001_n002",
+            "MEL-MAT-LEVEL@m003_n001:m003_n002",
+            "MEL-MAT-LEVEL@m005_n001:m005_n002",
+            "MEL-MAT-LEVEL@m007_n001:m007_n002",
+            "MEL-MAT-LEVEL@m013_n001:m013_n002"
+          ]
+        }
+      ]
+    },
+    "solfege": {
+      "available": true,
+      "targets": [
+        {
+          "targetId": "SOL-12-NAME-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "Verified Score 已提供简谱音级与唱名映射。"
+        }
+      ],
+      "usedDegrees": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "octaves": [
+        -1,
+        0,
+        1
+      ]
+    },
+    "singing": {
+      "available": true,
+      "targets": [
+        {
+          "targetId": "SING-12-PITCH-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "Verified Score 提供明确音高，可用于钢琴和唱名跟唱。"
+        },
+        {
+          "targetId": "SING-12-LYRIC-01",
+          "recommendation": "RECOMMENDED",
+          "reason": "乐谱包含歌词—音符对应，可按连续小节教学。"
+        }
+      ],
+      "measuresPerUnit": 4,
+      "teachingUnitCount": 4
+    }
+  },
+  "teacherCandidates": {
+    "rhythmMaterialIds": [
+      "PAT-04",
+      "PAT-01",
+      "PAT-02"
+    ]
+  },
+  "limitations": [
+    "Learning Profile 自动生成教学候选；教师备课只选择课堂活动；节奏材料与演唱教学段由系统从已确认歌曲数据自动生成。"
+  ]
+}

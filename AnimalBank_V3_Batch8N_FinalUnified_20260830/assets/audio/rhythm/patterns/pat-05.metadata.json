@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.1.0",
+  "renderer": "rhythm-note-drums-preview-v1.0.0",
+  "audioSource": "stage1-rhythm-note-drums-v1",
+  "source": "local FluidSynth / MuseScore_General.sf3 General MIDI percussion bank",
+  "kind": "RHYTHM_KNOWLEDGE_PREVIEW",
+  "slotId": "knowledge_preview:PAT-05",
+  "materialId": "PAT-05",
+  "sampleRate": 44100,
+  "channels": 2,
+  "format": "wav",
+  "bpm": 64.0,
+  "meter": {
+    "beats": 2,
+    "unit": 4
+  },
+  "countInBeats": 2,
+  "patternStartBeat": 2.0,
+  "patternBeats": 1.0,
+  "repeatCount": 4,
+  "totalBeats": 6.0,
+  "totalSeconds": 6.324966,
+  "events": [
+    {
+      "index": 0,
+      "atBeat": 0.0,
+      "durationBeats": 0.25,
+      "chant": "di",
+      "action": "PAT_LEFT",
+      "actionLabel": "左手拍左腿",
+      "drumSoundKey": "0.25"
+    },
+    {
+      "index": 1,
+      "atBeat": 0.25,
+      "durationBeats": 0.25,
+      "chant": "di",
+      "action": "PAT_RIGHT",
+      "actionLabel": "右手拍右腿",
+      "drumSoundKey": "0.25"
+    },
+    {
+      "index": 2,
+      "atBeat": 0.5,
+      "durationBeats": 0.25,
+      "chant": "di",
+      "action": "PAT_LEFT",
+      "actionLabel": "左手拍左腿",
+      "drumSoundKey": "0.25"
+    },
+    {
+      "index": 3,
+      "atBeat": 0.75,
+      "durationBeats": 0.25,
+      "chant": "di",
+      "action": "PAT_RIGHT",
+      "actionLabel": "右手拍右腿",
+      "drumSoundKey": "0.25"
+    }
+  ],
+  "repeatStartBeats": [
+    2.0,
+    3.0,
+    4.0,
+    5.0
+  ],
+  "contentSha256": "f9fc9454f15ef0c3988408d1ad7c45019050ed70abc82330716f8b917826da2c",
+  "playbackContract": "same_duration_drum_samples_as_rhythm_learning"
+}

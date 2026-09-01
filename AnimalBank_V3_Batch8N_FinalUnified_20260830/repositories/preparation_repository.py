@@ -1,0 +1,183 @@
+from __future__ import annotations
+
+from copy import deepcopy
+from pathlib import Path
+from uuid import uuid4
+
+from .persistence_utils import atomic_write_json, read_json, require_preparation_id, require_song_id, utc_now
+
+
+
+class PreparationRepository:
+    """Persistence for the final teacher Preparation model.
+
+    The formal teacher-owned choice is intentionally tiny: selectedActivities.
+    The formal teacher-owned choice is selectedActivities only.
+    """
+
+    def __init__(self, data_root: Path):
+        self.root = Path(data_root).resolve() / "preparations"
+        self.root.mkdir(parents=True, exist_ok=True)
+
+    def _path(self, preparation_id: str) -> Path:
+        return self.root / f"{require_preparation_id(preparation_id)}.json"
+
+    def _artifact_path(self, preparation_id: str, name: str) -> Path:
+        allowed = {"lesson-recipe.json", "readiness.json", "sticker-arrangement.json"}
+        if name not in allowed:
+            raise ValueError(f"不支持的 Preparation 生成物：{name}")
+        return self.root / require_preparation_id(preparation_id) / name
+
+    @staticmethod
+    def _normalize(raw: dict) -> dict:
+        value = deepcopy(raw)
+        value.pop("audioPlanStatus", None)
+        value.pop("audioManifestStatus", None)
+        value["selectedActivities"] = list(dict.fromkeys(value.get("selectedActivities") or []))
+        value.setdefault("lessonRecipeId", None)
+        value.setdefault("lessonRecipeStatus", "NOT_GENERATED")
+        value.setdefault("recipeReviewStatus", "NOT_REVIEWED")
+        value.setdefault("readinessStatus", "NOT_EVALUATED")
+        value.setdefault("teacherAdjustments", {})
+        value.setdefault("status", "DRAFT")
+        value.setdefault("isActive", True)
+        return value
+
+    @staticmethod
+    def invalidate_recipe_review_metadata(adjustments: dict | None, *, reason: str) -> dict:
+        value = deepcopy(adjustments or {})
+        current = value.pop("recipeReview", None)
+        legacy_reviewed_at = value.pop("recipeReviewedAt", None)
+        if current or legacy_reviewed_at:
+            history = list(value.get("recipeReviewHistory") or [])
+            entry = deepcopy(current or {})
+            if legacy_reviewed_at and not entry.get("reviewedAt"):
+                entry["reviewedAt"] = legacy_reviewed_at
+            entry["superseded"] = True
+            entry["reason"] = reason
+            if entry and entry not in history:
+                history.append(entry)
+            value["recipeReviewHistory"] = history
+        return value
+
+    def list_preparations(self) -> list[dict]:
+        values = [self._normalize(read_json(path)) for path in sorted(self.root.glob("prep_*.json"))]
+        return sorted(values, key=lambda value: (value.get("createdAt", ""), value["preparationId"]))
+
+    def get_preparation_by_id(self, preparation_id: str) -> dict | None:
+        path = self._path(preparation_id)
+        return self._normalize(read_json(path)) if path.is_file() else None
+
+    def get_active_preparation_for_song(self, song_id: str) -> dict | None:
+        song_id = require_song_id(song_id)
+        matches = [
+            value for value in self.list_preparations()
+            if value.get("songId") == song_id and value.get("isActive", True)
+        ]
+        return max(matches, key=lambda value: value.get("updatedAt", ""), default=None)
+
+    def create_preparation(self, song_id: str, *, reuse_active: bool = True) -> dict:
+        song_id = require_song_id(song_id)
+        if reuse_active:
+            active = self.get_active_preparation_for_song(song_id)
+            if active:
+                return active
+        timestamp = utc_now()
+        preparation = {
+            "preparationId": f"prep_{uuid4().hex}",
+            "songId": song_id,
+            "selectedActivities": [],
+            "lessonRecipeId": None,
+            "lessonRecipeStatus": "NOT_GENERATED",
+            "recipeReviewStatus": "NOT_REVIEWED",
+            "readinessStatus": "NOT_EVALUATED",
+            "teacherAdjustments": {},
+            "status": "DRAFT",
+            "isActive": True,
+            "createdAt": timestamp,
+            "updatedAt": timestamp,
+        }
+        atomic_write_json(self._path(preparation["preparationId"]), preparation)
+        return preparation
+
+    def update_preparation(self, preparation_id: str, changes: dict, *, internal: bool = False) -> dict:
+        preparation = self.get_preparation_by_id(preparation_id)
+        if not preparation:
+            raise KeyError(preparation_id)
+        if "status" in changes and not internal:
+            raise ValueError("Preparation.status 只能由内部 Readiness Gate 更新。")
+
+        allowed = {"selectedActivities", "teacherAdjustments"}
+        if internal:
+            allowed |= {
+                "lessonRecipeId", "status", "isActive", "lessonRecipeStatus",
+                "recipeReviewStatus", "readinessStatus",
+            }
+        unknown = set(changes) - allowed
+        if unknown:
+            raise ValueError(f"不允许更新 Preparation 字段：{', '.join(sorted(unknown))}")
+        if "status" in changes and changes["status"] not in {"DRAFT", "READY"}:
+            raise ValueError("Preparation.status 只允许 DRAFT 或 READY。")
+        if "selectedActivities" in changes and not isinstance(changes["selectedActivities"], list):
+            raise ValueError("selectedActivities 必须为数组。")
+        if "teacherAdjustments" in changes and not isinstance(changes["teacherAdjustments"], dict):
+            raise ValueError("teacherAdjustments 必须为对象。")
+
+        selection_changed = (
+            "selectedActivities" in changes
+            and list(changes["selectedActivities"]) != list(preparation.get("selectedActivities") or [])
+        )
+        preparation.update(deepcopy(changes))
+        preparation["selectedActivities"] = list(dict.fromkeys(preparation.get("selectedActivities") or []))
+
+        if selection_changed and not internal:
+            preparation["teacherAdjustments"] = self.invalidate_recipe_review_metadata(
+                preparation.get("teacherAdjustments"), reason="teacher_activity_selection_changed"
+            )
+            preparation.update({
+                "lessonRecipeId": None,
+                "lessonRecipeStatus": "STALE" if self.get_artifact(preparation_id, "lesson-recipe.json") else "NOT_GENERATED",
+                "recipeReviewStatus": "NOT_REVIEWED",
+                "readinessStatus": "STALE" if self.get_artifact(preparation_id, "readiness.json") else "NOT_EVALUATED",
+                "status": "DRAFT",
+            })
+        preparation["updatedAt"] = utc_now()
+        atomic_write_json(self._path(preparation_id), preparation)
+        return preparation
+
+    def artifact_path(self, preparation_id: str, name: str) -> Path:
+        return self._artifact_path(preparation_id, name)
+
+    def get_artifact(self, preparation_id: str, name: str) -> dict | None:
+        path = self._artifact_path(preparation_id, name)
+        return read_json(path) if path.is_file() else None
+
+    def save_artifact(self, preparation_id: str, name: str, value: dict) -> dict:
+        atomic_write_json(self._artifact_path(preparation_id, name), value)
+        return value
+
+    def invalidate_readiness_for_song(self, song_id: str) -> None:
+        for preparation in self.list_preparations():
+            if preparation.get("songId") != song_id:
+                continue
+            preparation_id = preparation["preparationId"]
+            self.update_preparation(preparation_id, {
+                "readinessStatus": "STALE" if self.get_artifact(preparation_id, "readiness.json") else "NOT_EVALUATED",
+                "status": "DRAFT",
+            }, internal=True)
+
+    def invalidate_for_song(self, song_id: str) -> None:
+        for preparation in self.list_preparations():
+            if preparation.get("songId") != song_id:
+                continue
+            preparation_id = preparation["preparationId"]
+            self.update_preparation(preparation_id, {
+                "teacherAdjustments": self.invalidate_recipe_review_metadata(
+                    preparation.get("teacherAdjustments"), reason="song_pipeline_changed"
+                ),
+                "lessonRecipeId": None,
+                "lessonRecipeStatus": "STALE" if self.get_artifact(preparation_id, "lesson-recipe.json") else "NOT_GENERATED",
+                "recipeReviewStatus": "NOT_REVIEWED",
+                "readinessStatus": "STALE" if self.get_artifact(preparation_id, "readiness.json") else "NOT_EVALUATED",
+                "status": "DRAFT",
+            }, internal=True)
