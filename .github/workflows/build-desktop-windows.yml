@@ -83,4 +83,4 @@ jobs:
               --title "动物乐队课堂 Windows 安装包 v0.1.0" \
               --notes "面向老师的 Windows 离线课堂播放器。下载安装后可直接导入网页端下载的 .animalclass 课程包。"
           fi
-          gh release upload "$RELEASE_TAG" release-assets/* --clobber
+          gh release upload "$RELEASE_TAG" release-assets/nsis/*.exe --clobber
