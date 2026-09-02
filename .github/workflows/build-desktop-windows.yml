@@ -6,7 +6,7 @@ on:
       release_tag:
         description: GitHub Release tag for the installer
         required: true
-        default: desktop-v0.1.0
+        default: desktop-v0.1.1
 
 permissions:
   contents: write
@@ -46,6 +46,12 @@ jobs:
       - name: Install desktop dependencies
         run: npm ci
 
+      - name: Check Rust formatting
+        run: cargo fmt --check
+
+      - name: Test desktop importer
+        run: cargo test --locked
+
       - name: Build Windows application
         run: npm run build -- --bundles nsis
 
@@ -80,7 +86,7 @@ jobs:
         run: |
           if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
             gh release create "$RELEASE_TAG" \
-              --title "动物乐队课堂 Windows 安装包 v0.1.0" \
+              --title "动物乐队课堂 Windows 安装包 v0.1.1" \
               --notes "面向老师的 Windows 离线课堂播放器。下载安装后可直接导入网页端下载的 .animalclass 课程包。"
           fi
           gh release upload "$RELEASE_TAG" release-assets/nsis/*.exe --clobber
