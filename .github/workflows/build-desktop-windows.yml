@@ -41,12 +41,13 @@ jobs:
         uses: Swatinem/rust-cache@v2
         with:
           workspaces: AnimalBank_V3_Batch8N_FinalUnified_20260830/desktop/src-tauri
+          cache-on-failure: true
 
       - name: Install desktop dependencies
         run: npm ci
 
       - name: Build Windows application
-        run: npm run build
+        run: npm run build -- --bundles nsis
 
       - name: Upload Windows installers
         uses: actions/upload-artifact@v4
