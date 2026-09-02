@@ -121,4 +121,5 @@ test("秒悟镜像部署使用平台端口并排除桌面构建产物", async ()
   assert.match(start, /PORT:-9000/);
   assert.match(dockerignore, /desktop/);
   assert.match(dockerignore, /deliverables/);
+  assert.match(dockerignore, /windows_x64_setup\.exe/);
 });
