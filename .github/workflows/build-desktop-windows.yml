@@ -48,9 +48,15 @@ jobs:
 
       - name: Check Rust formatting
         run: cargo fmt --check
+        working-directory: AnimalBank_V3_Batch8N_FinalUnified_20260830/desktop/src-tauri
 
       - name: Test desktop importer
         run: cargo test --locked
+        working-directory: AnimalBank_V3_Batch8N_FinalUnified_20260830/desktop/src-tauri
+
+      - name: Build locked Rust release
+        run: cargo build --release --locked
+        working-directory: AnimalBank_V3_Batch8N_FinalUnified_20260830/desktop/src-tauri
 
       - name: Build Windows application
         run: npm run build -- --bundles nsis
