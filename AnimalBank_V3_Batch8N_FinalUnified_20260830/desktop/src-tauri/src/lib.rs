@@ -498,7 +498,7 @@ fn serve_course(root: PathBuf, listener: TcpListener) -> Result<(), String> {
 }
 
 #[tauri::command]
-fn start_course(app: tauri::AppHandle, pack_id: String) -> Result<(), String> {
+async fn start_course(app: tauri::AppHandle, pack_id: String) -> Result<(), String> {
     let root = courses_root(&app)?.join(safe_pack_directory(&pack_id));
     let manifest = read_manifest(&root)?;
     let listener = TcpListener::bind("127.0.0.1:0").map_err(|error| error.to_string())?;
