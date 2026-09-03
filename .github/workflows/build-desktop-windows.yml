@@ -46,6 +46,9 @@ jobs:
       - name: Install desktop dependencies
         run: npm ci
 
+      - name: Generate desktop icons
+        run: npm run icons
+
       - name: Check Rust formatting
         run: cargo fmt --check
         working-directory: AnimalBank_V3_Batch8N_FinalUnified_20260830/desktop/src-tauri
