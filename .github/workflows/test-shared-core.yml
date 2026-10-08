@@ -1,0 +1,18 @@
+name: Shared Core unit tests (extraction branch)
+on:
+  push:
+    branches:
+      - feature/extract-animal-band-core
+  pull_request:
+    paths:
+      - 'packages/animal-band-core/**'
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test isolated shared core
+        run: npm --prefix packages/animal-band-core test

@@ -1,0 +1,19 @@
+{
+  "name": "@animal-band/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Shared music pitch, rhythm timing, and score adapters; extraction preview",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./pitch": "./src/pitch/pitch-utils.js",
+    "./rhythm": "./src/rhythm/rhythm-runtime.js",
+    "./adapters": "./src/adapters/score-to-timeline.js"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  }
+}
